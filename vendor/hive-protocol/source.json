@@ -1,0 +1,6 @@
+{
+  "url": "https://raw.githubusercontent.com/apache/hive/master/service-rpc/if/TCLIService.thrift",
+  "sha256": "0ee78bbf80da2e9b92ca3f16efabc761d0a8fa59078d2b431df0824dba3613c3",
+  "license": "Apache-2.0",
+  "referenceOnly": true
+}

@@ -1,0 +1,6 @@
+Native BitTorrent: librqbit 9.1.0 and its Rust protocol components.
+Upstream: https://github.com/ikatson/rqbit
+License: Apache License, Version 2.0 (vendor/librqbit/LICENSE).
+Local changes: vendor/librqbit/TOMATO_PATCHES.json.
+The library is initialized only for active BitTorrent downloads; no HTTP web UI
+or torrent web service is enabled in the embedded application.

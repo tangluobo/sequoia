@@ -1,0 +1,42 @@
+// Run only against an owned local fixture. No installed browser profiles are used.
+const fs=require('fs'),path=require('path'),assert=require('assert/strict'),net=require('net'),{spawn}=require('child_process');
+const runtime=process.env.TOMATO_QA_NODE_MODULES||'C:/Users/zoleet/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules';
+const {chromium}=require(path.join(runtime,'playwright'));
+const exe=path.resolve(process.argv[2]),out=path.resolve(process.argv[3]);
+if(fs.existsSync(out))throw Error('Use a fresh output directory');fs.mkdirSync(out,{recursive:true});
+const profile=fs.mkdtempSync(path.join(out,'tomato-cloud-fixture-'));
+let server,browser,base,ownerToken,editorToken;
+const errors=[],steps=[];
+async function api(endpoint,method='GET',body=undefined,token=ownerToken){const r=await fetch(base+'/v1'+endpoint,{method,headers:{'Content-Type':'application/json',Authorization:'Bearer '+(token||'')},body:body===undefined?undefined:JSON.stringify(body)});const data=await r.json();if(!r.ok)throw Error(r.status+' '+data.message);return data;}
+async function login(page,email){await page.goto(base);await page.locator('#login-form input[name=email]').fill(email);await page.locator('#login-form input[name=password]').fill('fixture-password-123');await page.getByRole('button',{name:'登录',exact:true}).click();await page.locator('#workspace').waitFor({state:'visible'});await page.getByRole('heading',{name:'所有项目'}).waitFor();}
+async function ok(page){await page.locator('#dialog-ok').click();await page.locator('#dialog').waitFor({state:'hidden'});}
+async function newProject(page,name){await page.getByRole('button',{name:'新建项目',exact:true}).click();await page.locator('#dialog input[name=name]').fill(name);await ok(page);await page.getByRole('cell',{name,exact:true}).waitFor();}
+async function openProject(page,name){await page.getByRole('row').filter({has:page.getByRole('cell',{name,exact:true})}).getByRole('button',{name:'打开',exact:true}).click();await page.getByRole('heading',{name,exact:true}).waitFor();}
+function objectRow(page,name){return page.getByRole('row').filter({has:page.getByRole('cell',{name,exact:true})});}
+async function newObject(page,kind,name,body){await page.getByRole('button',{name:'新建对象',exact:true}).click();await page.locator('#dialog input[name=name]').fill(name);await page.locator('#dialog select[name=kind]').selectOption(kind);await page.locator('#dialog textarea[name=body]').fill(JSON.stringify(body));await ok(page);await page.getByRole('cell',{name,exact:true}).waitFor();}
+(async()=>{try{
+ const listener=net.createServer();await new Promise(r=>listener.listen(0,'127.0.0.1',r));const port=listener.address().port;await new Promise(r=>listener.close(r));base='http://127.0.0.1:'+port;
+ server=spawn(exe,['--data',profile,'--listen','127.0.0.1:'+port,'--local-fixture-registration'],{windowsHide:true,stdio:['ignore','ignore',fs.openSync(path.join(out,'server.log'),'w')],env:{...process.env,TOMATO_CLOUD_SMTP_ADDRESS:''}});
+ for(let i=0;i<100;i++){try{if((await fetch(base+'/healthz')).ok)break;}catch{}await new Promise(r=>setTimeout(r,50));}
+ for(const email of ['owner@example.test','editor@example.test'])await api('/register','POST',{email,name:email,password:'fixture-password-123'},'');
+ ownerToken=(await api('/login','POST',{email:'owner@example.test',password:'fixture-password-123',code:'',device:'owned QA'},'')).token;
+ editorToken=(await api('/login','POST',{email:'editor@example.test',password:'fixture-password-123',code:'',device:'owned QA'},'')).token;
+ browser=await chromium.launch({channel:'msedge',headless:true});const context=await browser.newContext({viewport:{width:1360,height:950},acceptDownloads:true});const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
+ await login(page,'owner@example.test');steps.push('login');await newProject(page,'协作验收🙂');await newProject(page,'目标项目');steps.push('create projects');
+ await openProject(page,'协作验收🙂');await newObject(page,'query','中文查询',{text:"SELECT '中文🙂'"});await newObject(page,'connection','数据库连接',{type:'MYSQL',host:'127.0.0.1',port:3306,username:'tester'});steps.push('create query and connection through UI');
+ await objectRow(page,'中文查询').getByRole('button',{name:'预览',exact:true}).click();assert((await page.locator('#dialog pre').textContent()).includes('中文🙂'));await ok(page);steps.push('preview');
+ const downloadPromise=page.waitForEvent('download');await objectRow(page,'中文查询').getByRole('button',{name:'下载',exact:true}).click();const download=await downloadPromise;await download.saveAs(path.join(out,'downloaded-query.json'));assert.equal(JSON.parse(fs.readFileSync(path.join(out,'downloaded-query.json'),'utf8')).text,"SELECT '中文🙂'");steps.push('download readback');
+ await objectRow(page,'中文查询').getByRole('button',{name:'编辑',exact:true}).click();await page.locator('#dialog textarea[name=body]').fill(JSON.stringify({text:'SELECT local_draft'}));
+ const p=(await api('/projects')).find(p=>p.name==='协作验收🙂'),target=(await api('/projects')).find(p=>p.name==='目标项目');const objects=await api('/projects/'+p.id+'/objects');const q=await api('/projects/'+p.id+'/objects/'+objects.find(o=>o.name==='中文查询').id);
+ await api('/projects/'+p.id+'/objects/'+q.id,'PUT',{parent_id:q.parent_id,kind:q.kind,name:q.name,body:{text:'SELECT remote_edit'},base_revision:q.revision,mutation_id:crypto.randomUUID(),deleted:false});
+ await page.locator('#dialog-ok').click();await page.getByRole('heading',{name:'保存失败，内容已保留'}).waitFor();assert((await page.locator('#dialog textarea').inputValue()).includes('local_draft'));await ok(page);steps.push('concurrent edit conflict keeps local draft');
+ await objectRow(page,'中文查询').getByRole('checkbox').check();await page.getByRole('button',{name:'复制到项目',exact:true}).click();await page.locator('#dialog select').selectOption(target.id);const transferred=page.waitForResponse(r=>r.url().endsWith('/transfer')&&r.request().method()==='POST');await ok(page);assert.equal((await transferred).status(),200);const copied=await api('/projects/'+target.id+'/objects');assert.equal(copied.length,1);steps.push('copy to project');
+ await page.getByRole('button',{name:'成员',exact:true}).click();await page.locator('#dialog input[name=email]').fill('editor@example.test');await page.locator('#dialog select[name=role]').selectOption('editor');await page.getByRole('button',{name:'发送邀请',exact:true}).click();await page.waitForTimeout(150);await ok(page);
+ const second=await browser.newContext({viewport:{width:1360,height:950}});const teammate=await second.newPage();teammate.on('pageerror',e=>errors.push(e.message));await login(teammate,'editor@example.test');await teammate.getByRole('button',{name:'邀请',exact:true}).click();await teammate.getByRole('button',{name:'接受',exact:true}).click();await teammate.getByRole('button',{name:'接受',exact:true}).waitFor({state:'hidden'});await teammate.getByRole('button',{name:'项目',exact:true}).click();await openProject(teammate,'协作验收🙂');await teammate.getByRole('cell',{name:'中文查询',exact:true}).waitFor();steps.push('second account accepts invitation and receives assets');
+ const members=await api('/projects/'+p.id+'/members'),member=members.find(m=>m.email==='editor@example.test');await api('/projects/'+p.id+'/members/'+member.id,'PUT',{role:'viewer'});await teammate.getByRole('button',{name:'新建对象',exact:true}).waitFor({state:'hidden',timeout:15000});steps.push('live role downgrade removes write controls');
+ await api('/projects/'+p.id+'/members/'+member.id,'DELETE');await teammate.getByRole('heading',{name:'所有项目'}).waitFor({timeout:15000});steps.push('live project access revocation');
+ await page.screenshot({path:path.join(out,'portal-project.png'),fullPage:true});await page.getByRole('button',{name:'账号与安全',exact:true}).click();await page.getByRole('heading',{name:'账号与安全',exact:true}).waitFor();await page.screenshot({path:path.join(out,'portal-account.png'),fullPage:true});steps.push('account usage and session management');
+ assert.deepEqual(errors,[]);fs.writeFileSync(path.join(out,'validation.json'),JSON.stringify({status:'passed',steps,errors,executable:exe},null,2));
+ console.log(JSON.stringify({status:'passed',steps:steps.length,output:out}));
+ }finally{if(browser)await browser.close();if(server){server.kill();await new Promise(r=>{if(server.exitCode!==null)r();else server.once('exit',r);});}}
+})().catch(e=>{console.error(e);fs.writeFileSync(path.join(out,'failure.txt'),e.stack);process.exitCode=1;});

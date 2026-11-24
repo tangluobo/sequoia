@@ -1,0 +1,6 @@
+{
+  "target": "i686-pc-windows-msvc",
+  "sourceSha256": "986967cef6f1969830f94743fb197828c170e5e61410d7166e457626a90fa4d4",
+  "binarySha256": "3b2e25f94ae8d66feae918a1cd730d6eba2b2e30833858d7677fadc4d2f28c3d",
+  "runtime": "static CRT; Windows ODBC driver manager"
+}

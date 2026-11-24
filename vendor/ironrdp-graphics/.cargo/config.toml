@@ -1,0 +1,4 @@
+[patch.crates-io]
+ironrdp-core = { path = "../ironrdp-core" }
+ironrdp-error = { path = "../ironrdp-error" }
+ironrdp-pdu = { path = "../ironrdp-pdu" }

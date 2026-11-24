@@ -1,0 +1,82 @@
+{
+  "setup": [
+    "SET time_zone='+00:00'",
+    "CREATE TEMPORARY TABLE tomato_type_fixture(b BIT(8),payload BLOB)",
+    "INSERT INTO tomato_type_fixture VALUES(b'10100101',UNHEX('00ff41'))"
+  ],
+  "cases": [
+    {
+      "sql": "SELECT CAST('2024-02-29' AS DATE) AS d, CAST('12:34:56.123000' AS TIME(6)) AS t, CAST('2024-02-29 12:34:56.123000' AS DATETIME(6)) AS ts",
+      "columns": [
+        "d",
+        "t",
+        "ts"
+      ],
+      "rows": [
+        [
+          "2024-02-29",
+          "12:34:56.123000",
+          "2024-02-29 12:34:56.123000"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT CAST('12345678901234567890.1234567890' AS DECIMAL(30,10)) AS n, CAST('18446744073709551615' AS UNSIGNED) AS u",
+      "columns": [
+        "n",
+        "u"
+      ],
+      "rows": [
+        [
+          "12345678901234567890.1234567890",
+          "18446744073709551615"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT CAST('{\"中文\":[1,null]}' AS JSON) AS j, NULL AS empty_value, 'NULL' AS literal_value",
+      "columns": [
+        "j",
+        "empty_value",
+        "literal_value"
+      ],
+      "rows": [
+        [
+          "{\"中文\": [1, null]}",
+          null,
+          "NULL"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT b,payload FROM tomato_type_fixture",
+      "columns": [
+        "b",
+        "payload"
+      ],
+      "rows": [
+        [
+          "165",
+          "\u0000�A"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT 0.0000000001 AS small_value, 1e100 AS large_value, true AS yes_value, false AS no_value",
+      "columns": [
+        "small_value",
+        "large_value",
+        "yes_value",
+        "no_value"
+      ],
+      "rows": [
+        [
+          "1E-10",
+          "1.0E100",
+          "1",
+          "0"
+        ]
+      ]
+    }
+  ]
+}

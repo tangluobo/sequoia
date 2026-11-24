@@ -1,0 +1,144 @@
+{
+  "source": "Original Java Tomato ZMODEM implementation",
+  "sourceRoot": "D:/Data/Git/tangluobo/tomata",
+  "sourceHead": "64b8fa6724e6b6539956d01fe5cff640be168ec2",
+  "purpose": "Test-only interoperability oracle. Not linked or distributed in the Rust application.",
+  "files": [
+    {
+      "path": "ZModem.java",
+      "sha256": "5aed7d1a9e5128355605efa6fcf3b951ea86a14c443a4ea392995618b0de465c"
+    },
+    {
+      "path": "zm/io/ZMPacketOutputStream.java",
+      "sha256": "2d61a1741aadc24bf6014aa2584729c7bd3b248e7932334be0b60cd031913057"
+    },
+    {
+      "path": "zm/io/ZMPacketInputStream.java",
+      "sha256": "30769a4b29dc2d43ece9a9a056d494da6540ea3e9c7119f86d6b85792d14c42a"
+    },
+    {
+      "path": "xfer/zm/util/ZMPacketFactory.java",
+      "sha256": "7efa072289cd3d45d2fa85f5415ea06ef3eac5235f2f23b4cad70e56246932f2"
+    },
+    {
+      "path": "xfer/zm/util/ZMPacket.java",
+      "sha256": "698a4f3b8305e5ee9d0843bb745f990252b611f4bcf4b3f4e22481e76fc15eca"
+    },
+    {
+      "path": "xfer/zm/util/ZMOptions.java",
+      "sha256": "5709c9a06c4b387b7c2c326e84e48e61cdb1f8f5ce4c079806d6251e32e9c6c8"
+    },
+    {
+      "path": "xfer/zm/util/ZModemSend.java",
+      "sha256": "43fe2245eea018f11d67bd4093f24349dbc8fddabd8393d5c8f36b6bc134c423"
+    },
+    {
+      "path": "xfer/zm/util/ZModemReceive.java",
+      "sha256": "725e7ac97984b62aec85ffd6b4f998efef8b7439a9de77a409eb5e415d753ed7"
+    },
+    {
+      "path": "xfer/zm/util/ZModemCharacter.java",
+      "sha256": "b44c3c595ade1a7b27cbed9dd3b9025211144e11eab2361534f1b2c17234bfd8"
+    },
+    {
+      "path": "xfer/zm/util/ZDLEEncoder.java",
+      "sha256": "172aced8b409a6dd20993f0dd91bb58bd1b59c28279202eb460744bbfd493fc2"
+    },
+    {
+      "path": "xfer/zm/proto/Escape.java",
+      "sha256": "57a7b0fc6bbae7b812dc2b3cc69b93727ea14c478c98fa0d793ff5ea1d3138f5"
+    },
+    {
+      "path": "xfer/zm/proto/Action.java",
+      "sha256": "480cc03f5901ef92c3469bde1aa7fb948bcb2f8c54473969e5df54baa048854f"
+    },
+    {
+      "path": "xfer/zm/packet/InvalidPacketException.java",
+      "sha256": "ddb233b799939a9571757c07f9817f219c07f4e4fa4e22207e749fa61f4695ef"
+    },
+    {
+      "path": "xfer/zm/packet/Header.java",
+      "sha256": "290898a701ca6c34da114d77965d869880e2f07074ab5425610c4e76d50afdcf"
+    },
+    {
+      "path": "xfer/zm/packet/Format.java",
+      "sha256": "70063d9c44f9a2bf8b82b3b23353270263cec5143f44ae7d094541a9696a4a0b"
+    },
+    {
+      "path": "xfer/zm/packet/Finish.java",
+      "sha256": "4f466fe47a1f0e9393947566018e696e6321583199fdacd08fd0b0e4ea659246"
+    },
+    {
+      "path": "xfer/zm/packet/DataPacket.java",
+      "sha256": "0adf5d69093137cf16fbfe7535c4a3fa2e6f3046c607f5cdafc832ab5f1d04b8"
+    },
+    {
+      "path": "xfer/zm/packet/Cancel.java",
+      "sha256": "f0fb0adc0ef115b72231edf218062e73a61c80bb518e538ce260d97382450883"
+    },
+    {
+      "path": "xfer/util/XCRC.java",
+      "sha256": "34af0e13baa36fd3218df0991a41b09398f6cdadf27412fa6f85b9bc7315c631"
+    },
+    {
+      "path": "xfer/util/TimeoutException.java",
+      "sha256": "8e4f4b8741e541c61e37141fb9cfb9945dcb136d245fd6bcef427bb14362f496"
+    },
+    {
+      "path": "xfer/util/InvalidChecksumException.java",
+      "sha256": "6b775720889df439ae8148807ed92946a6ebf09616d3ab426dc5068dbbf19684"
+    },
+    {
+      "path": "xfer/util/HexBuffer.java",
+      "sha256": "f4c719f84f8555229a9ce0d36135d297a97cda160b007cc55c88eed3a69d1736"
+    },
+    {
+      "path": "xfer/util/CRC8.java",
+      "sha256": "ed3b16a3db36035f05139a8403232314bb8366c672986d344cdb9b4e75cb60da"
+    },
+    {
+      "path": "xfer/util/CRC16.java",
+      "sha256": "5fb54f36b053d29b0c06317fc63f8d664f54c9e8044f216b49d9f20e286c2fe2"
+    },
+    {
+      "path": "xfer/util/CRC.java",
+      "sha256": "34ce2e4fa935a71607e535b27b992f63b8240e519df21a734cdc3ddc04b6de50"
+    },
+    {
+      "path": "xfer/util/ByteBuffer.java",
+      "sha256": "e83888967784dbebcfd825fa362b38668f4c8835030f1343054872fb270ff67f"
+    },
+    {
+      "path": "xfer/util/Buffer.java",
+      "sha256": "7f046df4d8fc32191ece60285a02accfa9dc536f3bd4a71fb478207d01f3f377"
+    },
+    {
+      "path": "xfer/util/ASCII.java",
+      "sha256": "ccfff85cc0cca924e72482a30d77e2dfd5d1754420be6da87efba6a1eac03a33"
+    },
+    {
+      "path": "xfer/util/Arrays.java",
+      "sha256": "1717f8913739207497fb79a2737fcec5db538724f6b906ca79f583b41b3b3266"
+    },
+    {
+      "path": "xfer/io/ObjectOutputStream.java",
+      "sha256": "66cb829b24df328323683e316d7ddcfb5d79a68f8de3cf7b9b559c637238146c"
+    },
+    {
+      "path": "xfer/io/ObjectInputStream.java",
+      "sha256": "80dfd1f6ced0d313678413e97670f3c289d4cacc70020531bcb4b37df8884012"
+    },
+    {
+      "path": "util/FileAdapter.java",
+      "sha256": "3f0f565ff7366a818848b67b6ff89e31fa37c89472c5e7656b359dd6f19d0485"
+    },
+    {
+      "path": "util/EmptyFileAdapter.java",
+      "sha256": "d85851bb91dc174294f82bc3c7f0f763d9cf6519f86f9ff4cfca8abd2312979e"
+    },
+    {
+      "path": "util/CustomFile.java",
+      "sha256": "7852816c9bbfa8ebfd1424b32a5f5a49fcafb331a2487d25e0f22038a696e6c4"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"projects":[{"name":"project","path":"/project","activeProfiles":["dev","test"],"runType":"NPM","runTarget":"dev"}],"runtimes":[{"id":"jdk","type":"JDK","name":"current"}],"jdks":[{"id":"jdk","name":"duplicate"}],"buildTools":[{"id":"maven","type":"MAVEN","homePath":"/maven","settingsPath":null}]}

@@ -1,0 +1,269 @@
+[
+  {
+    "kind": "drop",
+    "width": 418.0,
+    "height": 101.0,
+    "controls": [
+      {
+        "class": "Label",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 58.0
+      },
+      {
+        "class": "Label",
+        "text": "确定要删除选中的 2 张表、1 个视图吗？此操作不可恢复！",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "x": 58.0,
+        "y": 0.0,
+        "width": 360.0,
+        "height": 58.0
+      },
+      {
+        "class": "ButtonBar",
+        "x": 0.0,
+        "y": 58.0,
+        "width": 418.0,
+        "height": 43.0
+      },
+      {
+        "class": "Button",
+        "text": "确认删除",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "default": false,
+        "cancel": false,
+        "x": 129.0,
+        "y": 68.0,
+        "width": 75.0,
+        "height": 23.0
+      },
+      {
+        "class": "Button",
+        "text": "取消",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "default": false,
+        "cancel": true,
+        "x": 333.0,
+        "y": 68.0,
+        "width": 75.0,
+        "height": 23.0
+      }
+    ]
+  },
+  {
+    "kind": "clear",
+    "width": 418.0,
+    "height": 101.0,
+    "controls": [
+      {
+        "class": "Label",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 58.0
+      },
+      {
+        "class": "Label",
+        "text": "确定要清空选中的 2 张表的数据吗？\n此操作将删除所有数据（DELETE FROM），不可恢复！",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "x": 58.0,
+        "y": 0.0,
+        "width": 360.0,
+        "height": 58.0
+      },
+      {
+        "class": "ButtonBar",
+        "x": 0.0,
+        "y": 58.0,
+        "width": 418.0,
+        "height": 43.0
+      },
+      {
+        "class": "Button",
+        "text": "确认清空",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "default": false,
+        "cancel": false,
+        "x": 129.0,
+        "y": 68.0,
+        "width": 75.0,
+        "height": 23.0
+      },
+      {
+        "class": "Button",
+        "text": "取消",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "default": false,
+        "cancel": true,
+        "x": 333.0,
+        "y": 68.0,
+        "width": 75.0,
+        "height": 23.0
+      }
+    ]
+  },
+  {
+    "kind": "created",
+    "width": 418.0,
+    "height": 101.0,
+    "controls": [
+      {
+        "class": "Label",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 58.0
+      },
+      {
+        "class": "Label",
+        "text": "表 orders 创建成功",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "x": 58.0,
+        "y": 0.0,
+        "width": 360.0,
+        "height": 58.0
+      },
+      {
+        "class": "ButtonBar",
+        "x": 0.0,
+        "y": 58.0,
+        "width": 418.0,
+        "height": 43.0
+      },
+      {
+        "class": "Button",
+        "text": "确定",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "default": true,
+        "cancel": false,
+        "x": 333.0,
+        "y": 68.0,
+        "width": 75.0,
+        "height": 23.0
+      }
+    ]
+  },
+  {
+    "kind": "rename-error",
+    "width": 418.0,
+    "height": 101.0,
+    "controls": [
+      {
+        "class": "Label",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 58.0
+      },
+      {
+        "class": "Label",
+        "text": "对象名称已存在",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "x": 58.0,
+        "y": 0.0,
+        "width": 360.0,
+        "height": 58.0
+      },
+      {
+        "class": "ButtonBar",
+        "x": 0.0,
+        "y": 58.0,
+        "width": 418.0,
+        "height": 43.0
+      },
+      {
+        "class": "Button",
+        "text": "确定",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "default": true,
+        "cancel": false,
+        "x": 333.0,
+        "y": 68.0,
+        "width": 75.0,
+        "height": 23.0
+      }
+    ]
+  },
+  {
+    "kind": "validation",
+    "width": 360.0,
+    "height": 157.0,
+    "controls": [
+      {
+        "class": "Label",
+        "text": "字段设置不完整，请检查以下问题",
+        "fontName": "System Regular",
+        "fontSize": 14.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "x": 10.0,
+        "y": 10.0,
+        "width": 282.0,
+        "height": 48.0
+      },
+      {
+        "class": "Label",
+        "text": "字段 1: 类型不能为空\n字段 2: 需要指定长度",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "x": 0.0,
+        "y": 68.0,
+        "width": 360.0,
+        "height": 46.0
+      },
+      {
+        "class": "ButtonBar",
+        "x": 0.0,
+        "y": 114.0,
+        "width": 360.0,
+        "height": 43.0
+      },
+      {
+        "class": "Button",
+        "text": "确定",
+        "fontName": "System Regular",
+        "fontSize": 12.0,
+        "fontFile": "C:\\WINDOWS\\Fonts\\msyh.ttc",
+        "default": true,
+        "cancel": false,
+        "x": 275.0,
+        "y": 124.0,
+        "width": 75.0,
+        "height": 23.0
+      }
+    ]
+  }
+]

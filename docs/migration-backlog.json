@@ -1,0 +1,2255 @@
+{
+  "schemaVersion": 1,
+  "revision": 1776,
+  "referenceRoot": "D:/Data/Git/tangluobo/tomata",
+  "fullMigrationComplete": false,
+  "items": [
+    {
+      "id": "oracle-schema-field-and-completion-projections",
+      "status": "optimized-windows-real-oracle-owner-privileges-object-search-keyboard-completion-and-budget-verified",
+      "reference": "Java TableObjectsView.java preloadColumns433-473; SqlEditorView.java refreshCompletionMetadata562-633; DatabaseService.java getTableColumns2506+; actual owned Oracle expanded-view SQL captured in1772v4",
+      "rust": "crates/services/src/database/oracle/catalog/schema.rs; schema/primary.rs; objects/fields.rs; workbench/completion.rs",
+      "scope": "Separate authorized dictionary projections, use authenticated SESSION_USER for USER/ALL selection, preserve exact names/ordinal order/comments/types/primary flags and existing controls. Object fields move their compact Vec allocation; completion counts pending input and output together. Bounded sorted index and 256-constraint batches; no per-table sessions or unbounded metadata maps. Corrected the Oracle-only fixture to legal apostrophe/comma/edge-space names; embedded double quotation marks are forbidden by Oracle21c naming rules, independently reproduced using SQLPlus. Do not assume server collation keeps a table contiguous: an exact-name position index merges interleaved rows without cloning names/field vectors; index memory is counted and released before the attribute index. Actual Oracle DBA dictionary under NLS_COMP=LINGUISTIC returned four joined rows for two case-distinct tables. Replace the old ALL_* object/comment join with bounded authenticated USER_* or granted ALL_* projections and exact-name/type comment merge. Foreign-owner schema rows carry owner for exact client verification; linguistic IN results outside the exact primary batch are ignored. Header and field lookup indexes count toward metadata budgets.",
+      "evidence": [
+        "target/oracle-xe-fixture-designer-lazy-1772-v4/designer-readiness-sessions.log",
+        "target/oracle-schema-1774/initial-clippy.log",
+        "target/oracle-schema-1774/schema-focused-v2.log",
+        "target/oracle-xe-fixture-oracle-schema-1774/oracle-schema.log",
+        "target/oracle-xe-fixture-oracle-schema-1774/identifier-diagnostic.log",
+        "target/oracle-xe-fixture-oracle-schema-1774-v2/validation.json",
+        "target/oracle-xe-fixture-oracle-schema-1774-v2/collation-diagnostic.log",
+        "target/oracle-schema-1774-v3/collation-baseline.log",
+        "target/oracle-schema-1774-v3/schema-fixed.log",
+        "target/oracle-xe-fixture-oracle-schema-1774-v3/linguistic-header-join.log",
+        "target/oracle-xe-fixture-oracle-schema-1774-v3/pdb-live-readiness-sessions.log",
+        "target/oracle-xe-fixture-oracle-schema-1774-v3/cancellation.json",
+        "target/oracle-xe-fixture-oracle-schema-1774-v3/cleanup-cancelled.json",
+        "target/oracle-schema-1774-v4/checks.json",
+        "target/database-fixtures/probes/migration-1774-oracle-schema-v4/validation.json",
+        "target/oracle-xe-fixture-oracle-schema-1774-v4/validation.json",
+        "target/oracle-xe-fixture-oracle-schema-1774-v4/cleanup.json",
+        "target/oracle-schema-1774-v4/native-v2/identity.json",
+        "target/window-probes/oracle-schema-1774-v4-memory-idle-v2/validation.json",
+        "dist/tomato-1774-windows-x64/validation.json"
+      ],
+      "remaining": [
+        "Java object list and background field preload use two-phase delivery; this remains a separate migration item",
+        "Full Java all-state visual and physical-input parity remains separate"
+      ]
+    },
+    {
+      "id": "object-browser-background-fields",
+      "status": "optimized-exe-hive-held-response-mysql-postgresql-oracle-split-legacy-catalog-and-native-controls-verified",
+      "reference": "Java TableObjectsView.java433-473 preloadColumns; fields search re-applied after background completion",
+      "rust": "crates/services/src/database/objects.rs; crates/ui-egui/src/app/database_objects.rs; crates/ui-egui/src/tabs/database_objects.rs",
+      "scope": "Publish object headers before quiet field preload. Keep legacy complete API; preserve rename, selection and layout for empty search, and use the ordinary Java filter path for nonempty search. Scope/generation guards reject stale refresh, changed database/namespace and closed tabs. Shared header snapshots, bounded payloads and completion-triggered admission retries avoid per-table sessions, clones and timer polling.",
+      "evidence": [
+        "target/oracle-schema-1774/next-source-audit.md",
+        "target/object-background-1776-draft/production-applied.json",
+        "target\\native-checks\\object-preload-prototype-1776-v4-scope2\\validation.json",
+        "target\\database-fixtures\\probes\\object-preload-prototype-1776-v4\\validation.json",
+        "target/object-background-1776-v1/checks-and-protocols.json",
+        "target/native-checks/object-background-canonical-1776-v1/validation.json",
+        "target/database-fixtures/probes/object-background-1776-v1/validation.json",
+        "target/object-background-1776-v1/acceptance-current.json",
+        "target/oracle-xe-fixture-object-background-1776-v1/validation.json",
+        "target/oracle-xe-fixture-object-background-1776-v1/cleanup.json",
+        "dist/tomato-1776-windows-x64/validation.json",
+        "target/oracle-xe-fixture-object-background-1776-v1/validation.json",
+        "target/oracle-xe-fixture-object-background-1776-v1/cleanup.json",
+        "target/object-background-1776-v1/native/identity.json",
+        "target/window-probes/object-background-1776-v1-memory/validation.json"
+      ],
+      "remaining": [
+        "Full Java all-state visual and physical-input parity remains separate"
+      ]
+    },
+    {
+      "id": "database-duplicate-disconnect-barrier",
+      "status": "loopback-barrier-independent-connection-and-reopen-order-oracle-zero-sessions-release-verified",
+      "reference": "Java connection recovery/session lifecycle; actual Oracle reader cleanup failed ORA-01940 after two disconnect commands",
+      "rust": "crates/ui-egui/src/tasks/queue.rs; crates/ui-egui/src/tasks/queue/routing.rs; crates/ui-egui/src/tasks/queue/actor.rs",
+      "scope": "Keep each disconnect in the per-connection actor order. Retire only after the completed disconnect is still the last accepted task; preserve queued reopen requests and independent actors, bounded retirement delivery and idle engine release.",
+      "evidence": [
+        "target/oracle-xe-fixture-designer-lazy-1772-v4/oracle-ui.log",
+        "target/designer-lazy-1772-v6/disconnect-baseline.log",
+        "target/designer-lazy-1772-v6/queue-fixed.log",
+        "target/designer-lazy-1772-v6/checks.json",
+        "target/oracle-xe-fixture-designer-lazy-1772-v6/validation.json",
+        "dist/tomato-1772-windows-x64/validation.json"
+      ],
+      "remaining": [
+        "Full application physical-input and visual acceptance remains separate"
+      ]
+    },
+    {
+      "id": "designer-on-demand-original-sql",
+      "status": "optimized-windows-real-mysql-postgres-hive-wire-oracle-privilege-retry-controls-copy-save-refresh-verified",
+      "reference": "Java TableStructureView.java constructor170, selection429-443 and loadSqlPreview1749; getTableDdl is deferred to existing-table save-as",
+      "rust": "crates/core/src/workbench.rs; crates/services/src/database/objects/designer.rs; crates/services/src/database/objects/oracle_designer.rs; crates/services/src/database/hive/designer.rs; crates/ui-egui/src/app/table_design.rs; crates/ui-egui/src/app/workspace.rs; crates/ui-egui/src/tabs/table_design.rs",
+      "scope": "Separate lightweight structure/save actions from legacy full responses and on-demand original SQL. Preserve raw column/index/version conflict guards, read replay/SSH recovery policy, existing mode selector and SQL copy. Quiet background reads remain editable; epoch checks reject stale output; failed previews retry only through existing gestures. MySQL canonical table SQL is still read for lossless attribute signatures but not retained; readonly views do not need SHOW CREATE on structure open.",
+      "evidence": [
+        "target/designer-lazy-1772/ui-focused.log",
+        "target/designer-lazy-1772-v6/checks.json",
+        "target/database-fixtures/probes/migration-1772-lazy-design-v6/validation.json",
+        "target/oracle-xe-fixture-designer-lazy-1772-v6/validation.json",
+        "target/oracle-xe-fixture-designer-lazy-1772-v6/cleanup.json",
+        "target/designer-lazy-1772-v6/native/identity.json",
+        "target/window-probes/designer-lazy-1772-v6-memory/validation.json",
+        "dist/tomato-1772-windows-x64/validation.json"
+      ],
+      "remaining": [
+        "Full Java all-state visual parity and physical input acceptance remain separate"
+      ]
+    },
+    {
+      "id": "native-grayscale-compositing-contrast",
+      "status": "optimized-exe-native-framebuffer-gpu-coverage-regression-and-idle-memory-verified",
+      "reference": "User confirms frosted text edges in 1768; recheck of the exact optimized EXE in the current desktop session",
+      "rust": "vendor/egui-wgpu/src/renderer.rs; vendor/egui-wgpu/src/egui.wgsl; vendor/egui-wgpu/src/lcd.wgsl; crates/ui-egui/src/font_assets.rs; crates/ui-egui/src/app/markdown_print/gpu.rs",
+      "scope": "Neutral compositing for native grayscale coverage; retain system LCD contrast for explicit RGB preference; weak renderer binding; reuse existing uniform, atlas and pipeline; scalar print coverage follows the same rule",
+      "evidence": [
+        "target/text-recheck-1770/current-auto/validation.json",
+        "target/text-recheck-1770/current-auto/window.png",
+        "target/text-coverage-1770/checks.json",
+        "target/text-coverage-1770/lcd-gpu.json",
+        "target/text-coverage-1770/development/validation.json",
+        "target/text-coverage-1770/native/comparison.json",
+        "target/text-coverage-1770/native/identity.json",
+        "target/window-probes/text-coverage-1770-memory/validation.json",
+        "dist/tomato-1770-windows-x64/validation.json"
+      ],
+      "remaining": [
+        "Physical display perception and additional native monitor scales"
+      ]
+    },
+    {
+      "id": "oracle-designer-plsql-and-preview",
+      "status": "optimized-windows-and-xe-native-controls-effects-copyable-preview-foreign-keys-and-graceful-disconnect-verified",
+      "reference": "Java TableStructureView.java trigger pane and DatabaseService.getTableTriggers; Oracle PL/SQL grammar",
+      "rust": "crates/core/src/table_design/auxiliary.rs; crates/core/src/table_design/preview.rs; crates/ui-egui/src/tabs/table_design.rs; crates/ui-egui/src/panels/sql/designer/info/form.rs; crates/services/src/database/objects/oracle_designer.rs; vendor/oracledb/src/statement/sql_parser.rs; crates/services/src/database/oracle/catalog/foreign_keys.rs; crates/services/src/database/objects.rs; crates/services/src/database/oracle/worker.rs",
+      "scope": "Preserve Oracle trigger unit terminators in create/alter execution, show copyable multi-unit SQL, valid Oracle form choices and INSTEAD OF metadata; exclude DDL correlation pseudorecords from native driver client binds without changing SELECT/DML/anonymous PL/SQL bindings; share bounded position-preserving Oracle foreign-key metadata across designer and object catalog without joining expanded views or aggregating identifiers; acknowledge graceful Oracle disconnect only after LOGOFF/EOF with a bounded network call, before backend destruction can abort its socket",
+      "evidence": [
+        "target/oracle-designer-1768/core-focused.log",
+        "target/oracle-designer-1768/build-status.json",
+        "target/oracle-xe-fixture-designer-1768-v2/oracle-ui.log",
+        "target/oracle-xe-fixture-designer-1768-v2/oracle-primary.log",
+        "target/oracle-xe-fixture-designer-1768-v2/cleanup.json",
+        "target/oracle-designer-1768/bind-parser-standalone.log",
+        "target/oracle-xe-fixture-designer-1768-v3/oracle-primary.log",
+        "target/oracle-xe-fixture-designer-1768-v3/results.json",
+        "target/oracle-xe-fixture-designer-1768-v3/designer-resource.log",
+        "target/oracle-xe-fixture-designer-1768-v3/cleanup.json",
+        "target/oracle-designer-1768/checks.json",
+        "target/oracle-xe-fixture-designer-1768-v5/oracle-primary.log",
+        "target/oracle-xe-fixture-designer-1768-v5/oracle-ui.log",
+        "target/oracle-xe-fixture-designer-1768-v5/designer-ui-save-sessions.log",
+        "target/oracle-xe-fixture-designer-1768-v5/cleanup.json",
+        "target/oracle-designer-1768/catalog-check.log",
+        "target/oracle-xe-fixture-designer-1768-v7/oracle-primary.log",
+        "target/oracle-xe-fixture-designer-1768-v7/oracle-ui.log",
+        "target/oracle-xe-fixture-designer-1768-v7/cleanup.json",
+        "target/oracle-designer-1768/checks-catalog.json",
+        "target/oracle-designer-1768/native-final/identity.json",
+        "target/oracle-xe-fixture-designer-1768-v8/validation.json",
+        "target/oracle-xe-fixture-designer-1768-v8/oracle-primary.log",
+        "target/oracle-xe-fixture-designer-1768-v8/oracle-ui.log",
+        "target/oracle-xe-fixture-designer-1768-v8/cleanup.json",
+        "target/oracle-designer-1768/checks-close.json",
+        "target/oracle-designer-1768/native-close/identity.json",
+        "target/window-probes/oracle-designer-1768-close-memory/validation.json",
+        "dist/tomato-1768-windows-x64/validation.json"
+      ],
+      "remaining": [
+        "Full Java visual comparison and physical display acceptance remain separate"
+      ]
+    },
+    {
+      "id": "windows-native-grayscale-default",
+      "status": "optimized-windows-package-native-framebuffer-and-regression-verified",
+      "reference": "User-reported frosted text edges; DirectWrite grayscale antialiasing",
+      "rust": "vendor/epaint/src/text/windows.rs; crates/ui-egui/src/app/settings.rs; crates/ui-egui/src/font_assets.rs",
+      "scope": "Replace extracted ClearType green coverage with native grayscale coverage by default, retaining layout and explicit legacy preferences",
+      "evidence": [
+        "target/text-native-gray-1766/native-adapter.json",
+        "target/text-native-gray-1766/native-adapter.log",
+        "target/text-native-gray-1766/native-font.log",
+        "target/text-native-gray-1766/fonts-focused.log",
+        "target/text-native-gray-1766/settings-focused.log",
+        "target/text-native-gray-1766/development/comparison.json",
+        "target/text-native-gray-1766/development/identity.json",
+        "target/text-native-gray-1766/native/comparison.json",
+        "target/text-native-gray-1766/native/identity.json",
+        "target/text-native-gray-1766/checks.json",
+        "target/text-native-gray-1766/test-summary.json",
+        "target/window-probes/text-native-gray-1766-memory/validation.json",
+        "dist/tomato-1766-windows-x64/validation.json"
+      ],
+      "remaining": [
+        "Final perceived sharpness on the user display and additional native monitor scales"
+      ]
+    },
+    {
+      "id": "oracle-session-owner-primary-key-catalog",
+      "status": "xe21-native-key-ui-roundtrip-and-windows-release-verified",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/service/DatabaseService.java; Oracle USER_CONSTRAINTS and USER_CONS_COLUMNS",
+      "rust": "crates/services/src/database/oracle/catalog/columns.rs",
+      "scope": "Read owned primary-key metadata through owner views and preserve authorized cross-owner lookup, including composite-key positions",
+      "evidence": [
+        "target/oracle-xe-fixture-1762-diagnostic/oracle-ui.log",
+        "target/oracle-xe-fixture-1762-diagnostic/sessions.log",
+        "target/oracle-xe-fixture-primary-1764-final/validation.json",
+        "target/oracle-xe-fixture-primary-1764-final/cleanup.json",
+        "dist/tomato-1764-windows-x64/validation.json"
+      ],
+      "remaining": []
+    },
+    {
+      "id": "restore-archive-picker-long-names",
+      "status": "native-chooser-geometry-and-exact-selection-verified",
+      "reference": "Original backup restore dialog and existing JavaFX menu metrics",
+      "rust": "crates/ui-egui/src/app/backup_ui/restore_source.rs; crates/ui-egui/src/compact_menu.rs",
+      "scope": "Bound opened popup and closed caption widths while retaining the complete archived filename",
+      "evidence": [
+        "target/restore-popup-width-1762/baseline.log",
+        "target/restore-popup-width-1762/roundtrip.log"
+      ],
+      "remaining": [
+        "Large-name interaction in the packaged native restore window"
+      ]
+    },
+    {
+      "id": "windows-text-edges-and-surface-physical-extent",
+      "status": "optimized-windows-package-framebuffer-and-memory-verified",
+      "reference": "Windows native client size; JavaFX LCD labels",
+      "rust": "vendor/egui-wgpu/src/winit.rs; vendor/epaint/src/text/windows.rs; crates/ui-egui/src/app/settings.rs",
+      "scope": "Align the swapchain with the physical client area and offer native grayscale coverage for users sensitive to color fringes",
+      "evidence": [
+        "target/sharpness-halo-1762/normal1758/capture.png",
+        "target/sharpness-halo-1762/dx121758/capture.png",
+        "target/sharpness-halo-1762/gl1758/capture.png",
+        "target/sharpness-halo-1762/fixture-vulkan-focused.log",
+        "target/sharpness-halo-1762/fixture-dx12-focused.log",
+        "dist/qa-candidate-text-1762/comparison.json",
+        "dist/qa-candidate-text-1762/identity.json",
+        "dist/tomato-1762-windows-x64/validation.json",
+        "target/window-probes/text-1762-memory/validation.json"
+      ],
+      "remaining": []
+    },
+    {
+      "id": "database-object-toolbar-archive-wizards",
+      "status": "mysql-postgresql-xe21-native-toolbar-and-windows-release-verified",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/handler/AbstractDbHandler.java; src/main/java/com/tangluobo/tomato/module/connect/ConnectModule.java",
+      "rust": "crates/ui-egui/src/app/database_objects.rs; crates/ui-egui/src/app/backup_ui.rs; crates/ui-egui/src/app/backup_ui/restore_source.rs",
+      "scope": "Open database backup from the object toolbar and restore an actual legacy archive selected from the database's scoped backup folders",
+      "evidence": [
+        "target/java-object-wizards-1760/validation.json",
+        "target/database-fixtures/probes/migration-1760-object-backup-mysql/validation.json",
+        "target/database-fixtures/probes/migration-1760-object-backup-postgres/validation.json",
+        "dist/tomato-1760-windows-x64/validation.json",
+        "target/oracle-xe-fixture-1760-retry/oracle-ui.log",
+        "target/oracle-xe-fixture-1760-retry/cleanup.json",
+        "target/oracle-xe-fixture-primary-1764-final/validation.json"
+      ],
+      "remaining": []
+    },
+    {
+      "id": "windows-lcd-glyph-position-and-ui-label-spacing",
+      "status": "javafx-reference-and-optimized-windows-framebuffer-verified",
+      "reference": "JavaFX installed DirectWrite font strike and Prism glyph cache",
+      "rust": "vendor/epaint/src/text/font.rs; vendor/epaint/src/text/windows.rs; vendor/epaint/src/text/text_layout.rs; crates/ui-egui/src/font_assets.rs",
+      "scope": "Windows LCD glyph positions and spacing for ordinary Latin/CJK UI labels",
+      "evidence": [
+        "target/sharpness-1758/spacing-release.compare.json",
+        "target/sharpness-1758/more-labels/comparison.json",
+        "target/sharpness-1758/gpu-lcd.json",
+        "target/sharpness-1758/additional-scales/validation.json",
+        "dist/tomato-1758-windows-x64/validation.json"
+      ],
+      "remaining": [
+        "Native pixel comparison for additional monitor scales and more application surfaces"
+      ]
+    },
+    {
+      "id": "square-popup-menu-frames",
+      "status": "four-windows-framebuffers-and-optimized-release-verified",
+      "rust": "crates/ui-egui/src/theme.rs",
+      "scope": "Square shared menu frames with existing object menu geometry",
+      "evidence": [
+        "target/window-probes/objects-1756-square-menu-final/validation.json",
+        "dist/tomato-1756-windows-x64/validation.json"
+      ],
+      "remaining": []
+    },
+    {
+      "id": "database-object-mutation-owner-lifecycle",
+      "status": "closed-object-tab-mysql-postgresql-ui-verified-and-included-in-1756-release",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/handler/AbstractDbHandler.java",
+      "rust": "crates/ui-egui/src/app/database_objects.rs; crates/ui-egui/src/app/workspace.rs",
+      "scope": "Track completed database writes independently of the initiating object tab, then update dependent tabs and tree caches and surface errors",
+      "evidence": [
+        "target/database-fixtures/probes/migration-1754-close-object-page/validation.json",
+        "target/migration-1754-detached-mutation-clippy-final.log",
+        "target/migration-1754-detached-mutation-workspace.log",
+        "dist/tomato-1756-windows-x64/validation.json"
+      ],
+      "remaining": []
+    },
+    {
+      "id": "database-object-mutation-refresh",
+      "status": "javafx-confirmations-and-mysql-postgresql-ui-verified",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/handler/AbstractDbHandler.java; src/main/java/com/tangluobo/tomato/module/connect/view/TableObjectsView.java",
+      "rust": "crates/ui-egui/src/panels/sql/objects/dialogs.rs; crates/ui-egui/src/app/database_objects.rs; crates/ui-egui/src/app/tree_objects.rs",
+      "scope": "Mixed table/view confirmation, cancel, filtered and sorted data reload, unsaved draft preservation, and scoped tree synchronization after inline rename or drop",
+      "evidence": [
+        "target/java-objects-mutations-1752/validation.json",
+        "target/database-fixtures/probes/migration-1752-object-mutations-signoff/validation.json",
+        "target/migration-1752-object-mutations-signoff-clippy.log",
+        "dist/tomato-1752-windows-x64/validation.json"
+      ],
+      "remaining": []
+    },
+    {
+      "id": "database-object-batch-open",
+      "status": "javafx-controls-and-mysql-postgresql-native-bulk-path-verified",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/view/TableObjectsView.java",
+      "rust": "crates/ui-egui/src/panels/sql/objects.rs; crates/ui-egui/src/panels/sql/objects/grid.rs; crates/ui-egui/src/app/database_objects.rs; crates/ui-egui/src/app/db_tree.rs",
+      "scope": "Ordered bulk data/structure tabs from toolbar and context menu, detail cell drag-selection, first-activation deferred loading, existing-tab reuse, and matching table/view title",
+      "evidence": [
+        "target/java-objects-batch-1750/validation.json",
+        "target/database-fixtures/probes/migration-1750-object-open-final/validation.json",
+        "target/database-fixtures/probes/migration-1762-bulk-mysql-retry/validation.json",
+        "target/database-fixtures/probes/migration-1762-bulk-postgres-retry/validation.json",
+        "target/migration-1750-objects-final-tests.log",
+        "dist/tomato-1750-windows-x64/validation.json"
+      ],
+      "remaining": [
+        "Oracle and Hive remain separate acceptance cases"
+      ]
+    },
+    {
+      "id": "tencent-domain-list-certificate",
+      "status": "owned-domain-list-issuance-with-nonblocking-buckets-and-acme-retry-verified",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/view/AliyunDomainDataView.java",
+      "rust": "crates/ui-egui/src/panels/cloud.rs; crates/ui-egui/src/app/remote_tree.rs; crates/services/src/cloud/certificate.rs; crates/services/src/cloud/api.rs",
+      "scope": "DNSPod list and tree actions, Java-compatible DNS-01 TXT requests, nonblocking Bucket discovery and session keys, CA retry and validation diagnostics, cancellation cleanup, and S3/OSS publication",
+      "evidence": [
+        "target/cloud-ui/certificate-domains-final-1730-122210/validation.json",
+        "target/migration-1730-cloud-services.log",
+        "target/migration-1730-workspace-tests.log",
+        "target/cloud-ui/certificate-1738-final/validation.json",
+        "target/window-probes/certificate-1738-release/cloud_certificate-03.png",
+        "target/migration-1738-certificate-serial-workspace.log",
+        "dist/tomato-1738-windows-x64/validation.json",
+        "target/certificate-1734-reproduction/comparison.json",
+        "target/cloud-ui/certificate-1746-domain-list-final/protocol-audit.json",
+        "target/migration-1746-certificate-services-focused.log",
+        "target/migration-1746-certificate-tests.log",
+        "target/certificate-1746-release-issuance/validation.json",
+        "dist/tomato-1746-windows-x64/validation.json",
+        "target/certificate-1750-release-comparison/validation.json",
+        "target/cloud-ui/certificate-1750-recheck/validation.json",
+        "target/window-probes/certificate-1750-capture-recheck/validation.json",
+        "target/window-probes/certificate-1752-release/validation.json"
+      ],
+      "remaining": [
+        "Public issuance using the user's account, DNS delegation and storage was not performed"
+      ]
+    },
+    {
+      "id": "oracle-user-tree-direct-paste",
+      "status": "oracle-owner-tree-and-mysql-postgresql-missing-source-verified",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/handler/AbstractDbHandler.java",
+      "rust": "crates/ui-egui/src/app/table_transfer.rs; crates/services/src/database/transfer.rs",
+      "scope": "Direct table paste for one saved connection, cross-connection wizard, missing source, target-name conflicts, result dialog, and Oracle owner tree refresh",
+      "evidence": [
+        "target/database-fixtures/probes/migration-1744-transfer-retry/validation.json",
+        "target/migration-1744-final-tests.log",
+        "target/oracle-xe-fixture-1748/java-reference-final/validation.json",
+        "target/oracle-xe-fixture-1748/baseline-proof.json",
+        "target/oracle-xe-fixture-1748/oracle-paste-ui.validation.json",
+        "target/database-fixtures/probes/migration-1748-table-paste/validation.json",
+        "target/migration-1748-paste-tests.log",
+        "target/oracle-xe-fixture-1748/current-cli.validation.json",
+        "dist/tomato-1748-windows-x64/validation.json"
+      ],
+      "remaining": []
+    },
+    {
+      "id": "sql-editor-completion-gesture-and-menu",
+      "status": "keyboard-only-trigger-java-menu-geometry-regression-verified",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/view/SqlEditorPane.java",
+      "rust": "crates/ui-egui/src/panels/sql/completion.rs; crates/ui-egui/src/panels/sql/editor_menu.rs",
+      "scope": "Separate keyboard intent from pointer and document changes, preserve asynchronous completion and keyboard/mouse candidate selection, and match measured JavaFX context menu dimensions",
+      "evidence": [
+        "target/sql-editor-menu-1728/java-layout-detail.log",
+        "target/migration-1728-sql-editor-tests-v3.log",
+        "target/migration-1728-sql-completion-actor-v2.log",
+        "target/sql-editor-menu-1728/rust-verified/completion.state.json"
+      ],
+      "remaining": [
+        "Physical mouse acceptance and full workbench visual comparison remain separate"
+      ]
+    },
+    {
+      "id": "rdp-ssh-route",
+      "status": "implemented-loopback-protocol-verified",
+      "rust": "crates/services/src/remote_desktop.rs",
+      "scope": "SSH forwarding, original TLS identity, server redirection and owned shutdown",
+      "evidence": [
+        "target/migration-1672-rdp-ssh.log",
+        "target/migration-1672-rdp-stalled-ssh-close.log"
+      ],
+      "remaining": []
+    },
+    {
+      "id": "directory-shell-export",
+      "status": "deferred-native-shell-and-four-protocol-workflows-verified",
+      "rust": "crates/services/src/files/export; crates/native-drag/src/windows/deferred",
+      "scope": "Immediate selected-root drag metadata; directory enumeration and streaming after drop; mixed indices, nested files, empty directories, failure propagation and cancellation; 4096 items, 64 levels and bounded retained metadata",
+      "evidence": [
+        "target/migration-1672-folder-shell.log",
+        "target/migration-1678-preflight.json",
+        "target/migration-1678-shell-full-v6.log",
+        "target/migration-1678-file-export-v6.log",
+        "target/migration-1678-file-tabs-v6.log",
+        "target/migration-1678-ftp-export-v6.log",
+        "target/migration-1678-s3-oss-export-v6.log",
+        "target/migration-1678-sftp-export-v6.log"
+      ],
+      "remaining": [
+        "Physical Explorer directory-gesture acceptance remains separate from the actual Shell target and four protocol fixtures"
+      ]
+    },
+    {
+      "id": "bittorrent",
+      "status": "implemented-multifile-selective-and-legacy-resume-loopback-verified",
+      "reference": "src/main/java/com/tangluobo/tomato/module/tools/TorrentDownloadEngine.java",
+      "rust": "crates/services/src/downloader/bt.rs",
+      "scope": "Magnet, local/HTTP torrent metadata, verified transfer, cancel/resume, bounded peers and collision-safe publication",
+      "evidence": [
+        "target/migration-1672-library-tests-v8.log"
+      ],
+      "remaining": []
+    },
+    {
+      "id": "redis-tls-ssh",
+      "status": "implemented-loopback-tls-ssh-verified",
+      "rust": "crates/services/src/redis_data.rs",
+      "scope": "TCP routing with original TLS SNI and certificate verification; additional native capability beyond Java plaintext Redis",
+      "evidence": [
+        "target/migration-1672-service-tests-v4.log"
+      ],
+      "remaining": []
+    },
+    {
+      "id": "hive",
+      "status": "native-hs2-ui-workflow-and-release-designer-verified",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/handler/HiveDbHandler.java",
+      "scope": "Native HiveServer2 transport, catalogs, query workbench, table data, structures and supported mutations",
+      "rust": "crates/services/src/database/hive",
+      "evidence": [
+        "target/migration-1672-full-tests-v3.log",
+        "target/migration-1672-hive-mtls.log",
+        "target/hive-interop/native-http-sasl-1672/validation.json",
+        "target/native-checks/migration-1676-hive-ui-v1/validation.json",
+        "target/window-probes/migration-1676-hive-release/validation.json"
+      ],
+      "remaining": [
+        "Isolated MIT Kerberos realm requires Linux CI execution",
+        "Complete Java visual comparison remains separate"
+      ]
+    },
+    {
+      "id": "oracle-transfer",
+      "status": "owned-free26ai-and-xe21-combined-transfer-verified",
+      "rust": "crates/services/src/database/transfer.rs",
+      "scope": "Copy tables and transfer data through the existing Oracle native session",
+      "remaining": [
+        "Free 26ai combined flow was verified over the owned VM loopback relay. Complete Free 26ai combined SSH flow was not repeated.",
+        "Full Java visual comparison remains separate"
+      ],
+      "evidence": [
+        "target/oracle-free-fixture-1742/real_oracle_native_lobs_identity_copy_nb3_dependencies_and_restore.route.proof.json",
+        "target/oracle-xe-fixture-1740/real_oracle_native_lobs_identity_copy_nb3_dependencies_and_restore.trigger.proof.json",
+        "target/oracle-xe-fixture-1740/real_oracle_native_lobs_identity_copy_nb3_dependencies_and_restore.ssh-retry.proof.json",
+        "target/migration-1740-final-workspace-tests.log",
+        "target/oracle-xe-fixture-1734/timestamp-transfer-validation.json",
+        "target/oracle-xe-fixture-1734/full-ddl-archive.stderr.log",
+        "target/oracle-xe-fixture-1734b/full-workflow-validation.json",
+        "target/migration-1734-timestamp-workspace-tests.log",
+        "target/oracle-xe-fixture-1734/direct.stderr.log",
+        "target/oracle-xe-fixture-1734/transfer-validation.json",
+        "target/oracle-xe-fixture-1732/java-copy-final.log",
+        "target/oracle-xe-fixture-1732/current-session.log",
+        "target/migration-1732-oracle-cancel-test.log",
+        "target/oracle-vm-1688/validation.json",
+        "target/oracle-vm-1688/native-oracle.log",
+        "target/linux-fixture-1690/native-oracle-v4-direct.json",
+        "target/linux-fixture-1690/native-session-diagnostic.log",
+        "target/linux-fixture-1690/driver-metadata.json",
+        "target/oracle-fixture-1694/workflows-done-v2.json",
+        "target/oracle-fixture-1694/release-cli-pages-validation.json",
+        "target/oracle-jdbc-1694/validation-ddl.json",
+        "target/oracle-xe-fixture-1694e/cleanup.json",
+        "target/oracle-xe-fixture-1694e/xe-workflows-done.json",
+        "target/oracle-xe-fixture-1694f/xe-workflows-v2-done.json",
+        "target/oracle-xe-fixture-1694f/cleanup.json"
+      ]
+    },
+    {
+      "id": "oracle-backup-restore",
+      "status": "owned-free26ai-native-tree-and-xe21-direct-ssh-restore-verified",
+      "rust": "crates/services/src/database/backup/oracle/restore.rs; crates/services/src/database/oracle/metadata.rs; crates/ui-egui/src/app/sql_tree/direct.rs",
+      "scope": "Original database backup and restore workflows",
+      "evidence": [
+        "target/oracle-free-fixture-1742/backup-tree-ui-final.proof.json",
+        "dist/tomato-1742-windows-x64/validation.json",
+        "target/database-fixtures/probes/migration-1742-backup-mysql/validation.json",
+        "target/database-fixtures/probes/migration-1742-backup-postgres/validation.json",
+        "target/oracle-free-fixture-1742/real_oracle_native_lobs_identity_copy_nb3_dependencies_and_restore.route.proof.json",
+        "target/oracle-free-fixture-1742/real_oracle_restores_nb3_identity_and_typed_rows.route.proof.json",
+        "target/oracle-xe-fixture-1740/trigger-ddl-source.log",
+        "target/oracle-xe-fixture-1740/real_oracle_native_lobs_identity_copy_nb3_dependencies_and_restore.trigger.proof.json",
+        "target/oracle-xe-fixture-1740/real_oracle_native_lobs_identity_copy_nb3_dependencies_and_restore.ssh-retry.proof.json",
+        "target/oracle-xe-fixture-1740/real_oracle_restores_nb3_identity_and_typed_rows.trigger.proof.json",
+        "dist/tomato-1740-windows-x64/validation.json",
+        "target/oracle-xe-fixture-1734b/full-workflow-validation.json",
+        "target/oracle-xe-fixture-1734b/full-workflow.stderr.log",
+        "target/migration-1672-library-tests-v8.log",
+        "target/migration-1676-tests-v1.log",
+        "target/oracle-vm-1688/validation.json",
+        "target/oracle-vm-1688/native-oracle.log",
+        "target/linux-fixture-1690/native-oracle-v4-direct.json",
+        "target/linux-fixture-1690/native-session-diagnostic.log",
+        "target/linux-fixture-1690/driver-metadata.json",
+        "target/oracle-fixture-1694/workflows-done-v2.json",
+        "target/oracle-fixture-1694/release-cli-pages-validation.json",
+        "target/oracle-jdbc-1694/validation-ddl.json",
+        "target/oracle-xe-fixture-1694e/cleanup.json",
+        "target/oracle-xe-fixture-1694e/xe-workflows-done.json",
+        "target/oracle-xe-fixture-1694f/xe-workflows-v2-done.json",
+        "target/oracle-xe-fixture-1694f/cleanup.json"
+      ],
+      "remaining": [
+        "Full Java visual comparison remains separate"
+      ],
+      "uiFolder": "Original flat Oracle backup folder, native creation and restore actions, archive listing, confirmation and in-place refresh verified on Oracle Free 26ai."
+    },
+    {
+      "id": "rdp-standard-security",
+      "status": "native-independent-freerdp-wire-security-verified",
+      "rust": "crates/rdp-security",
+      "scope": "Legacy useSsl=false, negotiated 40/56/128-bit Standard Security, Low/High/None, state-bound transport headers and bounded compatibility retry; original TLS/CredSSP stays unchanged",
+      "remaining": [],
+      "evidence": [
+        "target/rdp-standard-interop/native-standard-128-wire-v2/validation.json",
+        "target/rdp-standard-interop/native-standard-56-wire-v2/validation.json",
+        "target/rdp-standard-interop/native-standard-40-wire-v2/validation.json",
+        "target/rdp-standard-interop/native-standard-low-wire-v2/validation.json",
+        "target/rdp-standard-interop/native-standard-high-wire-v2/validation.json",
+        "target/rdp-standard-interop/native-standard-none-wire-v2/validation.json",
+        "target/migration-1672-rdp-security-tests-v2.log",
+        "target/migration-1672-rdp-regressions-v3.log"
+      ]
+    },
+    {
+      "id": "markdown-reference-settings",
+      "status": "actual-entrypoints-audited-preview-differences-fixed",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/markdown",
+      "scope": "Compare extension, stylesheet, general/editor and spelling options with the actual Rust editor behavior",
+      "remaining": [
+        "Own native framebuffers inspected; complete Java pixel parity has not been verified"
+      ],
+      "evidence": [
+        "target/window-probes/migration-1672-markdown/validation.json",
+        "target/window-probes/migration-1672-file-browser/validation.json"
+      ]
+    },
+    {
+      "id": "native-installers",
+      "status": "windows-final-payload-compiled-isolated-install-uninstall-verified",
+      "scope": "Audit Java packaging and provide supported native installers in addition to portable archives",
+      "evidence": [
+        "target/installer-probe-1672/tomato-packaging-validation-1672.exe.json",
+        "target/installer-probes/native-payload-1672-v3/validation.json",
+        "target/qa-installer-migration-1672/tomato-1672-setup.exe.json"
+      ],
+      "remaining": [
+        "Other platforms retain existing portable/app bundles; Java reference only has this Windows NSIS installer"
+      ]
+    },
+    {
+      "id": "adb-shared-device-session",
+      "status": "native-multiview-process-socket-h264-and-gui-reconnect-verified",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/handler/AdbSessionPool.java",
+      "rust": "crates/services/src/remote_desktop/adb/pool.rs",
+      "scope": "One transport/decoder per resolved executable, endpoint and runtime; immutable GPU planes shared between views; per-view touch IDs and cancellation; shared mode/quality/reconnect; final-view RAII shutdown",
+      "remaining": [
+        "Physical Android-device image quality and frame-rate comparison are not inferred from the synthetic 1080p fixture"
+      ],
+      "evidence": [
+        "target/migration-1672-adb-final-native-v2.log",
+        "target/migration-1672-desktop-menus-native.log",
+        "target/migration-1672-adb-global-menu-ui.log"
+      ]
+    },
+    {
+      "id": "adb-vnc-tab-menu",
+      "status": "wired-native-reconnect-global-path-regression-verified",
+      "rust": "crates/ui-egui/src/app/desktops/menu.rs",
+      "scope": "Java VNC reconnect/disconnect/fullscreen; ADB reconnect/disconnect/Back/Home/Recent/fullscreen, compact existing menu rows, reconnect re-resolves global executable and updates shared transport",
+      "evidence": [
+        "target/migration-1672-adb-global-menu-ui.log"
+      ],
+      "remaining": [
+        "Full Java pixel parity remains unverified"
+      ]
+    },
+    {
+      "id": "database-table-settings",
+      "status": "native-controls-and-optimized-window-verified",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/handler/AbstractDbHandler.java; dialog/GlobalConfigDialog.java",
+      "rust": "crates/ui-egui/src/app/table_config",
+      "scope": "Native table-font dialog and complete family popup; legacy tableFontName/tableFontSize; dynamic data/designer rows; tab structure/data refresh",
+      "remaining": [
+        "Complete Java pixel parity remains unverified"
+      ],
+      "evidence": [
+        "target/migration-1676-tests-v1.log",
+        "target/oracle-table-config-1674-v2/validation.json",
+        "target/window-probes/migration-1676-controls/validation.json"
+      ]
+    },
+    {
+      "id": "mq-consumer-group-batch",
+      "status": "native-controls-and-owned-kafka-rocketmq-verified",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/handler/KafkaConnectHandler.java; RocketmqConnectHandler.java",
+      "rust": "crates/services/src/mq/batch.rs; crates/ui-egui/src/panels/mq.rs",
+      "scope": "Ctrl/Command/Shift row selection, batch confirmation and cancellation, reused transport, bounded sequential deletion, partial-failure report and refresh",
+      "remaining": [
+        "Complete Java pixel parity remains unverified"
+      ],
+      "evidence": [
+        "target/migration-1676-mq-brokers-v2.log",
+        "target/window-probes/migration-1676-controls/validation.json"
+      ]
+    },
+    {
+      "id": "markdown-copy-actions",
+      "status": "native-selection-context-gestures-and-release-preview-verified",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/MarkdownEditorPane.java",
+      "rust": "crates/ui-egui/src/panels/editor/preview.rs",
+      "scope": "Copy highlighted Unicode on drag release and copy the whole rendered paragraph from its context menu",
+      "remaining": [],
+      "evidence": [
+        "target/migration-1676-tests-v1.log",
+        "target/window-probes/migration-1676-markdown/validation.json"
+      ]
+    },
+    {
+      "id": "local-terminal-clear",
+      "status": "native-conpty-control-and-optimized-build-verified",
+      "reference": "src/main/java/com/tangluobo/tomato/ssh/LocalTerminalPane.java",
+      "rust": "crates/ui-egui/src/panels/terminal.rs",
+      "scope": "Clear emulated display and selection while preserving the current shell process and pending command",
+      "remaining": [],
+      "evidence": [
+        "target/migration-1676-tests-v1.log"
+      ]
+    },
+    {
+      "id": "application-session-shutdown",
+      "status": "native-stalled-socket-full-completion-buffer-and-hs2-release-verified",
+      "rust": "crates/ui-egui/src/tasks/queue; crates/ui-egui/src/app/shutdown.rs",
+      "scope": "Parallel cancellation, off-UI result release, 2 second session-close grace, absolute existing cleanup deadlines, ordinary and capture shutdown controller",
+      "remaining": [],
+      "evidence": [
+        "target/migration-1676-queue-shutdown.log",
+        "target/native-checks/migration-1676-hive-ui-v1/validation.json",
+        "target/window-probes/migration-1676-hive-release/validation.json"
+      ]
+    },
+    {
+      "id": "standalone-file-tab-actions",
+      "status": "four-kinds-live-encrypted-session-config-and-current-directory-refresh-verified",
+      "reference": "SFTPConnectHandler.java:69; FTPConnectHandler.java:69; S3ConnectHandler.java:66",
+      "rust": "crates/ui-egui/src/app/file_tabs.rs; terminal_config.rs; session_config.rs",
+      "scope": "SFTP/FTP/S3/OSS original refresh and session menus; live explicit file-view mode, cancel/no-write and encrypted save; reference defaults preserved",
+      "remaining": [
+        "Complete Java visual parity remains separate"
+      ],
+      "evidence": [
+        "target/migration-1678-preflight.json",
+        "target/window-probes/migration-1678-session/validation.json"
+      ]
+    },
+    {
+      "id": "docker-container-properties",
+      "status": "native-controls-and-actual-linux-docker-daemon-verified",
+      "reference": "ssh/ContainerInspectPane.java",
+      "rust": "crates/ui-egui/src/panels/terminal/tools/inspect; crates/services/src/terminal/ssh/tools/management/docker.rs",
+      "scope": "Original grouped controls and copyable details; resource and restart-policy update followed by inspect/readback; checked numeric parameters, preserved swap allowance and bash-to-sh fallback",
+      "remaining": [
+        "Full Java application pixel parity remains separate"
+      ],
+      "evidence": [
+        "target/migration-1680-preflight.json",
+        "target/migration-1680-docker-resources-v11.log",
+        "target/migration-1680-docker-presentation-v11.log",
+        "target/migration-1680-docker-controls-v11.log",
+        "target/migration-1680-mongo-focus-v11.log",
+        "target/migration-1680-credential-focus-v11.log",
+        "target/migration-1680-docker-ssh-v11.log",
+        "target/window-probes/migration-1680-docker/validation.json",
+        "target/java-docker-1680/validation.json",
+        "target/linux-fixture-1690/actual-docker.json",
+        "target/migration-1690-actual-docker.log"
+      ]
+    },
+    {
+      "id": "ssh-container-tree-jobs",
+      "status": "native-stop-start-transient-password-and-stable-tabs-verified",
+      "reference": "ssh connection-tree container handlers",
+      "rust": "crates/ui-egui/src/app/ssh_tree",
+      "scope": "Short-lived SSH actor; stop/start/readback; at most 8 concurrent jobs; transient credentials reused only for unchanged public connection options; no additional workspace tab; duplicate in-flight requests are merged before a new credential prompt; changing public endpoint options invalidates cached credentials",
+      "remaining": [
+        "Real saved-host container-management acceptance remains separate"
+      ],
+      "evidence": [
+        "target/migration-1680-preflight.json",
+        "target/migration-1680-docker-resources-v11.log",
+        "target/migration-1680-docker-presentation-v11.log",
+        "target/migration-1680-docker-controls-v11.log",
+        "target/migration-1680-mongo-focus-v11.log",
+        "target/migration-1680-credential-focus-v11.log",
+        "target/migration-1680-docker-ssh-v11.log",
+        "target/window-probes/migration-1680-tree/validation.json",
+        "target/java-docker-1680/validation.json",
+        "target/migration-1682-preflight.json",
+        "target/migration-1682-fstab-paths-v10.log",
+        "target/migration-1682-storage-model-v10.log",
+        "target/migration-1682-storage-controls-v10.log",
+        "target/migration-1682-ssh-menus-v10.log",
+        "target/migration-1682-tree-credentials-v10.log",
+        "target/migration-1682-credential-focus-v10.log",
+        "target/migration-1682-storage-ssh-v10.log",
+        "target/migration-1682-ssh-selector-drag-v10.log",
+        "target/migration-1682-ssh-manager-viewport-v10.log"
+      ]
+    },
+    {
+      "id": "mongo-new-document-focus",
+      "status": "actual-widget-typing-verified",
+      "reference": "MongoCollectionView new-document action",
+      "rust": "crates/ui-egui/src/panels/mongo.rs; crates/ui-egui/src/tabs/text_state.rs",
+      "scope": "New document clears selection and focuses the actual editor after layout; direct text input without another click",
+      "remaining": [
+        "Complete Mongo UI visual parity remains separate"
+      ],
+      "evidence": [
+        "target/migration-1680-preflight.json",
+        "target/migration-1680-docker-resources-v11.log",
+        "target/migration-1680-docker-presentation-v11.log",
+        "target/migration-1680-docker-controls-v11.log",
+        "target/migration-1680-mongo-focus-v11.log",
+        "target/migration-1680-credential-focus-v11.log",
+        "target/migration-1680-docker-ssh-v11.log",
+        "target/java-docker-1680/validation.json"
+      ]
+    },
+    {
+      "id": "credential-modal-input-isolation",
+      "status": "actual-terminal-and-native-password-workflow-verified",
+      "reference": "Original modal authentication behavior",
+      "rust": "crates/ui-egui/src/app/credentials.rs; crates/ui-egui/src/panels/terminal/input.rs",
+      "scope": "Disabled/background terminal surrenders focus under a modal; Enter submits the password after single-line editor loses focus; independently checked no credential bytes reach shell",
+      "remaining": [
+        "Physical OS input acceptance remains separate"
+      ],
+      "evidence": [
+        "target/migration-1680-preflight.json",
+        "target/migration-1680-docker-resources-v11.log",
+        "target/migration-1680-docker-presentation-v11.log",
+        "target/migration-1680-docker-controls-v11.log",
+        "target/migration-1680-mongo-focus-v11.log",
+        "target/migration-1680-credential-focus-v11.log",
+        "target/migration-1680-docker-ssh-v11.log",
+        "target/window-probes/migration-1680-tree/validation.json",
+        "target/java-docker-1680/validation.json"
+      ]
+    },
+    {
+      "id": "ssh-storage-management",
+      "status": "native-controls-and-actual-linux-sudo-lvm-block-device-commands-readback-verified",
+      "reference": "ssh/StoragePanel.java",
+      "rust": "crates/ui-egui/src/panels/terminal/tools/storage; dialogs/storage.rs; tabs/ssh/storage.rs; crates/services/src/terminal/ssh/tools/management.rs",
+      "scope": "Block table sorting, original device identities, keyboard navigation, LVM selection/defaults, initialize PV, create/extend VG, extend LV, mount/format choices, fstab persistence escaping, confirmation, cancellation, error modal and inventory readback; visible rows and once-per-reply metadata parsing",
+      "remaining": [
+        "Full Java pixel parity remains separate",
+        "Real Linux commands/parser used Windows OpenSSH; native SSH actor paths remain covered by the separately recorded encrypted protocol regression"
+      ],
+      "evidence": [
+        "target/migration-1682-preflight.json",
+        "target/migration-1682-fstab-paths-v10.log",
+        "target/migration-1682-storage-model-v10.log",
+        "target/migration-1682-storage-controls-v10.log",
+        "target/migration-1682-ssh-menus-v10.log",
+        "target/migration-1682-tree-credentials-v10.log",
+        "target/migration-1682-credential-focus-v10.log",
+        "target/migration-1682-storage-ssh-v10.log",
+        "target/migration-1682-ssh-selector-drag-v10.log",
+        "target/migration-1682-ssh-manager-viewport-v10.log",
+        "target/window-probes/migration-1682-storage-v10-final/validation.json",
+        "target/java-storage-1682/validation.json",
+        "target/linux-fixture-1690/actual-storage-v2.json",
+        "target/owned-storage-probe-1690/sources.json"
+      ]
+    },
+    {
+      "id": "ssh-docker-context-menu",
+      "status": "actual-egui-disabled-controls-and-selection-counts-verified",
+      "reference": "ssh/DockerPanel.java:414",
+      "rust": "crates/ui-egui/src/panels/terminal/tools/table/menu.rs",
+      "scope": "Original start/stop/delete states, multi-selection count suffixes, single-item restrictions and 23px menu rows; busy actor prevents duplicate mutations",
+      "remaining": [
+        "Complete Java pixel parity remains separate"
+      ],
+      "evidence": [
+        "target/migration-1682-preflight.json",
+        "target/migration-1682-fstab-paths-v10.log",
+        "target/migration-1682-storage-model-v10.log",
+        "target/migration-1682-storage-controls-v10.log",
+        "target/migration-1682-ssh-menus-v10.log",
+        "target/migration-1682-tree-credentials-v10.log",
+        "target/migration-1682-credential-focus-v10.log",
+        "target/migration-1682-storage-ssh-v10.log",
+        "target/migration-1682-ssh-selector-drag-v10.log",
+        "target/migration-1682-ssh-manager-viewport-v10.log"
+      ]
+    },
+    {
+      "id": "ssh-table-range-selection",
+      "status": "egui-press-drag-filtered-range-secondary-preservation-and-blank-clear-verified",
+      "reference": "utils/RowSelectorDragSelection.java; ssh/PortPanel.java; ssh/DockerPanel.java",
+      "rust": "crates/ui-egui/src/panels/terminal/tools/table/selection.rs",
+      "scope": "Row-selector press and hold selects displayed ranges, filtered port rows map to the actual original indices, right press preserves a selected range, Ctrl toggles and Shift selects displayed ranges, blank clicks clear selection",
+      "remaining": [
+        "Complete Java visual parity remains separate"
+      ],
+      "evidence": [
+        "target/migration-1682-preflight.json",
+        "target/migration-1682-fstab-paths-v10.log",
+        "target/migration-1682-storage-model-v10.log",
+        "target/migration-1682-storage-controls-v10.log",
+        "target/migration-1682-ssh-menus-v10.log",
+        "target/migration-1682-tree-credentials-v10.log",
+        "target/migration-1682-credential-focus-v10.log",
+        "target/migration-1682-storage-ssh-v10.log",
+        "target/migration-1682-ssh-selector-drag-v10.log",
+        "target/migration-1682-ssh-manager-viewport-v10.log"
+      ]
+    },
+    {
+      "id": "gpu-staging-allocation-recheck",
+      "status": "observed-once-not-reproduced-root-cause-open",
+      "rust": "vendor/egui-wgpu/src/renderer.rs:1022",
+      "scope": "One initial optimized GUI failure allocating47KiB of index staging despite98KiB destination capacity; same executable failed-operation recheck on NVIDIA940MX Vulkan and the final full default-backend sweep passed",
+      "remaining": [
+        "Root cause of the initial GPU allocation failure is not established; no graphics-driver or GPU-recovery fix is claimed"
+      ],
+      "evidence": [
+        "target/migration-1682-gpu-recheck.json",
+        "target/window-probes/migration-1682-gpu-staging-recheck/validation.json",
+        "target/migration-1682-native-release.json"
+      ]
+    },
+    {
+      "id": "ssh-manager-table-interactions",
+      "status": "constrained-column-drag-and-standalone-port-viewport-verified",
+      "reference": "ssh/StoragePanel.java; ssh/PortPanel.java; ssh/DockerPanel.java",
+      "rust": "crates/ui-egui/src/panels/terminal/tools/storage/devices.rs; tools/table/grid.rs; tools/ports.rs",
+      "scope": "Storage constrained column dragging, generic manager adjacent-column adjustment, fixed 24px rows, standalone PortPanel fixed header/filter/footer and internal vertical scrolling, visible-row rendering and original white blank area; original Java node snapshots and actual native SSH port inventory captured",
+      "remaining": [
+        "Complete application Java visual parity remains separate"
+      ],
+      "evidence": [
+        "target/java-storage-1682/validation.json",
+        "target/java-ports-1682/validation.json",
+        "target/window-probes/migration-1682-ports-v10-final/validation.json",
+        "target/migration-1682-preflight.json"
+      ]
+    },
+    {
+      "id": "designer-table-options",
+      "status": "mysql-six-options-native-controls-save-readback-verified",
+      "reference": "module/connect/view/TableStructureView.java:1170",
+      "rust": "crates/core/src/table_design/options.rs; crates/ui-egui/src/panels/sql/designer/pages.rs",
+      "scope": "CREATE/ALTER engine, charset, collation, live auto_increment, row_format, configured avg_row_length; preview/save use one plan; data-only counter drift does not block unrelated schema changes",
+      "remaining": [
+        "Non-MySQL table options intentionally disabled",
+        "Full Java visual parity remains separate"
+      ],
+      "evidence": [
+        "target/migration-1684-checks-complete.json",
+        "target/database-fixtures/probes/migration-1684-final-v2/validation.json",
+        "target/migration-1684-native-review.json"
+      ]
+    },
+    {
+      "id": "designer-foreign-keys-triggers",
+      "status": "mysql-postgresql-and-oracle-native-add-delete-preview-save-readback-effects-verified",
+      "reference": "module/connect/view/TableStructureView.java:1128",
+      "rust": "crates/core/src/table_design/auxiliary.rs; crates/ui-egui/src/panels/sql/designer/info",
+      "scope": "Staged compound constraints and trigger bodies, CREATE and ALTER, real metadata signatures and DML effects, lazy row copies, fixed-height bounded grid preview and scrollable inline form; existing definitions remain read-only and preserve undisplayed attributes",
+      "remaining": [
+        "Full Java visual parity remains separate"
+      ],
+      "evidence": [
+        "target/migration-1684-checks-complete.json",
+        "target/database-fixtures/probes/migration-1684-final-v2/validation.json",
+        "target/migration-1684-native-review.json",
+        "target/oracle-xe-fixture-designer-1768-v8/validation.json"
+      ]
+    },
+    {
+      "id": "designer-native-column-generation",
+      "status": "mysql-postgres-defaults-generated-columns-and-identity-readback-verified",
+      "rust": "crates/core/src/table_design/generation.rs; crates/services/src/database/workbench",
+      "scope": "Native create/copy preserves expression defaults, generated columns and identity mode; PostgreSQL identity/serial disable and re-enable synchronize a new sequence after MAX; original Java SQL fixtures preserved with explicitly documented corrections",
+      "remaining": [
+        "Oracle engine not verified; existing Oracle identity changes require explicit SQL"
+      ],
+      "evidence": [
+        "target/migration-1684-checks-complete.json",
+        "target/database-fixtures/probes/migration-1684-final-v2/validation.json",
+        "target/migration-1684-native-review.json"
+      ]
+    },
+    {
+      "id": "sql-stored-program-execution",
+      "status": "mysql-postgres-procedural-scripts-and-live-literal-modes-verified",
+      "rust": "crates/core/src/sql_script/procedural.rs; crates/services/src/database/script.rs",
+      "scope": "Borrowed dialect lexer for MySQL DELIMITER/compound bodies and PostgreSQL dollar quotes/nested comments; actual session mode and successful explicit mode changes update splitting and transaction tracking; never replay executed user statements",
+      "remaining": [
+        "All dialect-specific SQL syntax remains subject to server validation"
+      ],
+      "evidence": [
+        "target/migration-1684-checks-complete.json",
+        "target/database-fixtures/probes/migration-1684-final-v2/validation.json",
+        "target/migration-1684-native-review.json"
+      ]
+    },
+    {
+      "id": "connection-export-selection",
+      "status": "native-checkbox-background-publication-and-original-java-decryption-verified",
+      "reference": "module/connect/dialog/ExportConnectionDialog.java; module/connect/ConnectModule.java:2956",
+      "rust": "crates/core/src/config/export; crates/core/src/repository.rs; crates/ui-egui/src/app/export; crates/services/src/commands.rs",
+      "scope": "Recursive tri-state selection, retained ancestor groups, default redaction/explicit encrypted credentials, Java versioned envelope, bounded/cancellable serialization and atomic background publication, native warnings, source path protection, reimport references/unknown fields, stale job and duplicate prevention, native keyboard parent/child/home/end/page navigation with virtual-row reveal and footer-focus isolation, visible rows and request-only copies; original Java TreeView icon-click and Space semantics, label double-fold, shared real CJK bold face and Modena mark corrected in 1688",
+      "remaining": [
+        "Physical OS file-picker acceptance and full-application pixel parity remain separate"
+      ],
+      "evidence": [
+        "target/migration-1686-preflight.json",
+        "target/migration-1686-checks-complete.json",
+        "target/java-export-1686/validation.json",
+        "target/migration-1686-native-review.json",
+        "target/window-probes/migration-1686-interop-release/validation.json",
+        "target/java-picker-1688-v3/validation.json",
+        "target/migration-1688-native-review.json"
+      ]
+    },
+    {
+      "id": "scroll-state-routing",
+      "status": "native-export-home-column-range-and-designer-popup-scroll-verified",
+      "rust": "crates/ui-egui/src/app/export/view.rs; crates/ui-egui/src/panels/terminal/tools/files/columns.rs; crates/ui-egui/src/panels/sql/designer/type_picker.rs",
+      "scope": "Read the actual persisted ScrollArea state; Home reveals the first virtual row, wheel-scrolled column range selection matches painted files and visible type candidates retain their viewport on arrow navigation",
+      "remaining": [
+        "Physical OS gestures and full Java pixel parity remain separate"
+      ],
+      "evidence": [
+        "target/migration-1686-file-browser-scroll-controls-v6.log",
+        "target/migration-1686-designer-type-scroll-controls-v6.log",
+        "target/migration-1686-connection-export-native-v6.log",
+        "target/migration-1686-checks-complete.json"
+      ]
+    },
+    {
+      "id": "connection-import-selection",
+      "status": "native-background-selection-encrypted-commit-and-original-java-planner-verified",
+      "reference": "module/connect/ConnectionImportPlanner.java; module/connect/dialog/ImportConnectionDialog.java",
+      "rust": "crates/core/src/config/import; crates/core/src/repository; crates/services/src/connections; crates/ui-egui/src/app/import; crates/ui-egui/src/app/connection_picker",
+      "scope": "Independent identity-based selection, external-root rows, first duplicate-ID remapping, default/manual duplicates, preserved unknown fields, async bounded read/commit, source/model/disk revision guards, encrypted backup, cancel-late adoption, native warning/failure/success, visible-row navigation, actual Java planning/decryption comparison",
+      "remaining": [
+        "Physical OS file-picker acceptance and complete application Java pixel parity remain separate"
+      ],
+      "evidence": [
+        "target/migration-1688-preflight.json",
+        "target/migration-1688-checks-complete.json",
+        "target/java-picker-1688-v3/validation.json",
+        "target/window-probes/migration-1688-import-interop-release/validation.json",
+        "target/migration-1688-native-review.json"
+      ]
+    },
+    {
+      "id": "oracle-native-recovery",
+      "status": "formal-optimized-cli-direct-ssh-reads-and-interrupted-write-recovery-verified",
+      "rust": "crates/services/src/database/oracle; database/recovery.rs; vendor/oracledb",
+      "scope": "Typed transport failures, invalidated native actor, >30-second user statements, bounded read-only reconnect and recreated SSH tunnel; never replay writes or lost transactions; split scoped metadata with full LONG defaults and 8 MiB retained budget",
+      "evidence": [
+        "target/migration-1690-v4-oracle-unit.log",
+        "target/migration-1690-driver-wire-tests-v2.log",
+        "target/linux-fixture-1690/driver-metadata.json",
+        "target/linux-fixture-1690/native-oracle-recovery-v2-direct.json",
+        "target/linux-fixture-1690c/native-oracle-ssh-recovery.json",
+        "target/oracle-xe-fixture-1694e/cleanup.json",
+        "target/oracle-xe-fixture-1694e/xe-workflows-done.json",
+        "target/oracle-xe-fixture-1694f/xe-workflows-v2-done.json",
+        "target/oracle-xe-fixture-1694f/cleanup.json",
+        "target/oracle-xe-fixture-1698/cli-recovery-validation-v3.json",
+        "target/migration-1698-validation-complete.json",
+        "target/oracle-free-fixture-1742/real_oracle_native_lobs_identity_copy_nb3_dependencies_and_restore.route.proof.json",
+        "target/oracle-xe-fixture-1740/real_oracle_native_lobs_identity_copy_nb3_dependencies_and_restore.ssh-retry.proof.json"
+      ],
+      "remaining": [
+        "Full copy/archive passed later in the separately recorded XE 21c direct/SSH and Free 26ai combined workflows; native result-window and explicit lost-transaction UI acceptance remain separate",
+        "Complete Java application visual parity remains separate"
+      ]
+    },
+    {
+      "id": "redis-cluster-ssh-routing",
+      "status": "native-factory-shared-ssh-redirect-tls-and-real-three-primary-engine-verified",
+      "reference": "module/connect/service/RedisService.java",
+      "rust": "crates/services/src/redis_data/cluster.rs; crates/services/src/terminal/ssh/tunnel.rs",
+      "scope": "Seed discovery, MOVED/ASK, authenticated TLS identities and all-primary scan via bounded owned SSH routes",
+      "evidence": [
+        "target/migration-1692-shared-transport-focused.log",
+        "target/migration-1692-redis-real-final-c.json",
+        "target/migration-1692-checks-complete.json"
+      ],
+      "remaining": []
+    },
+    {
+      "id": "native-dialog-work-area",
+      "status": "optimized-native-positions-and-original-java-coordinate-method-verified",
+      "reference": "utils/DialogPositionUtil.java",
+      "rust": "crates/ui-egui/src/native_dialog/placement.rs; vendor/egui-winit/src/work_area.rs",
+      "scope": "Owner display visual bounds, nested wizard notices, native-size and DPI correction, oversized clamp and existing fallback",
+      "evidence": [
+        "target/window-probes/migration-1692-dialogs-release/validation.json",
+        "target/java-dialog-position-1692/validation.json",
+        "target/java-dialog-position-1692-release/validation.json",
+        "target/migration-1692-native-review.json"
+      ],
+      "remaining": [
+        "Non-Windows work-area query and physical mixed-DPI monitor gestures remain separate",
+        "Complete Java application pixel parity remains separate"
+      ]
+    },
+    {
+      "id": "oracle-partial-packet-recovery",
+      "status": "tcp-fragment-timeout-resume-regression-passed",
+      "rust": "vendor/oracledb/src/transport.rs",
+      "scope": "Do not consume an incomplete packet; retain the next packet boundary across one read timeout",
+      "evidence": [
+        "target/migration-1692-fragment-red.log",
+        "target/migration-1692-driver-green.log",
+        "target/oracle-xe-fixture-1694e/cleanup.json",
+        "target/oracle-xe-fixture-1694e/xe-workflows-done.json",
+        "target/oracle-xe-fixture-1694f/xe-workflows-v2-done.json",
+        "target/oracle-xe-fixture-1694f/cleanup.json",
+        "target/oracle-xe-fixture-1698/cli-recovery-validation-v3.json",
+        "target/migration-1698-validation-complete.json",
+        "target/oracle-free-fixture-1742/real_oracle_native_lobs_identity_copy_nb3_dependencies_and_restore.route.proof.json",
+        "target/oracle-xe-fixture-1740/real_oracle_native_lobs_identity_copy_nb3_dependencies_and_restore.ssh-retry.proof.json"
+      ],
+      "remaining": [
+        "CLI direct/SSH reads and interrupted-write recovery passed on owned XE21; full copy/archive passed in later XE21/Free26ai combined workflows. Physical input and full visual comparison remain separate."
+      ]
+    },
+    {
+      "id": "ssh-monitor-history-and-rates",
+      "status": "optimized-native-encrypted-sampling-exit-original-java-component-and-linux-parser-verified",
+      "reference": "ssh/MonitorPanel.java",
+      "rust": "crates/ui-egui/src/tabs/ssh/monitor.rs; crates/ui-egui/src/panels/terminal/tools/monitor.rs",
+      "scope": "One-hour timestamped bounded history; raw current transfer labels, capped smoothed graphs, whole physical disks without partition/device-mapper duplicates, reconnect reset, original 400x80 chart geometry",
+      "remaining": [
+        "Full Java application pixel parity remains separate"
+      ],
+      "evidence": [
+        "target/java-monitor-1694/validation.json",
+        "target/migration-1694-checks-complete.json",
+        "target/window-probes/migration-1694-monitor-development-v11/validation.json",
+        "target/ssh-monitor-linux-1694/validation.json",
+        "target/window-probes/migration-1694-monitor-release/validation.json",
+        "target/migration-1694-native-review.json",
+        "target/window-probes/migration-1694-memory/validation.json"
+      ]
+    },
+    {
+      "id": "settings-immediate-sidebar-toggle",
+      "status": "optimized-build-actual-widget-immediate-save-and-external-revision-rejection-verified",
+      "reference": "ConnectModule.java:2180; TomatoController.java:258",
+      "rust": "crates/ui-egui/src/app/settings.rs",
+      "scope": "Immediate sidebar toggle through guarded original global.json repository; preserve other unsaved settings and unknown legacy fields; revert widget on failed save",
+      "remaining": [],
+      "evidence": [
+        "target/migration-1694-focused-sidebar-v7.log",
+        "target/migration-1694-checks-complete.json",
+        "target/migration-1694-release-fresh.json",
+        "target/migration-1694-configuration-readonly.json"
+      ]
+    },
+    {
+      "id": "database-write-reconnect-and-interrupted-script-results",
+      "status": "optimized-native-actual-mysql-postgres-ssh-workflows-ui-owned-results-and-exit-verified",
+      "reference": "module/connect/service/DatabaseConnectionRecovery.java; DatabaseService.java:1470; SqlStatementResult.java",
+      "rust": "crates/services/src/database/opening.rs; recovery.rs; script/interrupted.rs; query_rows.rs; crates/ui-egui/src/app/workspace.rs",
+      "scope": "Bounded opening factory; no replay of user SQL or lost transactions; reconnect only; owned partial script output; query-row metadata and writeback; per-panel native failure notices",
+      "evidence": [
+        "target/migration-1696-checks-complete.json",
+        "target/window-probes/migration-1696-database-final-v1/validation.json",
+        "target/database-fixtures/probes/migration-1696-full-final-v1/validation.json",
+        "target/window-probes/migration-1696-native-release/validation.json",
+        "target/migration-1696-native-review.json",
+        "target/oracle-xe-fixture-1698/cli-recovery-validation-v3.json",
+        "target/migration-1698-validation-complete.json",
+        "target/oracle-free-fixture-1742/real_oracle_native_lobs_identity_copy_nb3_dependencies_and_restore.route.proof.json",
+        "target/oracle-xe-fixture-1740/real_oracle_native_lobs_identity_copy_nb3_dependencies_and_restore.ssh-retry.proof.json"
+      ],
+      "remaining": [
+        "Complete application Java pixel parity remains separate",
+        "Oracle native result-window acceptance remains separate. Full Oracle copy/archive passed in the later XE21 direct/SSH and Free26ai combined workflows."
+      ]
+    },
+    {
+      "id": "recursive-image-and-voc-dataset-converters",
+      "status": "native-background-controls-recursive-files-original-java-output-and-optimized-windows-verified",
+      "reference": [
+        "src/main/java/com/tangluobo/tomato/module/tools/ImageFormatConverterPane.java",
+        "src/main/java/com/tangluobo/tomato/module/tools/DatasetConverterPane.java"
+      ],
+      "rust": [
+        "crates/services/src/tools/conversion",
+        "crates/ui-egui/src/panels/converters.rs",
+        "crates/ui-egui/src/tabs/converter.rs"
+      ],
+      "scope": "Recursive relative paths, partial failures, atomic publication, original Java encodings/metadata/coordinates/full-width spaces, native controls and inline status, shared single permit and streaming annotations",
+      "evidence": [
+        "target/java-converters-1700-v3/validation.json",
+        "target/window-probes/migration-1700-converters-release/validation.json",
+        "target/migration-1700-checks-complete.json",
+        "target/window-probes/migration-1700-dataset-memory/validation.json"
+      ],
+      "remaining": [
+        "Physical picker and mid-batch-close gestures remain separate",
+        "Full Java application pixel parity remains separate"
+      ]
+    },
+    {
+      "id": "json-and-mq-readonly-selection",
+      "status": "native-shared-renderer-controls-and-current-java-selected-bytes-verified",
+      "reference": [
+        "src/main/java/com/tangluobo/tomato/module/tools/JsonToolPane.java",
+        "src/main/java/com/tangluobo/tomato/module/tools/JsonFoldableTextView.java"
+      ],
+      "rust": [
+        "crates/ui-egui/src/panels/json/output",
+        "crates/ui-egui/src/tabs/json/selection.rs",
+        "crates/ui-egui/src/tabs/mq/body.rs",
+        "crates/ui-egui/src/panels/mq.rs"
+      ],
+      "scope": "Grapheme selection, scroll, keyboard focus and copy, original gutter/history interactions, raw line endings, bounded long-line caches and actual shared MQ body actions",
+      "evidence": [
+        "target/java-json-selection-1702-v6/validation.json",
+        "target/window-probes/migration-1702-json-release-v2/validation.json",
+        "target/migration-1702-checks-complete.json"
+      ],
+      "remaining": [
+        "Physical input and actual broker workflow acceptance remain separate",
+        "Full Java application visual parity remains separate"
+      ]
+    },
+    {
+      "id": "redis-key-action-workflows",
+      "status": "native-widget-and-real-single-node-redis-readback-verified",
+      "reference": "module/connect/view/RedisDataView.java; module/connect/service/RedisService.java",
+      "rust": "crates/ui-egui/src/panels/redis; crates/services/src/redis_data/delete.rs",
+      "scope": "Frozen operation targets, selection and modal isolation, original Ctrl-focus semantics, actual rename/TTL/delete readback, bounded per-key partial-failure reports and complete SCAN continuation",
+      "evidence": [
+        "target/migration-1704-real-redis-widgets.log",
+        "target/migration-1704-real-redis-service.log",
+        "target/migration-1704-tests-v5.log",
+        "target/java-redis-keyboard-1704-v1/validation.json",
+        "target/window-probes/migration-1704-hosts-redis-release-v1/validation.json"
+      ],
+      "remaining": [
+        "Physical OS gestures and complete Java application pixel parity remain separate",
+        "Current per-key delete fault tests and single-node Redis are not a new three-primary cluster/TLS/SSH acceptance"
+      ]
+    },
+    {
+      "id": "hosts-java-save-compatibility",
+      "status": "native-unix-sudo-retry-wired-windows-transaction-and-process-tests-passed",
+      "reference": "module/tools/HostsFilePane.java",
+      "rust": "crates/services/src/hosts.rs; crates/ui-egui/src/panels/hosts.rs",
+      "scope": "Compact Java-readable serialization, unknown fields and edited/reordered duplicate rows, backup/revision guards, failed-save draft retention and explicit reload, modal isolation and temporary status; Unix permission challenge, transient sudo authorization, bounded background retry, rollback and cancellation",
+      "evidence": [
+        "target/window-probes/migration-1704-hosts-redis-release-v1/validation.json",
+        "target/migration-1704-tests-v5.log",
+        "target/migration-1706-tests-v2.log",
+        "target/window-probes/migration-1706-hosts-redis-release-v1/validation.json",
+        "target/qa-linux-hosts-1706-v3/primitive-validation.json",
+        "target/qa-linux-hosts-1706-v3/validation.json"
+      ],
+      "remaining": [
+        "Actual macOS sudo and full Java visual comparison remain separate",
+        "End-to-end execution of the compiled Rust Hosts service on Linux remains pending"
+      ]
+    },
+    {
+      "id": "hosts-redis-root-modal-scope",
+      "status": "actual-native-controls-and-release-windows-verified",
+      "reference": "HostsFilePane.java and RedisDataView.java showAndWait dialogs",
+      "rust": "crates/ui-egui/src/app/modal.rs; crates/ui-egui/src/panels/hosts.rs",
+      "scope": "Visible owner dialogs prevent background settings navigation and Hosts Ctrl+S; hidden owners do not lock another module. Password field focus, retry, cancellation, and undo-state release verified.",
+      "evidence": [
+        "target/migration-1706-tests-v2.log",
+        "target/migration-1706-native-review.json"
+      ],
+      "remaining": [
+        "Complete Java visual parity remains separate"
+      ]
+    },
+    {
+      "id": "sql-editor-copy-drag",
+      "status": "original-java-and-rust-editor-events-verified",
+      "reference": "SqlEditorPane.installCopyDragSupport, SqlEditorView fallback editor, SqlEditorDragGhost",
+      "rust": "crates/ui-egui/src/panels/sql/copy_drag.rs",
+      "scope": "Ctrl drag from the selection, bounded cursor preview, insert and select at release, cancel, Unicode and single undo",
+      "evidence": [
+        "target/migration-1708-tests-v2.log",
+        "target/qa-java-sql-drag-1708/run.log",
+        "target/window-probes/migration-1708-sql-workbench/validation.json"
+      ],
+      "remaining": [
+        "Physical mouse gesture and full Java visual comparison remain separate"
+      ]
+    },
+    {
+      "id": "markdown-native-print",
+      "status": "windows-native-system-dialog-and-actual-local-sftp-s3-a4-verified",
+      "reference": "module/connect/MarkdownEditorPane.java exportPdf, used by local, SFTP and S3 editors",
+      "rust": "crates/ui-egui/src/app/markdown_print; crates/native-print/src/windows.rs",
+      "scope": "Original PDF toolbar, current draft, Windows printer selection and cancellation, portrait A4, preview styles and images, paginated output with one reusable pixel buffer",
+      "remaining": [
+        "Physical printer and Linux/macOS system dialogs remain pending",
+        "Rendered PDF pages are rasterized at 216 dpi; selectable PDF text is not emitted"
+      ],
+      "evidence": [
+        "target/migration-1712-tests-final.log",
+        "target/qa-markdown-print-1712/release-print/validation.json",
+        "target/qa-markdown-print-1712/release-native-cancel/validation.json",
+        "target/qa-markdown-print-1712/release-native-range/validation.json",
+        "target/qa-markdown-print-1712/release-print-stress/validation.json",
+        "target/qa-markdown-print-1712/java-layout-toolbar/original-preview.png",
+        "target/qa-markdown-print-1712/java-layout-toolbar/original-toolbar.png",
+        "target/qa-markdown-layout-1722/release-remote/validation.json"
+      ]
+    },
+    {
+      "id": "vnc-password-dialog-and-bell",
+      "status": "original-dialog-native-release-and-loopback-workflow-verified",
+      "reference": "RemoteDesktopConnectHandler.openVncTab, PasswordPromptDialog, VncPane.onBell and VncClient.requirePassword",
+      "rust": "crates/ui-egui/src/panels/desktop/vnc/password.rs and crates/services/src/remote_desktop/vnc.rs",
+      "scope": "Modal keyboard authentication, cancel the current socket, saved or transient password, legacy port fallback, and native system bell",
+      "evidence": [
+        "target/migration-1710-tests-final.log",
+        "target/qa-vnc-1710/original-prompt-v3/validation.json",
+        "target/qa-vnc-1710/release-final-prompt/validation.json",
+        "target/qa-vnc-1710/release-final-connected/validation.json"
+      ],
+      "remaining": [
+        "Physical audio output, macOS and Linux system bell runtime, and full Java visual comparison remain separate"
+      ]
+    },
+    {
+      "id": "markdown-find-and-toolbar-parity",
+      "status": "java-source-and-native-editor-workflows-verified",
+      "reference": "module/connect/MarkdownEditorPane.java search, replace and toolbar actions",
+      "rust": "crates/core/src/search.rs; crates/ui-egui/src/panels/editor/find.rs; crates/ui-egui/src/panels/editor/actions.rs",
+      "scope": "Lookaround, numbered and named backreferences, Java-style replacement and quoting, synchronized query controls with Enter navigation, five insertion actions, empty-line prefix, undo and cancellation",
+      "evidence": [
+        "target/migration-1714-tests-final.log",
+        "target/qa-markdown-find-1714/validation.json",
+        "target/qa-markdown-find-1714/release/validation.json",
+        "target/qa-markdown-find-1714/release-1716/style-validation.json"
+      ],
+      "remaining": [
+        "Java-specific regex flags and some Unicode and line-terminator semantics still differ from the JDK; explicit runtime and size limits apply"
+      ]
+    },
+    {
+      "id": "markdown-html-export-parity",
+      "status": "java-html-files-native-windows-export-verified",
+      "reference": "module/connect/MarkdownEditorPane.java exportHtml, buildFullHtml, tableToHtml, CodeBlockHtmlRenderer",
+      "rust": "crates/services/src/markdown/export.rs; crates/core/src/syntax/markdown.rs; crates/ui-egui/src/app/markdown_html.rs",
+      "scope": "Original document title and CSS, native default filename, literal table cells and alignment, fenced and indented code colors, atomic write and success/cancel/error workflows.",
+      "remaining": [
+        "Live loopback SFTP/S3 read-to-HTML command path verified. Native remote save dialogs and other platforms remain untested. Input, output, table and individual code block sizes are bounded."
+      ],
+      "evidence": [
+        "target/migration-1716-tests-final.log",
+        "target/qa-markdown-html-1716/original-comparison.json",
+        "target/qa-markdown-html-1716/release/validation.json",
+        "target/qa-markdown-html-1716/release-pdf/validation.json",
+        "target/migration-1718-tests-approved.log"
+      ]
+    },
+    {
+      "id": "markdown-image-direct-uris",
+      "status": "java-routes-native-windows-local-s3-print-and-authenticated-sftp-verified",
+      "reference": "module/connect/MarkdownEditorPane.java isDirectImageSource, toImageUrl, cleanResourceSource",
+      "rust": "crates/services/src/markdown/resource.rs, crates/services/src/files/document.rs, crates/services/src/files/object_tree.rs, crates/ui-egui/src/panels/editor/preview/image.rs",
+      "scope": "Shared local/HTTP/file/drive/data routing before storage; percent-decoded relative paths; authenticated SFTP, signed S3 and Windows preview/A4 workflow; bounded reads, preview sizing and cache retention.",
+      "remaining": [
+        "Direct file URLs are local-only. Preview input and display dimensions are bounded."
+      ],
+      "evidence": [
+        "target/migration-1718-tests-approved.log",
+        "target/qa-markdown-images-1718/java-verified/validation.json",
+        "target/qa-markdown-images-1718/release-local/validation.json",
+        "target/qa-markdown-images-1718/release-s3/validation.json",
+        "target/qa-markdown-images-1718/release-print/validation.json"
+      ]
+    },
+    {
+      "id": "markdown-inline-image-and-gif",
+      "status": "java-textflow-native-windows-inline-cell-gif-and-a4-verified",
+      "reference": "MarkdownEditorPane.renderInline, tableCell, renderImage and setupSelectableTextFlow",
+      "rust": "crates/services/src/markdown.rs, crates/ui-egui/src/panels/editor/preview, crates/services/src/files/images/animation.rs, vendor/epaint/src/text/text_layout.rs",
+      "scope": "Paragraph, heading, lists and table cell images share shaped wrap and baseline metrics. Clipboard excludes image objects. Visible GIFs stream latest frame, releasing playback when hidden. A4 print uses the first GIF frame.",
+      "evidence": [
+        "target/migration-1720-tests-verified.log",
+        "target/qa-markdown-inline-1720/java/validation.json",
+        "target/qa-markdown-inline-1720/release-flow/validation.json",
+        "target/qa-markdown-inline-1720/release-print/validation.json",
+        "target/qa-markdown-images-1718/release-1720-local/validation.json",
+        "target/qa-markdown-images-1718/release-1720-s3/validation.json"
+      ],
+      "remaining": [
+        "Two simultaneous animated previews share a global decoder budget. Hidden in-progress GIFs restart when visible again. A4 printing uses one static frame.",
+        "Font metrics still differ by renderer. More uncommon list item shapes and other platforms need direct comparison."
+      ]
+    },
+    {
+      "id": "markdown-complex-table-list-and-remote-print",
+      "status": "java-layout-rules-and-release-sftp-s3-print-verified",
+      "reference": "MarkdownEditorPane.renderMarkdown, renderTableLines, tableCell, renderList, exportPdf",
+      "rust": "crates/services/src/markdown/preview.rs, crates/services/src/markdown/tables.rs, crates/ui-egui/src/panels/editor/preview/table.rs, crates/services/src/files/storage/document_image.rs",
+      "scope": "Java line-based table recognition shared with HTML export, Markdown per-cell processing, missing/extra cells, content widths and equal shrink, shared edges, cached geometry and clipped visible rows. Fixed list inset, numbering, continuations, and sibling spacing. Session-specific SFTP paths and S3 bucket-root resolution for absolute and relative images in previews and A4 printing.",
+      "evidence": [
+        "target/migration-1722-tests-approved.log",
+        "target/qa-markdown-layout-1722/release-layout/validation.json",
+        "target/qa-markdown-layout-1722/release-remote/validation.json",
+        "target/qa-markdown-inline-1720/release-1722-inline/validation.json"
+      ],
+      "remaining": [
+        "Windows loopback sessions verified. External provider accounts, physical printers, Linux/macOS system dialogs and pixel-perfect font metrics are outside the current evidence.",
+        "Preview and print cap total table cells at 48000. Java corner cases for list items beginning with a nonparagraph block need additional comparison."
+      ]
+    },
+    {
+      "id": "ftp-server-active-passive-lifecycle",
+      "status": "java-reference-active-passive-and-rust-wire-ui-regression-verified",
+      "reference": "FtpFileServer.handlePort, handleEpsv, handlePasv, handleStor, handleMkd, handleRmd; ServerManagerPane start/stop",
+      "rust": "crates/services/src/servers/ftp.rs and vendor/libunftp",
+      "scope": "PORT/PASV/EPSV, recursive MKD, nested upload, legacy command aliases, root-policy updates and cancellation of both sockets and pending listeners.",
+      "evidence": [
+        "target/migration-1724-tests-combined.log",
+        "target/qa-ftp-1724/java-validation.json",
+        "target/qa-ftp-1724/release-ftp-validation.json",
+        "target/qa-smb-1726/java-ftp-anonymous.json",
+        "target/migration-1726-tests-approved.log"
+      ],
+      "remaining": [
+        "IPv4 active PORT verified; active IPv6 EPRT is outside the Java reference. FTP without TLS retains the original transport.",
+        "Automated app controls used a temporary profile. Physical desktop pointer use and external FTP networks were not part of this validation."
+      ]
+    },
+    {
+      "id": "smb-native-and-ftp-anonymous",
+      "status": "native-smb-independent-client-and-ftp-anonymous-wire-verified",
+      "reference": "ServerManagerPane and FtpFileServer.handleUser; Java SmbFileServer only simulated a listener",
+      "rust": "crates/services/src/servers/smb.rs, crates/services/src/servers/ftp.rs, and vendor/libunftp",
+      "scope": "Legacy SMB saved profiles, signed NTLMv2 accounts, disabled accounts, per-share allowlists and read-only mode, account homes, scoped guest access, working port, transfer, stop and normal shutdown. FTP anonymous logs in directly on USER and cannot inherit the home of a named account.",
+      "evidence": [
+        "target/migration-1726-tests-approved.log",
+        "target/qa-smb-1726/java-ftp-anonymous.json",
+        "target/qa-smb-1726/workspace/validation.json",
+        "target/qa-smb-1726/desktop/validation.json"
+      ],
+      "remaining": [
+        "SMB config edits apply on the next start. Guest access requires an explicitly read-only share with an empty allowlist; SMB clients that mandate signing use named accounts. Windows Explorer, external networks, and non-Windows builds have not been independently accepted."
+      ]
+    },
+    {
+      "id": "designer-mysql-postgresql-foreign-key-identifier-lists",
+      "status": "real-mysql-postgresql-backend-and-controls-copy-save-cascade-refresh-verified-in-optimized-windows-package",
+      "reference": "Java TableStructureView foreign-key information; native quoted-identifier support",
+      "rust": "crates/services/src/database/objects/designer_foreign_keys.rs; crates/services/src/database/objects/designer.rs; crates/core/src/table_design/auxiliary.rs; crates/ui-egui/src/panels/sql/designer/info/form.rs",
+      "scope": "Read individually ordered paired FK fields without SQL aggregation; reuse lossless labels across Oracle/MySQL/PostgreSQL; keep ordinary labels and seven-column geometry, preserve raw definition conflict signatures, bound results and field counts, make readonly non-body detail fields single-line and selectable.",
+      "evidence": [
+        "target/fk-names-1770/core.log",
+        "crates/services/tests/database_servers/objects/designer_foreign_names.rs",
+        "crates/ui-egui/src/app/tests/designer/foreign_names.rs",
+        "target/database-fixtures/probes/migration-1770-text-fk-v3/tests.log",
+        "target/database-fixtures/probes/migration-1770-text-fk-v3/filtered-ui-tests.log",
+        "target/database-fixtures/probes/migration-1770-text-fk-v3/validation.json",
+        "dist/tomato-1770-windows-x64/validation.json"
+      ],
+      "remaining": []
+    }
+  ],
+  "referenceBoundaries": [
+    {
+      "id": "mongo-uri-ssh",
+      "status": "same-reference-restriction",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/service/MongoService.java",
+      "evidence": "buildSettings explicitly rejects URI mode with useSshTunnel"
+    },
+    {
+      "id": "smb-server",
+      "status": "reference-is-mock",
+      "reference": "src/main/java/com/tangluobo/tomato/module/tools/server/SmbFileServer.java",
+      "evidence": "dummySocket reads a header then closes; does not implement SMB negotiation, authentication or shares",
+      "nativeExtension1726": "Real SMB2/3 server wired to the existing legacy configuration. Signed NTLMv2 accounts and guest read-only shares verified independently."
+    },
+    {
+      "id": "spice",
+      "status": "reference-unavailable",
+      "scope": "Do not label protocol registration as a working desktop adapter"
+    },
+    {
+      "id": "designer-foreign-key-trigger-editing",
+      "status": "reference-is-placeholder",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/view/TableStructureView.java:1128",
+      "evidence": "Original Java add/delete buttons only show a feature-pending message; reading and refresh are real. Native MySQL/PostgreSQL add/delete/save/readback were independently implemented and verified in 1684.",
+      "nativeExtension1684": "Original Java add/delete remain placeholders; Rust now has independently implemented, actual MySQL/PostgreSQL-verified native add/delete/save/readback."
+    },
+    {
+      "id": "markdown-legacy-options",
+      "status": "reference-options-window-is-unreachable",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/MarkdownEditorPane.java",
+      "evidence": "SFTP/S3/local file entrypoints instantiate the root MarkdownEditorPane; its toolbar has no options action. The nested legacy editor/options window is not instantiated by the application. Its shared editor helpers still influence default editing behavior."
+    },
+    {
+      "id": "hive-table-row-edit-import-copy",
+      "status": "reference-restriction",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/service/DatabaseService.java:2036",
+      "evidence": "Java insertRows rejects HIVE in the table dialect switch, update/delete require unsupported JDBC transactions, and copyTableSameConnection supports only MYSQL/POSTGRESQL/ORACLE. SQL statement execution remains supported."
+    },
+    {
+      "id": "redis-cluster-ssh",
+      "status": "reference-has-no-cluster-tunnel",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/service/RedisService.java:111",
+      "evidence": "Java createJedisCluster constructs direct seed addresses and never acquires the SSH leases used by single-node Redis. Native cluster tunnel discovery remains a separate capability, not verified parity."
+    },
+    {
+      "id": "rdp-fips",
+      "status": "reference-restriction",
+      "reference": "D:/Data/Git/tangluobo/rdp4j/src/main/java/com/tangluobo/rdp4j/layers/Secure.java",
+      "evidence": "Java secure transport does not implement FIPS; Rust rejects it explicitly rather than using another cipher"
+    },
+    {
+      "id": "development-realtime-titlebar",
+      "status": "reference-controls-not-mounted",
+      "reference": "src/main/java/com/tangluobo/tomato/module/tools/DevelopmentManagerPane.java:1182;1291",
+      "evidence": "titleBar contains the Git/realtime toggles but is not added to panel children; default currentMode is GIT. Original Java version screenshot confirms absence. Experimental Rust controls were withdrawn.",
+      "originalFrame": "target/window-probes/development-release-404/java-version.png"
+    },
+    {
+      "id": "static-system-settings",
+      "status": "reference-controls-have-no-operation-handler",
+      "reference": "module/settings/SettingsModule.java:31; module/connect/ConnectModule.java:2189",
+      "scope": "Autostart and automatic-update controls are only instantiated and inserted in the Java layout; no listeners, persisted values or corresponding actions. Sidebar save is a separate wired action."
+    },
+    {
+      "id": "settings-auto-start-auto-update-theme",
+      "status": "reference-controls-unwired",
+      "reference": "module/settings/SettingsModule.java; module/connect/ConnectModule.java:2189",
+      "evidence": "Original auto-start/auto-update checkboxes and theme text have no action, persistence or update mechanism. The sidebar checkbox is wired and is being matched independently. Do not count these empty controls as working features."
+    },
+    {
+      "id": "hosts-entry-form",
+      "status": "reference-controls-removed",
+      "reference": "module/tools/HostsFilePane.java:createRightPanel/updateRightPanel/setEntriesVisible",
+      "evidence": "Current right panel mounts only NumberedTextArea; setEntriesVisible is an empty compatibility method. Old renderEntries/createEntryRow methods have no mounted entry form."
+    },
+    {
+      "id": "designer-oracle-existing-identity-toggle",
+      "status": "reference-change-unhandled",
+      "reference": "src/main/java/com/tangluobo/tomato/module/connect/view/TableStructureView.java:730; module/connect/service/DatabaseService.java:3788",
+      "evidence": "The Java checkbox changes the displayed 自增 value, but generateModifyColumnSql only compares that value in the MYSQL branch. Its ORACLE branch handles type, nullability, default and comments; it emits no identity alteration. Rust create/copy preserves identity; existing Oracle toggles are explicitly rejected without changing the database. This is not claimed as an implemented Java toggle workflow."
+    },
+    {
+      "id": "oracle-embedded-double-quote-identifier",
+      "status": "oracle-server-restriction",
+      "reference": "https://docs.oracle.com/en/database/oracle/oracle-database/21/sqlrf/Database-Object-Names-and-Qualifiers.html",
+      "evidence": "target/oracle-xe-fixture-oracle-schema-1774/identifier-diagnostic.log: embedded double quote reproduces ORA-03001, apostrophe succeeds; keep actual valid-name coverage"
+    }
+  ],
+  "validation": {
+    "revision": 1776,
+    "checks": {
+      "fmt": 0,
+      "clippy": 0,
+      "harness": 0,
+      "workspace": 0,
+      "cli": 0
+    },
+    "workspaceTests": {
+      "passed": 1077,
+      "failed": 0,
+      "ignored": 123
+    },
+    "sourceStability": "target/object-background-1776-v1/source-manifest.json",
+    "nativeFramebuffer": "target/object-background-1776-v1/native/identity.json",
+    "nativeTextComparison": "target/object-background-1776-v1/native/comparison.json",
+    "databaseWorkflows": "target/database-fixtures/probes/object-background-1776-v1/validation.json",
+    "hiveHeldResponse": "target/native-checks/object-background-canonical-1776-v1/validation.json",
+    "oracle": "target/oracle-xe-fixture-object-background-1776-v1/validation.json",
+    "oracleCleanup": "target/oracle-xe-fixture-object-background-1776-v1/cleanup.json",
+    "memory": "target/window-probes/object-background-1776-v1-memory/validation.json",
+    "legacyConfigurationReadOnly": "配置兼容性检查通过：63 个连接，4 个分组（只读，未连接服务器）",
+    "savedHostsContacted": false,
+    "fullJavaVisualParityClaimed": false,
+    "fullMigrationComplete": false,
+    "remaining": "Physical monitor perception/scales, full Java all-state visual/input parity and the remaining migration checklist are not claimed complete",
+    "delivery": "dist/tomato-1776-windows-x64"
+  },
+  "priorValidation1672": {
+    "releaseBuilt": true,
+    "fullWorkspaceTestsPassed": true,
+    "visualParityVerified": false,
+    "savedConfigurationModified": false,
+    "libraryTests": {
+      "passed": 718,
+      "failed": 0,
+      "ignored": 28,
+      "log": "target/migration-1672-library-tests-v8.log"
+    },
+    "strictClippy": "target/migration-1672-final-v2-clippy.log",
+    "priorFullWorkspaceTests": {
+      "passed": 848,
+      "failed": 0,
+      "ignored": 92,
+      "suites": 59,
+      "log": "target/migration-1672-full-tests-v3.log",
+      "scope": "Before RDP standard security changes"
+    },
+    "nativeRdpFiles": "target/native-checks/migration-1672-final-native-files/validation.json",
+    "latestPreAdbPoolTests": {
+      "passed": 854,
+      "failed": 0,
+      "ignored": 93,
+      "suites": 61,
+      "log": "target\\migration-1672-final-tests.log",
+      "scope": "Before shared ADB implementation; not final-source proof"
+    },
+    "workspaceTests": {
+      "passed": 854,
+      "failed": 0,
+      "ignored": 94,
+      "suites": 61,
+      "log": "target/migration-1672-final-v2-tests.log"
+    },
+    "sourceFreeze": "migration-1672-final-v2",
+    "releaseProfile": "target/qa-candidate-migration-1672/release-profile.json",
+    "memory": "target/window-probes/migration-1672-memory/validation.json",
+    "nativeMarkdown": "target/window-probes/migration-1672-markdown/validation.json",
+    "nativeFileBrowser": "target/window-probes/migration-1672-file-browser/validation.json",
+    "goRustInterop": "target/migration-1672-final-v2-cloud-interop.log",
+    "saved110": {
+      "savedHost": "110",
+      "results": [
+        {
+          "mode": "TAB",
+          "normalExit": true,
+          "captureSize": [
+            1200,
+            900
+          ],
+          "captureToExitMillis": 615,
+          "configurationUnchanged": true,
+          "report": {
+            "savedHost": "110",
+            "sessions": [
+              {
+                "mode": "TAB",
+                "ready": true,
+                "canvas": [
+                  1920,
+                  1080
+                ],
+                "texturePresent": true,
+                "pointerRevision": 2,
+                "pointerSize": [
+                  32,
+                  32
+                ],
+                "pointerHidden": false,
+                "nativePointerImageCached": false,
+                "inputMessages": 0,
+                "meanInputDispatchMicros": 0,
+                "maxInputDispatchMicros": 0,
+                "dispatchScope": "GUI service queue to TLS write completion; excludes server processing and physical display latency"
+              }
+            ],
+            "passwordsIncluded": false,
+            "inputContentsIncluded": false,
+            "physicalMouseAcceptanceClaimed": false
+          }
+        },
+        {
+          "mode": "WINDOW",
+          "normalExit": true,
+          "captureSize": [
+            1920,
+            1080
+          ],
+          "captureToExitMillis": 1062,
+          "configurationUnchanged": true,
+          "report": {
+            "savedHost": "110",
+            "sessions": [
+              {
+                "mode": "WINDOW",
+                "ready": true,
+                "canvas": [
+                  1920,
+                  1080
+                ],
+                "texturePresent": true,
+                "pointerRevision": 6,
+                "pointerSize": [
+                  32,
+                  32
+                ],
+                "pointerHidden": false,
+                "nativePointerImageCached": false,
+                "inputMessages": 0,
+                "meanInputDispatchMicros": 0,
+                "maxInputDispatchMicros": 0,
+                "dispatchScope": "GUI service queue to TLS write completion; excludes server processing and physical display latency"
+              }
+            ],
+            "passwordsIncluded": false,
+            "inputContentsIncluded": false,
+            "physicalMouseAcceptanceClaimed": false
+          }
+        }
+      ],
+      "actualNativeGuiConnected": true,
+      "configurationUnchanged": true,
+      "isolatedEncryptedProfile": true,
+      "otherSchedulerStateCopied": false,
+      "physicalMouseInteractionAccepted": false,
+      "scope": "actual host rendered by the optimized application in both modes; physical input requires separate observation",
+      "savedHostFileCopyVerified": false,
+      "guiSha256": "7569984A2A19E721128BF9F6B72EC86EB6BD8456940D6615288B0485C8B68A87"
+    }
+  },
+  "priorValidation1676": {
+    "releaseBuilt": true,
+    "fullWorkspaceTestsPassed": true,
+    "visualParityVerified": false,
+    "savedConfigurationModified": false,
+    "workspaceTests": {
+      "passed": 867,
+      "failed": 0,
+      "ignored": 96,
+      "suites": 61,
+      "log": "target/migration-1676-tests-v1.log"
+    },
+    "strictClippy": "target/migration-1676-clippy-v2.log",
+    "sourceFreeze": "migration-1676-final-v1",
+    "releaseProfile": "target/qa-candidate-migration-1676/release-profile.json",
+    "nativeReview": "target/migration-1676-native-review.json",
+    "memory": "target/window-probes/migration-1676-memory/validation.json",
+    "saved110Scope": "1676 actual saved host connected in TAB and WINDOW modes, frames received and normal shutdown verified; physical mouse movement and Explorer file paste remain unverified",
+    "saved110": "target/migration-1676-saved-110.json"
+  },
+  "priorValidation1678": {
+    "releaseBuilt": true,
+    "fullWorkspaceTestsPassed": true,
+    "visualParityVerified": false,
+    "savedConfigurationModified": false,
+    "workspaceTests": {
+      "passed": 873,
+      "failed": 0,
+      "ignored": 96,
+      "suites": 61,
+      "log": "target/migration-1678-tests-v6.log"
+    },
+    "strictClippy": "target/migration-1678-clippy-v6.log",
+    "sourceFreeze": "migration-1678-final-v1",
+    "releaseProfile": "target/qa-candidate-migration-1678/release-profile.json",
+    "nativeReview": "target/migration-1678-native-review.json",
+    "fileWorkflows": "target/migration-1678-preflight.json",
+    "memory": "target/window-probes/migration-1678-memory/validation.json",
+    "saved110": "target/migration-1678-saved-110.json",
+    "saved110Scope": "Actual saved host, both modes, real frame publication and normal controller exit; physical input and Explorer file paste are not inferred"
+  },
+  "priorValidation1680": {
+    "releaseBuilt": true,
+    "fullWorkspaceTestsPassed": true,
+    "visualParityVerified": false,
+    "savedConfigurationModified": false,
+    "workspaceTests": {
+      "passed": 880,
+      "failed": 0,
+      "ignored": 96,
+      "suites": 61,
+      "log": "target/migration-1680-tests-v11.log"
+    },
+    "strictClippy": "target/migration-1680-clippy-v11.log",
+    "sourceFreeze": "migration-1680-final-v1",
+    "releaseProfile": "target/qa-candidate-migration-1680/release-profile.json",
+    "nativeReview": "target/migration-1680-native-review.json",
+    "dockerWorkflows": "target/migration-1680-native-release.json",
+    "originalJavaComponent": "target/java-docker-1680/validation.json",
+    "actualDockerDaemonVerified": false,
+    "memory": "target/window-probes/migration-1680-memory/validation.json",
+    "saved110": "target/migration-1680-saved-110.json",
+    "saved110Scope": "Actual saved host, both modes, real frame publication and normal controller exit; physical input and Explorer file paste are not inferred"
+  },
+  "priorValidation1682": {
+    "releaseBuilt": true,
+    "fullWorkspaceTestsPassed": true,
+    "visualParityVerified": false,
+    "savedConfigurationModified": false,
+    "workspaceTests": {
+      "passed": 907,
+      "failed": 0,
+      "ignored": 96,
+      "suites": 63,
+      "log": "target/migration-1682-tests-v10.log"
+    },
+    "strictClippy": "target/migration-1682-clippy-v10.log",
+    "sourceFreeze": "migration-1682-final-v3",
+    "nativeReview": "target/migration-1682-native-review.json",
+    "storageWorkflows": "target/migration-1682-native-release.json",
+    "originalJavaComponent": "target/java-storage-1682/validation.json",
+    "actualBlockDevicesTouched": false,
+    "memory": "target/window-probes/migration-1682-memory-v10-final/validation.json",
+    "saved110": "target/migration-1682-saved-110.json",
+    "saved110Scope": "Actual saved host, both modes, real frame publication and normal controller exit; physical input and Explorer file paste are not inferred"
+  },
+  "priorValidation1684": {
+    "releaseBuilt": true,
+    "fullWorkspaceTestsPassed": true,
+    "visualParityVerified": false,
+    "savedConfigurationModified": false,
+    "workspaceTests": {
+      "passed": 916,
+      "failed": 0,
+      "ignored": 96,
+      "suites": 63,
+      "log": "target/migration-1684-tests-v7.log"
+    },
+    "strictClippy": "target/migration-1684-clippy-v7.log",
+    "sourceFreeze": "migration-1684-final-v2",
+    "nativeReview": "target/migration-1684-native-review.json",
+    "databaseWorkflows": "target/database-fixtures/probes/migration-1684-final-v2/validation.json",
+    "actualMysqlVersion": "8.4.11",
+    "actualPostgresVersion": "17.11",
+    "oracleEngineVerified": false,
+    "memory": "target/window-probes/migration-1684-memory/validation.json",
+    "newRdpAcceptanceClaimed": false,
+    "physicalOsInputUsed": false
+  },
+  "priorValidation1686": {
+    "releaseBuilt": true,
+    "fullWorkspaceTestsPassed": true,
+    "visualParityVerified": false,
+    "savedConfigurationModified": false,
+    "workspaceTests": {
+      "passed": 923,
+      "failed": 0,
+      "ignored": 96,
+      "suites": 63,
+      "log": "target/migration-1686-tests-v6.log"
+    },
+    "strictClippy": "target/migration-1686-clippy-v6.log",
+    "sourceFreeze": "migration-1686-final-v2",
+    "nativeReview": "target/migration-1686-native-review.json",
+    "originalJavaComponent": "target/java-export-1686/validation.json",
+    "javaEncryptedExportInterop": "target/window-probes/migration-1686-interop-release/validation.json",
+    "databaseWorkflows": "target/database-fixtures/probes/migration-1686-final-v2/validation.json",
+    "memory": "target/window-probes/migration-1686-memory/validation.json",
+    "newRdpAcceptanceClaimed": false,
+    "physicalOsInputUsed": false
+  },
+  "priorValidation1690": {
+    "releaseBuilt": true,
+    "fullWorkspaceTestsPassed": true,
+    "visualParityVerified": false,
+    "savedConfigurationModified": false,
+    "workspaceTests": {
+      "passed": 940,
+      "failed": 0,
+      "ignored": 96,
+      "suites": 64,
+      "log": "target/migration-1688-tests-v6.log"
+    },
+    "strictClippy": "target/migration-1688-clippy-v6.log",
+    "sourceFreeze": "migration-1688-final-v2",
+    "nativeReview": "target/migration-1688-native-review.json",
+    "originalJavaComponent": "target/java-picker-1688-v3/validation.json",
+    "javaImportInterop": "target/window-probes/migration-1688-import-interop-release/validation.json",
+    "javaEncryptedExportInterop": "target/window-probes/migration-1688-interop-release/validation.json",
+    "databaseWorkflows": "target/database-fixtures/probes/migration-1688-final-v2/validation.json",
+    "memory": "target/window-probes/migration-1688-memory/validation.json",
+    "newRdpAcceptanceClaimed": false,
+    "physicalOsInputUsed": false,
+    "oracleEngineAttempt": {
+      "passed": false,
+      "log": "target/oracle-vm-1688/native-oracle.log",
+      "backendTestsPassed": 0,
+      "backendTestsFailed": 1,
+      "rootCause": "unresolved connection closed",
+      "separateFromWorkspaceCounts": true
+    }
+  },
+  "priorValidation1692": {
+    "releaseBuilt": true,
+    "fullWorkspaceTestsPassed": true,
+    "visualParityVerified": false,
+    "savedConfigurationModified": false,
+    "state": "1692-delivered-1694-monitor-settings-and-oracle-acceptance-in-progress",
+    "workspaceTests": {
+      "passed": 953,
+      "failed": 0,
+      "ignored": 99,
+      "suites": 65,
+      "log": "target/migration-1692-tests-v4.log"
+    },
+    "strictClippy": "target/migration-1692-clippy-v4.log",
+    "sourceFreeze": "migration-1692-final-v1",
+    "nativeReview": "target/migration-1692-native-review.json",
+    "memory": "target/window-probes/migration-1692-memory/validation.json",
+    "physicalOsInputUsed": false,
+    "delivery": "dist/tomato-1692-windows-x64",
+    "deliveryVerification": "target/migration-1692-delivery-verified.json"
+  },
+  "priorValidation1694": {
+    "revision": 1694,
+    "workspaceTests": {
+      "passed": true,
+      "counts": [
+        963,
+        0,
+        99
+      ],
+      "suites": 65,
+      "logSha256": "2ECB5177E2A43521604777E5FCCBDB1B15FB562A01C624261C616F190447C059",
+      "testsLog": "target/migration-1694-tests-v11.log",
+      "clippyLog": "target/migration-1694-clippy-v11.log",
+      "fmtLog": "target/migration-1694-fmt-v11.log",
+      "sourceManifest": "target/migration-1694-compile-sources-v11.json"
+    },
+    "sourceFreeze": "migration-1694-final-v3",
+    "nativeReview": "target/migration-1694-native-review.json",
+    "memory": "target/window-probes/migration-1694-memory/validation.json",
+    "configuration": "target/migration-1694-configuration-readonly.json",
+    "oracleActualCompleteWorkflowPassed": false,
+    "fullJavaVisualParity": false,
+    "physicalOsInputUsed": false
+  },
+  "priorValidation1696": {
+    "revision": 1696,
+    "workspaceTests": {
+      "passed": true,
+      "counts": [
+        967,
+        0,
+        102
+      ],
+      "suites": 65,
+      "logSha256": "B169C719887CA369EBCD9AE1A8FB7973DE3EA97E7EAE20C266ACF90A7D87A809",
+      "testsLog": "target/migration-1696-tests-v8.log",
+      "clippyLog": "target/migration-1696-clippy-v8.log",
+      "fmtLog": "target/migration-1696-fmt-v8.log",
+      "sourceManifest": "target/migration-1696-compile-sources-v8.json"
+    },
+    "sourceFreeze": "migration-1696-final-v1",
+    "nativeReview": "target/migration-1696-native-review.json",
+    "memory": "target/window-probes/migration-1696-memory/validation.json",
+    "configuration": "target/migration-1696-configuration-readonly.json",
+    "actualDatabaseWorkflows": "target/database-fixtures/probes/migration-1696-full-final-v1/validation.json",
+    "fullJavaVisualParity": false,
+    "physicalOsInputUsed": false,
+    "oracleActualCompleteWorkflowPassed": false,
+    "oracleActualFollowup1698": {
+      "releaseRevision": 1696,
+      "acceptanceOnly": true,
+      "formalOracleRecoveryCases": 8,
+      "formalOracleRecoveryPassed": true,
+      "fullOracleCopyArchivePassed": false,
+      "maintenanceEnableCallsCompleted": true,
+      "maintenanceStatusReadbackVerified": false,
+      "allOwnedFixturesStopped": true,
+      "runtimeSourceChanged": false
+    }
+  },
+  "priorValidation1700": {
+    "revision": 1700,
+    "workspaceTests": {
+      "passed": true,
+      "counts": [
+        973,
+        0,
+        102
+      ],
+      "suites": 65,
+      "logSha256": "DD91BD7407F3B67B7218015130B9D03E0D55DC2F539EBACA538DBC569A73A980",
+      "testsLog": "target/migration-1700-tests-v3.log",
+      "clippyLog": "target/migration-1700-clippy-v3.log",
+      "fmtLog": "target/migration-1700-fmt-v3.log",
+      "sourceManifest": "target/migration-1700-compile-sources-v3.json"
+    },
+    "sourceFreeze": "migration-1700-final-v1",
+    "nativeReview": "target/migration-1700-native-review.json",
+    "originalJavaConverters": "target/java-converters-1700-v3/validation.json",
+    "nativeConverters": "target/window-probes/migration-1700-converters-release/validation.json",
+    "memory": "target/window-probes/migration-1700-memory/validation.json",
+    "datasetMemory": "target/window-probes/migration-1700-dataset-memory/validation.json",
+    "configuration": "target/migration-1700-configuration-readonly.json",
+    "actualDatabaseWorkflows": "target/database-fixtures/probes/migration-1700-full-final-v1/validation.json",
+    "fullJavaVisualParity": false,
+    "physicalOsInputUsed": false,
+    "oracleActualCompleteWorkflowPassed": false,
+    "oracleActualFollowup1698": {
+      "releaseRevision": 1696,
+      "acceptanceOnly": true,
+      "formalOracleRecoveryCases": 8,
+      "formalOracleRecoveryPassed": true,
+      "fullOracleCopyArchivePassed": false,
+      "maintenanceEnableCallsCompleted": true,
+      "maintenanceStatusReadbackVerified": false,
+      "allOwnedFixturesStopped": true,
+      "runtimeSourceChanged": false
+    }
+  },
+  "priorValidation1702": {
+    "revision": 1702,
+    "workspaceTests": {
+      "passed": true,
+      "counts": [
+        983,
+        0,
+        102
+      ],
+      "suites": 65,
+      "logSha256": "E75412F4872F6183D58872ABD1072898ECEAD0D26E9AB2D7FD4EC562F566D673",
+      "testsLog": "target/migration-1702-tests-v6.log",
+      "clippyLog": "target/migration-1702-clippy-v6.log",
+      "fmtLog": "target/migration-1702-fmt-v6.log",
+      "sourceManifest": "target/migration-1702-compile-sources-v6.json"
+    },
+    "sourceFreeze": "migration-1702-final-v2",
+    "nativeReview": "target/migration-1702-native-review.json",
+    "originalJava": "target/java-json-selection-1702-v6/validation.json",
+    "nativeJsonAndMq": "target/window-probes/migration-1702-json-release-v2/validation.json",
+    "memory": "target/window-probes/migration-1702-memory-v2/validation.json",
+    "configuration": "target/migration-1702-configuration-readonly.json",
+    "fullJavaVisualParity": false,
+    "physicalOsInputUsed": false,
+    "systemClipboardWritten": false,
+    "brokerTransportExercised": false,
+    "oracleActualCompleteWorkflowPassed": false
+  },
+  "priorValidation1704": {
+    "revision": 1704,
+    "workspaceCounts": [
+      989,
+      0,
+      103
+    ],
+    "workspaceSuites": 66,
+    "sourceManifest": "target/migration-1704-compile-sources-v5.json",
+    "nativeWindows": 2,
+    "originalJavaWindows": 2,
+    "realSingleNodeRedis": true,
+    "originalHostsReadsRustSave": true,
+    "normalExit": true,
+    "savedConfigurationModified": false,
+    "physicalOsInputUsed": false,
+    "systemClipboardWritten": false,
+    "fullJavaVisualParity": false,
+    "installerExecuted": false,
+    "fullMigrationComplete": false
+  },
+  "priorValidation1706": {
+    "revision": 1706,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      996,
+      0,
+      104
+    ],
+    "optimizedWindowsBuild": "target/migration-1706-release-fresh.json",
+    "actualLinuxSudoVerified": false,
+    "linuxSudoCommandVerified": true,
+    "nativeWindows": "target/window-probes/migration-1706-hosts-redis-release-v1/validation.json",
+    "oldConfig": "target/migration-1706-configuration-readonly.json",
+    "memory": "target/window-probes/migration-1706-memory-v1/validation.json",
+    "delivery": "dist/tomato-1706-windows-x64"
+  },
+  "priorValidation1708": {
+    "revision": 1708,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      997,
+      0,
+      104
+    ],
+    "optimizedWindowsBuild": "target/migration-1708-release-fresh.json",
+    "nativeWindows": "target/window-probes/migration-1708-sql-workbench/validation.json",
+    "oldConfig": "target/migration-1708-configuration-readonly.json",
+    "memory": "target/window-probes/migration-1708-memory/validation.json",
+    "delivery": "dist/tomato-1708-windows-x64"
+  },
+  "priorValidation1710": {
+    "revision": 1710,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      998,
+      0,
+      104
+    ],
+    "vncPromptBodyPoints": [
+      346,
+      161
+    ],
+    "optimizedWindowsBuild": "target/migration-1710-release-fresh-final.json",
+    "nativeWindows": [
+      "target/qa-vnc-1710/release-final-prompt/validation.json",
+      "target/qa-vnc-1710/release-final-connected/validation.json"
+    ],
+    "oldConfig": "target/migration-1710-configuration-readonly.json",
+    "memory": "target/window-probes/migration-1710-memory-final/validation.json",
+    "delivery": "dist/tomato-1710-windows-x64"
+  },
+  "priorValidation1712": {
+    "revision": 1712,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      999,
+      0,
+      104
+    ],
+    "optimizedWindowsBuild": "target/migration-1712-release-fresh-final.json",
+    "nativeWindows": [
+      "target/qa-markdown-print-1712/release-print/validation.json",
+      "target/qa-markdown-print-1712/release-native-cancel/validation.json",
+      "target/qa-markdown-print-1712/release-native-range/validation.json",
+      "target/qa-markdown-print-1712/release-print-stress/validation.json"
+    ],
+    "oldConfig": "target/migration-1712-configuration-readonly.json",
+    "memory": "target/window-probes/migration-1712-memory/validation.json",
+    "delivery": "dist/tomato-1712-windows-x64"
+  },
+  "priorValidation1714": {
+    "revision": 1714,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      1004,
+      0,
+      104
+    ],
+    "optimizedWindowsBuild": "target/migration-1714-release-fresh-final.json",
+    "nativeWindows": [
+      "target/qa-markdown-find-1714/release/validation.json"
+    ],
+    "oldConfig": "target/migration-1714-configuration-readonly.json",
+    "memory": "target/window-probes/migration-1714-memory/validation.json",
+    "delivery": "dist/tomato-1714-windows-x64"
+  },
+  "priorValidation1716": {
+    "revision": 1716,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      1006,
+      0,
+      104
+    ],
+    "optimizedWindowsBuild": "target/migration-1716-release-fresh-final.json",
+    "nativeWindows": [
+      "target/qa-markdown-html-1716/release/validation.json",
+      "target/qa-markdown-find-1714/release-1716/style-validation.json",
+      "target/qa-markdown-html-1716/release-pdf/validation.json"
+    ],
+    "oldConfig": "target/migration-1716-configuration-readonly.json",
+    "memory": "target/window-probes/migration-1716-memory/validation.json",
+    "delivery": "dist/tomato-1716-windows-x64"
+  },
+  "priorValidation1718": {
+    "revision": 1718,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      1010,
+      0,
+      104
+    ],
+    "optimizedWindowsBuild": "target/migration-1718-release-fresh-approved.json",
+    "nativeWindows": [
+      "target/qa-markdown-images-1718/release-local/validation.json",
+      "target/qa-markdown-images-1718/release-s3/validation.json",
+      "target/qa-markdown-images-1718/release-print/validation.json"
+    ],
+    "oldConfig": "target/migration-1718-configuration-readonly.json",
+    "memory": "target/window-probes/migration-1718-memory/validation.json",
+    "delivery": "dist/tomato-1718-windows-x64"
+  },
+  "priorValidation1720": {
+    "revision": 1720,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      1013,
+      0,
+      104
+    ],
+    "optimizedWindowsBuild": "target/migration-1720-release-fresh-verified.json",
+    "nativeWindows": [
+      "target/qa-markdown-inline-1720/release-flow/validation.json",
+      "target/qa-markdown-inline-1720/release-print/validation.json",
+      "target/qa-markdown-images-1718/release-1720-local/validation.json",
+      "target/qa-markdown-images-1718/release-1720-s3/validation.json"
+    ],
+    "oldConfig": "target/migration-1720-configuration-readonly.json",
+    "memory": "target/window-probes/migration-1720-memory/validation.json",
+    "delivery": "dist/tomato-1720-windows-x64"
+  },
+  "priorValidation1722": {
+    "revision": 1722,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      1017,
+      0,
+      106
+    ],
+    "optimizedWindowsBuild": "target/migration-1722-release-fresh-approved.json",
+    "nativeWindows": [
+      "target/qa-markdown-layout-1722/release-layout/validation.json",
+      "target/qa-markdown-layout-1722/release-remote/validation.json",
+      "target/qa-markdown-inline-1720/release-1722-inline/validation.json"
+    ],
+    "oldConfig": "target/migration-1722-configuration-readonly.json",
+    "memory": "target/window-probes/migration-1722-memory/validation.json",
+    "delivery": "dist/tomato-1722-windows-x64"
+  },
+  "priorValidation1724": {
+    "revision": 1724,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      1021,
+      0,
+      106
+    ],
+    "optimizedWindowsBuild": "target/migration-1724-release-fresh-combined.json",
+    "referenceFtp": "target/qa-ftp-1724/java-validation.json",
+    "optimizedFtp": "target/qa-ftp-1724/release-ftp-validation.json",
+    "oldConfig": "target/migration-1724-configuration-readonly.json",
+    "memory": "target/window-probes/migration-1724-memory/validation.json",
+    "delivery": "dist/tomato-1724-windows-x64"
+  },
+  "priorValidation1726": {
+    "revision": 1726,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      1024,
+      0,
+      107
+    ],
+    "optimizedWindowsBuild": "target/migration-1726-release-fresh-approved.json",
+    "referenceFtp": "target/qa-smb-1726/java-ftp-anonymous.json",
+    "smbClient": "target/qa-smb-1726/workspace/validation.json",
+    "nativeWindows": "target/qa-smb-1726/desktop/validation.json",
+    "oldConfig": "target/migration-1726-configuration-readonly.json",
+    "memory": "target/window-probes/migration-1726-memory/validation.json",
+    "delivery": "dist/tomato-1726-windows-x64"
+  },
+  "priorValidation1768": {
+    "revision": 1768,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      1052,
+      0,
+      121
+    ],
+    "checks": "target/oracle-designer-1768/checks-close.json",
+    "driverParserTests": "target/oracle-designer-1768/bind-parser-standalone.log",
+    "optimizedWindowsBuild": "target/oracle-designer-1768/release-close.jsonl",
+    "oracleEngine": "target/oracle-xe-fixture-designer-1768-v8/validation.json",
+    "oracleCleanup": "target/oracle-xe-fixture-designer-1768-v8/cleanup.json",
+    "nativeWindows": "target/oracle-designer-1768/native-close/identity.json",
+    "oldConfig": "target/oracle-designer-1768/legacy-config.log",
+    "memory": "target/window-probes/oracle-designer-1768-close-memory/validation.json",
+    "delivery": "dist/tomato-1768-windows-x64"
+  },
+  "priorValidation1770": {
+    "revision": 1770,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      1054,
+      0,
+      121
+    ],
+    "checks": "target/text-coverage-1770/checks.json",
+    "optimizedWindowsBuild": "target/text-coverage-1770/release.jsonl",
+    "nativeWindows": "target/text-coverage-1770/native/identity.json",
+    "gpuCoverage": "target/text-coverage-1770/lcd-gpu.json",
+    "realDatabases": "target/database-fixtures/probes/migration-1770-text-fk-v3/validation.json",
+    "oldConfig": "target/text-coverage-1770/legacy-config.log",
+    "memory": "target/window-probes/text-coverage-1770-memory/validation.json",
+    "delivery": "dist/tomato-1770-windows-x64"
+  },
+  "priorValidation1772": {
+    "revision": 1772,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      1063,
+      0,
+      121
+    ],
+    "checks": "target/designer-lazy-1772-v6/checks.json",
+    "optimizedWindowsBuild": "target/designer-lazy-1772-v6/release.jsonl",
+    "nativeWindows": "target/designer-lazy-1772-v6/native/identity.json",
+    "database": "target/database-fixtures/probes/migration-1772-lazy-design-v6/validation.json",
+    "oracle": "target/oracle-xe-fixture-designer-lazy-1772-v6/validation.json",
+    "memory": "target/window-probes/designer-lazy-1772-v6-memory/validation.json",
+    "oldConfig": "target/designer-lazy-1772-v6/legacy-config.log",
+    "delivery": "dist/tomato-1772-windows-x64"
+  },
+  "priorValidation1774": {
+    "revision": 1774,
+    "fullMigrationComplete": false,
+    "workspaceTests": [
+      1069,
+      0,
+      122
+    ],
+    "checks": "target/oracle-schema-1774-v4/checks.json",
+    "optimizedWindowsBuild": "target/oracle-schema-1774-v4/release.jsonl",
+    "nativeWindows": "target/oracle-schema-1774-v4/native-v2/identity.json",
+    "database": "target/database-fixtures/probes/migration-1774-oracle-schema-v4/validation.json",
+    "oracle": "target/oracle-xe-fixture-oracle-schema-1774-v4/validation.json",
+    "oracleCleanup": "target/oracle-xe-fixture-oracle-schema-1774-v4/cleanup.json",
+    "memory": "target/window-probes/oracle-schema-1774-v4-memory-idle-v2/validation.json",
+    "oldConfig": "target/oracle-schema-1774-v4/legacy-config.log",
+    "delivery": "dist/tomato-1774-windows-x64"
+  }
+}

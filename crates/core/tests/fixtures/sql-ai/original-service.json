@@ -1,0 +1,313 @@
+{
+  "urls": [
+    {
+      "input": null,
+      "output": "/chat/completions"
+    },
+    {
+      "input": "",
+      "output": "/chat/completions"
+    },
+    {
+      "input": "  ",
+      "output": "/chat/completions"
+    },
+    {
+      "input": "https://api.example.invalid/v1",
+      "output": "https://api.example.invalid/v1/chat/completions"
+    },
+    {
+      "input": "https://api.example.invalid/v1///",
+      "output": "https://api.example.invalid/v1/chat/completions"
+    },
+    {
+      "input": "https://api.example.invalid/v1/chat/completions/",
+      "output": "https://api.example.invalid/v1/chat/completions"
+    },
+    {
+      "input": "HTTPS://API.EXAMPLE.INVALID/CHAT/COMPLETIONS",
+      "output": "HTTPS://API.EXAMPLE.INVALID/CHAT/COMPLETIONS"
+    },
+    {
+      "input": "http://localhost:11434/v1",
+      "output": "http://localhost:11434/v1/chat/completions"
+    }
+  ],
+  "clean": [
+    {
+      "input": null,
+      "output": "",
+      "sql": false
+    },
+    {
+      "input": "",
+      "output": "",
+      "sql": false
+    },
+    {
+      "input": " SELECT 1; ",
+      "output": "SELECT 1;",
+      "sql": true
+    },
+    {
+      "input": "```sql\nSELECT 1;\n```",
+      "output": "SELECT 1;",
+      "sql": true
+    },
+    {
+      "input": "```SQL\r\nWITH x AS (SELECT 1) SELECT * FROM x\r\n```",
+      "output": "WITH x AS (SELECT 1) SELECT * FROM x",
+      "sql": true
+    },
+    {
+      "input": "```SELECT 1;```",
+      "output": "```SELECT 1;```",
+      "sql": false
+    },
+    {
+      "input": "SQL: SELECT 1;",
+      "output": "SELECT 1;",
+      "sql": true
+    },
+    {
+      "input": "sql:\tSHOW TABLES",
+      "output": "SHOW TABLES",
+      "sql": true
+    },
+    {
+      "input": "ſQL: SELECT 1;",
+      "output": "SELECT 1;",
+      "sql": true
+    },
+    {
+      "input": "解释：SELECT 1;",
+      "output": "解释：SELECT 1;",
+      "sql": false
+    },
+    {
+      "input": "-- 注释\n/* 说明 */ SELECT 1;",
+      "output": "-- 注释\n/* 说明 */ SELECT 1;",
+      "sql": true
+    },
+    {
+      "input": "-- 注释\rSELECT 1;",
+      "output": "-- 注释\rSELECT 1;",
+      "sql": false
+    },
+    {
+      "input": "/*未闭合 SELECT 1",
+      "output": "/*未闭合 SELECT 1",
+      "sql": false
+    },
+    {
+      "input": "selecté",
+      "output": "selecté",
+      "sql": true
+    },
+    {
+      "input": "selection",
+      "output": "selection",
+      "sql": false
+    },
+    {
+      "input": "SELECT_1",
+      "output": "SELECT_1",
+      "sql": false
+    },
+    {
+      "input": "WITH(SELECT 1)",
+      "output": "WITH(SELECT 1)",
+      "sql": true
+    },
+    {
+      "input": "MERGE INTO t",
+      "output": "MERGE INTO t",
+      "sql": true
+    },
+    {
+      "input": "CALL p()",
+      "output": "CALL p()",
+      "sql": true
+    },
+    {
+      "input": "DESC t",
+      "output": "DESC t",
+      "sql": true
+    },
+    {
+      "input": "DESCRIBE t",
+      "output": "DESCRIBE t",
+      "sql": true
+    },
+    {
+      "input": "DROP TABLE t",
+      "output": "DROP TABLE t",
+      "sql": true
+    },
+    {
+      "input": "DELETE FROM t",
+      "output": "DELETE FROM t",
+      "sql": true
+    },
+    {
+      "input": "GRANT SELECT ON t",
+      "output": "GRANT SELECT ON t",
+      "sql": false
+    },
+    {
+      "input": "﻿SELECT 1;",
+      "output": "﻿SELECT 1;",
+      "sql": false
+    },
+    {
+      "input": " SELECT 1;",
+      "output": " SELECT 1;",
+      "sql": false
+    }
+  ],
+  "system": [
+    {
+      "input": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "output": "你是数据库 SQL 助手。只返回一条可直接放入编辑器的 SQL，不要 Markdown 代码块、解释或前后说明。\n必须使用给定数据库实际存在的表名和字段名，并遵循 当前数据库 方言。用户没有明确要求写操作时，只生成只读查询。不要执行 SQL。\n当前数据库：未指定\n当前没有可用的表结构；无法确定名称时不要凭空编造，请在 SQL 注释中指出待替换名称。"
+    },
+    {
+      "input": [
+        "MYSQL",
+        "app",
+        "public",
+        "TABLE users\n  id INT PRIMARY KEY\n  name VARCHAR(20)"
+      ],
+      "output": "你是数据库 SQL 助手。只返回一条可直接放入编辑器的 SQL，不要 Markdown 代码块、解释或前后说明。\n必须使用给定数据库实际存在的表名和字段名，并遵循 MYSQL 方言。用户没有明确要求写操作时，只生成只读查询。不要执行 SQL。\n当前数据库：app，Schema：public\n\n当前库结构（只用于生成 SQL）：\nTABLE users\n  id INT PRIMARY KEY\n  name VARCHAR(20)"
+    },
+    {
+      "input": [
+        " ",
+        "\t",
+        " ",
+        ""
+      ],
+      "output": "你是数据库 SQL 助手。只返回一条可直接放入编辑器的 SQL，不要 Markdown 代码块、解释或前后说明。\n必须使用给定数据库实际存在的表名和字段名，并遵循 当前数据库 方言。用户没有明确要求写操作时，只生成只读查询。不要执行 SQL。\n当前数据库：未指定\n当前没有可用的表结构；无法确定名称时不要凭空编造，请在 SQL 注释中指出待替换名称。"
+    },
+    {
+      "input": [
+        "PostgreSQL",
+        "数据库",
+        "模式",
+        "TABLE 中文表\n  主键 BIGINT"
+      ],
+      "output": "你是数据库 SQL 助手。只返回一条可直接放入编辑器的 SQL，不要 Markdown 代码块、解释或前后说明。\n必须使用给定数据库实际存在的表名和字段名，并遵循 PostgreSQL 方言。用户没有明确要求写操作时，只生成只读查询。不要执行 SQL。\n当前数据库：数据库，Schema：模式\n\n当前库结构（只用于生成 SQL）：\nTABLE 中文表\n  主键 BIGINT"
+    },
+    {
+      "input": [
+        "SQL",
+        " ",
+        "",
+        " "
+      ],
+      "output": "你是数据库 SQL 助手。只返回一条可直接放入编辑器的 SQL，不要 Markdown 代码块、解释或前后说明。\n必须使用给定数据库实际存在的表名和字段名，并遵循 SQL 方言。用户没有明确要求写操作时，只生成只读查询。不要执行 SQL。\n当前数据库： \n当前没有可用的表结构；无法确定名称时不要凭空编造，请在 SQL 注释中指出待替换名称。"
+    }
+  ],
+  "user": [
+    {
+      "input": [
+        null,
+        null
+      ],
+      "output": "需求："
+    },
+    {
+      "input": [
+        " 统计人数 ",
+        "  SELECT id FROM users; "
+      ],
+      "output": "需求：统计人数\n\n需要参考或修改的现有 SQL：\nSELECT id FROM users;"
+    },
+    {
+      "input": [
+        "",
+        " "
+      ],
+      "output": "需求："
+    },
+    {
+      "input": [
+        " 需求 ",
+        " "
+      ],
+      "output": "需求： 需求 \n\n需要参考或修改的现有 SQL：\n "
+    }
+  ],
+  "content": [
+    {
+      "input": "{}",
+      "error": "模型响应中没有 choices"
+    },
+    {
+      "input": "{\"choices\":[]}",
+      "error": "模型响应中没有 choices"
+    },
+    {
+      "input": "{\"choices\":[{}]}",
+      "error": "模型响应中没有文本内容"
+    },
+    {
+      "input": "{\"choices\":[{\"message\":{}}]}",
+      "error": "模型响应中没有文本内容"
+    },
+    {
+      "input": "{\"choices\":[{\"message\":{\"content\":null}}]}",
+      "output": ""
+    },
+    {
+      "input": "{\"choices\":[{\"message\":{\"content\":\"SELECT 1;\"}}]}",
+      "output": "SELECT 1;"
+    },
+    {
+      "input": "{\"choices\":[{\"message\":{\"content\":true}}]}",
+      "output": "true"
+    },
+    {
+      "input": "{\"choices\":[{\"message\":{\"content\":[{\"text\":\"SELECT \"},null,1,{\"text\":1},{\"other\":\"x\"}]}}]}",
+      "output": "SELECT 1"
+    }
+  ],
+  "errors": [
+    {
+      "input": null,
+      "output": "未知错误"
+    },
+    {
+      "input": "",
+      "output": "未知错误"
+    },
+    {
+      "input": "\n ",
+      "output": "未知错误"
+    },
+    {
+      "input": "not json\r\nline 2",
+      "output": "not json  line 2"
+    },
+    {
+      "input": "{\"error\":{\"message\":\"接口拒绝\\n请检查模型\"}}",
+      "output": "接口拒绝 请检查模型"
+    },
+    {
+      "input": "{\"error\":{\"message\":123}}",
+      "output": "123"
+    },
+    {
+      "input": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "output": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx…"
+    },
+    {
+      "input": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+      "output": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀…"
+    }
+  ]
+}

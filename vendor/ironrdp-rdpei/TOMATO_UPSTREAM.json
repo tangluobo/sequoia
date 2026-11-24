@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/Devolutions/IronRDP",
+  "sourceCommit": "0f9154d2128f8c65f4d51f6b7eb7cb1d66a12329",
+  "packageVersion": "0.1.0",
+  "source": "Unpublished upstream input-channel dependency required by the session renderer; normalized manifest",
+  "license": "MIT OR Apache-2.0"
+}

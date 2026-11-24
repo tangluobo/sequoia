@@ -1,0 +1,96 @@
+{
+  "names": [
+    {
+      "result": "unnamed"
+    },
+    {
+      "input": "",
+      "result": "unnamed"
+    },
+    {
+      "input": "mysql:生产 / A",
+      "result": "mysql_生产_A"
+    },
+    {
+      "input": "  a\t\r\nb  ",
+      "result": "a_b"
+    },
+    {
+      "input": "__a___b__",
+      "result": "a_b"
+    },
+    {
+      "input": "???",
+      "result": ""
+    },
+    {
+      "input": " ",
+      "result": ""
+    },
+    {
+      "input": "中文🍅",
+      "result": "中文🍅"
+    },
+    {
+      "input": "a b",
+      "result": "a b"
+    },
+    {
+      "input": "a b",
+      "result": "a b"
+    },
+    {
+      "input": "a\u000bb",
+      "result": "a_b"
+    },
+    {
+      "input": "CON",
+      "result": "CON"
+    },
+    {
+      "input": "name.sql",
+      "result": "name.sql"
+    },
+    {
+      "input": "._a_.",
+      "result": "._a_."
+    }
+  ],
+  "paths": [
+    {
+      "relative": "生产_A/my_db/query"
+    },
+    {
+      "path": "",
+      "relative": "生产_A/my_db/query"
+    },
+    {
+      "path": "child",
+      "relative": "生产_A/my_db/query/child"
+    },
+    {
+      "path": "first/second",
+      "relative": "生产_A/my_db/query/first/second"
+    },
+    {
+      "path": "/child",
+      "relative": "生产_A/my_db/query/unnamed/child"
+    },
+    {
+      "path": "child/",
+      "relative": "生产_A/my_db/query/child"
+    },
+    {
+      "path": "a//b",
+      "relative": "生产_A/my_db/query/a/unnamed/b"
+    },
+    {
+      "path": "/",
+      "relative": "生产_A/my_db/query"
+    },
+    {
+      "path": "a\\b",
+      "relative": "生产_A/my_db/query/a_b"
+    }
+  ]
+}

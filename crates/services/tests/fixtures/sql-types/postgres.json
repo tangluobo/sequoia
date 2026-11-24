@@ -1,0 +1,88 @@
+{
+  "setup": [
+    "SET TIME ZONE 'UTC'"
+  ],
+  "cases": [
+    {
+      "sql": "SELECT DATE '2024-02-29' AS d, TIME '12:34:56.123000' AS t, TIMESTAMP '2024-02-29 12:34:56.123000' AS ts, TIMESTAMPTZ '2024-02-29 12:34:56+08' AS tz",
+      "columns": [
+        "d",
+        "t",
+        "ts",
+        "tz"
+      ],
+      "rows": [
+        [
+          "2024-02-29",
+          "12:34:56.123",
+          "2024-02-29 12:34:56.123",
+          "2024-02-29 04:34:56+00"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT NUMERIC '123456789012345678901234567890.01234567890123456789' AS n, 'Infinity'::float8 AS infinite_value, 'NaN'::float8 AS nan_value",
+      "columns": [
+        "n",
+        "infinite_value",
+        "nan_value"
+      ],
+      "rows": [
+        [
+          "123456789012345678901234567890.01234567890123456789",
+          "Infinity",
+          "NaN"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT '{\"中文\":[1,null]}'::json AS j, '{\"中文\":[1,null]}'::jsonb AS jb, NULL AS empty_value, 'NULL'::text AS literal_value",
+      "columns": [
+        "j",
+        "jb",
+        "empty_value",
+        "literal_value"
+      ],
+      "rows": [
+        [
+          "{\"中文\":[1,null]}",
+          "{\"中文\": [1, null]}",
+          null,
+          "NULL"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT ARRAY[1,NULL,3] AS a, INTERVAL '3 days 04:05:06.1234' AS duration, UUID '123e4567-e89b-12d3-a456-426614174000' AS identifier",
+      "columns": [
+        "a",
+        "duration",
+        "identifier"
+      ],
+      "rows": [
+        [
+          "{1,NULL,3}",
+          "3 days 04:05:06.1234",
+          "123e4567-e89b-12d3-a456-426614174000"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT decode('00ff41','hex') AS payload, B'10100101' AS bits, true AS yes_value, false AS no_value",
+      "columns": [
+        "payload",
+        "bits",
+        "yes_value",
+        "no_value"
+      ],
+      "rows": [
+        [
+          "\\x00ff41",
+          "10100101",
+          "t",
+          "f"
+        ]
+      ]
+    }
+  ]
+}

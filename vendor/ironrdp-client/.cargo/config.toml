@@ -1,0 +1,18 @@
+[patch.crates-io]
+virtual-file-transfer = { path = "../virtual-file-transfer" }
+ironrdp-rdpsnd = { path = "../ironrdp-rdpsnd" }
+ironrdp-rdpsnd-native = { path = "../ironrdp-rdpsnd-native" }
+ironrdp-svc = { path = "../ironrdp-svc" }
+ironrdp-bulk = { path = "../ironrdp-bulk" }
+ironrdp-cliprdr = { path = "../ironrdp-cliprdr" }
+ironrdp-pdu = { path = "../ironrdp-pdu" }
+ironrdp-core = { path = "../ironrdp-core" }
+ironrdp-error = { path = "../ironrdp-error" }
+ironrdp-rdpei = { path = "../ironrdp-rdpei" }
+ironrdp-egfx = { path = "../ironrdp-egfx" }
+ironrdp-session = { path = "../ironrdp-session" }
+ironrdp-dvc = { path = "../ironrdp-dvc" }
+ironrdp-graphics = { path = "../ironrdp-graphics" }
+ironrdp-connector = { path = "../ironrdp-connector" }
+ironrdp-acceptor = { path = "../ironrdp-acceptor" }
+ironrdp-cliprdr-native = { path = "../ironrdp-cliprdr-native" }

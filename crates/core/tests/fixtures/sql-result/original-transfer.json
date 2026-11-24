@@ -1,0 +1,362 @@
+{
+  "rows": [
+    [
+      "1",
+      null,
+      "NULL",
+      "中文\n下一行",
+      "a\tb\rc",
+      "\"\\\b\f\u0000\u001f\u2028😀"
+    ],
+    [
+      "2",
+      "",
+      "résumé",
+      "ſ ΣΟΣ",
+      "\n\r",
+      "literal NULL"
+    ],
+    [
+      "3",
+      "a'b",
+      "ß",
+      "中文",
+      "中\t文",
+      null
+    ]
+  ],
+  "comments": {
+    "user_id": "用户编号",
+    "alreadyCamel": "精确注释",
+    "ALREADYCAMEL": "其他大小写注释",
+    "ÉTAT_NAME": " ",
+    "中文-字段": "两行\n注释",
+    "I_İ_ß": " "
+  },
+  "cases": [
+    {
+      "sample": 0,
+      "columns": [
+        "USER_ID",
+        "alreadyCamel",
+        "ÉTAT_NAME",
+        "中文-字段",
+        "I_İ_ß",
+        "tab\theader"
+      ],
+      "identities": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "selected": [],
+      "json": "",
+      "camelJson": "",
+      "comments": "",
+      "data": "",
+      "headers": "",
+      "headersData": "",
+      "all": "USER_ID\talreadyCamel\tÉTAT_NAME\t中文-字段\tI_İ_ß\ttab header\r\n1\tNULL\tNULL\t中文 下一行\ta b c\t\"\\\b\f\u0000\u001f\u2028😀\r\n2\t\trésumé\tſ ΣΟΣ\t  \tliteral NULL\r\n3\ta'b\tß\t中文\t中 文\tNULL"
+    },
+    {
+      "sample": 1,
+      "columns": [
+        "USER_ID",
+        "alreadyCamel",
+        "ÉTAT_NAME",
+        "中文-字段",
+        "I_İ_ß",
+        "tab\theader"
+      ],
+      "identities": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "selected": [],
+      "json": "",
+      "camelJson": "",
+      "comments": "",
+      "data": "",
+      "headers": "",
+      "headersData": "",
+      "all": "USER_ID\talreadyCamel\tÉTAT_NAME\t中文-字段\tI_İ_ß\ttab header\r\n1\tNULL\tNULL\t中文 下一行\ta b c\t\"\\\b\f\u0000\u001f\u2028😀\r\n2\t\trésumé\tſ ΣΟΣ\t  \tliteral NULL\r\n3\ta'b\tß\t中文\t中 文\tNULL"
+    },
+    {
+      "sample": 2,
+      "columns": [
+        "USER_ID",
+        "alreadyCamel",
+        "ÉTAT_NAME",
+        "中文-字段",
+        "I_İ_ß",
+        "tab\theader"
+      ],
+      "identities": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "selected": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "json": "[\n  {\n    \"USER_ID\": \"1\",\n    \"ÉTAT_NAME\": \"NULL\"\n  },\n  {\n    \"USER_ID\": \"3\",\n    \"ÉTAT_NAME\": \"ß\"\n  }\n]",
+      "camelJson": "[\n  {\n    \"userId\": \"1\",\n    \"étatName\": \"NULL\"\n  },\n  {\n    \"userId\": \"3\",\n    \"étatName\": \"ß\"\n  }\n]",
+      "comments": "用户编号：1\r\nÉTAT_NAME：NULL\r\n\r\n用户编号：3\r\nÉTAT_NAME：ß",
+      "data": "1\tNULL\r\n3\tß",
+      "headers": "USER_ID\tÉTAT_NAME",
+      "headersData": "USER_ID\tÉTAT_NAME\r\n1\tNULL\r\n3\tß",
+      "all": "USER_ID\talreadyCamel\tÉTAT_NAME\t中文-字段\tI_İ_ß\ttab header\r\n1\tNULL\tNULL\t中文 下一行\ta b c\t\"\\\b\f\u0000\u001f\u2028😀\r\n2\t\trésumé\tſ ΣΟΣ\t  \tliteral NULL\r\n3\ta'b\tß\t中文\t中 文\tNULL"
+    },
+    {
+      "sample": 3,
+      "columns": [
+        "USER_ID",
+        "alreadyCamel",
+        "ÉTAT_NAME",
+        "中文-字段",
+        "I_İ_ß",
+        "tab\theader"
+      ],
+      "identities": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "selected": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "json": "[\n  {\n    \"alreadyCamel\": \"\",\n    \"tab\\theader\": \"literal NULL\"\n  }\n]",
+      "camelJson": "[\n  {\n    \"alreadyCamel\": \"\",\n    \"tabHeader\": \"literal NULL\"\n  }\n]",
+      "comments": "精确注释：\r\ntab\theader：literal NULL",
+      "data": "\tliteral NULL",
+      "headers": "alreadyCamel\ttab header",
+      "headersData": "alreadyCamel\ttab header\r\n\tliteral NULL",
+      "all": "USER_ID\talreadyCamel\tÉTAT_NAME\t中文-字段\tI_İ_ß\ttab header\r\n1\tNULL\tNULL\t中文 下一行\ta b c\t\"\\\b\f\u0000\u001f\u2028😀\r\n2\t\trésumé\tſ ΣΟΣ\t  \tliteral NULL\r\n3\ta'b\tß\t中文\t中 文\tNULL"
+    },
+    {
+      "sample": 4,
+      "columns": [
+        "中文-字段",
+        "alreadyCamel",
+        "ÉTAT_NAME",
+        "USER_ID",
+        "I_İ_ß",
+        "tab\theader"
+      ],
+      "identities": [
+        3,
+        1,
+        2,
+        0,
+        4,
+        5
+      ],
+      "selected": [
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "json": "[\n  {\n    \"ÉTAT_NAME\": \"NULL\",\n    \"USER_ID\": \"1\"\n  },\n  {\n    \"ÉTAT_NAME\": \"ß\",\n    \"USER_ID\": \"3\"\n  }\n]",
+      "camelJson": "[\n  {\n    \"étatName\": \"NULL\",\n    \"userId\": \"1\"\n  },\n  {\n    \"étatName\": \"ß\",\n    \"userId\": \"3\"\n  }\n]",
+      "comments": "ÉTAT_NAME：NULL\r\n用户编号：1\r\n\r\nÉTAT_NAME：ß\r\n用户编号：3",
+      "data": "NULL\t1\r\nß\t3",
+      "headers": "ÉTAT_NAME\tUSER_ID",
+      "headersData": "ÉTAT_NAME\tUSER_ID\r\nNULL\t1\r\nß\t3",
+      "all": "中文-字段\talreadyCamel\tÉTAT_NAME\tUSER_ID\tI_İ_ß\ttab header\r\n中文 下一行\tNULL\tNULL\t1\ta b c\t\"\\\b\f\u0000\u001f\u2028😀\r\nſ ΣΟΣ\t\trésumé\t2\t  \tliteral NULL\r\n中文\ta'b\tß\t3\t中 文\tNULL"
+    },
+    {
+      "sample": 5,
+      "columns": [
+        "USER_ID",
+        "alreadyCamel",
+        "ÉTAT_NAME",
+        "中文-字段",
+        "I_İ_ß",
+        "tab\theader"
+      ],
+      "identities": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "selected": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "json": "[\n  {\n    \"USER_ID\": \"1\",\n    \"ÉTAT_NAME\": \"NULL\"\n  },\n  {\n    \"USER_ID\": \"3\",\n    \"ÉTAT_NAME\": \"ß\"\n  }\n]",
+      "camelJson": "[\n  {\n    \"userId\": \"1\",\n    \"étatName\": \"NULL\"\n  },\n  {\n    \"userId\": \"3\",\n    \"étatName\": \"ß\"\n  }\n]",
+      "comments": "用户编号：1\r\nÉTAT_NAME：NULL\r\n\r\n用户编号：3\r\nÉTAT_NAME：ß",
+      "data": "1\tNULL\r\n3\tß",
+      "headers": "USER_ID\tÉTAT_NAME",
+      "headersData": "USER_ID\tÉTAT_NAME\r\n1\tNULL\r\n3\tß",
+      "all": "USER_ID\talreadyCamel\tÉTAT_NAME\t中文-字段\tI_İ_ß\ttab header\r\n1\tNULL\tNULL\t中文 下一行\ta b c\t\"\\\b\f\u0000\u001f\u2028😀\r\n2\t\trésumé\tſ ΣΟΣ\t  \tliteral NULL\r\n3\ta'b\tß\t中文\t中 文\tNULL"
+    }
+  ],
+  "camel": [
+    {
+      "input": null,
+      "output": ""
+    },
+    {
+      "input": "",
+      "output": ""
+    },
+    {
+      "input": "USER_ID",
+      "output": "userId"
+    },
+    {
+      "input": "alreadyCamel",
+      "output": "alreadyCamel"
+    },
+    {
+      "input": "HTTPServer",
+      "output": "hTTPServer"
+    },
+    {
+      "input": "URL",
+      "output": "url"
+    },
+    {
+      "input": "User Name",
+      "output": "userName"
+    },
+    {
+      "input": "_A__B_",
+      "output": "aB"
+    },
+    {
+      "input": "---",
+      "output": "---"
+    },
+    {
+      "input": "   ",
+      "output": "   "
+    },
+    {
+      "input": "a\tB\nC",
+      "output": "aBC"
+    },
+    {
+      "input": "中文_字段",
+      "output": "中文字段"
+    },
+    {
+      "input": "中文",
+      "output": "中文"
+    },
+    {
+      "input": "ÉTAT_NAME",
+      "output": "étatName"
+    },
+    {
+      "input": "İD_VALUE",
+      "output": "i̇dValue"
+    },
+    {
+      "input": "I_İ_ß",
+      "output": "iİß"
+    },
+    {
+      "input": "ß_NAME",
+      "output": "ßName"
+    },
+    {
+      "input": "ẞ_NAME",
+      "output": "ßName"
+    },
+    {
+      "input": "ΟΣ_ΣΟΣ",
+      "output": "οςΣος"
+    },
+    {
+      "input": "a_ΐ",
+      "output": "aΐ"
+    },
+    {
+      "input": "a_ﬀ",
+      "output": "aﬀ"
+    },
+    {
+      "input": "ſ_TEST",
+      "output": "ſTest"
+    },
+    {
+      "input": "𐐀_NAME",
+      "output": "𐐨Name"
+    },
+    {
+      "input": "😀_VALUE",
+      "output": "😀Value"
+    },
+    {
+      "input": "a B",
+      "output": "a B"
+    },
+    {
+      "input": "a B",
+      "output": "a B"
+    },
+    {
+      "input": " ",
+      "output": " "
+    },
+    {
+      "input": "123_ABC",
+      "output": "123Abc"
+    },
+    {
+      "input": "A-B",
+      "output": "aB"
+    },
+    {
+      "input": "A\r\nB",
+      "output": "aB"
+    },
+    {
+      "input": "a_$VALUE",
+      "output": "a$value"
+    }
+  ]
+}

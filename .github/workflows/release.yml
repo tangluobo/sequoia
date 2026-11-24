@@ -1,0 +1,108 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+          - os: ubuntu-24.04
+            target: x86_64-unknown-linux-gnu
+          - os: ubuntu-24.04-arm
+            target: aarch64-unknown-linux-gnu
+          - os: macos-15-intel
+            target: x86_64-apple-darwin
+          - os: macos-15
+            target: aarch64-apple-darwin
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+      - uses: graalvm/setup-graalvm@v1
+        with:
+          distribution: graalvm-community
+          java-version: '25'
+      - name: Build embedded native Access exporter
+        run: python scripts/build-access-export.py
+      - name: Build Windows x86 ODBC import bridge
+        if: runner.os == 'Windows'
+        run: python scripts/build-odbc32.py
+      - uses: Swatinem/rust-cache@v2
+      - uses: ilammy/setup-nasm@v1
+        if: runner.arch == 'X64'
+        with:
+          version: '3.01'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Linux native dependencies
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libxkbcommon-dev libwayland-dev libx11-dev libxi-dev libxrandr-dev libxcursor-dev libasound2-dev libudev-dev libfontconfig1-dev unixodbc-dev libkrb5-dev libclang-dev
+      - name: macOS ODBC driver manager
+        if: runner.os == 'macOS'
+        run: brew install unixodbc
+      - name: Verify tag version
+        shell: bash
+        env:
+          RELEASE_REF: ${{ github.ref }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          if [[ "$RELEASE_REF" == refs/tags/* ]]; then
+            version=$(cargo metadata --no-deps --format-version 1 | python -c 'import json,sys; print(next(p["version"] for p in json.load(sys.stdin)["packages"] if p["name"] == "tomato"))')
+            test "$RELEASE_TAG" = "v$version"
+          fi
+      - if: runner.os == 'Windows'
+        run: cargo test --workspace --locked -- --test-threads=1
+      - if: runner.os != 'Windows'
+        run: cargo test --workspace --locked
+      - run: cargo build --release --locked --target ${{ matrix.target }} -p tomato -p tomato-cli
+      - name: Run packaged engine self-check
+        shell: bash
+        run: ./target/${{ matrix.target }}/release/tomato-cli self-check
+      - if: runner.os == 'Windows'
+        run: cargo xtask package --target ${{ matrix.target }} --no-build --installer
+      - if: runner.os != 'Windows'
+        run: cargo xtask package --target ${{ matrix.target }} --no-build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tomato-${{ matrix.target }}
+          if-no-files-found: error
+          path: |
+            dist/*.zip
+            dist/*.tar.gz
+            dist/*.sha256
+            dist/*-setup.exe
+  publish:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Verify and aggregate checksums
+        working-directory: dist
+        run: |
+          cat *.sha256 > SHA256SUMS.txt
+          sha256sum -c SHA256SUMS.txt
+      - name: Create draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: gh release create "$RELEASE_TAG" dist/*.zip dist/*.tar.gz dist/*-setup.exe dist/SHA256SUMS.txt --draft --verify-tag --generate-notes

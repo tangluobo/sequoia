@@ -1,0 +1,392 @@
+{
+  "mysql": [
+    {
+      "sql": "SELECT id AS renamed_id,label,42 AS id FROM tomato_origin_fixture ORDER BY renamed_id",
+      "labels": [
+        "renamed_id",
+        "label",
+        "id"
+      ],
+      "types": [
+        4,
+        12,
+        -5
+      ],
+      "columns": [
+        "id",
+        "label",
+        "id"
+      ],
+      "tables": [
+        "tomato_origin_fixture",
+        "tomato_origin_fixture",
+        ""
+      ],
+      "schemas": [
+        "",
+        "",
+        ""
+      ],
+      "catalogs": [
+        "tomato_fixture",
+        "tomato_fixture",
+        ""
+      ],
+      "rows": [
+        [
+          "1",
+          "中文",
+          "42"
+        ],
+        [
+          "2",
+          null,
+          "42"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT id,label,stamp,payload FROM tomato_origin_fixture WHERE 1=0",
+      "labels": [
+        "id",
+        "label",
+        "stamp",
+        "payload"
+      ],
+      "types": [
+        4,
+        12,
+        91,
+        -4
+      ],
+      "columns": [
+        "id",
+        "label",
+        "stamp",
+        "payload"
+      ],
+      "tables": [
+        "tomato_origin_fixture",
+        "tomato_origin_fixture",
+        "tomato_origin_fixture",
+        "tomato_origin_fixture"
+      ],
+      "schemas": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "catalogs": [
+        "tomato_fixture",
+        "tomato_fixture",
+        "tomato_fixture",
+        "tomato_fixture"
+      ],
+      "rows": []
+    },
+    {
+      "sql": "SELECT count(*) AS n FROM tomato_origin_fixture",
+      "labels": [
+        "n"
+      ],
+      "types": [
+        -5
+      ],
+      "columns": [
+        "n"
+      ],
+      "tables": [
+        ""
+      ],
+      "schemas": [
+        ""
+      ],
+      "catalogs": [
+        ""
+      ],
+      "rows": [
+        [
+          "2"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT 42 AS id,id AS actual_id,label FROM tomato_origin_fixture ORDER BY actual_id",
+      "labels": [
+        "id",
+        "actual_id",
+        "label"
+      ],
+      "types": [
+        -5,
+        4,
+        12
+      ],
+      "columns": [
+        "id",
+        "id",
+        "label"
+      ],
+      "tables": [
+        "",
+        "tomato_origin_fixture",
+        "tomato_origin_fixture"
+      ],
+      "schemas": [
+        "",
+        "",
+        ""
+      ],
+      "catalogs": [
+        "",
+        "tomato_fixture",
+        "tomato_fixture"
+      ],
+      "rows": [
+        [
+          "42",
+          "1",
+          "中文"
+        ],
+        [
+          "42",
+          "2",
+          null
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT a.id,b.label FROM tomato_origin_fixture a JOIN tomato_origin_fixture b ON a.id=b.id ORDER BY a.id",
+      "labels": [
+        "id",
+        "label"
+      ],
+      "types": [
+        4,
+        12
+      ],
+      "columns": [
+        "id",
+        "label"
+      ],
+      "tables": [
+        "tomato_origin_fixture",
+        "tomato_origin_fixture"
+      ],
+      "schemas": [
+        "",
+        ""
+      ],
+      "catalogs": [
+        "tomato_fixture",
+        "tomato_fixture"
+      ],
+      "rows": [
+        [
+          "1",
+          "中文"
+        ],
+        [
+          "2",
+          null
+        ]
+      ]
+    }
+  ],
+  "postgres": [
+    {
+      "sql": "SELECT id AS renamed_id,label,42 AS id FROM tomato_origin_fixture ORDER BY renamed_id",
+      "labels": [
+        "renamed_id",
+        "label",
+        "id"
+      ],
+      "types": [
+        4,
+        12,
+        4
+      ],
+      "columns": [
+        "id",
+        "label",
+        ""
+      ],
+      "tables": [
+        "tomato_origin_fixture",
+        "tomato_origin_fixture",
+        ""
+      ],
+      "schemas": [
+        "public",
+        "public",
+        ""
+      ],
+      "catalogs": [
+        "",
+        "",
+        ""
+      ],
+      "rows": [
+        [
+          "1",
+          "中文",
+          "42"
+        ],
+        [
+          "2",
+          null,
+          "42"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT id,label,stamp,payload FROM tomato_origin_fixture WHERE 1=0",
+      "labels": [
+        "id",
+        "label",
+        "stamp",
+        "payload"
+      ],
+      "types": [
+        4,
+        12,
+        91,
+        -2
+      ],
+      "columns": [
+        "id",
+        "label",
+        "stamp",
+        "payload"
+      ],
+      "tables": [
+        "tomato_origin_fixture",
+        "tomato_origin_fixture",
+        "tomato_origin_fixture",
+        "tomato_origin_fixture"
+      ],
+      "schemas": [
+        "public",
+        "public",
+        "public",
+        "public"
+      ],
+      "catalogs": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "rows": []
+    },
+    {
+      "sql": "SELECT count(*) AS n FROM tomato_origin_fixture",
+      "labels": [
+        "n"
+      ],
+      "types": [
+        -5
+      ],
+      "columns": [
+        ""
+      ],
+      "tables": [
+        ""
+      ],
+      "schemas": [
+        ""
+      ],
+      "catalogs": [
+        ""
+      ],
+      "rows": [
+        [
+          "2"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT 42 AS id,id AS actual_id,label FROM tomato_origin_fixture ORDER BY actual_id",
+      "labels": [
+        "id",
+        "actual_id",
+        "label"
+      ],
+      "types": [
+        4,
+        4,
+        12
+      ],
+      "columns": [
+        "",
+        "id",
+        "label"
+      ],
+      "tables": [
+        "",
+        "tomato_origin_fixture",
+        "tomato_origin_fixture"
+      ],
+      "schemas": [
+        "",
+        "public",
+        "public"
+      ],
+      "catalogs": [
+        "",
+        "",
+        ""
+      ],
+      "rows": [
+        [
+          "42",
+          "1",
+          "中文"
+        ],
+        [
+          "42",
+          "2",
+          null
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT a.id,b.label FROM tomato_origin_fixture a JOIN tomato_origin_fixture b ON a.id=b.id ORDER BY a.id",
+      "labels": [
+        "id",
+        "label"
+      ],
+      "types": [
+        4,
+        12
+      ],
+      "columns": [
+        "id",
+        "label"
+      ],
+      "tables": [
+        "tomato_origin_fixture",
+        "tomato_origin_fixture"
+      ],
+      "schemas": [
+        "public",
+        "public"
+      ],
+      "catalogs": [
+        "",
+        ""
+      ],
+      "rows": [
+        [
+          "1",
+          "中文"
+        ],
+        [
+          "2",
+          null
+        ]
+      ]
+    }
+  ]
+}

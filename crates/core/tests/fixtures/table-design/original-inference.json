@@ -1,0 +1,4890 @@
+[
+  {
+    "kind": "MYSQL",
+    "field": null,
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "MYSQL",
+    "field": "",
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "MYSQL",
+    "field": " ",
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "MYSQL",
+    "field": " ",
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "MYSQL",
+    "field": " ",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "id",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "userID",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "UUID",
+    "available": [],
+    "expected": {
+      "type": "CHAR",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "userGuid",
+    "available": [],
+    "expected": {
+      "type": "CHAR",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "guid_id",
+    "available": [],
+    "expected": {
+      "type": "CHAR",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "createdAt",
+    "available": [],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "updated_at",
+    "available": [],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "eventDateTime",
+    "available": [],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "birthday",
+    "available": [],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "eventTime",
+    "available": [],
+    "expected": {
+      "type": "TIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "create_date_time",
+    "available": [],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "datatime",
+    "available": [],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "timestamp",
+    "available": [],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "at",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "at_created",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "created_at",
+    "available": [],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "isActive",
+    "available": [],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "hasValue",
+    "available": [],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "canRead",
+    "available": [],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "island",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "has_amount",
+    "available": [],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "content_flag",
+    "available": [],
+    "expected": {
+      "type": "TEXT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "amount_count",
+    "available": [],
+    "expected": {
+      "type": "DECIMAL",
+      "length": "18",
+      "decimalPlaces": "2"
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "price",
+    "available": [],
+    "expected": {
+      "type": "DECIMAL",
+      "length": "18",
+      "decimalPlaces": "2"
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "userAge",
+    "available": [],
+    "expected": {
+      "type": "INT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "version",
+    "available": [],
+    "expected": {
+      "type": "INT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "description",
+    "available": [],
+    "expected": {
+      "type": "TEXT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "imageBytes",
+    "available": [],
+    "expected": {
+      "type": "BLOB",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "payload_json",
+    "available": [],
+    "expected": {
+      "type": "LONGTEXT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "sourceJsonb",
+    "available": [],
+    "expected": {
+      "type": "LONGTEXT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "name",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "JSONDataID",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "XMLUserName",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "唯一标识",
+    "available": [],
+    "expected": {
+      "type": "CHAR",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "用户编号",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "主键名称",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "创建时间",
+    "available": [],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "时间戳",
+    "available": [],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "生日",
+    "available": [],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "日期",
+    "available": [],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "时间",
+    "available": [],
+    "expected": {
+      "type": "TIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "是否有效",
+    "available": [],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "中文名称",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "用户_日期_time",
+    "available": [],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "日期时间",
+    "available": [],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "GUID编号",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": " id ",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "İd",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "ID COUNT",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "sha256Hash",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "emoji😀",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "foo_bar_baz",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": null,
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "MYSQL",
+    "field": "",
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "MYSQL",
+    "field": " ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "MYSQL",
+    "field": " ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "MYSQL",
+    "field": " ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "id",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "userID",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "UUID",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "CHAR",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "userGuid",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "CHAR",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "guid_id",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "CHAR",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "createdAt",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "updated_at",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "eventDateTime",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "birthday",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "eventTime",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "create_date_time",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "datatime",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "timestamp",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "at",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "at_created",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "created_at",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "isActive",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "hasValue",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "canRead",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "island",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "has_amount",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "content_flag",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TEXT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "amount_count",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DECIMAL",
+      "length": "18",
+      "decimalPlaces": "2"
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "price",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DECIMAL",
+      "length": "18",
+      "decimalPlaces": "2"
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "userAge",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "INT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "version",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "INT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "description",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TEXT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "imageBytes",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BLOB",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "payload_json",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "JSON",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "sourceJsonb",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "JSON",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "name",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "JSONDataID",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "XMLUserName",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "唯一标识",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "CHAR",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "用户编号",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "主键名称",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "创建时间",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "时间戳",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "生日",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "日期",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "时间",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "是否有效",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "中文名称",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "用户_日期_time",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "日期时间",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATETIME",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "GUID编号",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": " id ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "İd",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "ID COUNT",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "sha256Hash",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "emoji😀",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "MYSQL",
+    "field": "foo_bar_baz",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": null,
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "",
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": " ",
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": " ",
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": " ",
+    "available": [],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "id",
+    "available": [],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "userID",
+    "available": [],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "UUID",
+    "available": [],
+    "expected": {
+      "type": "uuid",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "userGuid",
+    "available": [],
+    "expected": {
+      "type": "uuid",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "guid_id",
+    "available": [],
+    "expected": {
+      "type": "uuid",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "createdAt",
+    "available": [],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "updated_at",
+    "available": [],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "eventDateTime",
+    "available": [],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "birthday",
+    "available": [],
+    "expected": {
+      "type": "date",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "eventTime",
+    "available": [],
+    "expected": {
+      "type": "time",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "create_date_time",
+    "available": [],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "datatime",
+    "available": [],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "timestamp",
+    "available": [],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "at",
+    "available": [],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "at_created",
+    "available": [],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "created_at",
+    "available": [],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "isActive",
+    "available": [],
+    "expected": {
+      "type": "boolean",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "hasValue",
+    "available": [],
+    "expected": {
+      "type": "boolean",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "canRead",
+    "available": [],
+    "expected": {
+      "type": "boolean",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "island",
+    "available": [],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "has_amount",
+    "available": [],
+    "expected": {
+      "type": "boolean",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "content_flag",
+    "available": [],
+    "expected": {
+      "type": "text",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "amount_count",
+    "available": [],
+    "expected": {
+      "type": "numeric",
+      "length": "18",
+      "decimalPlaces": "2"
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "price",
+    "available": [],
+    "expected": {
+      "type": "numeric",
+      "length": "18",
+      "decimalPlaces": "2"
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "userAge",
+    "available": [],
+    "expected": {
+      "type": "integer",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "version",
+    "available": [],
+    "expected": {
+      "type": "integer",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "description",
+    "available": [],
+    "expected": {
+      "type": "text",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "imageBytes",
+    "available": [],
+    "expected": {
+      "type": "bytea",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "payload_json",
+    "available": [],
+    "expected": {
+      "type": "jsonb",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "sourceJsonb",
+    "available": [],
+    "expected": {
+      "type": "jsonb",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "name",
+    "available": [],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "JSONDataID",
+    "available": [],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "XMLUserName",
+    "available": [],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "唯一标识",
+    "available": [],
+    "expected": {
+      "type": "uuid",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "用户编号",
+    "available": [],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "主键名称",
+    "available": [],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "创建时间",
+    "available": [],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "时间戳",
+    "available": [],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "生日",
+    "available": [],
+    "expected": {
+      "type": "date",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "日期",
+    "available": [],
+    "expected": {
+      "type": "date",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "时间",
+    "available": [],
+    "expected": {
+      "type": "time",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "是否有效",
+    "available": [],
+    "expected": {
+      "type": "boolean",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "中文名称",
+    "available": [],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "用户_日期_time",
+    "available": [],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "日期时间",
+    "available": [],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "GUID编号",
+    "available": [],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": " id ",
+    "available": [],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "İd",
+    "available": [],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "ID COUNT",
+    "available": [],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "sha256Hash",
+    "available": [],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "emoji😀",
+    "available": [],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "foo_bar_baz",
+    "available": [],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": null,
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "",
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": " ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": " ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": " ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "id",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "userID",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "UUID",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "uuid",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "userGuid",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "uuid",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "guid_id",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "uuid",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "createdAt",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "updated_at",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "eventDateTime",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "birthday",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "date",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "eventTime",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "time",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "create_date_time",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "datatime",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "timestamp",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "at",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "at_created",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "created_at",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "isActive",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "boolean",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "hasValue",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "boolean",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "canRead",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "boolean",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "island",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "has_amount",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "boolean",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "content_flag",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "text",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "amount_count",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "numeric",
+      "length": "18",
+      "decimalPlaces": "2"
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "price",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "numeric",
+      "length": "18",
+      "decimalPlaces": "2"
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "userAge",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "integer",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "version",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "integer",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "description",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "text",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "imageBytes",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "bytea",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "payload_json",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "jsonb",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "sourceJsonb",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "jsonb",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "name",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "JSONDataID",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "XMLUserName",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "唯一标识",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "uuid",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "用户编号",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "主键名称",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "创建时间",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "时间戳",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "生日",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "date",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "日期",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "date",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "时间",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "time",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "是否有效",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "boolean",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "中文名称",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "用户_日期_time",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "日期时间",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "timestamp",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "GUID编号",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": " id ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "İd",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "ID COUNT",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "bigint",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "sha256Hash",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "emoji😀",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "POSTGRESQL",
+    "field": "foo_bar_baz",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "character varying",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": null,
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "ORACLE",
+    "field": "",
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "ORACLE",
+    "field": " ",
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "ORACLE",
+    "field": " ",
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "ORACLE",
+    "field": " ",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "id",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "userID",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "UUID",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "userGuid",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "guid_id",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "createdAt",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "updated_at",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "eventDateTime",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "birthday",
+    "available": [],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "eventTime",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "create_date_time",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "datatime",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "timestamp",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "at",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "at_created",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "created_at",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "isActive",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "1",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "hasValue",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "1",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "canRead",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "1",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "island",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "has_amount",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "1",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "content_flag",
+    "available": [],
+    "expected": {
+      "type": "CLOB",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "amount_count",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "price",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "userAge",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "10",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "version",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "10",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "description",
+    "available": [],
+    "expected": {
+      "type": "CLOB",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "imageBytes",
+    "available": [],
+    "expected": {
+      "type": "BLOB",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "payload_json",
+    "available": [],
+    "expected": {
+      "type": "CLOB",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "sourceJsonb",
+    "available": [],
+    "expected": {
+      "type": "CLOB",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "name",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "JSONDataID",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "XMLUserName",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "唯一标识",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "用户编号",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "主键名称",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "创建时间",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "时间戳",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "生日",
+    "available": [],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "日期",
+    "available": [],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "时间",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "是否有效",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "1",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "中文名称",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "用户_日期_time",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "日期时间",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "GUID编号",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": " id ",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "İd",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "ID COUNT",
+    "available": [],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "sha256Hash",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "emoji😀",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "foo_bar_baz",
+    "available": [],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": null,
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "ORACLE",
+    "field": "",
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "ORACLE",
+    "field": " ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "ORACLE",
+    "field": " ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "ORACLE",
+    "field": " ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "id",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "userID",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "UUID",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "userGuid",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "guid_id",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "createdAt",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "updated_at",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "eventDateTime",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "birthday",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "eventTime",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "create_date_time",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "datatime",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "timestamp",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "at",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "at_created",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "created_at",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "isActive",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "1",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "hasValue",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "1",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "canRead",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "1",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "island",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "has_amount",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "1",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "content_flag",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "CLOB",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "amount_count",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "price",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "userAge",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "10",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "version",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "10",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "description",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "CLOB",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "imageBytes",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BLOB",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "payload_json",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "JSON",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "sourceJsonb",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "JSON",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "name",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "JSONDataID",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "XMLUserName",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "唯一标识",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "36",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "用户编号",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "主键名称",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "创建时间",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "时间戳",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "生日",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "日期",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "时间",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "是否有效",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "1",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "中文名称",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "用户_日期_time",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "日期时间",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "GUID编号",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": " id ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "İd",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "ID COUNT",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "NUMBER",
+      "length": "19",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "sha256Hash",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "emoji😀",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "ORACLE",
+    "field": "foo_bar_baz",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "VARCHAR2",
+      "length": "255",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": null,
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "HIVE",
+    "field": "",
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "HIVE",
+    "field": " ",
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "HIVE",
+    "field": " ",
+    "available": [],
+    "expected": null
+  },
+  {
+    "kind": "HIVE",
+    "field": " ",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "id",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "userID",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "UUID",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "userGuid",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "guid_id",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "createdAt",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "updated_at",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "eventDateTime",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "birthday",
+    "available": [],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "eventTime",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "create_date_time",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "datatime",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "timestamp",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "at",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "at_created",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "created_at",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "isActive",
+    "available": [],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "hasValue",
+    "available": [],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "canRead",
+    "available": [],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "island",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "has_amount",
+    "available": [],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "content_flag",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "amount_count",
+    "available": [],
+    "expected": {
+      "type": "DECIMAL",
+      "length": "18",
+      "decimalPlaces": "2"
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "price",
+    "available": [],
+    "expected": {
+      "type": "DECIMAL",
+      "length": "18",
+      "decimalPlaces": "2"
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "userAge",
+    "available": [],
+    "expected": {
+      "type": "INT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "version",
+    "available": [],
+    "expected": {
+      "type": "INT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "description",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "imageBytes",
+    "available": [],
+    "expected": {
+      "type": "BINARY",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "payload_json",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "sourceJsonb",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "name",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "JSONDataID",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "XMLUserName",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "唯一标识",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "用户编号",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "主键名称",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "创建时间",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "时间戳",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "生日",
+    "available": [],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "日期",
+    "available": [],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "时间",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "是否有效",
+    "available": [],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "中文名称",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "用户_日期_time",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "日期时间",
+    "available": [],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "GUID编号",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": " id ",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "İd",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "ID COUNT",
+    "available": [],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "sha256Hash",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "emoji😀",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "foo_bar_baz",
+    "available": [],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": null,
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "HIVE",
+    "field": "",
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "HIVE",
+    "field": " ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "HIVE",
+    "field": " ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": null
+  },
+  {
+    "kind": "HIVE",
+    "field": " ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "id",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "userID",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "UUID",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "userGuid",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "guid_id",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "createdAt",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "updated_at",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "eventDateTime",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "birthday",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "eventTime",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "create_date_time",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "datatime",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "timestamp",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "at",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "at_created",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "created_at",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "isActive",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "hasValue",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "canRead",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "island",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "has_amount",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "content_flag",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "amount_count",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DECIMAL",
+      "length": "18",
+      "decimalPlaces": "2"
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "price",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DECIMAL",
+      "length": "18",
+      "decimalPlaces": "2"
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "userAge",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "INT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "version",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "INT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "description",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "imageBytes",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BINARY",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "payload_json",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "sourceJsonb",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "name",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "JSONDataID",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "XMLUserName",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "唯一标识",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "用户编号",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "主键名称",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "创建时间",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "时间戳",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "生日",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "日期",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "DATE",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "时间",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "是否有效",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BOOLEAN",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "中文名称",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "用户_日期_time",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "日期时间",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "TIMESTAMP",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "GUID编号",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": " id ",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "İd",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "ID COUNT",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "BIGINT",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "sha256Hash",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "emoji😀",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  },
+  {
+    "kind": "HIVE",
+    "field": "foo_bar_baz",
+    "available": [
+      "jSoN"
+    ],
+    "expected": {
+      "type": "STRING",
+      "length": "",
+      "decimalPlaces": ""
+    }
+  }
+]

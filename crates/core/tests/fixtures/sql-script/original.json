@@ -1,0 +1,560 @@
+[
+  {
+    "input": null,
+    "statements": [],
+    "select": false,
+    "table": null
+  },
+  {
+    "input": "",
+    "statements": [],
+    "select": false,
+    "table": null
+  },
+  {
+    "input": " \t\r\n; ;",
+    "statements": [],
+    "select": false,
+    "table": null
+  },
+  {
+    "input": "SELECT 1; SELECT 2;",
+    "statements": [
+      "SELECT 1",
+      "SELECT 2"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT 'a;''b'; SELECT 2",
+    "statements": [
+      "SELECT 'a;''b'",
+      "SELECT 2"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT \"a;\"\"b\" FROM users;",
+    "statements": [
+      "SELECT \"a;\"\"b\" FROM users"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "-- leading ;\nSELECT 1; -- tail",
+    "statements": [
+      "-- leading ;\nSELECT 1",
+      "-- tail"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "/* a; b */ SELECT 1; SELECT 2",
+    "statements": [
+      "/* a; b */ SELECT 1",
+      "SELECT 2"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT 1 -- semicolon;\n;SELECT 2",
+    "statements": [
+      "SELECT 1 -- semicolon;",
+      "SELECT 2"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT 'unterminated;",
+    "statements": [
+      "SELECT 'unterminated;"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT \"unterminated;",
+    "statements": [
+      "SELECT \"unterminated;"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "/* unterminated;",
+    "statements": [
+      "/* unterminated;"
+    ],
+    "select": false,
+    "table": null
+  },
+  {
+    "input": "SELECT `a;b` FROM users;",
+    "statements": [
+      "SELECT `a",
+      "b` FROM users"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "DO $$ BEGIN SELECT 1; END $$; SELECT 2;",
+    "statements": [
+      "DO $$ BEGIN SELECT 1",
+      "END $$",
+      "SELECT 2"
+    ],
+    "select": false,
+    "table": null
+  },
+  {
+    "input": "SELECT 'a\\'; SELECT 2;",
+    "statements": [
+      "SELECT 'a\\'",
+      "SELECT 2"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT 1--2; SELECT 3",
+    "statements": [
+      "SELECT 1--2; SELECT 3"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "-- comment\rSELECT 1;",
+    "statements": [
+      "-- comment\rSELECT 1;"
+    ],
+    "select": false,
+    "table": null
+  },
+  {
+    "input": "SELECT 1 # comment; SELECT 2",
+    "statements": [
+      "SELECT 1 # comment",
+      "SELECT 2"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT id, name FROM users WHERE enabled=1",
+    "statements": [
+      "SELECT id, name FROM users WHERE enabled=1"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT id FROM \"public\".\"users\" u ORDER BY id",
+    "statements": [
+      "SELECT id FROM \"public\".\"users\" u ORDER BY id"
+    ],
+    "select": true,
+    "table": "public.users"
+  },
+  {
+    "input": "SELECT id FROM `app`.`users` u",
+    "statements": [
+      "SELECT id FROM `app`.`users` u"
+    ],
+    "select": true,
+    "table": "app.users"
+  },
+  {
+    "input": "SELECT id FROM [sales].[orders] o",
+    "statements": [
+      "SELECT id FROM [sales].[orders] o"
+    ],
+    "select": true,
+    "table": "sales.orders"
+  },
+  {
+    "input": "-- result editable\nSELECT id FROM users AS u WHERE u.id=1",
+    "statements": [
+      "-- result editable\nSELECT id FROM users AS u WHERE u.id=1"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT id FROM users u JOIN roles r ON r.id=u.role_id",
+    "statements": [
+      "SELECT id FROM users u JOIN roles r ON r.id=u.role_id"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT id FROM users u,roles r WHERE r.id=u.role_id",
+    "statements": [
+      "SELECT id FROM users u,roles r WHERE r.id=u.role_id"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT id FROM users WHERE note='join, later'",
+    "statements": [
+      "SELECT id FROM users WHERE note='join, later'"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT id,(SELECT max(id) FROM audit_log) last_id FROM users",
+    "statements": [
+      "SELECT id,(SELECT max(id) FROM audit_log) last_id FROM users"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT id FROM users WHERE role_id IN (SELECT id FROM roles)",
+    "statements": [
+      "SELECT id FROM users WHERE role_id IN (SELECT id FROM roles)"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT id FROM (SELECT id FROM users) u",
+    "statements": [
+      "SELECT id FROM (SELECT id FROM users) u"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT id FROM (VALUES (1),(2)) v(id)",
+    "statements": [
+      "SELECT id FROM (VALUES (1),(2)) v(id)"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT id FROM active_users UNION SELECT id FROM archived_users",
+    "statements": [
+      "SELECT id FROM active_users UNION SELECT id FROM archived_users"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT id FROM users WHERE enabled=1 UNION ALL SELECT id FROM archived_users",
+    "statements": [
+      "SELECT id FROM users WHERE enabled=1 UNION ALL SELECT id FROM archived_users"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT id FROM users GROUP BY id EXCEPT SELECT id FROM blocked",
+    "statements": [
+      "SELECT id FROM users GROUP BY id EXCEPT SELECT id FROM blocked"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT id FROM users ORDER BY id INTERSECT SELECT id FROM other",
+    "statements": [
+      "SELECT id FROM users ORDER BY id INTERSECT SELECT id FROM other"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT id FROM users LIMIT 10 UNION ALL SELECT id FROM archived",
+    "statements": [
+      "SELECT id FROM users LIMIT 10 UNION ALL SELECT id FROM archived"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "WITH c AS (SELECT 1) SELECT * FROM c",
+    "statements": [
+      "WITH c AS (SELECT 1) SELECT * FROM c"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SHOW TABLES",
+    "statements": [
+      "SHOW TABLES"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "DESCRIBE users",
+    "statements": [
+      "DESCRIBE users"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "DESC users",
+    "statements": [
+      "DESC users"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "EXPLAIN SELECT 1",
+    "statements": [
+      "EXPLAIN SELECT 1"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECTED nonsense",
+    "statements": [
+      "SELECTED nonsense"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "WITHHOLD anything",
+    "statements": [
+      "WITHHOLD anything"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "/*x*/ SELECT id FROM users",
+    "statements": [
+      "/*x*/ SELECT id FROM users"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": " SELECT id FROM users",
+    "statements": [
+      " SELECT id FROM users"
+    ],
+    "select": false,
+    "table": null
+  },
+  {
+    "input": "SELECT id FROM users",
+    "statements": [
+      "SELECT id FROM users"
+    ],
+    "select": false,
+    "table": null
+  },
+  {
+    "input": "\u001cSELECT id FROM users",
+    "statements": [
+      "SELECT id FROM users"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT * FROM Basic",
+    "statements": [
+      "SELECT * FROM Basic"
+    ],
+    "select": true,
+    "table": "B"
+  },
+  {
+    "input": "SELECT * FROM information_schema.tables",
+    "statements": [
+      "SELECT * FROM information_schema.tables"
+    ],
+    "select": true,
+    "table": "in"
+  },
+  {
+    "input": "SELECT * FROM \"FROM\"",
+    "statements": [
+      "SELECT * FROM \"FROM\""
+    ],
+    "select": true,
+    "table": "FROM"
+  },
+  {
+    "input": "SELECT 'FROM' AS marker FROM users",
+    "statements": [
+      "SELECT 'FROM' AS marker FROM users"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT `FROM` FROM users",
+    "statements": [
+      "SELECT `FROM` FROM users"
+    ],
+    "select": true,
+    "table": "FROM users"
+  },
+  {
+    "input": "SELECT * FROM users /* JOIN roles */",
+    "statements": [
+      "SELECT * FROM users /* JOIN roles */"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT * FROM users WHERE note='UNION'",
+    "statements": [
+      "SELECT * FROM users WHERE note='UNION'"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT * FROM users WHERE note='a''UNION''b'",
+    "statements": [
+      "SELECT * FROM users WHERE note='a''UNION''b'"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT * FROM users WHERE EXISTS(SELECT * FROM roles UNION SELECT * FROM other)",
+    "statements": [
+      "SELECT * FROM users WHERE EXISTS(SELECT * FROM roles UNION SELECT * FROM other)"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT * FROM users;DROP TABLE audit;",
+    "statements": [
+      "SELECT * FROM users",
+      "DROP TABLE audit"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT 'ß' FROM users",
+    "statements": [
+      "SELECT 'ß' FROM users"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT 'ßßßßß' FROM a",
+    "statements": [
+      "SELECT 'ßßßßß' FROM a"
+    ],
+    "select": true,
+    "tableError": "StringIndexOutOfBoundsException"
+  },
+  {
+    "input": "ſELECT id FROM users",
+    "statements": [
+      "ſELECT id FROM users"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT id FROM uſers",
+    "statements": [
+      "SELECT id FROM uſers"
+    ],
+    "select": true,
+    "table": "uſers"
+  },
+  {
+    "input": "SELECT id FROM users WHERE note='İ'",
+    "statements": [
+      "SELECT id FROM users WHERE note='İ'"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT * FROM 😀表",
+    "statements": [
+      "SELECT * FROM 😀表"
+    ],
+    "select": true,
+    "table": "😀表"
+  },
+  {
+    "input": "SELECT * FROM \"a b\"",
+    "statements": [
+      "SELECT * FROM \"a b\""
+    ],
+    "select": true,
+    "table": "a b"
+  },
+  {
+    "input": "SELECT * FROM t OFFSET 1 UNION SELECT * FROM x",
+    "statements": [
+      "SELECT * FROM t OFFSET 1 UNION SELECT * FROM x"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT * FROM t FOR UPDATE",
+    "statements": [
+      "SELECT * FROM t FOR UPDATE"
+    ],
+    "select": true,
+    "table": "t"
+  },
+  {
+    "input": "/*only comment*/",
+    "statements": [
+      "/*only comment*/"
+    ],
+    "select": false,
+    "table": null
+  },
+  {
+    "input": "SELECT 1;\u0000 SELECT 2;",
+    "statements": [
+      "SELECT 1",
+      "SELECT 2"
+    ],
+    "select": true,
+    "table": null
+  },
+  {
+    "input": "SELECT id FROM users joiner WHERE id=1",
+    "statements": [
+      "SELECT id FROM users joiner WHERE id=1"
+    ],
+    "select": true,
+    "table": "users"
+  },
+  {
+    "input": "SELECT id FROM users WHERE union_flag=1",
+    "statements": [
+      "SELECT id FROM users WHERE union_flag=1"
+    ],
+    "select": true,
+    "table": "users"
+  }
+]

@@ -1,0 +1,23 @@
+[package]
+name = "tomato-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+uuid.workspace = true
+aes = "0.8"
+ecb = { version = "0.1", features = ["alloc"] }
+base64 = "0.22"
+directories = "6"
+tempfile = "3"
+regex = "1"
+fancy-regex = "0.20"
+sha2 = "0.10"
+

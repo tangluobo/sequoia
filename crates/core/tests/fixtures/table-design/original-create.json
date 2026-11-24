@@ -1,0 +1,388 @@
+[
+  {
+    "name": "mysql-basic",
+    "kind": "MYSQL",
+    "database": "sample_db",
+    "table": "订单",
+    "columns": [
+      {
+        "字段名": "id",
+        "类型": "BIGINT",
+        "长度": "20",
+        "非空": "是",
+        "主键": "是",
+        "自增": "是"
+      },
+      {
+        "字段名": "name",
+        "类型": "VARCHAR",
+        "长度": "64",
+        "默认值": "O\u0027Reilly",
+        "注释": "名称 \u0027备注\u0027"
+      },
+      {
+        "字段名": "amount",
+        "类型": "DECIMAL",
+        "长度": "12",
+        "小数点": "2",
+        "无符号": "是",
+        "填充零": "是"
+      }
+    ],
+    "options": {
+      "引擎": "InnoDB",
+      "排序规则": "utf8mb4_0900_ai_ci",
+      "字符集": "utf8mb4"
+    },
+    "comment": "订单 \u0027备注\u0027",
+    "sql": "CREATE TABLE `sample_db`.`订单` (\n    `id` BIGINT(20) NOT NULL AUTO_INCREMENT,\n    `name` VARCHAR(64) DEFAULT \u0027O\u0027\u0027Reilly\u0027 COMMENT \u0027名称 \u0027\u0027备注\u0027\u0027\u0027,\n    `amount` DECIMAL(12,2) UNSIGNED ZEROFILL,\n    PRIMARY KEY (`id`)\n) ENGINE\u003dInnoDB DEFAULT CHARSET\u003dutf8mb4 COLLATE\u003dutf8mb4_0900_ai_ci COMMENT\u003d\u0027订单 \u0027\u0027备注\u0027\u0027\u0027;"
+  },
+  {
+    "name": "postgres-basic",
+    "kind": "POSTGRESQL",
+    "database": "actual_db",
+    "schema": "analytics",
+    "table": "orders",
+    "columns": [
+      {
+        "字段名": "id",
+        "类型": "BIGINT",
+        "长度": "20",
+        "非空": "是",
+        "主键": "是",
+        "自增": "是"
+      },
+      {
+        "字段名": "name",
+        "类型": "VARCHAR",
+        "长度": "64",
+        "默认值": "O\u0027Reilly",
+        "注释": "名称 \u0027备注\u0027"
+      },
+      {
+        "字段名": "amount",
+        "类型": "DECIMAL",
+        "长度": "12",
+        "小数点": "2",
+        "无符号": "是",
+        "填充零": "是"
+      }
+    ],
+    "options": {
+      "引擎": "InnoDB",
+      "排序规则": "utf8mb4_0900_ai_ci",
+      "字符集": "utf8mb4"
+    },
+    "comment": "订单 \u0027备注\u0027",
+    "sql": "CREATE TABLE \"analytics\".\"orders\" (\n    \"id\" BIGINT(20) NOT NULL,\n    \"name\" VARCHAR(64),\n    \"amount\" DECIMAL(12,2),\n    PRIMARY KEY (\"id\")\n);\nCOMMENT ON TABLE \"analytics\".\"orders\" IS \u0027订单 \u0027\u0027备注\u0027\u0027\u0027;"
+  },
+  {
+    "name": "postgres-schema-fallback",
+    "kind": "POSTGRESQL",
+    "database": "public",
+    "table": "orders",
+    "columns": [
+      {
+        "字段名": "id",
+        "类型": "BIGINT",
+        "长度": "20",
+        "非空": "是",
+        "主键": "是",
+        "自增": "是"
+      },
+      {
+        "字段名": "name",
+        "类型": "VARCHAR",
+        "长度": "64",
+        "默认值": "O\u0027Reilly",
+        "注释": "名称 \u0027备注\u0027"
+      },
+      {
+        "字段名": "amount",
+        "类型": "DECIMAL",
+        "长度": "12",
+        "小数点": "2",
+        "无符号": "是",
+        "填充零": "是"
+      }
+    ],
+    "comment": "",
+    "sql": "CREATE TABLE \"public\".\"orders\" (\n    \"id\" BIGINT(20) NOT NULL,\n    \"name\" VARCHAR(64),\n    \"amount\" DECIMAL(12,2),\n    PRIMARY KEY (\"id\")\n);"
+  },
+  {
+    "name": "oracle-basic",
+    "kind": "ORACLE",
+    "database": "APP",
+    "table": "orders",
+    "columns": [
+      {
+        "字段名": "id",
+        "类型": "BIGINT",
+        "长度": "20",
+        "非空": "是",
+        "主键": "是",
+        "自增": "是"
+      },
+      {
+        "字段名": "name",
+        "类型": "VARCHAR",
+        "长度": "64",
+        "默认值": "O\u0027Reilly",
+        "注释": "名称 \u0027备注\u0027"
+      },
+      {
+        "字段名": "amount",
+        "类型": "DECIMAL",
+        "长度": "12",
+        "小数点": "2",
+        "无符号": "是",
+        "填充零": "是"
+      }
+    ],
+    "comment": "备注",
+    "sql": "CREATE TABLE \"APP\".\"orders\" (\n    \"id\" BIGINT(20) NOT NULL,\n    \"name\" VARCHAR(64),\n    \"amount\" DECIMAL(12,2),\n    PRIMARY KEY (\"id\")\n);\nCOMMENT ON TABLE \"APP\".\"orders\" IS \u0027备注\u0027;"
+  },
+  {
+    "name": "hive-basic",
+    "kind": "HIVE",
+    "database": "sample_db",
+    "table": "orders",
+    "columns": [
+      {
+        "字段名": "id",
+        "类型": "BIGINT",
+        "长度": "20",
+        "非空": "是",
+        "主键": "是",
+        "自增": "是"
+      },
+      {
+        "字段名": "name",
+        "类型": "VARCHAR",
+        "长度": "64",
+        "默认值": "O\u0027Reilly",
+        "注释": "名称 \u0027备注\u0027"
+      },
+      {
+        "字段名": "amount",
+        "类型": "DECIMAL",
+        "长度": "12",
+        "小数点": "2",
+        "无符号": "是",
+        "填充零": "是"
+      }
+    ],
+    "comment": "备注",
+    "sql": "CREATE TABLE `sample_db`.`orders` (\n    `id` BIGINT(20),\n    `name` VARCHAR(64) COMMENT \u0027名称 \u0027\u0027备注\u0027\u0027\u0027,\n    `amount` DECIMAL(12,2)\n) COMMENT \u0027备注\u0027;"
+  },
+  {
+    "name": "mysql-type-size-rules",
+    "kind": "MYSQL",
+    "database": "sample_db",
+    "table": "types",
+    "columns": [
+      {
+        "字段名": "column_0",
+        "类型": "DATE",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_1",
+        "类型": "DATETIME",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_2",
+        "类型": "TIMESTAMP",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_3",
+        "类型": "TIME",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_4",
+        "类型": "YEAR",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_5",
+        "类型": "TEXT",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_6",
+        "类型": "MEDIUMTEXT",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_7",
+        "类型": "BLOB",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_8",
+        "类型": "JSON",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_9",
+        "类型": "GEOMETRY",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_10",
+        "类型": "POINT",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_11",
+        "类型": "BOOL",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_12",
+        "类型": "BOOLEAN",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_13",
+        "类型": "INT",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_14",
+        "类型": "FLOAT",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_15",
+        "类型": "DOUBLE",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_16",
+        "类型": "REAL",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_17",
+        "类型": "NUMERIC",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_18",
+        "类型": "INTERVAL",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_19",
+        "类型": "ENUM",
+        "长度": "20",
+        "小数点": "3"
+      },
+      {
+        "字段名": "column_20",
+        "类型": "SET",
+        "长度": "20",
+        "小数点": "3"
+      }
+    ],
+    "comment": "",
+    "sql": "CREATE TABLE `sample_db`.`types` (\n    `column_0` DATE(3),\n    `column_1` DATETIME(3),\n    `column_2` TIMESTAMP(3),\n    `column_3` TIME(3),\n    `column_4` YEAR(3),\n    `column_5` TEXT,\n    `column_6` MEDIUMTEXT,\n    `column_7` BLOB,\n    `column_8` JSON,\n    `column_9` GEOMETRY,\n    `column_10` POINT,\n    `column_11` BOOL,\n    `column_12` BOOLEAN,\n    `column_13` INT(20),\n    `column_14` FLOAT(20,3),\n    `column_15` DOUBLE(20,3),\n    `column_16` REAL(20,3),\n    `column_17` NUMERIC(20,3),\n    `column_18` INTERVAL(20),\n    `column_19` ENUM,\n    `column_20` SET\n);"
+  },
+  {
+    "name": "mysql-zero-time-precision",
+    "kind": "MYSQL",
+    "database": "sample_db",
+    "table": "time_values",
+    "columns": [
+      {
+        "字段名": "created",
+        "类型": "TIMESTAMP",
+        "长度": "26",
+        "小数点": "0",
+        "默认值": "current_timestamp"
+      },
+      {
+        "字段名": "nullable",
+        "类型": "VARCHAR",
+        "长度": "100",
+        "默认值": "null"
+      },
+      {
+        "字段名": "localized",
+        "类型": "VARCHAR",
+        "长度": "20",
+        "字符集": "utf8mb4",
+        "排序规则": "utf8mb4_bin",
+        "非空": "是"
+      }
+    ],
+    "comment": "",
+    "sql": "CREATE TABLE `sample_db`.`time_values` (\n    `created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n    `nullable` VARCHAR(100) DEFAULT NULL,\n    `localized` VARCHAR(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL\n);"
+  },
+  {
+    "name": "mysql-composite-key",
+    "kind": "MYSQL",
+    "database": "sample_db",
+    "table": "composite",
+    "columns": [
+      {
+        "字段名": "left_id",
+        "类型": "INT",
+        "主键": "是"
+      },
+      {
+        "字段名": "right_id",
+        "类型": "INT",
+        "主键": "是"
+      },
+      {
+        "字段名": "  ",
+        "类型": "VARCHAR"
+      }
+    ],
+    "options": {},
+    "comment": "",
+    "sql": "CREATE TABLE `sample_db`.`composite` (\n    `left_id` INT,\n    `right_id` INT,\n    PRIMARY KEY (`left_id`, `right_id`)\n);"
+  },
+  {
+    "name": "postgres-defaults-originally-ignored",
+    "kind": "POSTGRESQL",
+    "database": "actual_db",
+    "schema": "public",
+    "table": "defaults",
+    "columns": [
+      {
+        "字段名": "id",
+        "类型": "INTEGER",
+        "默认值": "42",
+        "自增": "是",
+        "注释": "原版此处不生成列注释"
+      }
+    ],
+    "comment": "",
+    "sql": "CREATE TABLE \"public\".\"defaults\" (\n    \"id\" INTEGER\n);"
+  }
+]

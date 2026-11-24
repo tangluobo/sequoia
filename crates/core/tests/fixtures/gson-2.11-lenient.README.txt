@@ -1,0 +1,14 @@
+Golden outputs: the original Java application's Gson 2.11.0 dependency.
+Jar SHA-256: 57928D6E5A6EDEB2ABD3770A8F95BA44DCE45F3B23B7A9DC2B309C581552A78B
+Invocation: JsonParser.parseString(input.trim()), then default Gson.toJson
+and new GsonBuilder().setPrettyPrinting().create().toJson.
+Reproducible oracle: tests/java/JsonLenientOracle.java.
+Run the ignored live_original_gson_reproduces_the_complete_golden_corpus test
+with TOMATO_ORACLE_GSON_JAR; TOMATO_ORACLE_JDK optionally chooses a JDK root.
+The application never loads this jar or launches Java.
+
+The 71 cases cover comments, single quotes, bare names/values, separators,
+omitted array items, duplicate names, number spelling/1024-character boundary,
+non-execute prefix, BOM, Unicode, escaping, trailing input and invalid syntax.
+Malformed isolated UTF-16 surrogates remain rejected: replacing them would
+silently merge distinct object keys. This differs from Gson's Java String model.

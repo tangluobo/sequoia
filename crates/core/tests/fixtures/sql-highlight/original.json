@@ -1,0 +1,1089 @@
+[
+  {
+    "input": "SELECT id,name FROM Users WHERE id>0",
+    "tokens": [
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " id,name ",
+        "kind": "BASE"
+      },
+      {
+        "text": "FROM",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " Users ",
+        "kind": "BASE"
+      },
+      {
+        "text": "WHERE",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " id>",
+        "kind": "BASE"
+      },
+      {
+        "text": "0",
+        "kind": "NUMBER"
+      }
+    ]
+  },
+  {
+    "input": "select count(*) from t group by x having sum(x)>1",
+    "tokens": [
+      {
+        "text": "select",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "count",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": "(*) ",
+        "kind": "BASE"
+      },
+      {
+        "text": "from",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " t ",
+        "kind": "BASE"
+      },
+      {
+        "text": "group",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "by",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " x ",
+        "kind": "BASE"
+      },
+      {
+        "text": "having",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "sum",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": "(x)>",
+        "kind": "BASE"
+      },
+      {
+        "text": "1",
+        "kind": "NUMBER"
+      }
+    ]
+  },
+  {
+    "input": "Select f (1), g\t(2), h\n(3)",
+    "tokens": [
+      {
+        "text": "Select",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "f",
+        "kind": "FUNCTION"
+      },
+      {
+        "text": " (",
+        "kind": "BASE"
+      },
+      {
+        "text": "1",
+        "kind": "NUMBER"
+      },
+      {
+        "text": "), ",
+        "kind": "BASE"
+      },
+      {
+        "text": "g",
+        "kind": "FUNCTION"
+      },
+      {
+        "text": "\t(",
+        "kind": "BASE"
+      },
+      {
+        "text": "2",
+        "kind": "NUMBER"
+      },
+      {
+        "text": "), h\n(",
+        "kind": "BASE"
+      },
+      {
+        "text": "3",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ")",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "SELECT '中文🍅', \"column\", `table`",
+    "tokens": [
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "'中文🍅'",
+        "kind": "STRING"
+      },
+      {
+        "text": ", ",
+        "kind": "BASE"
+      },
+      {
+        "text": "\"column\"",
+        "kind": "STRING"
+      },
+      {
+        "text": ", ",
+        "kind": "BASE"
+      },
+      {
+        "text": "`table`",
+        "kind": "STRING"
+      }
+    ]
+  },
+  {
+    "input": "SELECT 1e-3, 2E+5, 0xff, 0b01, 3.14, .5, 1.",
+    "tokens": [
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "1e-3",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ", ",
+        "kind": "BASE"
+      },
+      {
+        "text": "2E+5",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ", ",
+        "kind": "BASE"
+      },
+      {
+        "text": "0xff",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ", ",
+        "kind": "BASE"
+      },
+      {
+        "text": "0b01",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ", ",
+        "kind": "BASE"
+      },
+      {
+        "text": "3.14",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ", .",
+        "kind": "BASE"
+      },
+      {
+        "text": "5",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ", ",
+        "kind": "BASE"
+      },
+      {
+        "text": "1",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ".",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "123abc 1__2 0x_ 0b_ 12f 12U 01 1_2",
+    "tokens": [
+      {
+        "text": "123abc ",
+        "kind": "BASE"
+      },
+      {
+        "text": "1__2",
+        "kind": "NUMBER"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "0x_",
+        "kind": "NUMBER"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "0b_",
+        "kind": "NUMBER"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "12f",
+        "kind": "NUMBER"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "12U",
+        "kind": "NUMBER"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "01",
+        "kind": "NUMBER"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "1_2",
+        "kind": "NUMBER"
+      }
+    ]
+  },
+  {
+    "input": "中文123 中select éfrom α123",
+    "tokens": [
+      {
+        "text": "中文",
+        "kind": "BASE"
+      },
+      {
+        "text": "123",
+        "kind": "NUMBER"
+      },
+      {
+        "text": " 中",
+        "kind": "BASE"
+      },
+      {
+        "text": "select",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " é",
+        "kind": "BASE"
+      },
+      {
+        "text": "from",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " α",
+        "kind": "BASE"
+      },
+      {
+        "text": "123",
+        "kind": "NUMBER"
+      }
+    ]
+  },
+  {
+    "input": "SELECT 'a''b', 'a\\'b', \"a\\\"b\"",
+    "tokens": [
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "'a''b'",
+        "kind": "STRING"
+      },
+      {
+        "text": ", ",
+        "kind": "BASE"
+      },
+      {
+        "text": "'a\\'b'",
+        "kind": "STRING"
+      },
+      {
+        "text": ", ",
+        "kind": "BASE"
+      },
+      {
+        "text": "\"a\\\"b\"",
+        "kind": "STRING"
+      }
+    ]
+  },
+  {
+    "input": "-- comment\nSELECT 1",
+    "tokens": [
+      {
+        "text": "-- comment",
+        "kind": "COMMENT"
+      },
+      {
+        "text": "\n",
+        "kind": "BASE"
+      },
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "1",
+        "kind": "NUMBER"
+      }
+    ]
+  },
+  {
+    "input": "// not a SQL comment\nSELECT 1",
+    "tokens": [
+      {
+        "text": "// ",
+        "kind": "BASE"
+      },
+      {
+        "text": "not",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " a SQL comment\n",
+        "kind": "BASE"
+      },
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "1",
+        "kind": "NUMBER"
+      }
+    ]
+  },
+  {
+    "input": "# not a SQL comment\nSELECT 1",
+    "tokens": [
+      {
+        "text": "# ",
+        "kind": "BASE"
+      },
+      {
+        "text": "not",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " a SQL comment\n",
+        "kind": "BASE"
+      },
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "1",
+        "kind": "NUMBER"
+      }
+    ]
+  },
+  {
+    "input": "/* block\ncomment */ SELECT 1",
+    "tokens": [
+      {
+        "text": "/* block\ncomment */",
+        "kind": "COMMENT"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "1",
+        "kind": "NUMBER"
+      }
+    ]
+  },
+  {
+    "input": "/* unclosed SELECT 'value'",
+    "tokens": [
+      {
+        "text": "/* unclosed ",
+        "kind": "BASE"
+      },
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "'value'",
+        "kind": "STRING"
+      }
+    ]
+  },
+  {
+    "input": "'unclosed SELECT 1",
+    "tokens": [
+      {
+        "text": "'unclosed ",
+        "kind": "BASE"
+      },
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "1",
+        "kind": "NUMBER"
+      }
+    ]
+  },
+  {
+    "input": "@name @123 @@version @a_b $1 $fn(1)",
+    "tokens": [
+      {
+        "text": "@name",
+        "kind": "ANNOTATION"
+      },
+      {
+        "text": " @",
+        "kind": "BASE"
+      },
+      {
+        "text": "123",
+        "kind": "NUMBER"
+      },
+      {
+        "text": " @",
+        "kind": "BASE"
+      },
+      {
+        "text": "@version",
+        "kind": "ANNOTATION"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "@a_b",
+        "kind": "ANNOTATION"
+      },
+      {
+        "text": " $1 ",
+        "kind": "BASE"
+      },
+      {
+        "text": "$fn",
+        "kind": "FUNCTION"
+      },
+      {
+        "text": "(",
+        "kind": "BASE"
+      },
+      {
+        "text": "1",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ")",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "SELECT `name\\`value` FROM `中文`",
+    "tokens": [
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "`name\\`value`",
+        "kind": "STRING"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "FROM",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "`中文`",
+        "kind": "STRING"
+      }
+    ]
+  },
+  {
+    "input": "SELECT '\\z' FROM x",
+    "tokens": [
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "'\\z'",
+        "kind": "STRING"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "FROM",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " x",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "SELECT 'a\\\nb' FROM x",
+    "tokens": [
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " 'a\\\nb' ",
+        "kind": "BASE"
+      },
+      {
+        "text": "FROM",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " x",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "SELECT 'a\\\rb' FROM x",
+    "tokens": [
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " 'a\\\rb' ",
+        "kind": "BASE"
+      },
+      {
+        "text": "FROM",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " x",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "SELECT 'a\\b' FROM x",
+    "tokens": [
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " 'a\\b' ",
+        "kind": "BASE"
+      },
+      {
+        "text": "FROM",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " x",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "SELECT 'a\\\u2028b' FROM x",
+    "tokens": [
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " 'a\\\u2028b' ",
+        "kind": "BASE"
+      },
+      {
+        "text": "FROM",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " x",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "SELECT 'a\nb' FROM x",
+    "tokens": [
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "'a\nb'",
+        "kind": "STRING"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "FROM",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " x",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "UPDATE t SET n=1; DELETE FROM t WHERE id=2",
+    "tokens": [
+      {
+        "text": "UPDATE",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " t ",
+        "kind": "BASE"
+      },
+      {
+        "text": "SET",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " n=",
+        "kind": "BASE"
+      },
+      {
+        "text": "1",
+        "kind": "NUMBER"
+      },
+      {
+        "text": "; ",
+        "kind": "BASE"
+      },
+      {
+        "text": "DELETE",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "FROM",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " t ",
+        "kind": "BASE"
+      },
+      {
+        "text": "WHERE",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " id=",
+        "kind": "BASE"
+      },
+      {
+        "text": "2",
+        "kind": "NUMBER"
+      }
+    ]
+  },
+  {
+    "input": "create table t(a int); alter table t add b text",
+    "tokens": [
+      {
+        "text": "create",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "table",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "t",
+        "kind": "FUNCTION"
+      },
+      {
+        "text": "(a int); ",
+        "kind": "BASE"
+      },
+      {
+        "text": "alter",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "table",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " t add b text",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "a (1) b (2) c\r(3)",
+    "tokens": [
+      {
+        "text": "a (",
+        "kind": "BASE"
+      },
+      {
+        "text": "1",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ") b (",
+        "kind": "BASE"
+      },
+      {
+        "text": "2",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ") c\r(",
+        "kind": "BASE"
+      },
+      {
+        "text": "3",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ")",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "SELECT 1 -- comment\r\nFROM t",
+    "tokens": [
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "1",
+        "kind": "NUMBER"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "-- comment\r",
+        "kind": "COMMENT"
+      },
+      {
+        "text": "\n",
+        "kind": "BASE"
+      },
+      {
+        "text": "FROM",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " t",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "SELECT true,false,null,returning,window,partition",
+    "tokens": [
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " ",
+        "kind": "BASE"
+      },
+      {
+        "text": "true",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": ",",
+        "kind": "BASE"
+      },
+      {
+        "text": "false",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": ",",
+        "kind": "BASE"
+      },
+      {
+        "text": "null",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": ",",
+        "kind": "BASE"
+      },
+      {
+        "text": "returning",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": ",",
+        "kind": "BASE"
+      },
+      {
+        "text": "window",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": ",",
+        "kind": "BASE"
+      },
+      {
+        "text": "partition",
+        "kind": "KEYWORD"
+      }
+    ]
+  },
+  {
+    "input": "λfunc(1) funcλ(2) _name$(3)",
+    "tokens": [
+      {
+        "text": "λ",
+        "kind": "BASE"
+      },
+      {
+        "text": "func",
+        "kind": "FUNCTION"
+      },
+      {
+        "text": "(",
+        "kind": "BASE"
+      },
+      {
+        "text": "1",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ") funcλ(",
+        "kind": "BASE"
+      },
+      {
+        "text": "2",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ") ",
+        "kind": "BASE"
+      },
+      {
+        "text": "_name$",
+        "kind": "FUNCTION"
+      },
+      {
+        "text": "(",
+        "kind": "BASE"
+      },
+      {
+        "text": "3",
+        "kind": "NUMBER"
+      },
+      {
+        "text": ")",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "SELECT $$not-a-string$$, $tag$select$tag$",
+    "tokens": [
+      {
+        "text": "SELECT",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " $$not-a-string$$, $tag$select$tag$",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "--\u2028SELECT 1\nFROM t",
+    "tokens": [
+      {
+        "text": "--\u2028SELECT 1",
+        "kind": "COMMENT"
+      },
+      {
+        "text": "\n",
+        "kind": "BASE"
+      },
+      {
+        "text": "FROM",
+        "kind": "KEYWORD"
+      },
+      {
+        "text": " t",
+        "kind": "BASE"
+      }
+    ]
+  },
+  {
+    "input": "",
+    "tokens": []
+  },
+  {
+    "input": "  \t\r\n",
+    "tokens": [
+      {
+        "text": "  \t\r\n",
+        "kind": "BASE"
+      }
+    ]
+  }
+]

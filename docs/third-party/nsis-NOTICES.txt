@@ -1,0 +1,10 @@
+The optional Windows installer uses unmodified NSIS 3.13 runtime/compression code.
+Publisher: https://nsis.sourceforge.io/
+Source: https://sourceforge.net/projects/nsis/files/NSIS%203/3.13/
+The complete publisher copyright and license text is in nsis-COPYING.txt.
+Application installer scripts and generated payload manifests are Tomato code;
+they do not modify NSIS or its compression modules.
+
+The build-only compiler ZIP is SHA-256 pinned against the publisher dataset:
+https://nsis-dev.github.io/release-data/versions.json
+ba63dffc4410ee89193e1cb5a41989991bd77c61068da17e3156d136b7b0b3d8

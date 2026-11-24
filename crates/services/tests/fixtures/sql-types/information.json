@@ -1,0 +1,167 @@
+[
+  {
+    "statements": [],
+    "time": 2345,
+    "text": "\n--- 汇总 ---\n总耗时: 2.345s\n成功: 0  失败: 0",
+    "wrap": true,
+    "editable": false
+  },
+  {
+    "statements": [
+      {
+        "sql": "SELECT '中文;换行\\n' FROM items",
+        "success": true,
+        "rowset": true,
+        "time": 0,
+        "rows": 7,
+        "affected": 3,
+        "error": "错误行一\n错误行二"
+      }
+    ],
+    "time": 2345,
+    "text": "SELECT '中文;换行\\n' FROM items\n > OK\n > 时间: 0.000s\n > 行数: 7\n\n--- 汇总 ---\n总耗时: 2.345s\n成功: 1  失败: 0",
+    "wrap": true,
+    "editable": false
+  },
+  {
+    "statements": [
+      {
+        "sql": "SELECT '中文;换行\\n' FROM items",
+        "success": true,
+        "rowset": true,
+        "time": 0,
+        "rows": 7,
+        "affected": 3,
+        "error": "错误行一\n错误行二"
+      },
+      {
+        "sql": "UPDATE items SET value='a''b'",
+        "success": true,
+        "rowset": false,
+        "time": 1,
+        "rows": 7,
+        "affected": 3,
+        "error": "错误行一\n错误行二"
+      },
+      {
+        "sql": "SELECT '中文;换行\\n' FROM items",
+        "success": true,
+        "rowset": true,
+        "time": 999,
+        "rows": 7,
+        "affected": 3,
+        "error": "错误行一\n错误行二"
+      }
+    ],
+    "time": 2345,
+    "text": "SELECT '中文;换行\\n' FROM items\n > OK\n > 时间: 0.000s\n > 行数: 7\n\nUPDATE items SET value='a''b'\n > OK\n > 时间: 0.001s\n > 影响: 3 行\n\nSELECT '中文;换行\\n' FROM items\n > OK\n > 时间: 0.999s\n > 行数: 7\n\n--- 汇总 ---\n总耗时: 2.345s\n成功: 3  失败: 0",
+    "wrap": true,
+    "editable": false
+  },
+  {
+    "statements": [
+      {
+        "sql": "SELECT '中文;换行\\n' FROM items",
+        "success": true,
+        "rowset": true,
+        "time": 0,
+        "rows": 7,
+        "affected": 3,
+        "error": "错误行一\n错误行二"
+      },
+      {
+        "sql": "UPDATE items SET value='a''b'",
+        "success": false,
+        "rowset": false,
+        "time": 1,
+        "rows": 7,
+        "affected": 3,
+        "error": "错误行一\n错误行二"
+      },
+      {
+        "sql": "SELECT '中文;换行\\n' FROM items",
+        "success": true,
+        "rowset": true,
+        "time": 999,
+        "rows": 7,
+        "affected": 3,
+        "error": "错误行一\n错误行二"
+      },
+      {
+        "sql": "UPDATE items SET value='a''b'",
+        "success": true,
+        "rowset": false,
+        "time": 1001,
+        "rows": 7,
+        "affected": -1,
+        "error": "错误行一\n错误行二"
+      },
+      {
+        "sql": "SELECT '中文;换行\\n' FROM items",
+        "success": true,
+        "rowset": true,
+        "time": 1234567890,
+        "rows": 1234567890,
+        "affected": 3,
+        "error": "错误行一\n错误行二"
+      }
+    ],
+    "time": 2345,
+    "text": "SELECT '中文;换行\\n' FROM items\n > OK\n > 时间: 0.000s\n > 行数: 7\n\nUPDATE items SET value='a''b'\n > 错误\n > 错误行一\n错误行二\n\nSELECT '中文;换行\\n' FROM items\n > OK\n > 时间: 0.999s\n > 行数: 7\n\nUPDATE items SET value='a''b'\n > OK\n > 时间: 1.001s\n\nSELECT '中文;换行\\n' FROM items\n > OK\n > 时间: 1234567.890s\n > 行数: 1234567890\n\n--- 汇总 ---\n总耗时: 2.345s\n成功: 4  失败: 1",
+    "wrap": true,
+    "editable": false
+  },
+  {
+    "statements": [
+      {
+        "sql": "SELECT '中文;换行\\n' FROM items /* long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note  */",
+        "success": true,
+        "rowset": true,
+        "time": 0,
+        "rows": 7,
+        "affected": 3,
+        "error": "错误行一\n错误行二"
+      },
+      {
+        "sql": "UPDATE items SET value='a''b' /* long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note  */",
+        "success": false,
+        "rowset": false,
+        "time": 1,
+        "rows": 7,
+        "affected": 3,
+        "error": "错误行一\n错误行二"
+      },
+      {
+        "sql": "SELECT '中文;换行\\n' FROM items /* long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note  */",
+        "success": true,
+        "rowset": true,
+        "time": 999,
+        "rows": 7,
+        "affected": 3,
+        "error": "错误行一\n错误行二"
+      },
+      {
+        "sql": "UPDATE items SET value='a''b' /* long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note  */",
+        "success": true,
+        "rowset": false,
+        "time": 1001,
+        "rows": 7,
+        "affected": -1,
+        "error": "错误行一\n错误行二"
+      },
+      {
+        "sql": "SELECT '中文;换行\\n' FROM items /* long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note  */",
+        "success": true,
+        "rowset": true,
+        "time": 1234567890,
+        "rows": 1234567890,
+        "affected": 3,
+        "error": "错误行一\n错误行二"
+      }
+    ],
+    "time": 2345,
+    "text": "SELECT '中文;换行\\n' FROM items /* long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note  */\n > OK\n > 时间: 0.000s\n > 行数: 7\n\nUPDATE items SET value='a''b' /* long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note  */\n > 错误\n > 错误行一\n错误行二\n\nSELECT '中文;换行\\n' FROM items /* long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note  */\n > OK\n > 时间: 0.999s\n > 行数: 7\n\nUPDATE items SET value='a''b' /* long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note  */\n > OK\n > 时间: 1.001s\n\nSELECT '中文;换行\\n' FROM items /* long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note long note  */\n > OK\n > 时间: 1234567.890s\n > 行数: 1234567890\n\n--- 汇总 ---\n总耗时: 2.345s\n成功: 4  失败: 1",
+    "wrap": true,
+    "editable": false
+  }
+]

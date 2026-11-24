@@ -1,0 +1,28 @@
+
+["package"]
+"name" = "ironrdp-core"
+"version" = "0.2.1"
+"readme" = "README.md"
+"description" = "IronRDP common traits and types"
+"edition" = "2024"
+"rust-version" = "1.94"
+"license" = "MIT OR Apache-2.0"
+"homepage" = "https://github.com/Devolutions/IronRDP"
+"repository" = "https://github.com/Devolutions/IronRDP"
+"authors" = ["Devolutions Inc. <infos@devolutions.net>", "Teleport <goteleport.com>"]
+"keywords" = ["rdp", "remote-desktop", "network", "client", "protocol"]
+"categories" = ["network-programming"]
+
+["lib"]
+"doctest" = false
+"test" = false
+
+["features"]
+"default" = []
+"std" = ["alloc", "ironrdp-error/std"]
+"alloc" = ["ironrdp-error/alloc"]
+
+["dependencies"]
+
+["dependencies"."ironrdp-error"]
+"version" = "0.2"

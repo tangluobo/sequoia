@@ -1,0 +1,5 @@
+cloud-data
+secrets
+*.exe
+.env
+**/*_test.go

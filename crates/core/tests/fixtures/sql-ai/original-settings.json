@@ -1,0 +1,389 @@
+{
+  "loads": [
+    {
+      "input": {},
+      "output": {
+        "base": "https://api.openai.com/v1",
+        "model": "",
+        "key": "",
+        "includeSchema": true,
+        "timeout": 60,
+        "configured": false
+      }
+    },
+    {
+      "input": {
+        "aiApiBaseUrl": null,
+        "aiModel": null,
+        "aiApiKey": null
+      },
+      "output": {
+        "base": "",
+        "model": "",
+        "key": "",
+        "includeSchema": true,
+        "timeout": 60,
+        "configured": false
+      }
+    },
+    {
+      "input": {
+        "aiApiBaseUrl": "  http://fixture.invalid/v1  ",
+        "aiModel": " fixture ",
+        "aiApiKey": " legacy key ",
+        "aiIncludeSchema": false,
+        "aiRequestTimeoutSeconds": 999
+      },
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": " legacy key ",
+        "includeSchema": false,
+        "timeout": 999,
+        "configured": true
+      }
+    },
+    {
+      "input": {
+        "aiModel": " ",
+        "aiApiKey": " ",
+        "aiRequestTimeoutSeconds": -2
+      },
+      "output": {
+        "base": "https://api.openai.com/v1",
+        "model": " ",
+        "key": "",
+        "includeSchema": true,
+        "timeout": 60,
+        "configured": false
+      }
+    },
+    {
+      "input": {
+        "aiApiKey": "TOMATO_ENCRYPTED:invalid"
+      },
+      "output": {
+        "base": "https://api.openai.com/v1",
+        "model": "",
+        "key": "",
+        "includeSchema": true,
+        "timeout": 60,
+        "configured": false
+      }
+    }
+  ],
+  "saves": [
+    {
+      "timeout": -1,
+      "key": null,
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 5,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": -1,
+      "key": "",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 5,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": -1,
+      "key": "  fixture-secret-😀  ",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "fixture-secret-😀",
+        "includeSchema": false,
+        "timeout": 5,
+        "configured": true
+      },
+      "storedKey": "TOMATO_ENCRYPTED:eaXyhCJP+munZXL6nTnJCz8+//sQIUvvXtD7sIvMazY="
+    },
+    {
+      "timeout": 0,
+      "key": null,
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 5,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": 0,
+      "key": "",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 5,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": 0,
+      "key": "  fixture-secret-😀  ",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "fixture-secret-😀",
+        "includeSchema": false,
+        "timeout": 5,
+        "configured": true
+      },
+      "storedKey": "TOMATO_ENCRYPTED:eaXyhCJP+munZXL6nTnJCz8+//sQIUvvXtD7sIvMazY="
+    },
+    {
+      "timeout": 1,
+      "key": null,
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 5,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": 1,
+      "key": "",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 5,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": 1,
+      "key": "  fixture-secret-😀  ",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "fixture-secret-😀",
+        "includeSchema": false,
+        "timeout": 5,
+        "configured": true
+      },
+      "storedKey": "TOMATO_ENCRYPTED:eaXyhCJP+munZXL6nTnJCz8+//sQIUvvXtD7sIvMazY="
+    },
+    {
+      "timeout": 5,
+      "key": null,
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 5,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": 5,
+      "key": "",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 5,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": 5,
+      "key": "  fixture-secret-😀  ",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "fixture-secret-😀",
+        "includeSchema": false,
+        "timeout": 5,
+        "configured": true
+      },
+      "storedKey": "TOMATO_ENCRYPTED:eaXyhCJP+munZXL6nTnJCz8+//sQIUvvXtD7sIvMazY="
+    },
+    {
+      "timeout": 60,
+      "key": null,
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 60,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": 60,
+      "key": "",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 60,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": 60,
+      "key": "  fixture-secret-😀  ",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "fixture-secret-😀",
+        "includeSchema": false,
+        "timeout": 60,
+        "configured": true
+      },
+      "storedKey": "TOMATO_ENCRYPTED:eaXyhCJP+munZXL6nTnJCz8+//sQIUvvXtD7sIvMazY="
+    },
+    {
+      "timeout": 300,
+      "key": null,
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 300,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": 300,
+      "key": "",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 300,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": 300,
+      "key": "  fixture-secret-😀  ",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "fixture-secret-😀",
+        "includeSchema": false,
+        "timeout": 300,
+        "configured": true
+      },
+      "storedKey": "TOMATO_ENCRYPTED:eaXyhCJP+munZXL6nTnJCz8+//sQIUvvXtD7sIvMazY="
+    },
+    {
+      "timeout": 301,
+      "key": null,
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 300,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": 301,
+      "key": "",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 300,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": 301,
+      "key": "  fixture-secret-😀  ",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "fixture-secret-😀",
+        "includeSchema": false,
+        "timeout": 300,
+        "configured": true
+      },
+      "storedKey": "TOMATO_ENCRYPTED:eaXyhCJP+munZXL6nTnJCz8+//sQIUvvXtD7sIvMazY="
+    },
+    {
+      "timeout": 999,
+      "key": null,
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 300,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": 999,
+      "key": "",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "",
+        "includeSchema": false,
+        "timeout": 300,
+        "configured": true
+      },
+      "storedKey": ""
+    },
+    {
+      "timeout": 999,
+      "key": "  fixture-secret-😀  ",
+      "output": {
+        "base": "http://fixture.invalid/v1",
+        "model": "fixture",
+        "key": "fixture-secret-😀",
+        "includeSchema": false,
+        "timeout": 300,
+        "configured": true
+      },
+      "storedKey": "TOMATO_ENCRYPTED:eaXyhCJP+munZXL6nTnJCz8+//sQIUvvXtD7sIvMazY="
+    }
+  ]
+}

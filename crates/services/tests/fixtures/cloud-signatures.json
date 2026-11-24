@@ -1,0 +1,10 @@
+{
+  "id": "AKIDEXAMPLE",
+  "secret": "fixture-secret-中文",
+  "service": "cvm",
+  "host": "cvm.tencentcloudapi.com",
+  "date": "2019-02-25",
+  "timestamp": 1551113065,
+  "body": "{\"Limit\":1,\"Filters\":[{\"Values\":[\"未命名\"],\"Name\":\"instance-name\"}]}",
+  "authorization": "TC3-HMAC-SHA256 Credential=AKIDEXAMPLE/2019-02-25/cvm/tc3_request, SignedHeaders=content-type;host, Signature=a00c2138d87a90b3c9ef6a4b0249c850c975b5a633baa4cbfa0117c2d5c02e99"
+}

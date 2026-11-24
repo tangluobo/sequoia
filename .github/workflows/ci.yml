@@ -1,0 +1,310 @@
+name: CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  oracle-fixture:
+    name: Oracle ${{ matrix.label }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: 26ai
+            image: gvenzl/oracle-free@sha256:f5ff19033860d662c821cb04eb10483fa94f14f78eae252d054291ea07028093
+            authorization: owned-container-freepdb1
+          - label: 21c
+            image: gvenzl/oracle-xe@sha256:f82bccdf6020d27373fdf0e93046b63eb3f777a0289e329d9839feebaf4555de
+            authorization: owned-container-xepdb1
+    services:
+      oracle:
+        image: ${{ matrix.image }}
+        env:
+          ORACLE_PASSWORD: IsolatedOracleFixture42
+        ports: ['1521/tcp']
+        options: >-
+          --health-cmd healthcheck.sh
+          --health-interval 10s --health-timeout 5s --health-retries 30
+    env:
+      TOMATO_TEST_ORACLE_ISOLATED: ${{ matrix.authorization }}
+      CARGO_BUILD_JOBS: 2
+      TOMATO_TEST_ORACLE_PASSWORD: IsolatedOracleFixture42
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for initialized Oracle fixture
+        env:
+          ORACLE_CONTAINER_ID: ${{ job.services.oracle.id }}
+        run: |
+          # A healthy PDB can precede the image's initial password setup.
+          for attempt in $(seq 1 120); do
+            if docker logs --tail 200 "$ORACLE_CONTAINER_ID" 2>&1 | grep -Fq 'DATABASE IS READY TO USE!' &&
+               docker exec "$ORACLE_CONTAINER_ID" healthcheck.sh; then
+              exit 0
+            fi
+            sleep 5
+          done
+          docker logs --tail 100 "$ORACLE_CONTAINER_ID"
+          exit 1
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: graalvm/setup-graalvm@v1
+        with:
+          distribution: graalvm-community
+          java-version: '25'
+      - name: Native fixture dependencies
+        run: sudo apt-get update && sudo apt-get install -y libasound2-dev libudev-dev unixodbc-dev libkrb5-dev libclang-dev
+      - uses: ilammy/setup-nasm@v1
+        with:
+          version: '3.01'
+      - uses: Swatinem/rust-cache@v2
+      - name: Build native format adapter
+        run: python scripts/build-access-export.py
+      - name: Oracle same-connection and data-only table transfer
+        env:
+          TOMATO_TEST_ORACLE_PORT: ${{ job.services.oracle.ports[1521] }}
+        run: cargo test --locked -p tomato-services --test oracle_server -- --ignored --exact real_oracle_same_connection_and_data_only_transfer --nocapture
+      - name: Oracle read existing nb3 archives with identity and trigger state
+        env:
+          TOMATO_TEST_ORACLE_PORT: ${{ job.services.oracle.ports[1521] }}
+        run: cargo test --locked -p tomato-services --test oracle_server -- --ignored --exact real_oracle_restores_nb3_identity_and_typed_rows --nocapture
+      - name: Oracle native copy, LOB, identity and nb3 restore
+        env:
+          TOMATO_TEST_ORACLE_PORT: ${{ job.services.oracle.ports[1521] }}
+        run: cargo test --locked -p tomato-services --test oracle_server -- --ignored --exact real_oracle_native_lobs_identity_copy_nb3_dependencies_and_restore --nocapture
+      - name: Oracle primary keys across authenticated and granted schemas
+        env:
+          TOMATO_TEST_ORACLE_PORT: ${{ job.services.oracle.ports[1521] }}
+        run: cargo test --locked -p tomato-services --test oracle_server -- --ignored --exact real_oracle_primary_key_catalog_respects_the_authenticated_owner --nocapture
+      - name: Oracle driver correlation and client bind parser
+        run: cargo test --manifest-path vendor/oracledb/Cargo.toml --lib statement::sql_parser::tests
+      - name: Oracle designer PL/SQL and copyable trigger preview
+        env:
+          TOMATO_TEST_ORACLE_PORT: ${{ job.services.oracle.ports[1521] }}
+        run: cargo test --locked -p tomato-services --test oracle_server -- --ignored --exact oracle_designer::real_oracle_designer_triggers_preserve_plsql_and_copyable_preview --nocapture
+      - name: Oracle native foreign-key and trigger designer controls
+        env:
+          TOMATO_TEST_ORACLE_PORT: ${{ job.services.oracle.ports[1521] }}
+        run: cargo test --locked -p tomato-ui-egui --lib -- --ignored oracle_designer_controls_ --test-threads=1 --nocapture
+      - name: Oracle native backup tree and restore controls
+        env:
+          TOMATO_TEST_ORACLE_PORT: ${{ job.services.oracle.ports[1521] }}
+        run: cargo test --locked -p tomato-ui-egui --lib -- --ignored oracle_native_backup --test-threads=1 --nocapture
+  database-fixtures:
+    runs-on: ubuntu-24.04
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: fixture-root
+          MYSQL_ROOT_HOST: '%'
+          MYSQL_DATABASE: tomato_fixture
+          MYSQL_USER: tomato
+          MYSQL_PASSWORD: fixture-only
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot -pfixture-root"
+          --health-interval=10s --health-timeout=5s --health-retries=20
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_DB: tomato_fixture
+          POSTGRES_USER: tomato
+          POSTGRES_PASSWORD: fixture-only
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd="pg_isready -U tomato -d tomato_fixture"
+          --health-interval=10s --health-timeout=5s --health-retries=10
+      mongo:
+        image: mongo:8.0
+        env:
+          MONGO_INITDB_ROOT_USERNAME: fixture
+          MONGO_INITDB_ROOT_PASSWORD: fixture-only
+        ports: ['27017:27017']
+        options: >-
+          --health-cmd="mongosh --quiet --username fixture --password fixture-only --authenticationDatabase admin --eval 'db.adminCommand({ping:1})'"
+          --health-interval=10s --health-timeout=5s --health-retries=20
+    env:
+      TOMATO_TEST_MYSQL_URL: mysql://root:fixture-root@127.0.0.1:3306/tomato_fixture
+      TOMATO_TEST_MYSQL_SCOPE_URL: mysql://root:fixture-root@127.0.0.1:3306/tomato_fixture
+      TOMATO_TEST_POSTGRES_URL: postgres://tomato:fixture-only@127.0.0.1:5432/tomato_fixture
+      TOMATO_TEST_MONGO_URI: mongodb://fixture:fixture-only@127.0.0.1:27017/?authSource=admin
+      TOMATO_IMPORT_SOURCE_EXE: '${{ github.workspace }}/target/debug/tomato-cli'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: graalvm/setup-graalvm@v1
+        with:
+          distribution: graalvm-community
+          java-version: '25'
+      - name: Build embedded native Access exporter
+        run: python scripts/build-access-export.py
+      - uses: Swatinem/rust-cache@v2
+      - name: ODBC driver manager
+        run: sudo apt-get update && sudo apt-get install -y unixodbc-dev libkrb5-dev libclang-dev
+      - uses: ilammy/setup-nasm@v1
+        if: runner.arch == 'X64'
+        with:
+          version: '3.01'
+      - run: cargo build --locked -p tomato-cli
+      - run: cargo test --locked -p tomato-services --test database_servers -- --ignored
+      - run: cargo test --locked -p tomato-services --test mongo -- --ignored --nocapture
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-24.04, macos-15]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: graalvm/setup-graalvm@v1
+        with:
+          distribution: graalvm-community
+          java-version: '25'
+      - name: Build embedded native Access exporter
+        run: python scripts/build-access-export.py
+      - name: Build Windows x86 ODBC import bridge
+        if: runner.os == 'Windows'
+        run: python scripts/build-odbc32.py
+      - uses: Swatinem/rust-cache@v2
+      - uses: ilammy/setup-nasm@v1
+        if: runner.arch == 'X64'
+        with:
+          version: '3.01'
+      - name: Linux native dependencies
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y libxkbcommon-dev libwayland-dev libx11-dev libxi-dev libxrandr-dev libxcursor-dev libasound2-dev libudev-dev libfontconfig1-dev unixodbc-dev libkrb5-dev libclang-dev krb5-kdc krb5-user krb5-admin-server
+      - name: macOS ODBC driver manager
+        if: runner.os == 'macOS'
+        run: brew install unixodbc
+      - run: cargo fmt --all --check
+      - run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - name: Oracle protocol bounds and socket cleanup
+        run: cargo test --manifest-path vendor/oracledb/Cargo.toml --target-dir target/oracle-protocol-tests --lib tomato_ --locked
+      - name: RDP graphics codecs, compositor and allocation budgets
+        run: |
+          cargo test -p ironrdp-egfx --lib --locked
+          cargo test -p ironrdp-session --lib --locked
+          cargo test --manifest-path vendor/ironrdp-graphics/Cargo.toml --config vendor/ironrdp-graphics/.cargo/config.toml --target-dir target/rdp-graphics-tests --lib --locked
+      - name: RDP audio protocol and bounded playback conversion
+        run: cargo test --manifest-path vendor/ironrdp-rdpsnd-native/Cargo.toml --config vendor/ironrdp-rdpsnd-native/.cargo/config.toml --target-dir target/rdp-native-tests --lib --locked tomato_
+      - name: Windows file streams and clipboard owner lifecycle
+        if: runner.os == 'Windows'
+        run: |
+          cargo test -p ironrdp-cliprdr-native --lib --locked tomato_owner_event
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          ./scripts/qa/rdp-clipboard.ps1
+      # Windows console lifecycle fixtures can hang when multiple app instances run in parallel.
+      - if: runner.os == 'Windows'
+        run: cargo test --workspace --locked -- --test-threads=1
+      - if: runner.os != 'Windows'
+        run: cargo test --workspace --locked
+      - name: Hive lazy tree, designer save, sibling refresh and query controls
+        if: runner.os == 'Windows'
+        shell: pwsh
+        timeout-minutes: 5
+        run: |
+          $services = Get-ChildItem target/debug/deps/tomato_services-*.exe | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1
+          $ui = Get-ChildItem target/debug/deps/tomato_ui_egui-*.exe | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1
+          python scripts/qa/hive-ui.py --label ci-hive-ui-${{ github.run_id }}-${{ github.run_attempt }} --services $services.FullName --ui $ui.FullName
+      - name: Apache Java and native HiveServer2 interoperability
+        timeout-minutes: 15
+        run: python scripts/qa/hive.py --label ci
+      - name: Isolated Kerberos realm and Apache Java GSSAPI security layers
+        if: runner.os == 'Linux'
+        timeout-minutes: 15
+        run: python scripts/qa/hive.py --label ci-kerberos --kerberos
+      - name: Windows installer payload and preservation of user files on uninstall
+        if: runner.os == 'Windows'
+        run: python scripts/qa/installer.py --label ci
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: server/go.mod
+          cache-dependency-path: server/go.sum
+      - name: Build isolated collaboration peer
+        run: go -C server build -trimpath -o ../target/tomato-cloud-fixture.exe ./cmd/tomato-cloud
+      - name: Rust and Go collaboration interoperability
+        env:
+          TOMATO_CLOUD_FIXTURE_EXE: '${{ github.workspace }}/target/tomato-cloud-fixture.exe'
+        run: cargo test --workspace --locked real_go_server_ -- --ignored
+      - name: Build owned ADB peer
+        run: cargo build --workspace --all-targets --locked
+      - name: Native H264 video, live touch and PNG fallback
+        shell: bash
+        timeout-minutes: 5
+        run: |
+          fixture="$PWD/target/debug/examples/adb_fixture"
+          if [[ "$RUNNER_OS" == Windows ]]; then fixture="$fixture.exe"; fi
+          export TOMATO_TEST_ADB_EXE="$fixture"
+          cargo test --workspace --locked --test adb -- --ignored
+          cargo test --workspace --locked --test adb_video -- --ignored --nocapture --test-threads=1
+          cargo test --workspace --locked actual_adb_tab_draws_device_sends_click_tab_and_text_and_releases_search_focus -- --ignored --nocapture
+      - name: Real Bash completion and control keys over SSH
+        if: runner.os == 'Linux'
+        timeout-minutes: 3
+        env:
+          TOMATO_TEST_BASH: /bin/bash
+        run: cargo test --workspace --locked real_readline_completes_tab_and_erases_backspace -- --ignored --exact --nocapture
+      - name: Install isolated Redis fixture runtime
+        if: runner.os == 'Linux'
+        run: sudo apt-get install -y redis-server redis-tools
+      - name: Native Redis types and three-primary cluster
+        if: runner.os == 'Linux'
+        timeout-minutes: 5
+        env:
+          TOMATO_TEST_REDIS_SERVER: /usr/bin/redis-server
+          TOMATO_TEST_REDIS_CLI: /usr/bin/redis-cli
+        # The OpenSSH cluster acceptance requires its separate owned Linux fixture.
+        run: cargo test --workspace --locked --test redis_data -- --ignored --nocapture --skip real_cluster_ssh_discovery_all_types_primary_scan_and_configuration_readonly
+      - name: Redis database tree and real GUI command pipeline
+        if: runner.os == 'Linux'
+        timeout-minutes: 3
+        env:
+          TOMATO_TEST_REDIS_SERVER: /usr/bin/redis-server
+        run: cargo test --workspace --locked real_redis_tree_and_two_database_tabs_keep_values_isolated_and_release_on_disconnect -- --ignored --nocapture
+      - run: cargo run --locked -p tomato-cli -- self-check
+      - uses: actions/setup-python@v6
+        if: runner.os == 'Windows'
+        with:
+          python-version: '3.14'
+      - uses: msys2/setup-msys2@v2
+        if: runner.os == 'Windows'
+        id: rdp-msys2
+        with:
+          msystem: UCRT64
+          install: mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-ninja
+      - name: Independent synthetic Standard RDP security interoperability
+        if: runner.os == 'Windows'
+        timeout-minutes: 25
+        env:
+          MSYS2_LOCATION: ${{ steps.rdp-msys2.outputs.msys2-location }}
+        run: |
+          $tools = Join-Path $env:MSYS2_LOCATION 'ucrt64/bin'
+          python scripts/qa/build_freerdp.py --cmake (Join-Path $tools 'cmake.exe') --ninja (Join-Path $tools 'ninja.exe') --toolchain $tools
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          cargo test --workspace --locked --test remote_desktop --no-run --message-format=json > target/rdp-standard-artifacts.jsonl
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $harness = python -c "import json; from pathlib import Path; records=[json.loads(line) for line in Path('target/rdp-standard-artifacts.jsonl').read_text(encoding='utf-8-sig').splitlines() if line.startswith('{')]; print(next(r['executable'] for r in records if r.get('reason')=='compiler-artifact' and r['target']['name']=='remote_desktop' and r.get('executable')))"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          foreach ($strength in @('128','56','40','low','high','none')) {
+            python scripts/qa/freerdp.py --test-exe $harness --toolchain $tools --label "ci-standard-$strength" --strength $strength
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+      - uses: actions/upload-artifact@v4
+        if: always() && runner.os == 'Windows'
+        with:
+          name: standard-rdp-independent-evidence
+          if-no-files-found: ignore
+          path: |
+            target/rdp-standard-interop/*/validation.json
+            target/rdp-standard-interop/*/negotiation.json
+            target/rdp-standard-interop/*/test.log
+

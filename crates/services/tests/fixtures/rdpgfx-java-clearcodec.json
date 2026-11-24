@@ -1,0 +1,80 @@
+{
+  "reference": "Original Java rdp4j decoder; sequential stateful fixtures",
+  "referenceHashes": {
+    "D:\\Data\\Git\\tangluobo\\rdp4j\\src\\main\\java\\com\\tangluobo\\rdp4j\\ClearCodecDecoder.java": "95c213e94fa526cce77bc349cbeae777cc32195d99e5d70e569f403794964c46",
+    "D:\\Data\\Git\\tangluobo\\rdp4j\\src\\main\\java\\com\\tangluobo\\rdp4j\\RdesktopException.java": "aa811311cb01c74ab2266aabf1642b9c215e686b87e16c563a5f154e10559662"
+  },
+  "harnessSha256": "0d40c729acae24a37e4a90bbc28d7ef4cea5f00e38374dbd92765c2b1984b371",
+  "cases": [
+    {
+      "name": "residual-colors",
+      "width": 2,
+      "height": 2,
+      "stream": "0000080000000000000000000000030201023c322802",
+      "bgra": "030201ff030201ff3c3228ff3c3228ff"
+    },
+    {
+      "name": "glyph-store",
+      "width": 2,
+      "height": 2,
+      "stream": "010107000400000000000000000000001e140a04",
+      "bgra": "1e140aff1e140aff1e140aff1e140aff"
+    },
+    {
+      "name": "glyph-hit-reshape",
+      "width": 4,
+      "height": 1,
+      "stream": "03020700",
+      "bgra": "1e140aff1e140aff1e140aff1e140aff"
+    },
+    {
+      "name": "vbar-inline",
+      "width": 1,
+      "height": 4,
+      "stream": "0003000000001300000000000000000000000000030003020101031e140a3c3228",
+      "bgra": "030201ff1e140aff3c3228ff030201ff"
+    },
+    {
+      "name": "vbar-hit",
+      "width": 1,
+      "height": 4,
+      "stream": "0004000000000d0000000000000000000000000003000302010080",
+      "bgra": "030201ff1e140aff3c3228ff030201ff"
+    },
+    {
+      "name": "short-vbar-hit",
+      "width": 1,
+      "height": 4,
+      "stream": "0005000000000e000000000000000000000000000300030201004000",
+      "bgra": "1e140aff3c3228ff030201ff030201ff"
+    },
+    {
+      "name": "cache-reset-hit",
+      "width": 1,
+      "height": 4,
+      "stream": "0406000000000d0000000000000000000000000003000302010080",
+      "bgra": "030201ff1e140aff3c3228ff030201ff"
+    },
+    {
+      "name": "zero-vbar-hit",
+      "width": 1,
+      "height": 4,
+      "stream": "0007000000000d0000000000000000000000000003000302011080",
+      "bgra": "000000ff000000ff000000ff000000ff"
+    },
+    {
+      "name": "raw-subcodec-offset",
+      "width": 2,
+      "height": 2,
+      "stream": "000804000000000000001300000003020104010000000100020006000000005a5046786e64",
+      "bgra": "030201ff5a5046ff030201ff786e64ff"
+    },
+    {
+      "name": "glyph-hit-after-reset",
+      "width": 1,
+      "height": 4,
+      "stream": "03090700",
+      "bgra": "1e140aff1e140aff1e140aff1e140aff"
+    }
+  ]
+}

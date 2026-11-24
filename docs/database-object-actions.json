@@ -1,0 +1,130 @@
+{
+  "original": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\view\\TableObjectsView.java",
+  "originalSha256": "CA9BB10ECDD6E1ACB2951268A68BA1B080A72A05BD4E449286C89CC3CB7E8D1D",
+  "originalReadOnly": true,
+  "registration": "production",
+  "mappings": [
+    {
+      "java": "loadData",
+      "rust": [
+        "crates/services/src/database/objects.rs",
+        "crates/ui-egui/src/tabs/workbench.rs"
+      ],
+      "scope": "catalog read and shared production receipt"
+    },
+    {
+      "java": "createIconView / populateIconView",
+      "rust": [
+        "crates/ui-egui/src/panels/sql/objects/grid.rs",
+        "crates/ui-egui/src/tabs/database_objects.rs"
+      ],
+      "scope": "visible row icons; selection and background marquee"
+    },
+    {
+      "java": "createDetailView / autoFitColumns",
+      "rust": [
+        "crates/ui-egui/src/panels/sql/objects/grid.rs",
+        "crates/ui-egui/src/tabs/database_objects/window.rs"
+      ],
+      "scope": "detail widths, sorting and selection"
+    },
+    {
+      "java": "createErView",
+      "rust": [
+        "crates/ui-egui/src/panels/sql/objects/diagram.rs",
+        "crates/ui-egui/src/tabs/database_objects/diagram.rs"
+      ],
+      "scope": "cached table/link indices and viewport clipping"
+    },
+    {
+      "java": "applySearchDelayed / applySearch / matchesKeyword",
+      "rust": [
+        "crates/ui-egui/src/panels/sql/objects.rs",
+        "crates/ui-egui/src/tabs/database_objects.rs"
+      ],
+      "scope": "300 ms filtering of names, comments and fields"
+    },
+    {
+      "java": "handleOpenTable / handleDesignTable",
+      "rust": [
+        "crates/ui-egui/src/app/database_objects.rs",
+        "crates/ui-egui/src/app/db_tree.rs"
+      ],
+      "scope": "production data/designer tab routing"
+    },
+    {
+      "java": "startIconEdit / startDetailEdit / commitRename",
+      "rust": [
+        "crates/ui-egui/src/panels/sql/objects/grid.rs",
+        "crates/services/src/database/objects/mutate.rs"
+      ],
+      "scope": "delayed click and keyboard edit to actual ALTER/RENAME"
+    },
+    {
+      "java": "handleDeleteTable / handleClearTable / handleTruncateTable",
+      "rust": [
+        "crates/ui-egui/src/panels/sql/objects/dialogs.rs",
+        "crates/ui-egui/src/app/database_objects.rs"
+      ],
+      "scope": "immutable confirmed request, actor mutation and dependent refresh"
+    },
+    {
+      "java": "createToolBar: createQuery / createTable",
+      "rust": [
+        "crates/ui-egui/src/app/database_objects.rs",
+        "crates/ui-egui/src/app/query_tree/documents.rs"
+      ],
+      "scope": "real query document and production designer controllers"
+    },
+    {
+      "java": "createToolBar: importWizard / exportWizard",
+      "rust": [
+        "crates/ui-egui/src/app/database_objects.rs",
+        "crates/ui-egui/src/app/backup_ui.rs"
+      ],
+      "scope": "reuse source restore/backup callbacks; unsupported adapters remain unsupported"
+    },
+    {
+      "java": "copySelectedTablesToClipboard",
+      "rust": [
+        "crates/ui-egui/src/tabs/database_objects.rs",
+        "crates/ui-egui/src/app/database_objects.rs",
+        "crates/services/src/database/transfer/clipboard.rs",
+        "crates/ui-egui/src/app/table_transfer.rs"
+      ],
+      "scope": "original Java serialized application/x-tomato-copy-tables plus Unicode fallback; real preview/execution wizard; cross-application system roundtrip still requires explicit verification"
+    },
+    {
+      "java": "AbstractDbHandler.populateNodeContextMenu TABLE/VIEW and handleDeleteDbNodes/handleClearTables/handleTruncateTables",
+      "rust": [
+        "crates/ui-egui/src/app/tree_objects.rs",
+        "crates/ui-egui/src/app/connections.rs"
+      ],
+      "scope": "sidebar actions now reach the same actor and dependent refresh as object-page operations; native immutable confirmation, same-scope multi-selection and Delete"
+    }
+  ],
+  "verification": {
+    "database": "target/database-fixtures/probes/copy-tree-196/validation.json",
+    "windows": "target/window-probes/designer-objects-135/validation.json",
+    "defaultTestLog": "target/rdp-tests-196.log",
+    "nativeWorkflows": [
+      "mysql designer and object controls",
+      "postgres designer and object controls"
+    ],
+    "configurationUnchanged": true,
+    "additionalWindowProbes": [
+      "target/window-probes/transfer-196/validation.json",
+      "target/window-probes/admin-196/validation.json"
+    ],
+    "sidebarNativeWorkflows": 2,
+    "backupExtension": "target/database-fixtures/probes/pg-backup-213/validation.json"
+  },
+  "remaining": [
+    "PostgreSQL nb3 is now connected and tested; unusual inherited/range/row types and cluster-wide objects remain outside its supported scope; see database-backup-actions.json",
+    "all object drag targets and keyboard states",
+    "all visual states and font/control parity",
+    "remaining application adapters/tools listed in migration.md"
+  ],
+  "fullMigrationComplete": false,
+  "allVisualStatesVerified": false
+}

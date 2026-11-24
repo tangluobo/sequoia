@@ -1,0 +1,99 @@
+{
+  "originalReadOnly": true,
+  "originals": [
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\handler\\AbstractDbHandler.java",
+      "sha256": "C941F51721E92DD8C0308E9CC669D9092E2DF39613967F12F9F42AB96EBBF9D2"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\service\\BackupService.java",
+      "sha256": "861DF054766DB566CE69DCC49F257354A22EB9E80DED0FA04B8F993AAA837CAE"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\dialog\\BackupDialog.java",
+      "sha256": "33BBF33744C48850C98540FF855ECB6844B441ECF084FD45D727BC62CB5A669C"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\dialog\\RestoreDialog.java",
+      "sha256": "FE7632AC8EA6BB7D9C62D0661BACA8728BAC4EC23346F9880379786E90D120B0"
+    }
+  ],
+  "nativeImplementation": {
+    "service": "crates/services/src/database/backup",
+    "wizard": "crates/ui-egui/src/app/backup_ui",
+    "bulkClose": "crates/ui-egui/src/app/tab_closes.rs",
+    "archive": "crates/services/src/backup"
+  },
+  "behavior": {
+    "bulkClose": [
+      "left/right/all snapshots preserve pane order",
+      "skip pinned object tabs and detached windows",
+      "each dirty tab confirms separately; cancel skips only that tab",
+      "wait for asynchronous file/query saves",
+      "pause and retain the failed tab when resource release fails"
+    ],
+    "postgres": [
+      "database and schema scoped catalog",
+      "tables, dependent views, overloaded functions and procedures",
+      "bounded gzip data pages in original nb3 container",
+      "identity/serial sequence settings and state",
+      "generated columns, collation, exact numeric and binary values",
+      "enum/domain/composite types and arrays",
+      "partition bounds and indexes",
+      "foreign keys, triggers and row security policies",
+      "catalog dependency order for drops and creation",
+      "validate checksums before writes",
+      "transaction rollback on errors or cancellation",
+      "refresh clean data/designer/object/query scopes and preserve drafts",
+      "job-local session reuses the existing SSH route",
+      "cancel only the unique tagged backend and release it while preserving caller settings",
+      "await a submitted commit to avoid reporting cancellation after a committed restore",
+      "no fixed timeout on large data reads or index builds",
+      "native borrowed text fields avoid the AnyRow and String copies",
+      "custom filenames retain original whitespace"
+    ]
+  },
+  "legacyConfigurationDirect": true,
+  "oldBackupDirectoryLayout": true,
+  "allVisualStatesVerified": false,
+  "fullMigrationComplete": false,
+  "verificationPending": false,
+  "remaining": [
+    "ordinary table inheritance and custom range/extension type definitions",
+    "table row types and cyclic definitions that require deferred DDL",
+    "global owners, roles, grants and tablespaces are not a cluster dump",
+    "other application features recorded in migration.md",
+    "large objects, materialized views, standalone sequences and global objects are outside the original four-category wizard"
+  ],
+  "verification": {
+    "database": "target/database-fixtures/probes/pg-backup-213/validation.json",
+    "backendTestLog": "target/database-fixtures/probes/pg-backup-212/tests.log",
+    "backendTests": 19,
+    "nativeControlWorkflows": 12,
+    "defaultTests": 353,
+    "ignoredTests": 48,
+    "defaultTestLog": "target/backup-tests-212.log",
+    "uiDefaultRecheck": "target/backup-ui-tests-213.log",
+    "strictClippy": "target/backup-clippy-213.log",
+    "debugBuild": "target/backup-debug-build-213.log",
+    "originalScenes": "target/oracle-backup-211/identity.json",
+    "nativeScenes": [
+      "target/validation-visual-backup-212-0.json",
+      "target/validation-visual-backup-212-1.json",
+      "target/validation-visual-backup-212-2.json",
+      "target/validation-visual-backup-212-3.json",
+      "target/validation-visual-restore-212-0.json",
+      "target/validation-visual-restore-212-1.json",
+      "target/validation-visual-restore-confirm-212.json"
+    ],
+    "productionFreeze": "target/checkpoints/backup-213/production-sources.json",
+    "releasePending": false,
+    "memoryPending": false,
+    "release": "target\\window-probes\\backup-release-final-213\\validation.json",
+    "guiSha256": "71B71B201ED9E245C235EC8333E1A389D87DB194F9FD054F67410D96EC116F5C",
+    "cliSha256": "CA40B384029826BA0069AA43510A2072FCEC6B8E1C992BE39B060A63942218A9"
+  },
+  "references": [
+    "https://www.postgresql.org/docs/17/functions-admin.html"
+  ]
+}

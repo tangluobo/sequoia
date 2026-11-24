@@ -1,0 +1,37 @@
+services:
+  cloud:
+    build: .
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 128
+    mem_limit: 512m
+    environment:
+      GOMEMLIMIT: 256MiB
+      TOMATO_CLOUD_PUBLIC_URL: https://${TOMATO_CLOUD_DOMAIN:?Set your cloud domain}
+      TOMATO_CLOUD_SMTP_ADDRESS: ${TOMATO_CLOUD_SMTP_ADDRESS:-}
+      TOMATO_CLOUD_SMTP_USERNAME: ${TOMATO_CLOUD_SMTP_USERNAME:-}
+      TOMATO_CLOUD_SMTP_PASSWORD_FILE: /run/secrets/smtp_password
+      TOMATO_CLOUD_SMTP_FROM: ${TOMATO_CLOUD_SMTP_FROM:-}
+    secrets: [smtp_password]
+    volumes: [cloud-data:/data]
+    tmpfs: [/tmp:size=16m,mode=1777]
+  proxy:
+    image: caddy:2
+    restart: unless-stopped
+    ports: ['80:80', '443:443']
+    environment:
+      TOMATO_CLOUD_DOMAIN: ${TOMATO_CLOUD_DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on: [cloud]
+secrets:
+  smtp_password:
+    file: ./secrets/smtp-password.txt
+volumes:
+  cloud-data:
+  caddy-data:
+  caddy-config:

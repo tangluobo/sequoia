@@ -1,0 +1,189 @@
+
+["package"]
+"name" = "ironrdp-cliprdr-native"
+"version" = "0.7.0"
+"readme" = "README.md"
+"description" = "Native CLIPRDR static channel backend implementations for IronRDP"
+"edition" = "2024"
+"rust-version" = "1.94"
+"license" = "MIT OR Apache-2.0"
+"homepage" = "https://github.com/Devolutions/IronRDP"
+"repository" = "https://github.com/Devolutions/IronRDP"
+"authors" = ["Devolutions Inc. <infos@devolutions.net>", "Teleport <goteleport.com>"]
+"keywords" = ["rdp", "remote-desktop", "network", "client", "protocol"]
+"categories" = ["network-programming"]
+
+["features"]
+"__test" = ["dep:visibility"]
+
+["lib"]
+"doctest" = false
+"test" = false
+
+["dependencies"]
+
+["dependencies"."ironrdp-cliprdr"]
+"version" = "0.7"
+
+["dependencies"."ironrdp-core"]
+"version" = "0.2"
+
+["dependencies"."tracing"]
+"version" = "0.1"
+"features" = ["log"]
+
+["target"]
+
+["target"."cfg(target_os = \"linux\")"]
+
+["target"."cfg(target_os = \"linux\")"."dependencies"]
+"wayland-client" = "0.31"
+
+["target"."cfg(target_os = \"linux\")"."dependencies"."nix"]
+"version" = "0.31"
+"features" = ["poll"]
+
+["target"."cfg(target_os = \"linux\")"."dependencies"."visibility"]
+"version" = "0.1"
+"optional" = true
+
+["target"."cfg(target_os = \"linux\")"."dependencies"."wayland-protocols"]
+"version" = "0.32"
+"features" = ["client", "staging"]
+
+["target"."cfg(target_os = \"linux\")"."dependencies"."wayland-protocols-wlr"]
+"version" = "0.3"
+"features" = ["client"]
+
+["target"."cfg(target_os = \"linux\")"."dependencies"."x11rb"]
+"version" = "0.13"
+"features" = ["xfixes"]
+
+["target"."cfg(target_os = \"linux\")"."dependencies"."ironrdp-cliprdr-format"]
+"path" = "../ironrdp-cliprdr-format"
+"version" = "0.2"
+
+["target"."cfg(windows)"]
+
+["target"."cfg(windows)"."dependencies"]
+
+["target"."cfg(windows)"."dependencies"."windows"]
+"version" = "0.62"
+"features" = ["Win32_Foundation", "Win32_Graphics_Gdi", "Win32_System_DataExchange", "Win32_System_LibraryLoader", "Win32_System_Memory", "Win32_UI_Shell", "Win32_UI_WindowsAndMessaging"]
+
+["lints"]
+
+["lints"."rust"]
+"unsafe_op_in_unsafe_fn" = "warn"
+"invalid_reference_casting" = "warn"
+"unused_unsafe" = "warn"
+"missing_unsafe_on_extern" = "warn"
+"unsafe_attr_outside_unsafe" = "warn"
+"ambiguous_negative_literals" = "warn"
+"elided_lifetimes_in_paths" = "warn"
+"absolute_paths_not_starting_with_crate" = "warn"
+"single_use_lifetimes" = "warn"
+"unreachable_pub" = "warn"
+"unused_lifetimes" = "warn"
+"unused_qualifications" = "warn"
+"keyword_idents" = "warn"
+"noop_method_call" = "warn"
+"macro_use_extern_crate" = "warn"
+"redundant_imports" = "warn"
+"redundant_lifetimes" = "warn"
+"trivial_numeric_casts" = "warn"
+"unused_crate_dependencies" = "warn"
+"unused_macro_rules" = "warn"
+"unit_bindings" = "warn"
+
+["lints"."clippy"]
+"undocumented_unsafe_blocks" = "warn"
+"unnecessary_safety_comment" = "warn"
+"multiple_unsafe_ops_per_block" = "warn"
+"missing_safety_doc" = "warn"
+"transmute_ptr_to_ptr" = "warn"
+"as_ptr_cast_mut" = "warn"
+"as_pointer_underscore" = "warn"
+"cast_ptr_alignment" = "warn"
+"fn_to_numeric_cast_any" = "warn"
+"ptr_cast_constness" = "warn"
+"as_conversions" = "warn"
+"cast_lossless" = "warn"
+"cast_possible_truncation" = "warn"
+"cast_possible_wrap" = "warn"
+"cast_sign_loss" = "warn"
+"filetype_is_file" = "warn"
+"float_cmp" = "warn"
+"lossy_float_literal" = "warn"
+"float_cmp_const" = "warn"
+"as_underscore" = "warn"
+"unwrap_used" = "warn"
+"large_stack_frames" = "warn"
+"mem_forget" = "warn"
+"mixed_read_write_in_expression" = "warn"
+"needless_raw_strings" = "warn"
+"non_ascii_literal" = "warn"
+"panic" = "warn"
+"precedence_bits" = "warn"
+"rc_mutex" = "warn"
+"same_name_method" = "warn"
+"string_slice" = "warn"
+"suspicious_xor_used_as_pow" = "warn"
+"unused_result_ok" = "warn"
+"missing_panics_doc" = "warn"
+"semicolon_outside_block" = "warn"
+"clone_on_ref_ptr" = "warn"
+"cloned_instead_of_copied" = "warn"
+"pub_without_shorthand" = "warn"
+"infinite_loop" = "warn"
+"empty_enum_variants_with_brackets" = "warn"
+"deref_by_slicing" = "warn"
+"multiple_inherent_impl" = "warn"
+"map_with_unused_argument_over_ranges" = "warn"
+"partial_pub_fields" = "warn"
+"trait_duplication_in_bounds" = "warn"
+"type_repetition_in_bounds" = "warn"
+"checked_conversions" = "warn"
+"get_unwrap" = "warn"
+"similar_names" = "warn"
+"str_to_string" = "warn"
+"std_instead_of_core" = "warn"
+"separated_literal_suffix" = "warn"
+"unused_self" = "warn"
+"useless_let_if_seq" = "warn"
+"string_add" = "warn"
+"range_plus_one" = "warn"
+"self_named_module_files" = "warn"
+"redundant_type_annotations" = "warn"
+"unnecessary_self_imports" = "warn"
+"try_err" = "warn"
+"rest_pat_in_fully_bound_structs" = "warn"
+"doc_include_without_cfg" = "warn"
+"inline_always" = "warn"
+"large_include_file" = "warn"
+"or_fun_call" = "warn"
+"rc_buffer" = "warn"
+"string_lit_chars_any" = "warn"
+"unnecessary_box_returns" = "warn"
+"large_futures" = "warn"
+"allow_attributes" = "warn"
+"cfg_not_test" = "warn"
+"disallowed_script_idents" = "warn"
+"non_zero_suggestions" = "warn"
+"renamed_function_params" = "warn"
+"unused_trait_names" = "warn"
+"collection_is_never_read" = "warn"
+"copy_iterator" = "warn"
+"expl_impl_clone_on_copy" = "warn"
+"implicit_clone" = "warn"
+"large_types_passed_by_value" = "warn"
+"redundant_clone" = "warn"
+"alloc_instead_of_core" = "warn"
+"empty_drop" = "warn"
+"return_self_not_must_use" = "warn"
+"wildcard_dependencies" = "warn"
+"wildcard_imports" = "warn"
+"print_stderr" = "warn"
+"print_stdout" = "warn"
+"dbg_macro" = "warn"
+"todo" = "warn"

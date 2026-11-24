@@ -1,0 +1,377 @@
+[
+  {
+    "actions": [
+      "click:2",
+      "ctrl:0",
+      "ctrl:2"
+    ],
+    "states": [
+      {
+        "selected": [
+          "active_users"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "active_users",
+        "anchorObject": "active_users",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 1 个"
+      },
+      {
+        "selected": [
+          "active_users",
+          "orders"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "orders",
+        "anchorObject": "orders",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 2 个"
+      },
+      {
+        "selected": [
+          "orders"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "orders",
+        "anchorObject": "orders",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 1 个"
+      }
+    ]
+  },
+  {
+    "actions": [
+      "click:2",
+      "ctrl:0",
+      "shift:1"
+    ],
+    "states": [
+      {
+        "selected": [
+          "active_users"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "active_users",
+        "anchorObject": "active_users",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 1 个"
+      },
+      {
+        "selected": [
+          "active_users",
+          "orders"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "orders",
+        "anchorObject": "orders",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 2 个"
+      },
+      {
+        "selected": [
+          "orders",
+          "users"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "users",
+        "anchorObject": "orders",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 2 个"
+      }
+    ]
+  },
+  {
+    "actions": [
+      "click:2",
+      "ctrl:0",
+      "ctrlshift:1"
+    ],
+    "states": [
+      {
+        "selected": [
+          "active_users"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "active_users",
+        "anchorObject": "active_users",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 1 个"
+      },
+      {
+        "selected": [
+          "active_users",
+          "orders"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "orders",
+        "anchorObject": "orders",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 2 个"
+      },
+      {
+        "selected": [
+          "orders",
+          "users"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "users",
+        "anchorObject": "orders",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 2 个"
+      }
+    ]
+  },
+  {
+    "actions": [
+      "click:1",
+      "all",
+      "shift:2"
+    ],
+    "states": [
+      {
+        "selected": [
+          "users"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "users",
+        "anchorObject": "users",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 1 个"
+      },
+      {
+        "selected": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "orders",
+        "anchorObject": "users",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 3 个"
+      },
+      {
+        "selected": [
+          "users",
+          "active_users"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "active_users",
+        "anchorObject": "users",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 2 个"
+      }
+    ]
+  },
+  {
+    "actions": [
+      "click:2",
+      "ctrl:0",
+      "search:用户"
+    ],
+    "states": [
+      {
+        "selected": [
+          "active_users"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "active_users",
+        "anchorObject": "active_users",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 1 个"
+      },
+      {
+        "selected": [
+          "active_users",
+          "orders"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "orders",
+        "anchorObject": "orders",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 2 个"
+      },
+      {
+        "selected": [],
+        "visible": [
+          "users",
+          "active_users"
+        ],
+        "anchorObject": "orders",
+        "status": "共 2 个对象（表 1，视图 1）  |  1 个外键关系  |  已筛选（共 3 个）"
+      }
+    ]
+  },
+  {
+    "actions": [
+      "click:1",
+      "search:订单",
+      "search:",
+      "shift:2"
+    ],
+    "states": [
+      {
+        "selected": [
+          "users"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "users",
+        "anchorObject": "users",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 1 个"
+      },
+      {
+        "selected": [],
+        "visible": [
+          "orders"
+        ],
+        "anchorObject": "users",
+        "status": "共 1 个对象（表 1，视图 0）  |  1 个外键关系  |  已筛选（共 3 个）"
+      },
+      {
+        "selected": [],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "anchorObject": "users",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系"
+      },
+      {
+        "selected": [
+          "users",
+          "active_users"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "active_users",
+        "anchorObject": "users",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 2 个"
+      }
+    ]
+  },
+  {
+    "actions": [
+      "all",
+      "ctrl:1",
+      "ctrl:0"
+    ],
+    "states": [
+      {
+        "selected": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "orders",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 3 个"
+      },
+      {
+        "selected": [
+          "orders",
+          "active_users"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "orders",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 2 个"
+      },
+      {
+        "selected": [
+          "active_users"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "active_users",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 1 个"
+      }
+    ]
+  },
+  {
+    "actions": [
+      "click:0",
+      "search: 订单 "
+    ],
+    "states": [
+      {
+        "selected": [
+          "orders"
+        ],
+        "visible": [
+          "orders",
+          "users",
+          "active_users"
+        ],
+        "selectedObject": "orders",
+        "anchorObject": "orders",
+        "status": "共 3 个对象（表 2，视图 1）  |  1 个外键关系  |  已选中 1 个"
+      },
+      {
+        "selected": [],
+        "visible": [],
+        "anchorObject": "orders",
+        "status": "共 0 个对象（表 0，视图 0）  |  1 个外键关系  |  已筛选（共 3 个）"
+      }
+    ]
+  }
+]

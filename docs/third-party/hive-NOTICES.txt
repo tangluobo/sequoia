@@ -1,0 +1,16 @@
+The native HiveServer2 adapter follows Apache Hive's TCLIService protocol.
+Protocol reference: https://github.com/apache/hive/blob/master/service-rpc/if/TCLIService.thrift
+License: Apache License, Version 2.0 (vendor/hive-protocol/LICENSE).
+The reference IDL and its source URL/digest are in vendor/hive-protocol/.
+No Java or JDBC process is used by the native Hive connection.
+
+Kerberos uses the cross-krb5 0.5.0 safe system interface (MIT license).
+Source: https://github.com/estokes/cross-krb5
+It uses Windows SSPI, or the Unix system GSSAPI (libgssapi/libgssapi-sys,
+MIT license). The system ticket cache is used without changing saved passwords.
+SASL security-layer reference: https://www.rfc-editor.org/rfc/rfc4752
+
+Optional protocol QA downloads the unmodified Apache Hive service-rpc 4.1.0,
+Apache Thrift 0.16.0 and SLF4J API 1.7.36 artifacts from Maven Central.
+These are test fixtures, are SHA-256 pinned in scripts/qa/hive.py, and are not
+redistributed in the application. Their own licenses remain embedded in the jars.

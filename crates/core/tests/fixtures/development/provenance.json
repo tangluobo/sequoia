@@ -1,0 +1,20 @@
+{
+  "referenceSources": [
+    {
+      "source": "D:/Data/Git/tangluobo/tomata/src/main/java/com/tangluobo/tomato/module/tools/DevelopmentConfigManager.java",
+      "sha256": "BC757605FAB67CF28F585AF87909B0706887F446AA52F1947C12214706B8BEEB"
+    },
+    {
+      "source": "D:/Data/Git/tangluobo/tomata/src/main/java/com/tangluobo/tomato/module/tools/DevelopmentManagerPane.java",
+      "sha256": "80E87EDD25C3133E406539683334047E55AB8E4A41A1C88AEE7931D1B15BE67F"
+    },
+    {
+      "source": "D:/Data/Git/tangluobo/tomata/src/main/java/com/tangluobo/tomato/module/tools/DevelopmentProjectSettingsDialog.java",
+      "sha256": "CA4EA146B79B503043168EBF5B90AC43AC03B1937630B3C26378501765E45BCC"
+    }
+  ],
+  "scope": "Original Java load/migrateLegacyRuntimes results; null/default and unknown field handling compared after typed normalization",
+  "cases": 3,
+  "runtimeRequiresJava": false,
+  "oracle": "crates/core/tests/java/DevelopmentOracle.java"
+}

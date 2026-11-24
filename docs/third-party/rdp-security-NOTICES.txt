@@ -1,0 +1,18 @@
+Standard RDP Security compatibility adapter
+
+The Tomato adapter implements the legacy wire format documented by Microsoft
+MS-RDPBCGR, sections 2.2.1.10 and 5.3. It is only instantiated for a negotiated
+legacy connection. TLS and CredSSP keep their existing transports.
+
+RC4 is provided by RustCrypto rc4 0.1.0, licensed MIT OR Apache-2.0.
+Source: https://github.com/RustCrypto/stream-ciphers/tree/rc4-v0.1.0/rc4
+SHA-1 and MD5 are provided by RustCrypto sha1 and md-5, MIT OR Apache-2.0.
+RSA parsing/public-key arithmetic uses RustCrypto rsa, MIT OR Apache-2.0.
+These are normal locked Cargo dependencies; no external RDP executable is used
+by the application.
+
+Independent QA uses the FreeRDP 3.32.2 synthetic sample (Apache-2.0) and JDK JCA
+reference calculations. FreeRDP/OpenSSL fixture binaries are workspace-only test
+tools, are never installed, and are not included in Tomato release packages.
+The sample binds to IPv4 loopback and generates a test image; no user desktop
+or saved remote connection is used by this fixture.

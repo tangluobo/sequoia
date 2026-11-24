@@ -1,0 +1,56 @@
+[package]
+name = "virtual-file-transfer"
+version = "0.1.0"
+edition = "2024"
+description = "Transfer in-memory, generated, or archived data as files via Windows drag-and-drop and clipboard without staging temporary files"
+license = "MIT"
+repository = "https://github.com/hrtkysd/virtual-file-transfer"
+readme = "README.md"
+categories = [
+    "os::windows-apis",
+    "filesystem",
+    "api-bindings",
+]
+exclude = [
+    "/.github/",
+    "/.editorconfig",
+    "/.gitattributes",
+    "/.gitignore",
+]
+keywords = [
+    "windows",
+    "drag-and-drop",
+    "clipboard",
+    "virtual-files",
+    "ole",
+]
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+targets = []
+all-features = true
+
+[features]
+default = []
+spool = ["dep:tempfile"]
+
+[dependencies]
+windows = { version = "0.62.2", features = [
+    "Win32_Graphics_Gdi",
+    "Win32_System_Com",
+    "Win32_System_Com_StructuredStorage",
+    "Win32_System_DataExchange",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Memory",
+    "Win32_System_Ole",
+    "Win32_System_SystemServices",
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+] }
+windows-core = "0.62.2"
+tempfile = { version = "3", optional = true }
+
+[dev-dependencies]
+zip = "8.6"
+ouroboros = "0.18"

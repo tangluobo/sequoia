@@ -1,0 +1,30 @@
+[package]
+name = "ironrdp-rdpei"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.94"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Devolutions/IronRDP"
+readme = "README.md"
+
+[lib]
+doctest = false
+
+[dependencies.bitflags]
+version = "2.11"
+
+[dependencies.ironrdp-core]
+version = "0.2"
+
+[dependencies.ironrdp-dvc]
+version = "0.8"
+
+[dependencies.ironrdp-pdu]
+version = "0.9"
+
+[dependencies.ironrdp-svc]
+version = "0.8"
+
+[dependencies.tracing]
+version = "0.1"
+features = ["log"]

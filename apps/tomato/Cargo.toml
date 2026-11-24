@@ -1,0 +1,25 @@
+[package]
+name = "tomato"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+default-run = "tomato"
+
+[lints]
+workspace = true
+
+[build-dependencies]
+cc = "1"
+
+[dependencies]
+log = "0.4"
+tomato-ui-egui.workspace = true
+tomato-services.workspace = true
+eframe.workspace = true
+egui.workspace = true
+tokio.workspace = true
+image = { version = "0.25", default-features = false, features = ["png"] }
+
+[dev-dependencies]
+serde_json.workspace = true
+winit = { version = "0.30", default-features = false }

@@ -1,0 +1,185 @@
+{
+  "originalReadOnly": true,
+  "originals": [
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\dialog\\CopyTableDialog.java",
+      "sha256": "397AEC42830FA2A33F4A76B4C1874070D97EA6B6794E3E2E53DCADC6AAD0FCC2"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\handler\\PostgresDbHandler.java",
+      "sha256": "6216AE100A42CF1D22F137AF5D80585AC79DE6A62FD31871B7F11A729EE43590"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\handler\\MysqlDbHandler.java",
+      "sha256": "7CB9604A9F64B9FF8858C2F44A0EB958C6EFC1DB9B59B5E6976D6BAE90F633C5"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\handler\\AbstractDbHandler.java",
+      "sha256": "C941F51721E92DD8C0308E9CC669D9092E2DF39613967F12F9F42AB96EBBF9D2"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\dialog\\CreateDatabaseDialog.java",
+      "sha256": "C1B2D547E7D46FE1D51E3DAB13D5C3979BC93562DEC61D349315EC84CF45EE59"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\dialog\\EditDatabaseDialog.java",
+      "sha256": "FB500DA4DEC629062D4419D7B638250203C267E95061C761EDA4C51D1FA0AFAA"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\service\\DatabaseService.java",
+      "sha256": "48E26B67F2F436311D7773B240EA46FA5786F46564638A40D3010EE99FC9A76A"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\ConnectModule.java",
+      "sha256": "D472C05F3820088C2D49742B4910D4744EDFF281001D52DAFB7E6F4E10A20DF2"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\service\\BackupService.java",
+      "sha256": "861DF054766DB566CE69DCC49F257354A22EB9E80DED0FA04B8F993AAA837CAE"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\view\\TableObjectsView.java",
+      "sha256": "CA9BB10ECDD6E1ACB2951268A68BA1B080A72A05BD4E449286C89CC3CB7E8D1D"
+    }
+  ],
+  "registration": "production",
+  "currentSourceValidationPending": false,
+  "mappings": [
+    {
+      "java": "CopyTableDialog.initUI / handleNext / showStepTwo / handlePrev / regeneratePreviewSql",
+      "rust": [
+        "crates/ui-egui/src/app/table_transfer.rs",
+        "crates/ui-egui/src/app/table_transfer/view.rs"
+      ],
+      "scope": "two-step native wizard, destination database, selected tables, filters and SQL preview"
+    },
+    {
+      "java": "AbstractDbHandler.handleCopyTable / handlePasteTables; TableObjectsView.copySelectedTablesToClipboard",
+      "rust": [
+        "crates/ui-egui/src/app/connections.rs",
+        "crates/ui-egui/src/app/database_objects.rs",
+        "crates/services/src/database/transfer/clipboard.rs"
+      ],
+      "scope": "tree copy opens wizard; object copy uses JavaFX MIME serialized String and Unicode fallback; paste resolves existing saved connection ID"
+    },
+    {
+      "java": "DatabaseService.copyTableCrossConnection / transferRows / generateStructureSyncSql",
+      "rust": [
+        "crates/services/src/database/transfer.rs",
+        "crates/services/src/database/transfer/rows.rs",
+        "crates/services/src/database/transfer/postgres.rs"
+      ],
+      "scope": "reviewed plans, schema stamps, independent connections, bounded streaming, typed parameter casts, one prepared INSERT, committed batch progress, cancellation and cleanup"
+    },
+    {
+      "java": "PostgresDbHandler.openDatabase / handleSchemaDoubleClick / refreshSchemaNode",
+      "rust": [
+        "crates/ui-egui/src/app/sql_tree/postgres.rs",
+        "crates/ui-egui/src/app/db_tree/postgres.rs"
+      ],
+      "scope": "actual database then namespace, original database/schema/folder icons, isolated generation-stamped requests and cache"
+    },
+    {
+      "java": "CreateDatabaseDialog / EditDatabaseDialog; AbstractDbHandler.handleDeleteDatabase",
+      "rust": [
+        "crates/core/src/database_admin.rs",
+        "crates/services/src/database/admin.rs",
+        "crates/ui-egui/src/app/database_admin.rs"
+      ],
+      "scope": "native create/edit/preview and confirmed drop on real actor; retain failure drafts; PostgreSQL encoding changes require rebuilding database and are reported as unsupported rather than successful"
+    },
+    {
+      "java": "AbstractDbHandler.appendCloseMenuItems / closeTabsBySide / closeAllClosableTabs",
+      "rust": [
+        "crates/ui-egui/src/app/tab_closes.rs",
+        "crates/ui-egui/src/app/shell.rs"
+      ],
+      "scope": "ordered close queue, skip pinned objects, preserve dirty documents and honor save/cancel"
+    },
+    {
+      "java": "AbstractDbHandler.doHandleDbHostDoubleClick / closeDatabase / closeDatabaseObjectsForConnection",
+      "rust": [
+        "crates/ui-egui/src/app/sql_tree/mysql.rs",
+        "crates/ui-egui/src/app/sql_tree/postgres.rs",
+        "crates/ui-egui/src/app/database_objects.rs",
+        "crates/ui-egui/src/app/credentials.rs"
+      ],
+      "scope": "metadata requests do not create query tabs; database-node close retains independent query text and transactions; host close frees sessions while retaining query text; missing saved passwords resume the pending operation without a config write; query-toolbar password prompt resumes the exact selected scope and releases password editor state; host refresh replaces only opened directory metadata"
+    },
+    {
+      "java": "ConnectModule SQL host context menu / AbstractDbHandler.populateNodeContextMenu TABLE, VIEW / handleClearTables / handleTruncateTables / handleDeleteDbNodes",
+      "rust": [
+        "crates/ui-egui/src/app/connections.rs",
+        "crates/ui-egui/src/app/tree_objects.rs",
+        "crates/ui-egui/src/app/tree_objects/tests.rs"
+      ],
+      "scope": "original menu order, separators, icons and disabled create state; real create-table designer, warning/confirmation alerts, clear/truncate/drop actor commands, same-scope Ctrl/Shift selection and Delete, captured targets and dependent refresh; no Delete action after deselecting all rows"
+    }
+  ],
+  "verification": {
+    "validatedBaseline": "target/database-fixtures/probes/copy-tree-196/validation.json",
+    "databaseServiceTests": 18,
+    "nativeFlows": [
+      "MySQL transfer",
+      "PostgreSQL transfer",
+      "MySQL database tree and transaction-preserving close",
+      "PostgreSQL database tree and temporary password continuation",
+      "MySQL create/edit/drop retaining independent query text",
+      "PostgreSQL create/edit/drop retaining independent query text",
+      "existing two designer/object workflows",
+      "existing native MySQL backup workflow",
+      "MySQL sidebar menus: cancel/clear/truncate/new designer/Ctrl-Shift/Delete/drop view and dependent refresh",
+      "PostgreSQL sidebar menus: cancel/clear/truncate/new designer/Ctrl-Shift/Delete/drop view and dependent refresh"
+    ],
+    "sourceWindowOracles": [
+      "target/ui-table-transfer-original-170-0.png",
+      "target/ui-table-transfer-original-170-1.png",
+      "target/ui-database-admin-original-170-create-0.png",
+      "target/ui-database-admin-original-170-create-1.png",
+      "target/ui-database-admin-original-170-edit-0.png",
+      "target/ui-database-admin-original-170-edit-1.png"
+    ],
+    "configurationUnchanged": true,
+    "savedHostsContacted": false,
+    "defaultTestLog": "target/rdp-tests-196.log",
+    "defaultTests": 352,
+    "ignoredTests": 46,
+    "originalSourceShadowCompilation": "target/oracle-current-170/identity.json",
+    "currentNativeWindows": [
+      "target/window-probes/transfer-196/validation.json",
+      "target/window-probes/admin-196/validation.json"
+    ],
+    "uiHarnessSha256": "6B9D42812C32A1C96ABD662371521827859E3A4C9585497C2ABD18C52A1875E5",
+    "databaseHarnessSha256": "F4DD22459532A2664D317E99D31D359DA24ACA8497EB36A6C7416E7EA289B7D5",
+    "nativeSplitterScrollingAndRelease": "app::table_transfer::controls::native_wizard_dividers_scroll_preview_and_release_state_without_database_io",
+    "nativeFlowCount": 11,
+    "nativeHostArrows": "three actual fold/unfold cycles with no query tab and no additional actor requests, both MySQL and PostgreSQL",
+    "nativeClipboardAndDrag": "actual Copy SQL output, empty Copy preserves clipboard, splitter anchors do not jump to a preceding pointer position, scroll state and text state released on close",
+    "backupExtension": "target/database-fixtures/probes/pg-backup-213/validation.json"
+  },
+  "remaining": [
+    "PostgreSQL nb3 is now connected and tested; unusual inherited/range/row types and cluster-wide objects remain outside its supported scope; see database-backup-actions.json",
+    "all detailed drag/keyboard/font/control states compared with the original",
+    "full cross-application Windows private clipboard roundtrip with the Java app (wire format and production adapter are implemented)",
+    "advanced heterogeneous database types/capabilities beyond the tested lossless mappings",
+    "remaining application adapters and tools in migration checklist"
+  ],
+  "allVisualStatesVerified": false,
+  "fullMigrationComplete": false,
+  "originalLimitations": [
+    {
+      "java": "BackupService.getCreateTableSQL/getCreateViewSQL/getCreateFunctionSQL/getCreateEventSQL",
+      "lines": [
+        654,
+        667,
+        680,
+        693
+      ],
+      "scope": "Original only returns DDL for MySQL. PostgreSQL receives empty DDL; its visible backup tree is not proof of a usable backup/restore adapter."
+    },
+    {
+      "java": "AbstractDbHandler.buildSchemaFolders / PostgresDbHandler.handleSchemaDoubleClick",
+      "scope": "Original function folder has no loader or double-click handler; preserve this behavior rather than marking a new function browser complete."
+    }
+  ]
+}

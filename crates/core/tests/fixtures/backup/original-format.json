@@ -1,0 +1,195 @@
+{
+  "paths": [
+    {
+      "sanitized": "unnamed",
+      "filename": "unnamed.nb3"
+    },
+    {
+      "input": "",
+      "sanitized": "unnamed",
+      "filename": "unnamed.nb3"
+    },
+    {
+      "input": " ",
+      "sanitized": "unnamed",
+      "filename": "unnamed.nb3"
+    },
+    {
+      "input": ".",
+      "sanitized": "unnamed",
+      "filename": "unnamed.nb3"
+    },
+    {
+      "input": "..",
+      "sanitized": "unnamed",
+      "filename": "unnamed.nb3"
+    },
+    {
+      "input": "___",
+      "sanitized": "unnamed",
+      "filename": "___"
+    },
+    {
+      "input": "a/b:c*?\"<>|",
+      "sanitized": "a_b_c",
+      "filename": "a_b_c______"
+    },
+    {
+      "input": "中文 连接",
+      "sanitized": "中文_连接",
+      "filename": "中文 连接"
+    },
+    {
+      "input": "a\t\rb",
+      "sanitized": "a_b",
+      "filenameError": "InvalidPathException"
+    },
+    {
+      "input": " ",
+      "sanitized": " ",
+      "filename": " "
+    },
+    {
+      "input": " ",
+      "sanitized": " ",
+      "filename": " "
+    },
+    {
+      "input": " ",
+      "sanitized": " ",
+      "filename": " "
+    },
+    {
+      "input": "\u001c",
+      "sanitized": "unnamed",
+      "filename": "unnamed.nb3"
+    },
+    {
+      "input": " ",
+      "sanitized": "unnamed",
+      "filename": "unnamed.nb3"
+    },
+    {
+      "input": " leading ",
+      "sanitized": "leading",
+      "filenameError": "InvalidPathException"
+    },
+    {
+      "input": "...",
+      "sanitized": "...",
+      "filename": "..."
+    }
+  ],
+  "literals": [
+    {
+      "kind": "null",
+      "sql": "NULL"
+    },
+    {
+      "kind": "empty",
+      "sql": "''"
+    },
+    {
+      "kind": "quote",
+      "sql": "'O\\'Reilly'"
+    },
+    {
+      "kind": "backslash",
+      "sql": "'C:\\tmp\\one'"
+    },
+    {
+      "kind": "unicode",
+      "sql": "'中文😀'"
+    },
+    {
+      "kind": "separator",
+      "sql": "'one\u001e\ntwo'"
+    },
+    {
+      "kind": "bool",
+      "sql": "true"
+    },
+    {
+      "kind": "negative",
+      "sql": "-17"
+    },
+    {
+      "kind": "decimal",
+      "sql": "12345678901234567890.0012300"
+    },
+    {
+      "kind": "date",
+      "sql": "'2024-02-29'"
+    },
+    {
+      "kind": "time",
+      "sql": "'12:34:56'"
+    },
+    {
+      "kind": "timestamp",
+      "sql": "'2024-02-29 12:34:56'"
+    },
+    {
+      "kind": "localDate",
+      "sql": "'2024-02-29'"
+    },
+    {
+      "kind": "localTime",
+      "sql": "'12:34:56'"
+    },
+    {
+      "kind": "localDateTime",
+      "sql": "'2024-02-29 12:34:56'"
+    },
+    {
+      "kind": "map",
+      "sql": "'{\"value\":\"<中文>\\u2028\"}'"
+    },
+    {
+      "kind": "list",
+      "sql": "'[1,\"\\'\",false]'"
+    }
+  ],
+  "metadata": {
+    "MetaVersion": "30100",
+    "DatabaseType": "MYSQL",
+    "Catalog": "",
+    "Schema": "legacy_source",
+    "StartTime": "1",
+    "EndTime": "2",
+    "Encryption": "None",
+    "Comment": "旧备份格式",
+    "Objects": [
+      {
+        "UUID": "01234567-89AB-CDEF-0123-456789ABCDEF",
+        "Type": "Table",
+        "Name": "legacy_sample",
+        "Rows": "3",
+        "Metadata": {
+          "Filename": "01234567-89AB-CDEF-0123-456789ABCDEF.meta.json.gz",
+          "Checksum": "92fffde70133da68ba6b5f31738de758b6081192"
+        }
+      }
+    ]
+  },
+  "definition": {
+    "MetaVersion": "30100",
+    "Name": "legacy_sample",
+    "Type": "Table",
+    "DDL": "CREATE TABLE legacy_sample(id BIGINT NOT NULL, value TEXT)",
+    "SubDDL": [],
+    "AutoIncrement": "",
+    "Fields": [
+      "id",
+      "value"
+    ],
+    "TriggerDDL": [],
+    "IndexDDL": [],
+    "Data": [
+      {
+        "Filename": "01234567-89AB-CDEF-0123-456789ABCDEF.data.00000.sql.gz",
+        "Checksum": "7a7f036d1ce65a63dfec849fd5f3a62ebfc54aa7"
+      }
+    ]
+  }
+}

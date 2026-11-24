@@ -1,0 +1,100 @@
+[workspace]
+resolver = "3"
+members = ["crates/*", "apps/*", "xtask", "vendor/risuko-ed2k"]
+exclude = ["vendor/librqbit", "vendor/egui-wgpu", "vendor/ironrdp-async", "vendor/ironrdp-rdpeai", "vendor/ironrdp-cliprdr-format", "vendor/ironrdp-cliprdr-native", "vendor/virtual-file-transfer", "vendor/ironrdp-rdpsnd", "vendor/ironrdp-rdpsnd-native", "vendor/ironrdp-svc", "vendor/ironrdp-bulk", "vendor/ironrdp-cliprdr", "vendor/ironrdp-pdu", "vendor/ironrdp-core", "vendor/ironrdp-error", "vendor/ironrdp-rdpei", "vendor/ironrdp-egfx", "vendor/ironrdp-session", "vendor/ironrdp-dvc", "vendor/ironrdp-graphics", "vendor/oracledb", "vendor/epaint", "vendor/ironrdp-client", "vendor/ironrdp-connector", "vendor/ironrdp-acceptor", "vendor/zmodem2", "vendor/russh-sftp", "vendor/vt100", "vendor/eframe", "vendor/egui-winit", "vendor/egui", "vendor/sqlx-core", "vendor/sqlx-mysql", "vendor/sqlx-postgres", "vendor/cpal", "vendor/portable-pty", "vendor/libunftp"]
+default-members = ["apps/tomato", "apps/tomato-cli"]
+
+[workspace.package]
+version = "0.1.8"
+edition = "2024"
+rust-version = "1.95"
+license = "MIT"
+
+[workspace.dependencies]
+tomato-core = { path = "crates/core" }
+tomato-services = { path = "crates/services" }
+tomato-ui-egui = { path = "crates/ui-egui" }
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order", "arbitrary_precision"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+egui = "0.36"
+eframe = { version = "0.36", default-features = false, features = ["default_fonts", "wgpu", "x11", "wayland", "accesskit"] }
+rfd = "0.17"
+tokio = { version = "1", features = ["rt-multi-thread", "net", "io-util", "fs", "sync", "time", "macros"] }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+dbg_macro = "warn"
+todo = "warn"
+
+[profile.dev]
+opt-level = 1
+debug = 0
+incremental = false
+
+[profile.dev.package."*"]
+debug = 0
+
+[profile.dev.package.tomato]
+opt-level = 0
+[profile.dev.package.tomato-cli]
+opt-level = 0
+[profile.dev.package.tomato-core]
+opt-level = 0
+[profile.dev.package.tomato-services]
+opt-level = 0
+[profile.dev.package.tomato-ui-egui]
+opt-level = 0
+[profile.dev.package.xtask]
+opt-level = 0
+[profile.dev.package.openh264]
+opt-level = 3
+[profile.dev.package.openh264-sys2]
+opt-level = 3
+
+[profile.release]
+lto = "thin"
+codegen-units = 16
+strip = true
+
+[patch.crates-io]
+librqbit = { path = "vendor/librqbit" }
+libunftp = { path = "vendor/libunftp" }
+portable-pty = { path = "vendor/portable-pty" }
+ironrdp-async = { path = "vendor/ironrdp-async" }
+cpal = { path = "vendor/cpal" }
+ironrdp-rdpeai = { path = "vendor/ironrdp-rdpeai" }
+ironrdp-cliprdr-format = { path = "vendor/ironrdp-cliprdr-format" }
+ironrdp-cliprdr-native = { path = "vendor/ironrdp-cliprdr-native" }
+virtual-file-transfer = { path = "vendor/virtual-file-transfer" }
+ironrdp-rdpsnd = { path = "vendor/ironrdp-rdpsnd" }
+ironrdp-rdpsnd-native = { path = "vendor/ironrdp-rdpsnd-native" }
+ironrdp-svc = { path = "vendor/ironrdp-svc" }
+ironrdp-bulk = { path = "vendor/ironrdp-bulk" }
+ironrdp-cliprdr = { path = "vendor/ironrdp-cliprdr" }
+ironrdp-pdu = { path = "vendor/ironrdp-pdu" }
+ironrdp-core = { path = "vendor/ironrdp-core" }
+ironrdp-error = { path = "vendor/ironrdp-error" }
+ironrdp-rdpei = { path = "vendor/ironrdp-rdpei" }
+ironrdp-egfx = { path = "vendor/ironrdp-egfx" }
+ironrdp-session = { path = "vendor/ironrdp-session" }
+ironrdp-dvc = { path = "vendor/ironrdp-dvc" }
+ironrdp-graphics = { path = "vendor/ironrdp-graphics" }
+ironrdp-client = { path = "vendor/ironrdp-client" }
+sqlx-core = { path = "vendor/sqlx-core" }
+sqlx-mysql = { path = "vendor/sqlx-mysql" }
+sqlx-postgres = { path = "vendor/sqlx-postgres" }
+egui = { path = "vendor/egui" }
+epaint = { path = "vendor/epaint" }
+egui-wgpu = { path = "vendor/egui-wgpu" }
+egui-winit = { path = "vendor/egui-winit" }
+eframe = { path = "vendor/eframe" }
+ironrdp-connector = { path = "vendor/ironrdp-connector" }
+ironrdp-acceptor = { path = "vendor/ironrdp-acceptor" }
+
+zmodem2 = { path = "vendor/zmodem2" }
+russh-sftp = { path = "vendor/russh-sftp" }
+vt100 = { path = "vendor/vt100" }

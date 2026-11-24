@@ -1,0 +1,19 @@
+{
+  "clientWidth": 700,
+  "clientHeight": 450,
+  "rows": 2000,
+  "rowHeight": 28.0,
+  "scrollbars": [
+    {
+      "orientation": "VERTICAL",
+      "x": 686.0,
+      "y": 29.0,
+      "width": 13.0,
+      "height": 420.0,
+      "max": 1.0,
+      "visibleAmount": 0.0075,
+      "incrementDelta": 0.0001799208348326736,
+      "pageDelta": 0.007556675062972292
+    }
+  ]
+}

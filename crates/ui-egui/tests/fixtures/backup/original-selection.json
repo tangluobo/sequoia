@@ -1,0 +1,278 @@
+[
+  {
+    "operations": [
+      "child0+",
+      "all-"
+    ],
+    "trace": [
+      {
+        "all": false,
+        "custom": false,
+        "indeterminate": true,
+        "children": [
+          true,
+          false
+        ],
+        "selected": [
+          "users"
+        ]
+      },
+      {
+        "all": false,
+        "custom": false,
+        "indeterminate": true,
+        "children": [
+          true,
+          false
+        ],
+        "selected": [
+          "users"
+        ]
+      }
+    ]
+  },
+  {
+    "operations": [
+      "custom+",
+      "child0-",
+      "child1-"
+    ],
+    "trace": [
+      {
+        "all": false,
+        "custom": true,
+        "indeterminate": false,
+        "children": [
+          true,
+          true
+        ],
+        "selected": [
+          "users",
+          "orders"
+        ]
+      },
+      {
+        "all": false,
+        "custom": true,
+        "indeterminate": true,
+        "children": [
+          false,
+          true
+        ],
+        "selected": [
+          "orders"
+        ]
+      },
+      {
+        "all": false,
+        "custom": true,
+        "indeterminate": false,
+        "children": [
+          false,
+          false
+        ],
+        "selected": []
+      }
+    ]
+  },
+  {
+    "operations": [
+      "all+",
+      "child0+",
+      "child1+"
+    ],
+    "trace": [
+      {
+        "all": true,
+        "custom": false,
+        "indeterminate": false,
+        "children": [
+          false,
+          false
+        ],
+        "selected": [
+          "users",
+          "orders"
+        ]
+      },
+      {
+        "all": true,
+        "custom": false,
+        "indeterminate": true,
+        "children": [
+          true,
+          false
+        ],
+        "selected": [
+          "users",
+          "orders"
+        ]
+      },
+      {
+        "all": false,
+        "custom": true,
+        "indeterminate": false,
+        "children": [
+          true,
+          true
+        ],
+        "selected": [
+          "users",
+          "orders"
+        ]
+      }
+    ]
+  },
+  {
+    "operations": [
+      "child0+",
+      "child1+",
+      "custom-"
+    ],
+    "trace": [
+      {
+        "all": false,
+        "custom": false,
+        "indeterminate": true,
+        "children": [
+          true,
+          false
+        ],
+        "selected": [
+          "users"
+        ]
+      },
+      {
+        "all": false,
+        "custom": true,
+        "indeterminate": false,
+        "children": [
+          true,
+          true
+        ],
+        "selected": [
+          "users",
+          "orders"
+        ]
+      },
+      {
+        "all": false,
+        "custom": false,
+        "indeterminate": false,
+        "children": [
+          false,
+          false
+        ],
+        "selected": []
+      }
+    ]
+  },
+  {
+    "operations": [
+      "all+",
+      "all-"
+    ],
+    "trace": [
+      {
+        "all": true,
+        "custom": false,
+        "indeterminate": false,
+        "children": [
+          false,
+          false
+        ],
+        "selected": [
+          "users",
+          "orders"
+        ]
+      },
+      {
+        "all": false,
+        "custom": false,
+        "indeterminate": false,
+        "children": [
+          false,
+          false
+        ],
+        "selected": []
+      }
+    ]
+  },
+  {
+    "operations": [
+      "custom+",
+      "all+",
+      "all-"
+    ],
+    "trace": [
+      {
+        "all": false,
+        "custom": true,
+        "indeterminate": false,
+        "children": [
+          true,
+          true
+        ],
+        "selected": [
+          "users",
+          "orders"
+        ]
+      },
+      {
+        "all": true,
+        "custom": false,
+        "indeterminate": false,
+        "children": [
+          false,
+          false
+        ],
+        "selected": [
+          "users",
+          "orders"
+        ]
+      },
+      {
+        "all": false,
+        "custom": false,
+        "indeterminate": false,
+        "children": [
+          false,
+          false
+        ],
+        "selected": []
+      }
+    ]
+  },
+  {
+    "operations": [
+      "child0+",
+      "custom-"
+    ],
+    "trace": [
+      {
+        "all": false,
+        "custom": false,
+        "indeterminate": true,
+        "children": [
+          true,
+          false
+        ],
+        "selected": [
+          "users"
+        ]
+      },
+      {
+        "all": false,
+        "custom": false,
+        "indeterminate": true,
+        "children": [
+          true,
+          false
+        ],
+        "selected": [
+          "users"
+        ]
+      }
+    ]
+  }
+]

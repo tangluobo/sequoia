@@ -1,0 +1,6 @@
+{
+  "version": "0.17.3",
+  "source": "registry+https://github.com/rust-lang/crates.io-index",
+  "checksum": "d8942da362c0f0d895d7cac616263f2f9424edc5687364dfd1d25ef7eba506d7",
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,935 @@
+[
+  {
+    "name": "initial",
+    "rows": [
+      [
+        "b",
+        "10",
+        "r0"
+      ],
+      [
+        "a",
+        "2",
+        "r1"
+      ],
+      [
+        "b",
+        "2.00",
+        "r2"
+      ],
+      [
+        null,
+        "-1",
+        "r3"
+      ],
+      [
+        "😀",
+        null,
+        "r4"
+      ],
+      [
+        "",
+        "abc",
+        "r5"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [],
+    "columns": [
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "selected-r0",
+    "rows": [
+      [
+        "b",
+        "10",
+        "r0"
+      ],
+      [
+        "a",
+        "2",
+        "r1"
+      ],
+      [
+        "b",
+        "2.00",
+        "r2"
+      ],
+      [
+        null,
+        "-1",
+        "r3"
+      ],
+      [
+        "😀",
+        null,
+        "r4"
+      ],
+      [
+        "",
+        "abc",
+        "r5"
+      ]
+    ],
+    "selectedRows": [
+      "r0"
+    ],
+    "sorts": [],
+    "columns": [
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "value-ascending",
+    "rows": [
+      [
+        null,
+        "-1",
+        "r3"
+      ],
+      [
+        "a",
+        "2",
+        "r1"
+      ],
+      [
+        "b",
+        "10",
+        "r0"
+      ],
+      [
+        "b",
+        "2.00",
+        "r2"
+      ],
+      [
+        "😀",
+        null,
+        "r4"
+      ],
+      [
+        "",
+        "abc",
+        "r5"
+      ]
+    ],
+    "selectedRows": [
+      "r0"
+    ],
+    "sorts": [
+      {
+        "column": "value",
+        "type": "ASCENDING"
+      }
+    ],
+    "columns": [
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "like-b",
+    "rows": [
+      [
+        "b",
+        "10",
+        "r0"
+      ],
+      [
+        "b",
+        "2.00",
+        "r2"
+      ]
+    ],
+    "selectedRows": [
+      "r0"
+    ],
+    "sorts": [
+      {
+        "column": "value",
+        "type": "ASCENDING"
+      }
+    ],
+    "columns": [
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "amount-descending",
+    "rows": [
+      [
+        "b",
+        "2.00",
+        "r2"
+      ],
+      [
+        "b",
+        "10",
+        "r0"
+      ]
+    ],
+    "selectedRows": [
+      "r0"
+    ],
+    "sorts": [
+      {
+        "column": "amount",
+        "type": "DESCENDING"
+      }
+    ],
+    "columns": [
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "and-less-five",
+    "rows": [
+      [
+        "b",
+        "2.00",
+        "r2"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [
+      {
+        "column": "amount",
+        "type": "DESCENDING"
+      }
+    ],
+    "columns": [
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "remove-value-filter",
+    "rows": [
+      [
+        "b",
+        "2.00",
+        "r2"
+      ],
+      [
+        "a",
+        "2",
+        "r1"
+      ],
+      [
+        null,
+        "-1",
+        "r3"
+      ],
+      [
+        "😀",
+        null,
+        "r4"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [
+      {
+        "column": "amount",
+        "type": "DESCENDING"
+      }
+    ],
+    "columns": [
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "clear-sort-filtered",
+    "rows": [
+      [
+        null,
+        "-1",
+        "r3"
+      ],
+      [
+        "a",
+        "2",
+        "r1"
+      ],
+      [
+        "b",
+        "2.00",
+        "r2"
+      ],
+      [
+        "😀",
+        null,
+        "r4"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [],
+    "columns": [
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "clear-all-filters",
+    "rows": [
+      [
+        null,
+        "-1",
+        "r3"
+      ],
+      [
+        "a",
+        "2",
+        "r1"
+      ],
+      [
+        "b",
+        "10",
+        "r0"
+      ],
+      [
+        "b",
+        "2.00",
+        "r2"
+      ],
+      [
+        "😀",
+        null,
+        "r4"
+      ],
+      [
+        "",
+        "abc",
+        "r5"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [],
+    "columns": [
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "amount-ascending",
+    "rows": [
+      [
+        "😀",
+        null,
+        "r4"
+      ],
+      [
+        null,
+        "-1",
+        "r3"
+      ],
+      [
+        "b",
+        "10",
+        "r0"
+      ],
+      [
+        "a",
+        "2",
+        "r1"
+      ],
+      [
+        "b",
+        "2.00",
+        "r2"
+      ],
+      [
+        "",
+        "abc",
+        "r5"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [
+      {
+        "column": "amount",
+        "type": "ASCENDING"
+      }
+    ],
+    "columns": [
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "equals-null",
+    "rows": [
+      [
+        null,
+        "-1",
+        "r3"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [
+      {
+        "column": "amount",
+        "type": "ASCENDING"
+      }
+    ],
+    "columns": [
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "delete-visible-null-row",
+    "rows": [],
+    "selectedRows": [],
+    "sorts": [
+      {
+        "column": "amount",
+        "type": "ASCENDING"
+      }
+    ],
+    "columns": [
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "clear-after-delete",
+    "rows": [
+      [
+        "😀",
+        null,
+        "r4"
+      ],
+      [
+        "b",
+        "10",
+        "r0"
+      ],
+      [
+        "a",
+        "2",
+        "r1"
+      ],
+      [
+        "b",
+        "2.00",
+        "r2"
+      ],
+      [
+        "",
+        "abc",
+        "r5"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [],
+    "columns": [
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "hide-and-reorder",
+    "rows": [
+      [
+        "😀",
+        null,
+        "r4"
+      ],
+      [
+        "b",
+        "10",
+        "r0"
+      ],
+      [
+        "a",
+        "2",
+        "r1"
+      ],
+      [
+        "b",
+        "2.00",
+        "r2"
+      ],
+      [
+        "",
+        "abc",
+        "r5"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [],
+    "columns": [
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": false
+      }
+    ]
+  },
+  {
+    "name": "filter-physical-amount-after-reorder",
+    "rows": [
+      [
+        "a",
+        "2",
+        "r1"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [],
+    "columns": [
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": false
+      }
+    ]
+  },
+  {
+    "name": "sort-active-filtered",
+    "rows": [
+      [
+        "a",
+        "2",
+        "r1"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [
+      {
+        "column": "amount",
+        "type": "DESCENDING"
+      }
+    ],
+    "columns": [
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": false
+      }
+    ]
+  },
+  {
+    "name": "clear-filter-with-active-sort",
+    "rows": [
+      [
+        "😀",
+        null,
+        "r4"
+      ],
+      [
+        "b",
+        "10",
+        "r0"
+      ],
+      [
+        "a",
+        "2",
+        "r1"
+      ],
+      [
+        "b",
+        "2.00",
+        "r2"
+      ],
+      [
+        "",
+        "abc",
+        "r5"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [],
+    "columns": [
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": false
+      }
+    ]
+  },
+  {
+    "name": "tie-base",
+    "rows": [
+      [
+        "b",
+        "10",
+        "r0"
+      ],
+      [
+        "b",
+        "2.00",
+        "r2"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [
+      {
+        "column": "value",
+        "type": "ASCENDING"
+      }
+    ],
+    "columns": [
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "tie-reverse",
+    "rows": [
+      [
+        "b",
+        "2.00",
+        "r2"
+      ],
+      [
+        "b",
+        "10",
+        "r0"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [
+      {
+        "column": "amount",
+        "type": "DESCENDING"
+      }
+    ],
+    "columns": [
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "tie-filtered-back-to-value",
+    "rows": [
+      [
+        "b",
+        "2.00",
+        "r2"
+      ],
+      [
+        "b",
+        "10",
+        "r0"
+      ]
+    ],
+    "selectedRows": [],
+    "sorts": [
+      {
+        "column": "value",
+        "type": "ASCENDING"
+      }
+    ],
+    "columns": [
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": true
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": true
+      },
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": true
+      }
+    ]
+  },
+  {
+    "name": "all-hidden-row-selected",
+    "rows": [
+      [
+        "a",
+        "2",
+        "r1"
+      ],
+      [
+        "b",
+        "10",
+        "r0"
+      ],
+      [
+        "b",
+        "2.00",
+        "r2"
+      ],
+      [
+        "😀",
+        null,
+        "r4"
+      ],
+      [
+        "",
+        "abc",
+        "r5"
+      ]
+    ],
+    "selectedRows": [
+      "r1"
+    ],
+    "sorts": [],
+    "columns": [
+      {
+        "label": "identity",
+        "identity": 2,
+        "visible": false
+      },
+      {
+        "label": "amount",
+        "identity": 1,
+        "visible": false
+      },
+      {
+        "label": "value",
+        "identity": 0,
+        "visible": false
+      }
+    ]
+  }
+]

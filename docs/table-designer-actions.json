@@ -1,0 +1,237 @@
+{
+  "area": "table_designer",
+  "originalFile": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\view\\TableStructureView.java",
+  "originalSha256": "B52B2523B9E16F85A337DE799C6E0C557AA312D4607011BCDF9365E34F2C0AC4",
+  "supportedNativeDialects": [
+    "MYSQL",
+    "POSTGRESQL"
+  ],
+  "actions": [
+    {
+      "sourceMethod": "initializeUI",
+      "sourceLine": 227,
+      "rust": [
+        "crates/ui-egui/src/panels/sql/designer.rs",
+        "crates/ui-egui/src/panels/sql/designer/fields.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "loadStructure",
+      "sourceLine": 2713,
+      "rust": [
+        "crates/ui-egui/src/app/db_tree.rs",
+        "crates/services/src/database/objects/designer.rs",
+        "crates/ui-egui/src/tabs/table_design.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "initNewTableStructure",
+      "sourceLine": 2777,
+      "rust": [
+        "crates/ui-egui/src/app/table_design.rs",
+        "crates/services/src/database/objects/metadata.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "handleCreateNewTable",
+      "sourceLine": 2025,
+      "rust": [
+        "crates/ui-egui/src/app/table_design.rs",
+        "crates/ui-egui/src/panels/sql/designer/dialogs.rs",
+        "crates/services/src/database/objects/create.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "handleSave",
+      "sourceLine": 1906,
+      "rust": [
+        "crates/ui-egui/src/app/table_design.rs",
+        "crates/core/src/table_design/alter.rs",
+        "crates/services/src/database/objects/designer.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "handleAddField",
+      "sourceLine": 2213,
+      "rust": [
+        "crates/ui-egui/src/tabs/table_design.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "handleInsertField",
+      "sourceLine": 2343,
+      "rust": [
+        "crates/ui-egui/src/tabs/table_design.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "handleDeleteField",
+      "sourceLine": 2425,
+      "rust": [
+        "crates/ui-egui/src/tabs/table_design.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "handleTogglePrimaryKey",
+      "sourceLine": 2362,
+      "rust": [
+        "crates/ui-egui/src/tabs/table_design.rs",
+        "crates/ui-egui/src/panels/sql/designer/fields.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "handleMoveUp",
+      "sourceLine": 2385,
+      "rust": [
+        "crates/ui-egui/src/tabs/table_design.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "handleMoveDown",
+      "sourceLine": 2405,
+      "rust": [
+        "crates/ui-egui/src/tabs/table_design.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "navigateFromEditCell",
+      "sourceLine": 2226,
+      "rust": [
+        "crates/ui-egui/src/panels/sql/designer/fields.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "setupDragSelection",
+      "sourceLine": 790,
+      "rust": [
+        "crates/ui-egui/src/panels/sql/designer/fields.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "selectEntireColumn",
+      "sourceLine": 904,
+      "rust": [
+        "crates/ui-egui/src/tabs/table_design.rs",
+        "crates/ui-egui/src/panels/sql/designer/fields.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "handleCopyFields",
+      "sourceLine": 2549,
+      "rust": [
+        "crates/ui-egui/src/tabs/table_design/clipboard.rs",
+        "crates/ui-egui/src/panels/sql/designer.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "handlePasteFields",
+      "sourceLine": 2602,
+      "rust": [
+        "crates/ui-egui/src/tabs/table_design/clipboard.rs",
+        "crates/ui-egui/src/panels/sql/designer/fields.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "loadIndexes",
+      "sourceLine": 1346,
+      "rust": [
+        "crates/services/src/database/objects/designer.rs",
+        "crates/ui-egui/src/panels/sql/designer/info.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "loadForeignKeys",
+      "sourceLine": 1377,
+      "rust": [
+        "crates/services/src/database/objects/designer.rs",
+        "crates/ui-egui/src/panels/sql/designer/info.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "loadTriggers",
+      "sourceLine": 1409,
+      "rust": [
+        "crates/services/src/database/objects/designer.rs",
+        "crates/ui-egui/src/panels/sql/designer/info.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "loadOptions",
+      "sourceLine": 1441,
+      "rust": [
+        "crates/services/src/database/objects/designer.rs",
+        "crates/ui-egui/src/panels/sql/designer/pages.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "loadComment",
+      "sourceLine": 1519,
+      "rust": [
+        "crates/services/src/database/objects/designer.rs",
+        "crates/ui-egui/src/panels/sql/designer/pages.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    },
+    {
+      "sourceMethod": "loadSqlPreview",
+      "sourceLine": 1749,
+      "rust": [
+        "crates/core/src/table_design.rs",
+        "crates/core/src/table_design/alter.rs",
+        "crates/ui-egui/src/tabs/table_design/preview.rs",
+        "crates/ui-egui/src/panels/sql/designer/preview.rs"
+      ],
+      "status": "production_registered_mysql_postgres"
+    }
+  ],
+  "verification": {
+    "javaRowStateSequences": 7,
+    "javaRowStates": 42,
+    "nativeWindowPages": 7,
+    "lastCompletedDatabaseProbe": "target/database-fixtures/probes/designer-127-verified/validation.json",
+    "mysqlNativeControls": true,
+    "postgresNativeControls": true,
+    "allVisualStatesVerified": false,
+    "nativeWindowProbe": "target/window-probes/designer-127-verified/validation.json",
+    "queryCompletionAndCleanDataTabsRefresh": true,
+    "dirtyDataDraftPreserved": true,
+    "treeEntryAndFreshReopen": true
+  },
+  "sourcePlaceholdersPreserved": [
+    "index add/delete",
+    "foreign-key add/delete",
+    "trigger add/delete"
+  ],
+  "intentionalDifferences": [
+    "MySQL rename preserves data with CHANGE COLUMN instead of dropping/recreating the field",
+    "external structure changes are detected before writing",
+    "MySQL DDL cannot implicitly commit a user transaction"
+  ],
+  "remaining": [
+    "Oracle/Hive native adapters",
+    "all-state visual comparison",
+    "full object browser and database/namespace tree",
+    "other entries in docs/migration.md"
+  ],
+  "fullMigrationComplete": false
+}

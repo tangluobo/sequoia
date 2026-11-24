@@ -1,0 +1,74 @@
+{
+  "originalReadOnly": true,
+  "originals": [
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\handler\\RdpConnectHandler.java",
+      "sha256": "275993F039FD77D206BDD55138C2CB45A824DA13288C86F079314B6D919D2A58"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\dialog\\SessionConfigDialog.java",
+      "sha256": "B5956C95437C8155F41939DBD5C282016D5660802A5B5C0664D5E8BDBB8B4929"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\GlobalConfig.java",
+      "sha256": "1E29373DB046BB2CE24CB9E70CFA1FE929B33946F2F1847ABCFC363A63F3608F"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\ConnectionConfig.java",
+      "sha256": "46852B273D5975022678B9D8C6EF4CFA990F170DC3999B66FD0AB10EC4E45344"
+    },
+    {
+      "path": "D:\\Data\\Git\\tangluobo\\rdp4j\\src\\main\\java\\com\\tangluobo\\rdp4j\\RdpPane.java",
+      "sha256": "1024EAAC8342BE1B4F40EED2C1DF5980581785585B3F0690116117D2B8EA35B5"
+    }
+  ],
+  "mappings": [
+    {
+      "java": "RdpConnectHandler.shouldOpenInWindow and OPEN_WINDOWS",
+      "rust": [
+        "crates/ui-egui/src/app/rdp_windows.rs",
+        "crates/ui-egui/src/tabs/desktop/window.rs"
+      ],
+      "scope": "Legacy WINDOW/TAB inheritance, same-mode reuse, native taskbar window, close, maximize/fullscreen and restoring original tab without reconnection. Restart the initial full-screen toolbar deadline on an existing window; reset pin/drag state on restore; release remote key/mouse state on transitions."
+    },
+    {
+      "java": "SessionConfigDialog.show and GlobalConfig.rdpOpenMode",
+      "rust": [
+        "crates/ui-egui/src/app/rdp_windows/session.rs",
+        "crates/ui-egui/src/app/shell.rs"
+      ],
+      "scope": "Global setting and per-session override, inherit checkbox, encrypted Repository save, preserve unknown fields and temporary session credentials, cancel and external-conflict guard."
+    },
+    {
+      "java": "RdpPane.createExitBar, createControlButton, createPinIcon",
+      "rust": [
+        "crates/ui-egui/src/app/rdp_windows/toolbar.rs",
+        "crates/ui-egui/assets/images/rdp"
+      ],
+      "scope": "Original SVG path data and bar color, pin, quality fixed text, 5s hide, drag, minimize, restore, close; whole-state pixel parity remains unverified."
+    },
+    {
+      "java": "RdpPane status/native raster and RdesktopCanvas.repaintRemote dirty rectangles",
+      "rust": [
+        "vendor/ironrdp-client/src/rdp/graphics.rs",
+        "crates/services/src/remote_desktop/surface.rs",
+        "crates/ui-egui/src/panels/desktop/frame.rs"
+      ],
+      "scope": "16ms unioned protocol updates, bounded retained canvas, cooperative decode slice and egui partial texture upload; Windows clipboard stays on GUI thread."
+    }
+  ],
+  "verification": {
+    "default": "target/rdp-tests-199.log",
+    "protocol": "target/rdp-protocol-197.log",
+    "native": "target/window-probes/rdp-197/validation.json",
+    "releasePending": false,
+    "savedHostsContacted": false,
+    "productionFreeze": "target/checkpoints/rdp-199/production-sources.json",
+    "release": "target/window-probes/rdp-release-final-199/validation.json"
+  },
+  "remaining": [
+    "All-state Java/Rust pixel comparison",
+    "Real saved-host frame rate and active-session RAM measurement; automated tests only use owned loopback fixtures",
+    "Other RDP capabilities are not marked complete by these window/rendering changes"
+  ]
+}

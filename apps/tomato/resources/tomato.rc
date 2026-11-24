@@ -1,0 +1,3 @@
+// Same multi-resolution file icon as the original Java Windows package.
+LANGUAGE 9, 1
+1 ICON "tomato.ico"

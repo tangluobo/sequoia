@@ -1,0 +1,4020 @@
+{
+  "sourceHead": "cf793c3e7a8bb3c4d8443ca5957d4e14f27b371b",
+  "includesUncommittedSource": true,
+  "referenceHead": "4062db0ac2928ab58e3794f8017a81032cd6036f",
+  "javaFiles": 284,
+  "javaLines": 116916,
+  "files": [
+    {
+      "path": "src/main/java/com/tangluobo/tomato/AotUiSelfCheck.java",
+      "lines": 129,
+      "sha256": "2fe61af50a7747dea052a805cad791f860cf4f4b3dd22bd35cacc4763a7be844",
+      "publicMethods": [
+        "start"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/Launcher.java",
+      "lines": 77,
+      "sha256": "5063c05e671530a9582212449302ab12e861e7aca2758db3bc909bfe58c47d5f",
+      "publicMethods": [
+        "main"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/AbstractFileBrowserPane.java",
+      "lines": 2768,
+      "sha256": "1af59b479a3b51688168fe07b8d2994cdd35f884d47721a1611c925cef64f08f",
+      "publicMethods": [
+        "setInitialViewMode",
+        "startEdit",
+        "commitEdit",
+        "cancelEdit",
+        "navigateTo",
+        "refresh",
+        "getCurrentPath",
+        "getCurrentViewMode",
+        "getName",
+        "setName",
+        "getPath",
+        "setPath",
+        "isDirectory",
+        "setDirectory",
+        "isBucket",
+        "setBucket",
+        "getSize",
+        "setSize",
+        "getModifyTime",
+        "setModifyTime",
+        "getDisplayName",
+        "getDisplaySize",
+        "getDisplayTime",
+        "getDisplayType",
+        "getFormattedSize",
+        "toString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/ConfigManager.java",
+      "lines": 142,
+      "sha256": "e3037809dd176188cbd5240971804e1442a9d534ba88ca7c772387e199d960d0",
+      "publicMethods": [
+        "getConfigFilePath",
+        "loadConnections",
+        "saveConnections",
+        "generateId"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/ConnectionConfig.java",
+      "lines": 277,
+      "sha256": "46852b273d5975022678b9d8c6ef4cfa990f170dc3999b66fd0ab10ec4e45344",
+      "publicMethods": [
+        "getId",
+        "setId",
+        "getName",
+        "setName",
+        "getParentId",
+        "setParentId",
+        "getType",
+        "setType",
+        "getToolType",
+        "setToolType",
+        "getHost",
+        "setHost",
+        "getPort",
+        "setPort",
+        "getUsername",
+        "setUsername",
+        "isUsePassword",
+        "setUsePassword",
+        "getPassword",
+        "setPassword",
+        "isSavePassword",
+        "setSavePassword",
+        "isUseKey",
+        "setUseKey",
+        "getPrivateKeyPaths",
+        "setPrivateKeyPaths",
+        "getDatabase",
+        "setDatabase",
+        "getDatabaseProfileId",
+        "setDatabaseProfileId",
+        "getDescription",
+        "setDescription",
+        "getScrollbackLines",
+        "setScrollbackLines",
+        "getDefaultFileViewMode",
+        "setDefaultFileViewMode",
+        "getDomain",
+        "setDomain",
+        "getScreenWidth",
+        "setScreenWidth",
+        "getScreenHeight",
+        "setScreenHeight",
+        "isFullscreen",
+        "setFullscreen",
+        "getColorDepth",
+        "setColorDepth",
+        "isUseSsl",
+        "setUseSsl",
+        "isMapClipboard",
+        "setMapClipboard",
+        "isEnableSound",
+        "setEnableSound",
+        "getRdpFullScreenShortcut",
+        "setRdpFullScreenShortcut",
+        "getRdpOpenMode",
+        "setRdpOpenMode",
+        "getRemoteDesktopClientPath",
+        "setRemoteDesktopClientPath",
+        "getRemoteDesktopTlsPort",
+        "setRemoteDesktopTlsPort",
+        "getAdbExecutablePath",
+        "setAdbExecutablePath",
+        "getTerminalType",
+        "setTerminalType",
+        "getLocalDirectoryPath",
+        "setLocalDirectoryPath",
+        "getDirectoryType",
+        "setDirectoryType",
+        "isS3Directory",
+        "getBucket",
+        "setBucket",
+        "getS3Prefix",
+        "setS3Prefix",
+        "getRegion",
+        "setRegion",
+        "isPathStyleAccess",
+        "setPathStyleAccess",
+        "getEndpoint",
+        "setEndpoint",
+        "getPublicAccessUrl",
+        "setPublicAccessUrl",
+        "getCertificateEmail",
+        "setCertificateEmail",
+        "isRedisCluster",
+        "setRedisCluster",
+        "getRedisClusterNodes",
+        "setRedisClusterNodes",
+        "getRedisDatabase",
+        "setRedisDatabase",
+        "isUseSshTunnel",
+        "setUseSshTunnel",
+        "getSshTunnelHost",
+        "setSshTunnelHost",
+        "getSshTunnelPort",
+        "setSshTunnelPort",
+        "getSshTunnelUsername",
+        "setSshTunnelUsername",
+        "isSshTunnelUsePassword",
+        "setSshTunnelUsePassword",
+        "getSshTunnelPassword",
+        "setSshTunnelPassword",
+        "isSshTunnelSavePassword",
+        "setSshTunnelSavePassword",
+        "isSshTunnelUseKey",
+        "setSshTunnelUseKey",
+        "getSshTunnelPrivateKeyPaths",
+        "setSshTunnelPrivateKeyPaths",
+        "getSshTunnelHostId",
+        "setSshTunnelHostId",
+        "getServerConfig",
+        "setServerConfig"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/ConnectionIconResolver.java",
+      "lines": 21,
+      "sha256": "11f95425d0f80a86fbf676ef55bf1d44cab82c873733ad2fce0036a5218abe38",
+      "publicMethods": [
+        "resolve"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/ConnectionImportPlanner.java",
+      "lines": 195,
+      "sha256": "8d80680392fe6b5e62d80e06e1e5763015ac56533f6f8a9551405a002f182b85",
+      "publicMethods": [
+        "analyzeDuplicates",
+        "prepareSelected",
+        "DuplicateAnalysis"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/ConnectionTreeUtils.java",
+      "lines": 67,
+      "sha256": "34e5e33bd2012c9ca42d48a4e6e6f1dee4c34449d4e5abf05a936b0a76087e47",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/ConnectModule.java",
+      "lines": 3172,
+      "sha256": "d472c05f3820088c2d49742b4910d4744edff281001d52dafb7e6f4e10a20df2",
+      "publicMethods": [
+        "getName",
+        "loadSidebar",
+        "getDbNodeIcon",
+        "getTableIcon",
+        "getViewIcon",
+        "getQueryIcon",
+        "getConnections",
+        "isHostConnected",
+        "getIconForConfig",
+        "getRoot",
+        "getConnectingHosts",
+        "getDbNodeDataMap",
+        "getTreeView",
+        "markConnectionState",
+        "findItemById",
+        "startEdit",
+        "commitEdit",
+        "cancelEdit",
+        "createMenuIcon",
+        "startRenameEdit",
+        "handleNewBackup",
+        "updateHostIcon",
+        "updateHostIconGeneric",
+        "removeDbNodeDataRecursive",
+        "putDbNodeData",
+        "findConnectionById",
+        "getTerminalTabPane",
+        "showTerminalView",
+        "showWelcomeView",
+        "saveConnections",
+        "triggerConnect",
+        "triggerHostDoubleClick",
+        "openSettingsTab",
+        "openSettingsTabWithSshSelected",
+        "openSettingsTabWithRdpSelected",
+        "refreshDbHost",
+        "refreshDbNode",
+        "deleteDbNodes",
+        "deleteLocalDirNodes",
+        "showDataView",
+        "activateContentTab",
+        "getStage",
+        "ensureTabPaneInstalled",
+        "loadContent",
+        "createFixedSizeGraphic"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/ConnectType.java",
+      "lines": 80,
+      "sha256": "40c3dab47bb161abbf8dd797041526c90c408c93e1550c7d6ca2552123f405e3",
+      "publicMethods": [
+        "getCode",
+        "getDisplayName",
+        "getIconPath",
+        "getCategory",
+        "supportsUpdateByOriginalRow",
+        "fromCode"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/DatabaseLogoLoader.java",
+      "lines": 60,
+      "sha256": "0ff0e71dd0691fbbb025dd614dd4cf6582acdadd2c2d79611bc147dbf84a72d4",
+      "publicMethods": [
+        "load"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/DatabaseNodeData.java",
+      "lines": 99,
+      "sha256": "fa3eefac449f07ad562c22b4c9152b92e1691e36136c8299053c9c26623e8ac5",
+      "publicMethods": [
+        "getType",
+        "getName",
+        "getConnectionConfig",
+        "getDatabaseName",
+        "getSchemaName",
+        "getPath",
+        "isOpened",
+        "setOpened",
+        "getProperties",
+        "setProperties"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/DatabaseProfile.java",
+      "lines": 60,
+      "sha256": "8b8210942d43f9c5ceca6a40c02457b09ec436f0d0c2d57bb726433e381dfce8",
+      "publicMethods": [
+        "DatabaseProfile",
+        "buildJdbcUrl"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/DatabaseProfileRegistry.java",
+      "lines": 112,
+      "sha256": "487def9504fc4c468634007fdf8fb374b6814b3593de04bd70781a4d2913a485",
+      "publicMethods": [
+        "profiles",
+        "find",
+        "resolve",
+        "defaultProfileId"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/DataTypeProvider.java",
+      "lines": 181,
+      "sha256": "97775c34118f900d6e277074f81227be6cea14b8036f3d3ed91162fbecf13b18",
+      "publicMethods": [
+        "getDataTypes"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/AiSqlConfigDialog.java",
+      "lines": 96,
+      "sha256": "2ab0b502a30946ce0a265c9a654dcdfce0080648f44f5bf4cf1cf2423d464f4a",
+      "publicMethods": [
+        "show"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/AiSqlPromptDialog.java",
+      "lines": 51,
+      "sha256": "b2ba230bdf72cd5ae133f0cc39fe40a474a50bd849f164b83041122a0d43464d",
+      "publicMethods": [
+        "show"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/BackupDialog.java",
+      "lines": 916,
+      "sha256": "33bbf33744c48850c98540ff855ecb6844b441ecf084fd45d727bc62cb5a669c",
+      "publicMethods": [
+        "updateItem",
+        "showAndWait",
+        "getDisplayName",
+        "getType",
+        "getName",
+        "getDisplayName",
+        "setDisplayName",
+        "getCustomLabel",
+        "setCustomLabel",
+        "customLabelProperty",
+        "getSpecialType",
+        "isSpecial",
+        "isGroupNode",
+        "selectedProperty",
+        "isSelected",
+        "setSelected",
+        "indeterminateProperty",
+        "isIndeterminate",
+        "setIndeterminate",
+        "recordCountProperty",
+        "runningTimeProperty",
+        "incrementRecordCount",
+        "log",
+        "updateProgress"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/CloudInstancePropertiesDialog.java",
+      "lines": 89,
+      "sha256": "ece5a7a548d6c9521c1e271bcf78cf5e464371f0b6e96298e2551d3ce7b93f01",
+      "publicMethods": [
+        "show"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/ConnectionConfigDialog.java",
+      "lines": 3412,
+      "sha256": "d8651a645b3fa26740756119a81e5480d5ef1395de57ddb8ef452b97f01ebf3c",
+      "publicMethods": [
+        "showAndWait"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/ConnectTypeDialog.java",
+      "lines": 107,
+      "sha256": "97dcdf6f58736025f7455996c997f0579079b85c78dc17993601575e9b66924d",
+      "publicMethods": [
+        "showAndWait"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/CopyTableDialog.java",
+      "lines": 1074,
+      "sha256": "397aec42830fa2a33f4a76b4c1874070d97ea6b6794e3e2e53dcadc6aad0fcc2",
+      "publicMethods": [
+        "setSyncExecutor",
+        "setOnCloseCallback",
+        "isConfirmed",
+        "getSourceConfig",
+        "getSourceDatabase",
+        "getSourceSchema",
+        "getSourceTable",
+        "getSourceTables",
+        "getTargetTables",
+        "getTargetConfig",
+        "getTargetDatabase",
+        "getTargetSchema",
+        "getTargetTable",
+        "isCopyStructure",
+        "isCopyData",
+        "isDropIfExists",
+        "getFinalSelectedTables",
+        "isIncludeAdd",
+        "isIncludeDrop",
+        "isIncludeModify",
+        "presetTarget",
+        "isSameConnection",
+        "showAndWait"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/CreateDatabaseDialog.java",
+      "lines": 393,
+      "sha256": "c1b2d547e7d46fe1d51e3dab13d5c3979bc93562dec61d349315ec84cf45ee59",
+      "publicMethods": [
+        "getSql",
+        "getDatabaseName",
+        "getCharset",
+        "getCollation",
+        "isConfirmed",
+        "showAndWait"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/EditDatabaseDialog.java",
+      "lines": 334,
+      "sha256": "fb500da4dec629062d4419d7b638250203c267e95061c761eda4c51d1fa0afaa",
+      "publicMethods": [
+        "getCharset",
+        "getCollation",
+        "isConfirmed",
+        "showAndWait"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/ExportConnectionDialog.java",
+      "lines": 200,
+      "sha256": "7488858a4e19d85cd84e6839bfaff597cd9f8e3c59c6779c8f2023e00985f04d",
+      "publicMethods": [
+        "getSelectedConfigs",
+        "includePasswords",
+        "showAndWait"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/FolderDialog.java",
+      "lines": 69,
+      "sha256": "1f27bcce025fd23a2e707d82449b2b45746d0b358587dcd3c4acc2279bf306ef",
+      "publicMethods": [
+        "showAndWait"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/GlobalConfigDialog.java",
+      "lines": 130,
+      "sha256": "d939d9f54df8c6e801dd7e40d425371db427fb169fb4c97c6a35ee0ebf79fab3",
+      "publicMethods": [
+        "show",
+        "show"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/ImportConnectionDialog.java",
+      "lines": 181,
+      "sha256": "7cbd3c6bc93c7886749c7af7a339f43a2db06793b66d5110caa21212182c31bf",
+      "publicMethods": [
+        "getSelectedConfigs",
+        "showAndWait"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/LetsEncryptDialog.java",
+      "lines": 212,
+      "sha256": "8882b250e0ecc44f4f8d599db45d3480876fbdbefc0fbc150b10eaca54f31cc9",
+      "publicMethods": [
+        "Result",
+        "show",
+        "show",
+        "show",
+        "show"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/PasswordPromptDialog.java",
+      "lines": 75,
+      "sha256": "b45c54659f6b7afbac31a7bd3b976cc8550ceb4ecbc3949481bd084b0e528e58",
+      "publicMethods": [
+        "getPassword",
+        "isSavePassword",
+        "show"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/RestoreDialog.java",
+      "lines": 293,
+      "sha256": "fe7632ac8ea6bb7d9c62d0661baca8728bac4ec23346f9880379786e90d120b0",
+      "publicMethods": [
+        "showAndWait"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/dialog/SessionConfigDialog.java",
+      "lines": 153,
+      "sha256": "b5956c95437c8155f41939dbd5c282016d5660802a5b5c0664d5e8bdbb8b4929",
+      "publicMethods": [
+        "show"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/FieldTypeInference.java",
+      "lines": 217,
+      "sha256": "abc704b377f6564e243fe8e7086dcae7c380f8a7e666f4d035ba616c5e2a79c0",
+      "publicMethods": [
+        "infer",
+        "infer",
+        "Suggestion"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/FTPFileBrowserPane.java",
+      "lines": 546,
+      "sha256": "956ed266a2f1cf071870e53dbeb1fb08c1075dba0ee5ccc918cc91b024536dca",
+      "publicMethods": [
+        "disconnect",
+        "isConnected",
+        "connect",
+        "login",
+        "pwd",
+        "cwd",
+        "mkd",
+        "rmd",
+        "dele",
+        "rename",
+        "listFiles",
+        "disconnect"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/GlobalConfig.java",
+      "lines": 216,
+      "sha256": "1e29373db046bb2ce24cb9e70cfa1fe929b33946f2f1847abcfc363a63f3608f",
+      "publicMethods": [
+        "getScrollbackLines",
+        "setScrollbackLines",
+        "getTableFontName",
+        "setTableFontName",
+        "getTableFontSize",
+        "setTableFontSize",
+        "isSidebarVisible",
+        "setSidebarVisible",
+        "getSshTerminalFontName",
+        "setSshTerminalFontName",
+        "getSshTerminalFontSize",
+        "setSshTerminalFontSize",
+        "isSshServiceManagementEnabled",
+        "setSshServiceManagementEnabled",
+        "getSshDefaultFileViewMode",
+        "setSshDefaultFileViewMode",
+        "getRdpFullScreenShortcut",
+        "setRdpFullScreenShortcut",
+        "getRdpOpenMode",
+        "setRdpOpenMode",
+        "getAiApiBaseUrl",
+        "setAiApiBaseUrl",
+        "getAiModel",
+        "setAiModel",
+        "getAiApiKey",
+        "setAiApiKey",
+        "isAiIncludeSchema",
+        "setAiIncludeSchema",
+        "getAiRequestTimeoutSeconds",
+        "setAiRequestTimeoutSeconds",
+        "isAiSqlConfigured",
+        "getInstance",
+        "save"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/AbstractDbHandler.java",
+      "lines": 2683,
+      "sha256": "c941f51721e92dd8c0308e9cc669d9092e2df39613967f12f9f42ab96ebbf9d2",
+      "publicMethods": [
+        "getConnectType",
+        "openDatabase",
+        "updateHostIcon",
+        "supportsSchema",
+        "handleSchemaDoubleClick",
+        "refreshSchema",
+        "handleHostDoubleClick",
+        "closeConnection",
+        "closeDatabaseObjectsForConnection",
+        "handles",
+        "supports",
+        "handleConnect",
+        "handleHostDoubleClick",
+        "handleCreateDatabase",
+        "handleEditDatabase",
+        "handleDeleteDatabase",
+        "handleDeleteDbNodes",
+        "handleDeleteObjects",
+        "handleClearTables",
+        "handleTruncateTables",
+        "refreshDbHost",
+        "refreshDbNode",
+        "loadTablesForFolder",
+        "loadViewsForFolder",
+        "loadTablesAndViewsForFolder",
+        "loadQueriesForFolder",
+        "loadBackupsForFolder",
+        "handleTablesFolderDoubleClick",
+        "openObjectsView",
+        "openObject",
+        "designObject",
+        "createTable",
+        "createQuery",
+        "deleteObjects",
+        "clearTables",
+        "truncateTables",
+        "renameObject",
+        "importWizard",
+        "exportWizard",
+        "pasteTables",
+        "handleRenameObject",
+        "handleViewsFolderDoubleClick",
+        "handleNewTable",
+        "handleTableStructureDoubleClick",
+        "handleTableDataDoubleClick",
+        "populateNodeContextMenu",
+        "handleDatabaseDoubleClick",
+        "closeDatabase",
+        "handleCopyTable",
+        "handlePasteTables",
+        "handlePasteTables",
+        "handleNewQuery",
+        "handleQueryDoubleClick",
+        "handleRenameQuery",
+        "handleDeleteQuery",
+        "handleOpenQueryDir",
+        "handleRestoreBackup",
+        "handleOpenBackupDir",
+        "handleRenameBackup",
+        "handleDeleteBackup",
+        "handleNewQueryDir",
+        "handleNewBackupDir",
+        "handleRenameQueryDir",
+        "handleRenameBackupDir",
+        "handleDeleteQueryDir",
+        "handleDeleteBackupDir"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/AdbClient.java",
+      "lines": 915,
+      "sha256": "615901526e9c299bc6dac8e4c5275748677f0cce98ccf39fc0edd64f3b503669",
+      "publicMethods": [
+        "close",
+        "close",
+        "run",
+        "close",
+        "run"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/AdbConnectHandler.java",
+      "lines": 64,
+      "sha256": "6e340634a48900104ad7bf2aa7696109331fba64b63e49d8625947dfdfa6e7be",
+      "publicMethods": [
+        "supports",
+        "handleConnect"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/AdbInputDispatcher.java",
+      "lines": 76,
+      "sha256": "aaf2f7ab29e994c60ab70e3c37044d0fb718537af9e656886a167c0b01c0e18f",
+      "publicMethods": [
+        "close"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/AdbPane.java",
+      "lines": 468,
+      "sha256": "28b4a06078565320c60786b614d80616d269791bb9d09f5fb0bfc2d7cfdeaf6d",
+      "publicMethods": [
+        "handle",
+        "onStatus",
+        "onFrame",
+        "onVideoFrame"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/AdbSessionPool.java",
+      "lines": 492,
+      "sha256": "99277019cfac0fcb466b5e27da4fa37388a4c747fd834147a8e6a65f8c35c958",
+      "publicMethods": [
+        "close"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/AdbVideoSelfCheck.java",
+      "lines": 28,
+      "sha256": "299087a2382a1dde852190384c47b07bc594bcf6dbd4b895176b9b17df4f1bb4",
+      "publicMethods": [
+        "run"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/AliyunConnectHandler.java",
+      "lines": 305,
+      "sha256": "0ccaa24f4c44b4db28dca7568ae43508b8baa228f260a724b77c614d4147c6c3",
+      "publicMethods": [
+        "supports",
+        "handleConnect",
+        "handleHostDoubleClick",
+        "refreshHost",
+        "refreshDbNode",
+        "loadAliyunProductChildren",
+        "handleAliyunDomainDoubleClick",
+        "handleProductFolderDoubleClick",
+        "populateNodeContextMenu"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/ConnectHandler.java",
+      "lines": 53,
+      "sha256": "01862b698967d0a7b66c48e0df1f1bb8393901f69ed8e77b23aafc54e963156d",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/FTPConnectHandler.java",
+      "lines": 93,
+      "sha256": "94447a943ddc7b63e4653993c58cd967659ce12ed07f01cd0f031ac2ed445ac6",
+      "publicMethods": [
+        "supports",
+        "handleConnect"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/HiveDbHandler.java",
+      "lines": 35,
+      "sha256": "e1967c16decae0719f367590fa3780b550a5a87669c84f6d20718b464b317366",
+      "publicMethods": [
+        "getConnectType",
+        "openDatabase",
+        "updateHostIcon"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/KafkaConnectHandler.java",
+      "lines": 899,
+      "sha256": "bcbe3b0c800830e8d9538569ae0658ee7e251e6181eab1d3ff12926b24de99bd",
+      "publicMethods": [
+        "supports",
+        "handleConnect",
+        "handleHostDoubleClick",
+        "handleConsumersFolderDoubleClick",
+        "refreshHost",
+        "refreshDbNode",
+        "loadTopicsForFolder",
+        "loadClusterForFolder",
+        "handleClusterFolderDoubleClick",
+        "handleTopicsFolderDoubleClick",
+        "handleTopicDoubleClick",
+        "handleSendTopic",
+        "handleConsumerDoubleClick",
+        "handleBrokerDoubleClick",
+        "handleCreateTopic",
+        "handleDeleteTopic",
+        "populateNodeContextMenu"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/LocalDirectoryConnectHandler.java",
+      "lines": 1260,
+      "sha256": "784c2d7f0a9c44931dfd066ca707dfedc145171f8f0a6d69e1cbce14ce04b55b",
+      "publicMethods": [
+        "supports",
+        "handleConnect",
+        "handleHostDoubleClick",
+        "loadDirectoryContents",
+        "handleFolderDoubleClick",
+        "handleFileDoubleClick",
+        "refreshDbNode",
+        "handleCreateMarkdownAtHost",
+        "handleCreateMarkdownInFolder",
+        "createMarkdownFile",
+        "handleCreateSubdirectoryAtHost",
+        "handleCreateSubdirectoryInFolder",
+        "createSubdirectory",
+        "populateNodeContextMenu",
+        "renameNode",
+        "handleDeleteNodes",
+        "visitFile",
+        "postVisitDirectory",
+        "moveNode",
+        "s3BaseName",
+        "moveS3NodeFromTree",
+        "loadS3Contents",
+        "createS3MarkdownFile",
+        "createS3Subdirectory",
+        "renameS3Node",
+        "handleDeleteS3Nodes",
+        "moveS3Node"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/LocalTerminalConnectHandler.java",
+      "lines": 72,
+      "sha256": "58c10050d4acef845cd99a9dbb3c879a0d4b94cc85990996a04353d9c55e77a7",
+      "publicMethods": [
+        "supports",
+        "handleConnect"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/MongoConnectHandler.java",
+      "lines": 305,
+      "sha256": "aed080f098cc80392e7169e0b6c472344010420b08ba531244ac34ea97143e93",
+      "publicMethods": [
+        "supports",
+        "handleConnect",
+        "handleHostDoubleClick",
+        "handleDatabaseDoubleClick",
+        "handleCollectionDoubleClick",
+        "populateNodeContextMenu",
+        "closeConnection",
+        "promptCreateDatabase"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/MysqlDbHandler.java",
+      "lines": 45,
+      "sha256": "7cb9604a9f64b9ff8858c2f44a0eb958c6efc1db9b59b5e6976d6bae90f633c5",
+      "publicMethods": [
+        "getConnectType",
+        "openDatabase",
+        "updateHostIcon",
+        "supportsSchema"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/OracleDbHandler.java",
+      "lines": 45,
+      "sha256": "a26587135bb29d7a27d128fb91789c95a7ef4b3a7ab725ac12aaee09dd666012",
+      "publicMethods": [
+        "getConnectType",
+        "openDatabase",
+        "updateHostIcon",
+        "supportsSchema"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/PostgresDbHandler.java",
+      "lines": 119,
+      "sha256": "6216ae100a42cf1d22f137af5d80585ac79de6a62fd31871b7f11a729ee43590",
+      "publicMethods": [
+        "getConnectType",
+        "openDatabase",
+        "supportsSchema",
+        "handleSchemaDoubleClick",
+        "refreshSchema",
+        "updateHostIcon"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/RdpConnectHandler.java",
+      "lines": 362,
+      "sha256": "275993f039fd77d206bdd55138c2cb45a824da13288c86f079314b6d919d2a58",
+      "publicMethods": [
+        "supports",
+        "handleConnect"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/RedisConnectHandler.java",
+      "lines": 163,
+      "sha256": "55bd5c07cb6cab5d453478db4ff43875230d0fe05df920d8178587e437640651",
+      "publicMethods": [
+        "supports",
+        "handleConnect",
+        "handleHostDoubleClick",
+        "refreshHost",
+        "handleRedisDbDoubleClick",
+        "populateNodeContextMenu"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/RemoteDesktopConnectHandler.java",
+      "lines": 96,
+      "sha256": "c4b57993b191eace16a0608b71e89d5a297cce24b627cc61013508e0a5cf6a43",
+      "publicMethods": [
+        "supports",
+        "handleConnect"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/RocketmqConnectHandler.java",
+      "lines": 892,
+      "sha256": "ab324e79db87fb042d75fafe81c0ce180e7ce76cc823bda907f3d70a5b3886a7",
+      "publicMethods": [
+        "supports",
+        "handleConnect",
+        "handleHostDoubleClick",
+        "handleConsumersFolderDoubleClick",
+        "refreshHost",
+        "refreshDbNode",
+        "loadTopicsForFolder",
+        "loadClusterForFolder",
+        "handleClusterFolderDoubleClick",
+        "handleTopicsFolderDoubleClick",
+        "handleTopicDoubleClick",
+        "handleSendTopic",
+        "handleConsumerDoubleClick",
+        "handleBrokerDoubleClick",
+        "handleCreateTopic",
+        "handleDeleteTopic",
+        "populateNodeContextMenu"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/S3ConnectHandler.java",
+      "lines": 89,
+      "sha256": "6ab537630a4eeec289cd33977b243e351748d01828f32077e2a5b504582b760d",
+      "publicMethods": [
+        "supports",
+        "handleConnect"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/ScrcpyControlClient.java",
+      "lines": 311,
+      "sha256": "4ba6ba9c3f47ddc1fd2108a318d4b84b8839ba9e3da3af52bc416a455dd36b2c",
+      "publicMethods": [
+        "close"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/ScrcpyPacketBuffer.java",
+      "lines": 71,
+      "sha256": "354582659c580cecdc74f4d8f99666fb54a5afe588eae8f44b9f960eaf341f37",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/ScrcpyVideoDecoder.java",
+      "lines": 182,
+      "sha256": "0ee0fc0de842194509911a506dfac5368b2ad59ab2c9c99e54d4757093b22f3a",
+      "publicMethods": [
+        "close"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/SFTPConnectHandler.java",
+      "lines": 93,
+      "sha256": "ba8e7a88893674b37895ae0533bb26c2c052c406f2484f404c048e870e892f26",
+      "publicMethods": [
+        "supports",
+        "handleConnect"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/SshTerminalConnectHandler.java",
+      "lines": 1039,
+      "sha256": "6383ea807435185fd45595ba2a83686039929110362021e0a87262d4daf050f0",
+      "publicMethods": [
+        "supports",
+        "handleConnect",
+        "handleHostDoubleClick",
+        "handleStorageNodeDoubleClick",
+        "handlePortNodeDoubleClick",
+        "handleFileNodeDoubleClick",
+        "handleContainerFolderDoubleClick",
+        "handleContainerNodeDoubleClick",
+        "populateNodeContextMenu",
+        "loadContainerList",
+        "openContainerTerminalTab",
+        "openContainerLogsTab",
+        "openContainerInspectTab"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/TencentCloudConnectHandler.java",
+      "lines": 92,
+      "sha256": "b322ec33b8ae5d2b3ba985b54fcd97134723dbb931a32442ff0583f56757c512",
+      "publicMethods": [
+        "supports",
+        "handleConnect",
+        "handleHostDoubleClick",
+        "handleProductFolderDoubleClick",
+        "loadChildren",
+        "openDomain",
+        "refreshDbNode",
+        "populateNodeContextMenu"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/VncClient.java",
+      "lines": 520,
+      "sha256": "863ccade4d453bf232b41b0f85664c3e4521406709d1c4b3c96cd85f73c8a7af",
+      "publicMethods": [
+        "close"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/handler/VncPane.java",
+      "lines": 401,
+      "sha256": "213b1ab4db63f3713aa03b0b6ad50e3d47fc58073b3d1e0df622f9cd005195c5",
+      "publicMethods": [
+        "onPasswordRequired",
+        "onConnected",
+        "onFrameUpdate",
+        "onClipboardText",
+        "onBell",
+        "onDisconnected",
+        "onError"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/addons/MarkdownSyntaxHighlighterAddon.java",
+      "lines": 43,
+      "sha256": "a48fbec2e873cbc7e631892e0bf273b6eaa9c54888ac58efe10b8ae09cfbc943",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/addons/PreviewRendererAddon.java",
+      "lines": 39,
+      "sha256": "4014692801b0bdaac3d8f18f730ef2e11871649aab446930bfda3ec6c05365f9",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/addons/PreviewViewAddon.java",
+      "lines": 42,
+      "sha256": "01c9ac3bf233d3ed09acd230241fd989640c82505589fc5c24329d37ae71a5e0",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/addons/SmartFormatAddon.java",
+      "lines": 47,
+      "sha256": "4821ec30fb7ee22b826e4d4cbfb50851bccfac326f185479b55b42fb2be7ca94",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/addons/SpellCheckerAddon.java",
+      "lines": 54,
+      "sha256": "61331f9c603090e955c4087f75d9f5c63793a439d1974c9dbe7e41cac39e6de3",
+      "publicMethods": [
+        "toString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/controls/BottomSlidePane.java",
+      "lines": 115,
+      "sha256": "3d1378cc098450cd72888f0d40aabcdb8b4d7548709a86d824f77994b83594c1",
+      "publicMethods": [
+        "getCenter",
+        "setCenter",
+        "centerProperty",
+        "getBottom",
+        "setBottom",
+        "bottomProperty"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/controls/BrowseDirectoryButton.java",
+      "lines": 60,
+      "sha256": "04ee9ee84e8603569158777061000e8d95ea23877a95be70137d36173aed01c0",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/controls/BrowseFileButton.java",
+      "lines": 114,
+      "sha256": "282e77ddea4ee01b3c6762ab0e18f03da44f0236342aa84b479975d454512fd3",
+      "publicMethods": [
+        "addExtensionFilter",
+        "getBasePath",
+        "setBasePath",
+        "basePathProperty",
+        "getUrl",
+        "setUrl",
+        "urlProperty"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/controls/EscapeTextField.java",
+      "lines": 77,
+      "sha256": "641f0de728396d778a8913b901cf3544ccf884cd414e2ea3c193a6e715ea6ea6",
+      "publicMethods": [
+        "toString",
+        "fromString",
+        "getEscapedText",
+        "setEscapedText",
+        "escapedTextProperty",
+        "getEscapeCharacters",
+        "setEscapeCharacters",
+        "escapeCharactersProperty"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/controls/FileTreeCell.java",
+      "lines": 126,
+      "sha256": "028b84f672f30280f6a648bc1280fdfb4a7112e7bce2c6c91a2ca848dac660f6",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/controls/FileTreeItem.java",
+      "lines": 163,
+      "sha256": "838b32597bfe52065ef9fc34fdd9a3350959676bf704d497ade313a1f5786903",
+      "publicMethods": [
+        "isLeaf",
+        "getChildren",
+        "getLoadedChildren",
+        "refresh"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/controls/FileTreeView.java",
+      "lines": 141,
+      "sha256": "4910dac5c88558414f62e85f301a4ab6aa93aa79b5f1694de579a1f5f1de41dd",
+      "publicMethods": [
+        "refreshFiles",
+        "getExpandedDirectories",
+        "setExpandedDirectories",
+        "findItems"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/controls/IntSpinner.java",
+      "lines": 55,
+      "sha256": "8e49a6837008968279d6fcb208fd73ef8db49ca1cd47cf5909f030e92ce8f7df",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/controls/WebHyperlink.java",
+      "lines": 60,
+      "sha256": "6fb083af2d67f446c6b8a7fba3dc7cb6581f477f75a660f7b4c584239f353dae",
+      "publicMethods": [
+        "fire",
+        "getUri",
+        "setUri",
+        "UriProperty"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/dialogs/ImageDialog.java",
+      "lines": 170,
+      "sha256": "aab7f29361d946ee8aa4d5bee79f42f474cb75b8d9e9a4998e433bb3d5fbf10e",
+      "publicMethods": [
+        "init"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/dialogs/LinkDialog.java",
+      "lines": 179,
+      "sha256": "51a8bd7a02244c54d81e6793df814bd00b191cee7baedfba2c635837b8152df7",
+      "publicMethods": [
+        "init"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/editor/EmbeddedImage.java",
+      "lines": 197,
+      "sha256": "9acd50d4cdf2bf210a2cba8696c2fd058c72e80111ff6f78d7cb0f2c3f419f39",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/editor/EmbeddedImageOps.java",
+      "lines": 69,
+      "sha256": "917baa85183efe05f5ac5115e1e0de7aa3c58f34250610c13e3c63548355b4fb",
+      "publicMethods": [
+        "length",
+        "realCharAt",
+        "realGetText",
+        "realSubSequence",
+        "joinSeg"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/editor/FindReplacePane.java",
+      "lines": 627,
+      "sha256": "1093975eabcbd1460249293c952183bc7f82bbd062d59f710e12cf00ce4de8ad",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/editor/LineNumberGutterFactory.java",
+      "lines": 66,
+      "sha256": "95fff4f937cd9b42e2af1b5ad8fe445613ece4ad568181db8e81a4cd3f4fee24",
+      "publicMethods": [
+        "apply"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/editor/MarkdownEditorPane.java",
+      "lines": 605,
+      "sha256": "18415a25d5cefa4d309faec55594ec8fa8deb80e2948bb733f50321ebcc11209",
+      "publicMethods": [
+        "getNode",
+        "isReadOnly",
+        "setReadOnly",
+        "readOnlyProperty",
+        "getUndoManager",
+        "getSmartEdit",
+        "getTextArea",
+        "requestFocus",
+        "changed",
+        "getMarkdown",
+        "setMarkdown",
+        "markdownProperty",
+        "getMarkdownText",
+        "markdownTextProperty",
+        "getMarkdownAST",
+        "markdownASTProperty",
+        "selectionProperty",
+        "getScrollY",
+        "scrollYProperty",
+        "getPath",
+        "setPath",
+        "pathProperty",
+        "isVisible",
+        "setVisible",
+        "visibleProperty",
+        "undo",
+        "redo",
+        "cut",
+        "copy",
+        "paste",
+        "selectAll",
+        "selectRange",
+        "scrollCaretToVisible",
+        "scrollParagraphToVisible",
+        "hideContextMenu",
+        "find",
+        "findNextPrevious"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/editor/MarkdownSyntaxHighlighter.java",
+      "lines": 589,
+      "sha256": "3e680d1e9d5b6de71730f907f10bcb70818bfce26839f914d22bdacdc96d9d6c",
+      "publicMethods": [
+        "accept"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/editor/MarkdownTextArea.java",
+      "lines": 318,
+      "sha256": "880fdbf6321de243ab9eab5071380db5ab5ce9a396fe93ed63bbe0d7f19db12e",
+      "publicMethods": [
+        "replace",
+        "setStyleSpans",
+        "cut",
+        "copy",
+        "undo",
+        "redo",
+        "wordBreaksForwards",
+        "prevPage",
+        "nextPage",
+        "requestFollowCaret"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/editor/ParagraphOverlayGraphicFactory.java",
+      "lines": 300,
+      "sha256": "1e5e00a5ccb925b56e1aa7f7f0e49aea4bae23d7f271a5ce085faeb9e568d487",
+      "publicMethods": [
+        "addOverlayFactory",
+        "removeOverlayFactory",
+        "update",
+        "apply",
+        "createOverlayNodes",
+        "layoutOverlayNodes"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/editor/SmartEdit.java",
+      "lines": 1099,
+      "sha256": "5f662cfc3d07a44196c49d5e1d239e4eb98dd6e78877cd631a46b52f7c33ce24",
+      "publicMethods": [
+        "boldProperty",
+        "italicProperty",
+        "codeProperty",
+        "linkProperty",
+        "imageProperty",
+        "unorderedListProperty",
+        "orderedListProperty",
+        "blockquoteProperty",
+        "fencedCodeProperty",
+        "headerProperty",
+        "surroundSelection",
+        "surroundSelection",
+        "surroundSelection",
+        "insertBold",
+        "insertItalic",
+        "insertStrikethrough",
+        "insertInlineCode",
+        "insertLink",
+        "insertImage",
+        "insertLinkOrImage",
+        "insertHeading",
+        "insertUnorderedList",
+        "format"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/editor/SmartEditActions.java",
+      "lines": 55,
+      "sha256": "bd68e9acf46c99342616df33d5faad43cdcc95fcfdc874f6180c9b743123196f",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/editor/SmartFormat.java",
+      "lines": 336,
+      "sha256": "94e478847e778308b407e1be332d8085f49a997473e2e601fa3935d235ae6353",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/editor/WhitespaceOverlayFactory.java",
+      "lines": 108,
+      "sha256": "66ad247e19407547f20904024b20d7ed05b8abb3d3d764c63747f5e57e754fef",
+      "publicMethods": [
+        "createOverlayNodes",
+        "layoutOverlayNodes"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/Messages.java",
+      "lines": 55,
+      "sha256": "98efbe1d61c2340e7040529f16ad9fdd482adb351df25064a5872ac0b66c60d3",
+      "publicMethods": [
+        "get",
+        "get"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/options/EditorOptionsPane.java",
+      "lines": 176,
+      "sha256": "dfcecd8629ba09ed14652f7cbf85541b822bf9722fda364bebdfbbff670885d2",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/options/GeneralOptionsPane.java",
+      "lines": 337,
+      "sha256": "6172f041a5ca880afdb055f166ca3f962a07385a69acfd59bae561803c7c587f",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/options/MarkdownExtensions.java",
+      "lines": 117,
+      "sha256": "71d03f11a8529338d4fc2fe26340a256212627011d7d2c0cc19e4348c2bc42b5",
+      "publicMethods": [
+        "ids",
+        "displayName",
+        "isAvailable",
+        "getCommonmarkExtensions",
+        "getFlexmarkExtensions",
+        "getFlexmarkExtensions"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/options/MarkdownExtensionsPane.java",
+      "lines": 123,
+      "sha256": "89acef578bd44944d6e80cd4bafc7416c50c2d46ee8ca5ba2345862918e967fe",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/options/MarkdownOptionsPane.java",
+      "lines": 98,
+      "sha256": "b5a1af5e84da45d759fde3f9b838042bbd3476dec0a0842f021f8c826c485184",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/options/Options.java",
+      "lines": 318,
+      "sha256": "50dfb5738e9ebfa2fefe1f5a6e8cb2f32a644160ce09da979f26493a320dd770",
+      "publicMethods": [
+        "load",
+        "getFontFamily",
+        "setFontFamily",
+        "fontFamilyProperty",
+        "getFontSize",
+        "setFontSize",
+        "fontSizeProperty",
+        "getLineSeparator",
+        "setLineSeparator",
+        "lineSeparatorProperty",
+        "getEncoding",
+        "setEncoding",
+        "encodingProperty",
+        "getMarkdownFileExtensions",
+        "setMarkdownFileExtensions",
+        "markdownFileExtensionsProperty",
+        "getMarkdownExtensions",
+        "setMarkdownExtensions",
+        "markdownExtensionsProperty",
+        "getMarkdownRenderer",
+        "setMarkdownRenderer",
+        "markdownRendererProperty",
+        "isShowLineNo",
+        "setShowLineNo",
+        "showLineNoProperty",
+        "isShowWhitespace",
+        "setShowWhitespace",
+        "showWhitespaceProperty",
+        "isShowImagesEmbedded",
+        "setShowImagesEmbedded",
+        "showImagesEmbeddedProperty",
+        "getEmphasisMarker",
+        "setEmphasisMarker",
+        "emphasisMarkerProperty",
+        "getStrongEmphasisMarker",
+        "setStrongEmphasisMarker",
+        "strongEmphasisMarkerProperty",
+        "getBulletListMarker",
+        "setBulletListMarker",
+        "bulletListMarkerProperty",
+        "getWrapLineLength",
+        "setWrapLineLength",
+        "wrapLineLengthProperty",
+        "isFormatOnSave",
+        "setFormatOnSave",
+        "formatOnSaveProperty",
+        "isFormatOnlyModifiedParagraphs",
+        "setFormatOnlyModifiedParagraphs",
+        "formatOnlyModifiedParagraphsProperty",
+        "isSpellChecker",
+        "setSpellChecker",
+        "spellCheckerProperty",
+        "isGrammarChecker",
+        "setGrammarChecker",
+        "grammarCheckerProperty",
+        "getLanguage",
+        "setLanguage",
+        "languageProperty",
+        "getUserDictionary",
+        "setUserDictionary",
+        "userDictionaryProperty",
+        "getDisabledRules",
+        "setDisabledRules",
+        "disabledRulesProperty",
+        "ruleIdDesc2id",
+        "ruleIdDesc2desc",
+        "ruleIdDescs2ids",
+        "getAdditionalCSS",
+        "setAdditionalCSS",
+        "additionalCSSProperty",
+        "getAddonsPath",
+        "setAddonsPath",
+        "addonsPathProperty"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/options/OptionsDialog.java",
+      "lines": 171,
+      "sha256": "7d49badd3c4c7058fd35cf2852593a20d59fd77742e18699ff7369f1b898c5fa",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/options/SpellCheckerOptionsPane.java",
+      "lines": 319,
+      "sha256": "b4f0dc1231cd2a9cef2263edca4fe0246235c6e4693005f949c210d200b81f27",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/options/StylesheetsOptionsPane.java",
+      "lines": 77,
+      "sha256": "21217fb103550a76e448b0ae91d334c9a0881f385f4b0131435120cbd24cad2e",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/preview/ASTPreview.java",
+      "lines": 208,
+      "sha256": "72e0e3bc25052c67061b861cc19aa436090a5161d5a03f29093c3b1cb52d514d",
+      "publicMethods": [
+        "getNode",
+        "update",
+        "scrollY",
+        "editorSelectionChanged"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/preview/FlexmarkPreviewRenderer.java",
+      "lines": 238,
+      "sha256": "1a924344ceb4df3b5da5bbebefbd924d11b5208fdc4152298ccc7182e9943f17",
+      "publicMethods": [
+        "update",
+        "getHtml",
+        "getAST",
+        "findSequences",
+        "apply",
+        "setAttributes"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/preview/HtmlSourcePreview.java",
+      "lines": 119,
+      "sha256": "c35ac3e12797efb930ac844b623c8e2218c3a6823a0ac9e0f23b8a726a356de2",
+      "publicMethods": [
+        "getNode",
+        "update",
+        "scrollY",
+        "editorSelectionChanged"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/preview/MarkdownPreviewPane.java",
+      "lines": 211,
+      "sha256": "c48d1a8b9cba788789b1861cb71cf46534594e514d99f42ef425f613569c0f13",
+      "publicMethods": [
+        "getRenderer",
+        "getMarkdownText",
+        "getMarkdownAST",
+        "getPath",
+        "getEditorSelection",
+        "getNode",
+        "setRendererType",
+        "setType",
+        "pathProperty",
+        "markdownTextProperty",
+        "markdownASTProperty",
+        "scrollYProperty",
+        "editorSelectionProperty"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/preview/PreviewStyledTextArea.java",
+      "lines": 125,
+      "sha256": "024b56806cbac96a34ab0033a46d57d31265e92d29a6f83eab56276e22a3e6ae",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/spellchecker/GlobalLanguageTool.java",
+      "lines": 224,
+      "sha256": "419c56fba357fa81adf64a9a1b4e7b6cb6e6ba268726b8d47bd50a7928d3f96b",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/spellchecker/ResultCacheEx.java",
+      "lines": 77,
+      "sha256": "48c189cbf624a3f20a173421ec6cc8bcdbf2635857a264b8bfee4813bbd83ee7",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/spellchecker/SpellBlockProblems.java",
+      "lines": 59,
+      "sha256": "af1a68042f5d167a67d4c02480bc47745f38315df1b074e4936d4e1cfd4413a3",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/spellchecker/SpellChecker.java",
+      "lines": 701,
+      "sha256": "a97ac9c78c5201c6d1e6616e57b72a9dfec826239f63075800a32692f6035c58",
+      "publicMethods": [
+        "initContextMenu",
+        "hideContextMenu"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/spellchecker/SpellCheckerOverlayFactory.java",
+      "lines": 173,
+      "sha256": "964cb146e563fdd9e4c4cddcdd6fda7de2fecbc062de1a9ad58cdcd3a59a4b39",
+      "publicMethods": [
+        "createOverlayNodes",
+        "layoutOverlayNodes"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/spellchecker/SpellProblem.java",
+      "lines": 77,
+      "sha256": "041137ab62cf4a8b8b8681f744cb89fdba4103957fa79cbcb07169c4e11c91c7",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/spellchecker/SpellRange.java",
+      "lines": 103,
+      "sha256": "eb610cbd343756ad71be50cfcf6e6343e365c2785ad54e862677c03a660a25a5",
+      "publicMethods": [
+        "toString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/spellchecker/UserDictionary.java",
+      "lines": 117,
+      "sha256": "af9ece190e4629f8e4c1099515f660295cdf128c78bb9def05227a2fde378c4c",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/syntaxhighlighter/IdeaCodeHighlighter.java",
+      "lines": 378,
+      "sha256": "391a2659bb9fec2e3323778faf2024a345352cba36c2442f3016d2f512de7561",
+      "publicMethods": [
+        "cssClass",
+        "color",
+        "Token",
+        "languageFromInfo",
+        "languageFromFileName",
+        "normalizeLanguage",
+        "tokenize"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/syntaxhighlighter/SyntaxHighlighter.java",
+      "lines": 116,
+      "sha256": "19e40190e12b769f60003b964c3c945a4ff91445ac7432360209055e98422cd8",
+      "publicMethods": [
+        "highlight"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/util/Action.java",
+      "lines": 83,
+      "sha256": "88090069ad6cd62c76be9820e3051206f38a680e390bc5dd3e272974c84ec290",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/util/ActionUtils.java",
+      "lines": 111,
+      "sha256": "7aaab1fb300258e40ca2873c62abb414b4b5e78d5910ffb5f9c793b8db884a6c",
+      "publicMethods": [
+        "createMenu",
+        "createMenuItems",
+        "createMenuItem",
+        "createToolBar",
+        "createToolBarButtons",
+        "createToolBarButton"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/util/Addons.java",
+      "lines": 88,
+      "sha256": "fbb343c8af96f77b87903265ffb40f9025f463dc96030ae02d2a2154460dcb76",
+      "publicMethods": [
+        "getAddonsClassLoader"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/util/CommonmarkSourcePositions.java",
+      "lines": 486,
+      "sha256": "22889832bab0c9a4421c8241d1d370a1c0dbfd86cea731fe18e2a311a1500c9f",
+      "publicMethods": [
+        "visit",
+        "visit",
+        "visit",
+        "visit",
+        "visit",
+        "visit",
+        "visit",
+        "visit",
+        "visit",
+        "visit",
+        "visit",
+        "visit",
+        "get"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/util/Item.java",
+      "lines": 66,
+      "sha256": "43549a1df5cf6127a195e9af1fc90b4ed406fa9d8781d475c15d254adfbb9b7a",
+      "publicMethods": [
+        "equals",
+        "hashCode",
+        "toString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/util/PrefsBooleanProperty.java",
+      "lines": 71,
+      "sha256": "c953214d5d8b9cf3247bb7f9f7826a98752f3fb9f3ab8f9b3abd314acdb3dfa6",
+      "publicMethods": [
+        "init",
+        "setPreferences"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/util/PrefsEnumProperty.java",
+      "lines": 69,
+      "sha256": "55dd4b3453ea3ebe51c894eb825677af756cdc0795a24e920a705421a2bbeece",
+      "publicMethods": [
+        "init",
+        "setPreferences"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/util/PrefsIntegerProperty.java",
+      "lines": 67,
+      "sha256": "5ad72b7c9d46865b530b63dccf47f62264119069ced8eba97f3193e37158b717",
+      "publicMethods": [
+        "init",
+        "setPreferences"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/util/PrefsStringProperty.java",
+      "lines": 74,
+      "sha256": "647f971052b42abba5e58faa8d786f77928da38cab0c907d4da84a9ff8759dee",
+      "publicMethods": [
+        "init",
+        "init",
+        "setPreferences"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/util/PrefsStringsProperty.java",
+      "lines": 67,
+      "sha256": "c485fc23e545eb152ac09731643dde79e8f0fde159fb2b83b9c8dc3dc627ac1c",
+      "publicMethods": [
+        "init",
+        "setPreferences"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/util/Range.java",
+      "lines": 47,
+      "sha256": "a49831a175cec38ba11178a883eb1bd67d409dc3e7773c9178cb09273a0ab99c",
+      "publicMethods": [
+        "toString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/util/StageState.java",
+      "lines": 127,
+      "sha256": "90e06ed363e54ff466f79b0f143b03b7143664dd497390246e48f8e335a5747a",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/markdown/util/Utils.java",
+      "lines": 208,
+      "sha256": "b050bbcf92f7c80cbf821abbbd242780bc6f8d27529800dd318233f325ad2d20",
+      "publicMethods": [
+        "safeEquals",
+        "defaultIfEmpty",
+        "trimAndDefaultIfEmpty",
+        "isNullOrEmpty",
+        "ltrim",
+        "rtrim",
+        "putPrefs",
+        "putPrefsInt",
+        "putPrefsDouble",
+        "putPrefsBoolean",
+        "getPrefsStrings",
+        "putPrefsStrings",
+        "getPrefsEnum",
+        "putPrefsEnum",
+        "addSorted",
+        "isImage",
+        "findVScrollBar",
+        "findHScrollBar",
+        "error",
+        "fixSpaceAfterDeadKey",
+        "handle"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/MarkdownEditorPane.java",
+      "lines": 2709,
+      "sha256": "1fdcee4db787755807188af776e8b7aea263ddd4082d28b747159cc24f709bf3",
+      "publicMethods": [
+        "save",
+        "isModified",
+        "getDisplayName",
+        "getDisplayTitle",
+        "setOnTitleChange",
+        "createLocalResourceLoader",
+        "createObjectStorageResourceLoader",
+        "resolveRemoteResourcePath",
+        "loadMarkdownContent",
+        "getNodeTypes",
+        "render"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/MultiStatementResult.java",
+      "lines": 41,
+      "sha256": "baef0bb814633a932f3cfd4cb8634372412f47ed3ca09a0f58c71227edba9a45",
+      "publicMethods": [
+        "getResults",
+        "setResults",
+        "getTotalTime",
+        "setTotalTime",
+        "getSelectResults",
+        "getSuccessCount",
+        "getFailCount"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/RowState.java",
+      "lines": 13,
+      "sha256": "6ccd1a9ea5e09ecb5570ac3c478804f37d0db17fc2f5aa2e9e5fc8b525c992a5",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/S3FileBrowserPane.java",
+      "lines": 2230,
+      "sha256": "1f51b83c1d4246ff10aff372184027c3884f27fc4cccd776b49f5ac00ff0880c",
+      "publicMethods": [
+        "updateConfig",
+        "handle",
+        "read",
+        "read",
+        "changed",
+        "run",
+        "onPhase",
+        "onProgress"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/AiSqlService.java",
+      "lines": 167,
+      "sha256": "04138cadd2b869c711624ae3a72a4a1c2f06806757773312bbe9a5383a713d60",
+      "publicMethods": [
+        "generateSql"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/AliyunService.java",
+      "lines": 332,
+      "sha256": "04f6aeacead1f0197d81f94ce85e8bb6e4d2229029eea63c145edfd8a110800b",
+      "publicMethods": [
+        "getCode",
+        "getName",
+        "getIconType",
+        "getSupportedProducts",
+        "createClient",
+        "verifyCredentials",
+        "getRegions",
+        "getEcsInstances",
+        "getEcsInstances",
+        "getDomainList",
+        "getDomainRecords",
+        "addDomainRecord",
+        "updateDomainRecord",
+        "deleteDomainRecord"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/BackupService.java",
+      "lines": 969,
+      "sha256": "861df054766db566ce69dcc49f257354a22eb9e80ded0fa04b8f993aaa837cae",
+      "publicMethods": [
+        "createBackup",
+        "restoreBackup",
+        "listBackups",
+        "listBackupDirs",
+        "deleteBackupFile",
+        "deleteBackupDir",
+        "renameBackupFile",
+        "resolveBackupDir",
+        "getMetaVersion",
+        "setMetaVersion",
+        "getDatabaseType",
+        "setDatabaseType",
+        "getCatalog",
+        "setCatalog",
+        "getSchema",
+        "setSchema",
+        "getStartTime",
+        "setStartTime",
+        "getEndTime",
+        "setEndTime",
+        "getEncryption",
+        "setEncryption",
+        "getComment",
+        "setComment",
+        "getObjects",
+        "setObjects",
+        "getUuid",
+        "setUuid",
+        "getType",
+        "setType",
+        "getName",
+        "setName",
+        "getRows",
+        "setRows",
+        "getMetadata",
+        "setMetadata",
+        "getFilename",
+        "setFilename",
+        "getChecksum",
+        "setChecksum",
+        "getMetaVersion",
+        "setMetaVersion",
+        "getName",
+        "setName",
+        "getType",
+        "setType",
+        "getDdl",
+        "setDdl",
+        "getSubddl",
+        "setSubddl",
+        "getAutoIncrement",
+        "setAutoIncrement",
+        "getFields",
+        "setFields",
+        "getTriggerDDL",
+        "setTriggerDDL",
+        "getIndexDDL",
+        "setIndexDDL",
+        "getData",
+        "setData",
+        "getFilename",
+        "setFilename",
+        "getChecksum",
+        "setChecksum",
+        "recordCountProperty",
+        "runningTimeProperty",
+        "setTotalObjects",
+        "incrementRecordCount",
+        "log",
+        "updateProgress"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/DatabaseConnectionRecovery.java",
+      "lines": 110,
+      "sha256": "8cdefb4baaef1a11837c2f9052fb43abb27a2a367ce61e8de8584dd8befb5cc7",
+      "publicMethods": [
+        "execute",
+        "reconnect",
+        "run",
+        "isConnectionFailure"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/DatabaseService.java",
+      "lines": 4799,
+      "sha256": "c379a821b7b04892e96754d54bb64a9e1d6b9cb779271f3fec5c6faeaa864581",
+      "publicMethods": [
+        "acquireUsageLock",
+        "getConnection",
+        "getDatabases",
+        "getSchemas",
+        "getTables",
+        "getViews",
+        "getTablesInfo",
+        "getFunctions",
+        "getEvents",
+        "beginTransaction",
+        "commitTransaction",
+        "rollbackTransaction",
+        "queryTableData",
+        "executeSqlQuery",
+        "dropTables",
+        "clearTables",
+        "truncateTables",
+        "dropViews",
+        "renameTable",
+        "renameView",
+        "createDatabase",
+        "alterDatabase",
+        "dropDatabase",
+        "getDatabaseCharsetCollation",
+        "getCharsets",
+        "closeConnection",
+        "isConnectionActive",
+        "executeMultiSqlQuery",
+        "executeExplainQuery",
+        "executeStatusQuery",
+        "getPrimaryKeys",
+        "deleteRowsByPrimaryKeys",
+        "updateCell",
+        "insertEmptyRow",
+        "insertRows",
+        "updateRows",
+        "getTableColumns",
+        "resolveSchemaName",
+        "getDatabaseProductVersion",
+        "getTableIndexes",
+        "getTableForeignKeys",
+        "getDatabaseForeignKeys",
+        "getTableTriggers",
+        "getTableOptions",
+        "getEngines",
+        "getTableDdl",
+        "getTableComment",
+        "generateUpdateTableCommentSql",
+        "updateTableComment",
+        "executeDdl",
+        "executeDdlsInTransaction",
+        "createTable",
+        "generateCreateTableSql",
+        "needsDecimalPlaces",
+        "generateUpdateColumnCommentSql",
+        "generateAddColumnSql",
+        "generateDropColumnSql",
+        "generateModifyColumnSql",
+        "generateReorderColumnSql",
+        "generateStructureSyncSql",
+        "executeSqlList",
+        "updateColumnComment",
+        "copyTable",
+        "copyTables",
+        "copyTableSameConnection",
+        "copyTableCrossConnection"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/DdnsService.java",
+      "lines": 264,
+      "sha256": "8c59f607fbba7e521810b6e0157cd230bcbc7f0ffc0073efd09ed677b1a20abf",
+      "publicMethods": [
+        "getInstance",
+        "start",
+        "stop",
+        "isEnabled",
+        "enable",
+        "disable",
+        "fetchPublicIp"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/KafkaService.java",
+      "lines": 881,
+      "sha256": "4c7a827d25797bc2055fb0d2b9d2dd082cafac895453fb5a3d26f26895a1cb1d",
+      "publicMethods": [
+        "getLastDiag",
+        "getAdmin",
+        "testConnection",
+        "closeAdmin",
+        "closeAllAdmins",
+        "getTopicList",
+        "getTopicStats",
+        "createTopic",
+        "deleteTopic",
+        "getConsumerGroupList",
+        "getConsumerGroupDetail",
+        "deleteConsumerGroup",
+        "getClusterInfo",
+        "queryMessageByTime",
+        "queryMessageByOffset",
+        "queryUnconsumedMessages",
+        "getTopicConsumeStatus",
+        "sendMessage"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/LetsEncryptService.java",
+      "lines": 287,
+      "sha256": "63b3fee206f60aa4c2e25c87b475c68dd2958f24d9c9b2e93514c885b352d544",
+      "publicMethods": [
+        "issue",
+        "issue"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/MongoService.java",
+      "lines": 265,
+      "sha256": "87b03e5d3301655aa58c0e29a3a6f2a268132dfd00b902f3e96b112359d94fb9",
+      "publicMethods": [
+        "getClient",
+        "getDatabases",
+        "getCollections",
+        "findDocuments",
+        "insertDocument",
+        "replaceDocument",
+        "deleteDocument",
+        "runCommand",
+        "createCollection",
+        "renameCollection",
+        "dropCollection",
+        "getIndexes",
+        "createIndex",
+        "dropIndex",
+        "getValidator",
+        "updateValidator",
+        "close"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/OssService.java",
+      "lines": 427,
+      "sha256": "e004263cff1cd813ec8946ec1083c860bc1a7a4a1dcfb422b9312ff9c5d052d0",
+      "publicMethods": [
+        "createClient",
+        "listBuckets",
+        "listObjects",
+        "getObjectStream",
+        "putObject",
+        "uploadFile",
+        "listObjectsRecursive",
+        "createDirectory",
+        "deleteObject",
+        "copyObject",
+        "renameObject",
+        "renameDirectory",
+        "copyAcrossOSS",
+        "createBucket",
+        "getKey",
+        "setKey",
+        "isDirectory",
+        "setDirectory",
+        "getSize",
+        "setSize",
+        "getLastModified",
+        "setLastModified",
+        "getDisplayName",
+        "getPrefix",
+        "getFormattedSize"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/RedisService.java",
+      "lines": 647,
+      "sha256": "ff71022f3062d087eee676f63f8de250c2161ff271119891485d8ffb34f04cea",
+      "publicMethods": [
+        "getJedis",
+        "closeSshTunnel",
+        "getJedisCluster",
+        "closeJedisCluster",
+        "closeAllClusters",
+        "getDatabases",
+        "scanKeys",
+        "getKeyType",
+        "getKeyDetail",
+        "setKeyValue",
+        "deleteKey",
+        "renameKey",
+        "getTtl",
+        "setTtl",
+        "getDbSize",
+        "buildKeyHierarchy"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/RocketmqService.java",
+      "lines": 1113,
+      "sha256": "24ea8ed181e607932111995030e0ee1d5131c7a2f72038ae933596c40175981f",
+      "publicMethods": [
+        "getAdmin",
+        "testConnection",
+        "closeAdmin",
+        "updateNameServerAddressList",
+        "getNameServerAddressList",
+        "getAvailableNameSrvList",
+        "invokeSync",
+        "invokeAsync",
+        "invokeOneway",
+        "invoke",
+        "registerProcessor",
+        "setCallbackExecutor",
+        "isChannelWritable",
+        "isAddressReachable",
+        "closeChannels",
+        "start",
+        "shutdown",
+        "registerRPCHook",
+        "setRequestPipeline",
+        "clearRPCHook",
+        "closeAllAdmins",
+        "getTopicList",
+        "getTopicStats",
+        "getTopicRoute",
+        "createTopic",
+        "deleteTopic",
+        "queryMessageById",
+        "queryMessageByKey",
+        "queryMessageByTime",
+        "getConsumerGroupList",
+        "getConsumerGroupDetail",
+        "getConsumerConnection",
+        "deleteConsumerGroup",
+        "getClusterInfo",
+        "getBrokerInfo",
+        "getTopicConsumeStatus",
+        "queryUnconsumedMessages",
+        "getMessageTrack",
+        "reconsumeMessage",
+        "sendMessage"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/S3AuthHelper.java",
+      "lines": 125,
+      "sha256": "a7930ab59e40294c9963b50861aee62d2c7488c5486694b0068680f39a0e16fa",
+      "publicMethods": [
+        "buildAuthorization",
+        "uriEncodePath"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/S3Service.java",
+      "lines": 777,
+      "sha256": "370b5fbc1d5c495d645f0cc7764558dad24c63e553711611ce0ea7ffe3f659fb",
+      "publicMethods": [
+        "createClient",
+        "checkClientTrusted",
+        "checkServerTrusted",
+        "getAcceptedIssuers",
+        "closeSshTunnel",
+        "listBuckets",
+        "listObjects",
+        "getObjectStream",
+        "putObject",
+        "uploadFile",
+        "uploadFileDirect",
+        "createDirectory",
+        "deleteObject",
+        "copyObject",
+        "renameObject",
+        "renameDirectory",
+        "copyAcrossS3",
+        "contentLength",
+        "subscribe",
+        "onSubscribe",
+        "onNext",
+        "onError",
+        "onComplete",
+        "copyObjectAcrossBucket",
+        "listObjectsRecursive",
+        "createBucket",
+        "deleteBucket",
+        "getKey",
+        "setKey",
+        "isDirectory",
+        "setDirectory",
+        "getSize",
+        "setSize",
+        "getLastModified",
+        "setLastModified",
+        "getDisplayName",
+        "getPrefix",
+        "getFormattedSize"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/service/TencentCloudService.java",
+      "lines": 217,
+      "sha256": "0fb9b1228265bbef4ebd65aade00b4da9855bee0b88d90d60d45c3e568f6dc27",
+      "publicMethods": [
+        "TencentProduct",
+        "getSupportedProducts",
+        "verifyCredentials",
+        "verifyCredentialsOrThrow",
+        "getCvmInstances",
+        "getCvmInstances",
+        "getDomainList",
+        "getDomainRecords",
+        "addDomainRecord",
+        "updateDomainRecord",
+        "deleteDomainRecord"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/SFTPFileBrowserPane.java",
+      "lines": 955,
+      "sha256": "e95b151fe48c76ba24982dd15b3bba8737b66d5cfb29df5bebdb409df8f23cb7",
+      "publicMethods": [
+        "run",
+        "disconnect"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/SqlSplitter.java",
+      "lines": 383,
+      "sha256": "32476b81f6bf88eba2d6218184f0107100d9bc45ceda8dd702df28a9855e1ed9",
+      "publicMethods": [
+        "split",
+        "isSelectStatement",
+        "extractTableName"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/SqlStatementResult.java",
+      "lines": 46,
+      "sha256": "80ef143e13a7d70b92b6801d2b78056d3c506600dd2c3f58e30418d7a7d92383",
+      "publicMethods": [
+        "getSql",
+        "setSql",
+        "isSuccess",
+        "setSuccess",
+        "getErrorMessage",
+        "setErrorMessage",
+        "getErrorCause",
+        "setErrorCause",
+        "getQueryTime",
+        "setQueryTime",
+        "isHasResultSet",
+        "setHasResultSet",
+        "getResultData",
+        "setResultData",
+        "getUpdateCount",
+        "setUpdateCount",
+        "isSelect",
+        "setSelect",
+        "getSourceTableName",
+        "setSourceTableName"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/SshTunnel.java",
+      "lines": 152,
+      "sha256": "9cca8ad2409bb0d69a73bd5c68de290c5bdcabd2c4b3550ded7a148656a59738",
+      "publicMethods": [
+        "fromConfig",
+        "connect",
+        "getForwardedLocalPort",
+        "isActive",
+        "disconnect"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/SshTunnelManager.java",
+      "lines": 310,
+      "sha256": "be3e36d083127983b9fcec6f5268c89df8edc78d2d7b8a60f2893ebb7071ff4a",
+      "publicMethods": [
+        "getLocalPort",
+        "refresh",
+        "isClosed",
+        "close",
+        "acquire",
+        "acquire",
+        "peek",
+        "ensureBrokerTunnel",
+        "closeBrokerTunnels"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/TableRowData.java",
+      "lines": 76,
+      "sha256": "040f887d40ee0457754f9caea22100987c076da519b78eb07eb380fa3a9f4656",
+      "publicMethods": [
+        "getColumnNames",
+        "setColumnNames",
+        "getColumnTypes",
+        "setColumnTypes",
+        "getSourceColumnNames",
+        "setSourceColumnNames",
+        "getSourceTableNames",
+        "setSourceTableNames",
+        "getSourceSchemaNames",
+        "setSourceSchemaNames",
+        "getSourceCatalogNames",
+        "setSourceCatalogNames",
+        "getRows",
+        "setRows",
+        "getTotalCount",
+        "setTotalCount",
+        "getPage",
+        "setPage",
+        "getPageSize",
+        "setPageSize",
+        "getTotalPages",
+        "setTotalPages",
+        "getQueryTime",
+        "setQueryTime",
+        "getExecutedSql",
+        "setExecutedSql"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/ToolType.java",
+      "lines": 52,
+      "sha256": "0ad3234a7df87068ad1e5de5efb75f97708e9797a4e2c5f11f6e133eed646c3c",
+      "publicMethods": [
+        "getCode",
+        "getDisplayName",
+        "getIconPath",
+        "fromCode"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/AliyunDomainDataView.java",
+      "lines": 637,
+      "sha256": "31f60caf4b58ee2de26d1d5f6638c79377cf87541dd7d7b3ff1f7fe6f049b8ef",
+      "publicMethods": [
+        "getRecordId",
+        "getRr",
+        "getType",
+        "getValue",
+        "getTtl",
+        "getStatus",
+        "getPriority",
+        "getLine"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/ColorTransposeGamePane.java",
+      "lines": 319,
+      "sha256": "323242a5b7d39acce2ad196f409a547ca372de03786b0a80ffecff8126f1266a",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/FrozenRowSelectorPane.java",
+      "lines": 176,
+      "sha256": "0e742d2fa2c9dea99a2d051626013dbf24b66bb002465b87ba4198ad3bf56937",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/KafkaDataView.java",
+      "lines": 1349,
+      "sha256": "02abcd3e18005956e8e2dfd01d91ba50874252b2df38ea3d58e7309b5d86f4a1",
+      "publicMethods": [
+        "getMainTabPane",
+        "selectTopicTab",
+        "selectMessageTab",
+        "selectSendTab",
+        "toString",
+        "fromString",
+        "getTopic",
+        "getPartitions",
+        "getReplicationFactor",
+        "getTopicType",
+        "getPartition",
+        "getOffset",
+        "getKey",
+        "getStoreTime",
+        "getTimestampType",
+        "getDetail",
+        "getPartition",
+        "getLeader",
+        "getReplicaCount",
+        "getMinOffset",
+        "getMaxOffset"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/MongoCollectionView.java",
+      "lines": 347,
+      "sha256": "d2e3de7ac10130642d688758eb6a81ab85024c2f6680172f75e32d1545fa328b",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/QueryResultEditPlan.java",
+      "lines": 146,
+      "sha256": "1d773bcc21dd0146e13635348a01f46524804c05758fe63a335e55b53208eb8b",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/RedisDataView.java",
+      "lines": 1011,
+      "sha256": "df660f158b49b331fee764caba0a6ac3e3ff8e9b136ee25b378b0acc8f045dc0",
+      "publicMethods": [
+        "loadKeyTree"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/RocketmqDataView.java",
+      "lines": 1395,
+      "sha256": "64cf649bf30884d45bc29b97e0b2a9dd31be20c21070ff6b3e375b1bb47347d3",
+      "publicMethods": [
+        "getMainTabPane",
+        "selectTopicTab",
+        "selectMessageTab",
+        "selectSendTab",
+        "toString",
+        "fromString",
+        "getTopic",
+        "getTopicType",
+        "getMsgId",
+        "getTags",
+        "getKeys",
+        "getStoreTime",
+        "getBornHost",
+        "getDetail",
+        "getBrokerName",
+        "getQueueId",
+        "getMinOffset",
+        "getMaxOffset",
+        "getLastUpdateTimestamp"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/SqlCompletionEngine.java",
+      "lines": 197,
+      "sha256": "5223e956f83c92d8735f2932498404c88a65a9706e55615dbde67bfef80ed800",
+      "publicMethods": [
+        "Candidate",
+        "Completion",
+        "complete"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/SqlEditorDragGhost.java",
+      "lines": 96,
+      "sha256": "97a86b6f28a69ac9bebf621cef66a99247811f7d1f4cc97776e9314bb4f218a6",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/SqlEditorDuplicateSupport.java",
+      "lines": 53,
+      "sha256": "2ad632f8f94f3b31c756b919ec147f2486e1f14c4fef8030038db31d0afac85e",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/SqlEditorPane.java",
+      "lines": 823,
+      "sha256": "767af5f2ee33c5d0e63a57a45a904615a78ddd2448dfc72546ee9998ac81d998",
+      "publicMethods": [
+        "ChangeHighlight",
+        "setChangeHighlights",
+        "clearChangeHighlights",
+        "getText",
+        "setText",
+        "setSyntaxLanguage",
+        "setSyntaxLanguageForFileName",
+        "getSelectedText",
+        "getCaretPosition",
+        "getSelectionStart",
+        "getSelectionEnd",
+        "replaceText",
+        "selectRange",
+        "getSelectionOrCaretBounds",
+        "setEditable",
+        "isEditable",
+        "setOnModified",
+        "setOnRunRequest",
+        "setContextMenuActions",
+        "hideContextMenu",
+        "setOnSaveRequest",
+        "setMetadataCompletions",
+        "setMetadataCompletions",
+        "selectAll",
+        "requestFocus",
+        "appendText",
+        "appendText",
+        "clear"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/SqlEditorView.java",
+      "lines": 3062,
+      "sha256": "78b20c2a67dafd0a4b7183f7f09c67d52e6c329c11543af1d139a9f38e27a4bb",
+      "publicMethods": [
+        "toString",
+        "fromString",
+        "markModified",
+        "doSave",
+        "setPath",
+        "getPath",
+        "resolveQueryDir",
+        "loadFromFile",
+        "deleteQueryFile",
+        "cleanupQueryFile",
+        "listQueries",
+        "listQueryDirs",
+        "deleteQueryDir",
+        "startEdit",
+        "cancelEdit",
+        "commitEdit",
+        "getSqlText",
+        "setSqlText",
+        "getQueryName",
+        "setQueryName",
+        "isModified",
+        "isNamed",
+        "getQueryNode",
+        "setQueryNode",
+        "getSelectedConnection",
+        "getSelectedDatabase",
+        "setOnTitleChange",
+        "setOnSaveRequest",
+        "getNode",
+        "getText",
+        "setText",
+        "getSelectedText",
+        "getCaretPosition",
+        "getSelectionStart",
+        "getSelectionEnd",
+        "replaceText",
+        "selectRange",
+        "requestFocus",
+        "getAnchorBounds",
+        "installContextMenu",
+        "hideContextMenu",
+        "getNode",
+        "getText",
+        "setText",
+        "getSelectedText",
+        "getCaretPosition",
+        "getSelectionStart",
+        "getSelectionEnd",
+        "replaceText",
+        "selectRange",
+        "requestFocus",
+        "getAnchorBounds",
+        "installContextMenu",
+        "hideContextMenu"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/TableCellContextMenuUtils.java",
+      "lines": 799,
+      "sha256": "1abde5e94cef540efb24240026f8ec517f00a536dc4b9bb4600331feabf44d8c",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/TableDataChangeDetector.java",
+      "lines": 60,
+      "sha256": "f107e5b00a74f86e08f2a45bd1804f40b0311147d0a30d9c5e903113936ce72b",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/TableDataView.java",
+      "lines": 2646,
+      "sha256": "b54c82f436f127a0a18906701c241ef64ef649b2acfaddb9b444c523053718eb",
+      "publicMethods": [
+        "applyTableConfig",
+        "refreshData",
+        "startEdit",
+        "cancelEdit",
+        "commitEdit"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/TableObjectsView.java",
+      "lines": 2130,
+      "sha256": "ca9bb10ecdd6e1acb2951268a68ba1b080a72a05bd4e449286c89cc3cb7e8d1d",
+      "publicMethods": [
+        "notifyObjectRenamed",
+        "refreshData",
+        "notifyObjectDeleted"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/TableStructureView.java",
+      "lines": 4101,
+      "sha256": "b52b2523b9e16f85a337de799c6e0c557aa312d4607011bcdf9365e34f2c0ac4",
+      "publicMethods": [
+        "setOnTableCreated",
+        "setOnDirtyChange",
+        "setOnTableStructureChanged",
+        "loadStructure",
+        "applyTableConfig",
+        "startEdit",
+        "cancelEdit",
+        "commitEdit",
+        "startEdit",
+        "cancelEdit",
+        "commitEdit"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/connect/view/ToolPane.java",
+      "lines": 96,
+      "sha256": "b3206c9c3744ac645f23e750ed4e23beb114cfe679e57f6fe155b8a12c092e62",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/Module.java",
+      "lines": 11,
+      "sha256": "6393a607fa827f273681ffa6b53fe5dcf0d54dc150a7271f633f7e3f12cfe60f",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/server/ServerModule.java",
+      "lines": 204,
+      "sha256": "23d2c212bd91959db61f002e3b8518715920b3eeb0e954fa81bde1fa8cdf5ec7",
+      "publicMethods": [
+        "getName",
+        "loadSidebar",
+        "loadContent"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/settings/SettingsModule.java",
+      "lines": 47,
+      "sha256": "af852a723107d2d5e506d0e0c539c93dcea3d309035619e50e17620a2df41db6",
+      "publicMethods": [
+        "getName",
+        "loadSidebar",
+        "loadContent"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/DatasetConverterPane.java",
+      "lines": 383,
+      "sha256": "6a8c7d2f6f03edcd510efe1cd76ede60f1ae69f8bdd1eff9fd3d9bf082b4e6bc",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/DesktopShortcutPane.java",
+      "lines": 913,
+      "sha256": "d25b5401608613f55df5790451937ae89c884a94e7c6832c364872cea9ca87ee",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/DevelopmentConfigManager.java",
+      "lines": 226,
+      "sha256": "bc757605fab67cf28f585af87909b0706887f446aa52f1947c12214706b8beeb",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/DevelopmentManagerPane.java",
+      "lines": 3600,
+      "sha256": "80e87edd25c3133e406539683334047e55ab8e4a41a1c88aee7931d1b15be67f",
+      "publicMethods": [
+        "getName",
+        "getPath",
+        "toString",
+        "toString",
+        "createSidebarPane",
+        "main"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/DevelopmentModule.java",
+      "lines": 30,
+      "sha256": "ee7f3ea9f2c6e42d39946b58f41fe57741253108ef55994fc0a2241df7c0c798",
+      "publicMethods": [
+        "getName",
+        "loadSidebar",
+        "loadContent"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/DevelopmentProjectSettingsDialog.java",
+      "lines": 601,
+      "sha256": "ca4ea146b79b503043168ebf5b90ac43ac03b1937630b3c26378501765e45bcc",
+      "publicMethods": [
+        "toString",
+        "fromString",
+        "toString",
+        "fromString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/DownloadEngine.java",
+      "lines": 39,
+      "sha256": "4d9d0badd4dfe98a2263aa572d6f3f34900c79a7b4a708134833d6f079965150",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/DownloaderPane.java",
+      "lines": 1049,
+      "sha256": "01c4d5c5ab948dd07c214903fbe6bdd93c9fc3ff3d980ca5f9df08bcd9874c1a",
+      "publicMethods": [
+        "prepareForApplicationExit",
+        "onStatus",
+        "onPrepared",
+        "onProgress"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/DownloadProtocol.java",
+      "lines": 34,
+      "sha256": "f1c6680e02d7085ccdaec9ee9c436cda8af572bf1dece45956f32ffdc92176ac",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/DownloadSpeedEstimator.java",
+      "lines": 52,
+      "sha256": "77dee3238df9a56362202dc9ab480e909484ff8453e1fe3498f133b32c222246",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/DownloadTaskStore.java",
+      "lines": 127,
+      "sha256": "e07800cedfec0c66bcab23ed62e35db6ebe7a6500d1473fe98a04e1e6f8acdc0",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/Ed2kDownloadEngine.java",
+      "lines": 780,
+      "sha256": "e0e1658a17d7c42bd8dde2f3904845fd80217b839ff92fdc6f5481a4a97fabd5",
+      "publicMethods": [
+        "download",
+        "cancel",
+        "awaitStopped"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/extractor/core/Extractor.java",
+      "lines": 163,
+      "sha256": "4ecfe54cd2ba660fac0942b2874a529608508481e91cd9ced492007c2db07f70",
+      "publicMethods": [
+        "extract",
+        "extractAll",
+        "getOutputDir"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/extractor/core/FileScanner.java",
+      "lines": 397,
+      "sha256": "5406b0450f246c3c2eed81d643180eb9c9db38bd38402aaea5b6937a59f92463",
+      "publicMethods": [
+        "setMaxFileSize",
+        "setMinResourceSize",
+        "setVerbose",
+        "setUnpackArchives",
+        "setPeScan",
+        "isVerbose",
+        "scan",
+        "scanBuffer",
+        "scanDirectory"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/extractor/core/ScanResult.java",
+      "lines": 143,
+      "sha256": "3b580e7f986a8728e590eed32a4511b771f7db039e5737a0d374960ab15016b8",
+      "publicMethods": [
+        "getSourceFile",
+        "getOffset",
+        "getSize",
+        "getFormat",
+        "isStored",
+        "getResourceName",
+        "isInline",
+        "getInlineData",
+        "getArchiveEntry",
+        "defaultOutputName",
+        "equals",
+        "hashCode",
+        "toString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/extractor/Extractor.java",
+      "lines": 388,
+      "sha256": "b5ef149d58a90284a643320bd37147ff0f39d6ec9dbf548f227d4e95fbbe8ffe",
+      "publicMethods": [
+        "run"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/extractor/format/FileFormatInfo.java",
+      "lines": 34,
+      "sha256": "b5de306bacb921453a0f00765e1e735a1ab9b2d53031426cdfe5494c1c9fc38f",
+      "publicMethods": [
+        "getExtension",
+        "getDescription",
+        "getCategory",
+        "toString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/extractor/format/FormatCategory.java",
+      "lines": 24,
+      "sha256": "632ce5c31bb3f83986cd7e2ad304b5e7cc1ec5431475b241cf8043c611b1bdc4",
+      "publicMethods": [
+        "getDisplayName"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/extractor/format/FormatRegistry.java",
+      "lines": 424,
+      "sha256": "b48f2eab1326a5d2a2cb8b0cd92602f6e66feb14187d1299530952ab1b1c595c",
+      "publicMethods": [
+        "enableAll",
+        "enableCategory",
+        "enableOnly",
+        "enable",
+        "disable",
+        "isEnabled",
+        "getEnabledSignatures",
+        "getAllFormats",
+        "getAllSignatures",
+        "size",
+        "size",
+        "size",
+        "size",
+        "size",
+        "size",
+        "size"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/extractor/format/FormatSignature.java",
+      "lines": 126,
+      "sha256": "8bbaa8679674dc0fbc57fb837604ad202201680cc4ad9151be0e9c28b5828a10",
+      "publicMethods": [
+        "getFormat",
+        "getMagicLength",
+        "matches",
+        "sizeOf",
+        "getMinSize",
+        "toString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/extractor/format/SignatureSizer.java",
+      "lines": 14,
+      "sha256": "32965b042cc7b2efa50f1506d761ed1838a347cb0cccd29bec907faa74ec794e",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/extractor/pe/PEFile.java",
+      "lines": 301,
+      "sha256": "66e1442138557e20c16c68a1c6d0c8ceb10281a1deaf22a9cddd74d593c1dc2c",
+      "publicMethods": [
+        "getPath",
+        "getSections",
+        "getResources",
+        "getData",
+        "is64bit",
+        "findCompanionResources",
+        "rvaToOffset",
+        "close",
+        "toString",
+        "isType",
+        "toString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/extractor/pe/PEResourceExtractor.java",
+      "lines": 345,
+      "sha256": "ddebb696a0dee94797bf38408a73c12c2f983526d49af83d431e3885e32e0fda",
+      "publicMethods": [
+        "extract"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/extractor/utils/ByteUtils.java",
+      "lines": 66,
+      "sha256": "f14e9f5f31a1c28c1edfd451d02ec81d819fb1304526952f8e5bc9a46380a6cd",
+      "publicMethods": [
+        "readUInt16LE",
+        "readUInt32LE",
+        "readUInt32BE",
+        "matches",
+        "readIntLE",
+        "readLongLE",
+        "hex",
+        "align"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/extractor/utils/FileUtils.java",
+      "lines": 64,
+      "sha256": "ec0b4fa48a3136dc3e20f78ad4f0196c788541df71538a37ae53f6a77556c054",
+      "publicMethods": [
+        "copy",
+        "readAllBytes",
+        "ensureDir",
+        "uniquePath",
+        "humanSize"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/HostsFilePane.java",
+      "lines": 1281,
+      "sha256": "b321d52ecc4cd5a499d2b783b9a7b2b5813d3196b07d55bd0e0f4b0e34336ffc",
+      "publicMethods": [
+        "getIp",
+        "setIp",
+        "getDomain",
+        "setDomain",
+        "toString",
+        "getName",
+        "setName",
+        "isEnabled",
+        "setEnabled",
+        "getEntries",
+        "setEntries"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/HttpDownloadEngine.java",
+      "lines": 56,
+      "sha256": "56a5f29806370458b8bf3afd856502c1fa7de409bac5f5e7473ef1a8f2d4e473",
+      "publicMethods": [
+        "download",
+        "onStatus",
+        "onPrepared",
+        "onProgress",
+        "cancel",
+        "awaitStopped"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/IconImageProcessor.java",
+      "lines": 483,
+      "sha256": "243753369fad6c763837b397ff42893f77e257f6f62ee830caec0912e109010e",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/ImageBackgroundRemoverPane.java",
+      "lines": 1352,
+      "sha256": "34659f049559d01b8ab1f6c5d47fedbb399c711b2a2b35d53e00d6b979e15def",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/ImageFormatConverterPane.java",
+      "lines": 308,
+      "sha256": "60d12203914b307924484f86d90ab30f3f3a94e2c65bdafcbf2808cf1f7b00ef",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/JsonFoldableTextView.java",
+      "lines": 703,
+      "sha256": "f844fcafb8524ca1b6d538993d49882aa7f48d46dbf6756990799ba8c71e3bd5",
+      "publicMethods": [
+        "setText",
+        "setError",
+        "clear",
+        "expandAll",
+        "collapseAll",
+        "copyAll",
+        "getRawJson",
+        "apply"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/JsonToolPane.java",
+      "lines": 1351,
+      "sha256": "e43cfc370a632db3be5322c385f29d548ad625ba99c33c58d77822fc000ab677",
+      "publicMethods": [
+        "toString",
+        "apply"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/MultiThreadDownloader.java",
+      "lines": 1105,
+      "sha256": "e1f23277b2137189d5f31e107ec48bc577cd4878b0d57b332fef99da22739af4",
+      "publicMethods": [
+        "download",
+        "download",
+        "download",
+        "download",
+        "cancel",
+        "discardDownloadRecord",
+        "awaitStopped",
+        "Metadata",
+        "Progress",
+        "Rebalance",
+        "reassignedBytes",
+        "ConnectionRestart",
+        "Result"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/PortMappingPane.java",
+      "lines": 1071,
+      "sha256": "b98fa8312117c0f3a25fafbe67d88c3c742283ffadbe7a818a6df576e47dcbcc",
+      "publicMethods": [
+        "getId",
+        "setId",
+        "getName",
+        "setName",
+        "getSshHostId",
+        "setSshHostId",
+        "getDirection",
+        "setDirection",
+        "getLocalHost",
+        "setLocalHost",
+        "getLocalPort",
+        "setLocalPort",
+        "getRemoteHost",
+        "setRemoteHost",
+        "getRemotePort",
+        "setRemotePort",
+        "shutdownAll"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/ResourceExtractorPane.java",
+      "lines": 811,
+      "sha256": "8942fea3619a8562618a8779aa9fdf4bd9b7e72f6d3ac743310f774c9fc96817",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/server/FileServer.java",
+      "lines": 34,
+      "sha256": "61a21dacb58a6ac80ee3be40f19be0c8e810e7b8242a89e7723fc1a19a953bce",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/server/FtpFileServer.java",
+      "lines": 558,
+      "sha256": "35036a4aafbae978397e80e6a123382c969f9c6a119c8d776984cdd5cae44076",
+      "publicMethods": [
+        "getType",
+        "start",
+        "stop",
+        "isRunning",
+        "getListenAddress"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/server/HttpFileServer.java",
+      "lines": 510,
+      "sha256": "60799d4898bad53eaecdffe829c05df2f5c148e8bebc0948a6f172d1a2037f24",
+      "publicMethods": [
+        "getType",
+        "start",
+        "stop",
+        "isRunning",
+        "getListenAddress",
+        "handle",
+        "handle",
+        "handle"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/server/ServerAccount.java",
+      "lines": 60,
+      "sha256": "cfc8895e6e98644cfa68d498491a50988d9ee28474d281fa9a651a9fbca12d8d",
+      "publicMethods": [
+        "getUsername",
+        "setUsername",
+        "getPassword",
+        "setPassword",
+        "isEnabled",
+        "setEnabled",
+        "getHomeDirectory",
+        "setHomeDirectory"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/server/ServerConfig.java",
+      "lines": 87,
+      "sha256": "0a9b6dbb1bcd6a8616ed550995be4439c72c88aec396d415951f84f1d6d7c025",
+      "publicMethods": [
+        "getType",
+        "setType",
+        "getPort",
+        "setPort",
+        "getBindAddress",
+        "setBindAddress",
+        "isAnonymousAccess",
+        "setAnonymousAccess",
+        "getRootDirectory",
+        "setRootDirectory",
+        "getSharedDirectories",
+        "setSharedDirectories",
+        "getAccounts",
+        "setAccounts"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/server/ServerType.java",
+      "lines": 48,
+      "sha256": "61db5ad6102bb0ab338b87aa1687a06714b16505738b56595c6f57508cc05104",
+      "publicMethods": [
+        "getCode",
+        "getDisplayName",
+        "getDefaultPort",
+        "getIconPath",
+        "fromCode"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/server/SharedDirectory.java",
+      "lines": 57,
+      "sha256": "8231e36c7b9b7ab6ee7475ef9dcc843926d63e8471d6618728719e843ec110b4",
+      "publicMethods": [
+        "getAlias",
+        "setAlias",
+        "getPath",
+        "setPath",
+        "isReadOnly",
+        "setReadOnly",
+        "getAllowedUsers",
+        "setAllowedUsers"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/server/SmbFileServer.java",
+      "lines": 119,
+      "sha256": "eb4f86068c7e50f27cc17485c4f92e46df504c5ddc52f78842c5a9aa2e6432ff",
+      "publicMethods": [
+        "getType",
+        "start",
+        "stop",
+        "isRunning",
+        "getListenAddress"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/server/TemporaryDownloadToken.java",
+      "lines": 88,
+      "sha256": "149670a95ef6e174c149be521150be9d693c228b8de88f7ea454c4ac82e03617",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/ServerManagerPane.java",
+      "lines": 808,
+      "sha256": "fa67f7ec2114eb6e22fce385e4a842e9a693c1de7b2e59159c7e1b7fb1f466e5",
+      "publicMethods": [
+        "setConfigPort",
+        "getServerType",
+        "getServerConfig",
+        "loadFromServerConfig",
+        "setOnConfigChanged"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/SvgToPngPane.java",
+      "lines": 402,
+      "sha256": "57a2e59da7a04dc06912380c1720cbeb20578c2a481b9008db9de88043651523",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/ToolsModule.java",
+      "lines": 444,
+      "sha256": "1a8eb783d14b95b3a38a1bcc8fa89901af955088eeb46956b2a80d6859ee51b0",
+      "publicMethods": [
+        "getName",
+        "loadSidebar",
+        "loadContent"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/TorrentDownloadEngine.java",
+      "lines": 385,
+      "sha256": "600094e86040690c4d7a608278d986ccba88b7c79dc761e6640f97a252b24e22",
+      "publicMethods": [
+        "download",
+        "cancel",
+        "awaitStopped"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/module/tools/TraeSessionPane.java",
+      "lines": 1670,
+      "sha256": "4b6b335f22735c2798a93b84d3b4b37145b914bf7e28b8212135403d2c576d08",
+      "publicMethods": [
+        "getPhone",
+        "setPhone",
+        "getName",
+        "setName",
+        "isActive",
+        "setActive"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/ContainerInspectPane.java",
+      "lines": 686,
+      "sha256": "548feea05022dcd4b7883aef7be40e563eb89b26aeba0b1aa578ede3101004eb",
+      "publicMethods": [
+        "disconnect",
+        "refresh"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/DockerPanel.java",
+      "lines": 628,
+      "sha256": "4891fc9c64f394dbeaa0f3df5937889795095f6f8ac0d2158f41ff70b0208d14",
+      "publicMethods": [
+        "refresh",
+        "idProperty",
+        "imageProperty",
+        "nameProperty",
+        "statusProperty",
+        "portsProperty",
+        "createdProperty",
+        "getId",
+        "getImage",
+        "getName",
+        "getStatus",
+        "getPorts",
+        "getCreated"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/LinuxPTY.java",
+      "lines": 371,
+      "sha256": "55fba9bae68dd1fd3ccbde743f9d3a5a48842602d9bdbf5078a60b316d783cda",
+      "publicMethods": [
+        "isAvailable",
+        "start",
+        "read",
+        "write",
+        "resize",
+        "isAlive",
+        "getPid",
+        "close"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/LocalTerminalPane.java",
+      "lines": 474,
+      "sha256": "4212010d1ff9927357080349b3d109fac1b2545d6df408b76732e89482061509",
+      "publicMethods": [
+        "requestTerminalFocus",
+        "updateTerminalFont",
+        "setScrollbackLines",
+        "connect",
+        "disconnect"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/MonitorPanel.java",
+      "lines": 623,
+      "sha256": "6ee75e3583772702e2b1e8d85ff20edf769b3d32e4de16809a43e4c4793082ed",
+      "publicMethods": [
+        "startMonitoring",
+        "run",
+        "stopMonitoring"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/PortPanel.java",
+      "lines": 851,
+      "sha256": "4474cdf84b29b287792c1b6f8043ba41425ae75d2472fd60c7c46089599fa734",
+      "publicMethods": [
+        "protocolProperty",
+        "addressProperty",
+        "portProperty",
+        "pidProperty",
+        "processProperty",
+        "getProtocol",
+        "getAddress",
+        "getPort",
+        "getPid",
+        "getProcess",
+        "refresh"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/PseudoTerminal.java",
+      "lines": 120,
+      "sha256": "04be1d48c65afc0492c064c9cd0ef7e5782100355dcc54dd907a99efeeb9f770",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/SFTPClient.java",
+      "lines": 246,
+      "sha256": "b246f00fbd47fb890ebea9415edd9f83e39da956097e1428ba34da60d3d64803",
+      "publicMethods": [
+        "getName",
+        "getPath",
+        "isDirectory",
+        "getSize",
+        "getModifyTime",
+        "connect",
+        "reconnect",
+        "isConnected",
+        "listFiles",
+        "pwd",
+        "cd",
+        "download",
+        "downloadDir",
+        "upload",
+        "uploadDir",
+        "upload",
+        "mkdir",
+        "rename",
+        "createEmptyFile",
+        "rm",
+        "rmdir",
+        "exists",
+        "disconnect"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/SFTPFileBrowser.java",
+      "lines": 626,
+      "sha256": "906e01e9f10fa70948b65ee5661e249b5f7024a53eb7891a2c1b48dbe5d375b9",
+      "publicMethods": [
+        "initConnection",
+        "disconnect",
+        "onTerminalCwdChanged",
+        "followTerminalProperty"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/SSHSession.java",
+      "lines": 196,
+      "sha256": "ea35a7c5329e6fa7d9dacda9b9a803ee061c262ccd7fd812db1a7bc410f5fc1b",
+      "publicMethods": [
+        "connect",
+        "resize",
+        "getInputStream",
+        "getOutputStream",
+        "getJschSession",
+        "isConnected",
+        "disconnect"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/SSHTerminalPane.java",
+      "lines": 1544,
+      "sha256": "506d6c4a018793d5b0506d53b29db1511fc3c6f70b8420c1f36b8e15c793a387",
+      "publicMethods": [
+        "setScrollbackLines",
+        "requestTerminalFocus",
+        "sendCommand",
+        "connect",
+        "connect",
+        "connect",
+        "disconnect",
+        "setOnDisconnect",
+        "setTunnelResolver",
+        "setReconnectSettingsProvider",
+        "ReconnectSettings",
+        "isConnected",
+        "read",
+        "read",
+        "getEmulator",
+        "getTerminalView",
+        "updateTerminalFont",
+        "dumpBuffer"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/StoragePanel.java",
+      "lines": 336,
+      "sha256": "96375bd322a998a301305a0f454320b8a3183b36669bed4353108bb4d8994b79",
+      "publicMethods": [
+        "refresh"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/TerminalEmulator.java",
+      "lines": 2239,
+      "sha256": "f7fa86fcd29698518be1abba44b4154c8cf5ef53de51697e330f7bb259ef8d8c",
+      "publicMethods": [
+        "getFg",
+        "getBg",
+        "isBold",
+        "isUnderline",
+        "isReverse",
+        "isFgTrueColor",
+        "isBgTrueColor",
+        "getFgTrueColor",
+        "getBgTrueColor",
+        "setFgTrueColor",
+        "setBgTrueColor",
+        "clearTrueColor",
+        "getCols",
+        "getRows",
+        "getCursorX",
+        "getCursorY",
+        "isCursorVisible",
+        "isApplicationCursorKeys",
+        "isBracketedPasteMode",
+        "getChar",
+        "getAttr",
+        "setResponseHandler",
+        "setDebugWriter",
+        "setFileLogger",
+        "setCwdChangeListener",
+        "dumpBuffer",
+        "getScrollbackSize",
+        "getMaxScrollback",
+        "setMaxScrollback",
+        "getScrollOffset",
+        "getDiscardedScrollbackLines",
+        "pauseOutputScrolling",
+        "isOutputScrollingPaused",
+        "isUsingAltBuffer",
+        "onUserInput",
+        "setScrollOffset",
+        "getScrollbackLine",
+        "getScrollbackAttrLine",
+        "getScrollbackFgTcLine",
+        "getScrollbackBgTcLine",
+        "isLineWrapped",
+        "resize",
+        "process",
+        "process",
+        "processString",
+        "isWideChar"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/TerminalView.java",
+      "lines": 1215,
+      "sha256": "786235419c53179cdc669762c32f218c695e5faa453aea183372b6b34ccf7591",
+      "publicMethods": [
+        "getTextLocation",
+        "getLocationOffset",
+        "cancelLatestCommittedText",
+        "getSelectedText",
+        "isResizable",
+        "resize",
+        "setKeyInputHandler",
+        "setResizeHandler",
+        "setScrollbarHandler",
+        "setPasteHandler",
+        "setAutoScrollHandler",
+        "setScrollOffset",
+        "setTerminalFont",
+        "getFontFamily",
+        "getFontSize",
+        "render",
+        "getEmulator",
+        "getCharWidth",
+        "getCharHeight",
+        "stopBlink",
+        "hasSelection",
+        "getSelectedText",
+        "selectAll",
+        "clearSelection",
+        "copySelection"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/WindowsConPTY.java",
+      "lines": 544,
+      "sha256": "af9d0a2410578ccd3e96e796dc84ceafed589502f92b2b7de4edba17d3e10a99",
+      "publicMethods": [
+        "isPlatformSupported",
+        "isAvailable",
+        "start",
+        "peekAvailable",
+        "read",
+        "write",
+        "resize",
+        "isAlive",
+        "getPid",
+        "close"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/util/CustomFile.java",
+      "lines": 62,
+      "sha256": "7852816c9bbfa8ebfd1424b32a5f5a49fcafb331a2487d25e0f22038a696e6c4",
+      "publicMethods": [
+        "getName",
+        "getInputStream",
+        "getOutputStream",
+        "getOutputStream",
+        "getChild",
+        "length",
+        "isDirectory",
+        "exists"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/util/EmptyFileAdapter.java",
+      "lines": 21,
+      "sha256": "d85851bb91dc174294f82bc3c7f0f763d9cf6519f86f9ff4cfca8abd2312979e",
+      "publicMethods": [
+        "getInstance",
+        "getName",
+        "getInputStream",
+        "getOutputStream",
+        "getOutputStream",
+        "getChild",
+        "length",
+        "isDirectory",
+        "exists"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/util/FileAdapter.java",
+      "lines": 16,
+      "sha256": "3f0f565ff7366a818848b67b6ff89e31fa37c89472c5e7656b359dd6f19d0485",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/io/ObjectInputStream.java",
+      "lines": 7,
+      "sha256": "80dfd1f6ced0d313678413e97670f3c289d4cacc70020531bcb4b37df8884012",
+      "publicMethods": [
+        "read"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/io/ObjectOutputStream.java",
+      "lines": 7,
+      "sha256": "66cb829b24df328323683e316d7ddcfb5d79a68f8de3cf7b9b559c637238146c",
+      "publicMethods": [
+        "write"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/util/Arrays.java",
+      "lines": 80,
+      "sha256": "1717f8913739207497fb79a2737fcec5db538724f6b906ca79f583b41b3b3266",
+      "publicMethods": [
+        "copyOf",
+        "equals",
+        "toInteger",
+        "toShort",
+        "toInt",
+        "toLong",
+        "fromInteger",
+        "fromShort",
+        "fromInt",
+        "fromLong"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/util/ASCII.java",
+      "lines": 26,
+      "sha256": "ccfff85cc0cca924e72482a30d77e2dfd5d1754420be6da87efba6a1eac03a33",
+      "publicMethods": [
+        "value"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/util/Buffer.java",
+      "lines": 21,
+      "sha256": "7f046df4d8fc32191ece60285a02accfa9dc536f3bd4a71fb478207d01f3f377",
+      "publicMethods": [
+        "get",
+        "get",
+        "get",
+        "put",
+        "put",
+        "put",
+        "get",
+        "get",
+        "get",
+        "put",
+        "put",
+        "put",
+        "flip",
+        "remaining",
+        "hasRemaining",
+        "asHexBuffer",
+        "asByteBuffer"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/util/ByteBuffer.java",
+      "lines": 70,
+      "sha256": "e83888967784dbebcfd825fa362b38668f4c8835030f1343054872fb270ff67f",
+      "publicMethods": [
+        "allocate",
+        "allocateDirect",
+        "slice",
+        "duplicate",
+        "asReadOnlyBuffer",
+        "get",
+        "get",
+        "get",
+        "put",
+        "put",
+        "put",
+        "get",
+        "get",
+        "get",
+        "put",
+        "put",
+        "put",
+        "compact",
+        "isDirect",
+        "getChar",
+        "putChar",
+        "getChar",
+        "putChar",
+        "asHexBuffer",
+        "getShort",
+        "putShort",
+        "getShort",
+        "putShort",
+        "getInt",
+        "putInt",
+        "getInt",
+        "putInt",
+        "getLong",
+        "putLong",
+        "getLong",
+        "putLong",
+        "isReadOnly",
+        "flip",
+        "remaining",
+        "hasRemaining",
+        "asByteBuffer"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/util/CRC.java",
+      "lines": 135,
+      "sha256": "34ce2e4fa935a71607e535b27b992f63b8240e519df21a734cdc3ddc04b6de50",
+      "publicMethods": [
+        "size",
+        "initial",
+        "update",
+        "update",
+        "finalized",
+        "size",
+        "getBytes",
+        "type"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/util/CRC16.java",
+      "lines": 48,
+      "sha256": "5fb54f36b053d29b0c06317fc63f8d664f54c9e8044f216b49d9f20e286c2fe2",
+      "publicMethods": [
+        "getCRCLength",
+        "calcCRC"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/util/CRC8.java",
+      "lines": 13,
+      "sha256": "ed3b16a3db36035f05139a8403232314bb8366c672986d344cdb9b4e75cb60da",
+      "publicMethods": [
+        "getCRCLength",
+        "calcCRC"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/util/HexBuffer.java",
+      "lines": 83,
+      "sha256": "f4c719f84f8555229a9ce0d36135d297a97cda160b007cc55c88eed3a69d1736",
+      "publicMethods": [
+        "binToHex",
+        "hexToBin",
+        "allocate",
+        "allocateDirect",
+        "slice",
+        "duplicate",
+        "asReadOnlyBuffer",
+        "get",
+        "get",
+        "get",
+        "put",
+        "put",
+        "put",
+        "get",
+        "get",
+        "get",
+        "put",
+        "put",
+        "put",
+        "compact",
+        "isDirect",
+        "getChar",
+        "putChar",
+        "getChar",
+        "putChar",
+        "asByteBuffer",
+        "getShort",
+        "putShort",
+        "getShort",
+        "putShort",
+        "getInt",
+        "putInt",
+        "getInt",
+        "putInt",
+        "getLong",
+        "putLong",
+        "getLong",
+        "putLong",
+        "isReadOnly",
+        "flip",
+        "remaining",
+        "hasRemaining",
+        "asHexBuffer"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/util/InvalidChecksumException.java",
+      "lines": 5,
+      "sha256": "6b775720889df439ae8148807ed92946a6ebf09616d3ab426dc5068dbbf19684",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/util/TimeoutException.java",
+      "lines": 4,
+      "sha256": "8e4f4b8741e541c61e37141fb9cfb9945dcb136d245fd6bcef427bb14362f496",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/util/XCRC.java",
+      "lines": 6,
+      "sha256": "34af0e13baa36fd3218df0991a41b09398f6cdadf27412fa6f85b9bc7315c631",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/packet/Cancel.java",
+      "lines": 20,
+      "sha256": "f0fb0adc0ef115b72231edf218062e73a61c80bb518e538ce260d97382450883",
+      "publicMethods": [
+        "marshall",
+        "toString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/packet/DataPacket.java",
+      "lines": 54,
+      "sha256": "0adf5d69093137cf16fbfe7535c4a3fa2e6f3046c607f5cdafc832ab5f1d04b8",
+      "publicMethods": [
+        "unmarshall",
+        "type",
+        "data",
+        "setData",
+        "copyData",
+        "marshall",
+        "toString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/packet/Finish.java",
+      "lines": 18,
+      "sha256": "4f466fe47a1f0e9393947566018e696e6321583199fdacd08fd0b0e4ea659246",
+      "publicMethods": [
+        "marshall",
+        "toString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/packet/Format.java",
+      "lines": 32,
+      "sha256": "70063d9c44f9a2bf8b82b3b23353270263cec5143f44ae7d094541a9696a4a0b",
+      "publicMethods": [
+        "fromByte",
+        "crc",
+        "character",
+        "width",
+        "hex"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/packet/Header.java",
+      "lines": 69,
+      "sha256": "290898a701ca6c34da114d77965d869880e2f07074ab5425610c4e76d50afdcf",
+      "publicMethods": [
+        "unmarshall",
+        "type",
+        "format",
+        "setFlags",
+        "getFlags",
+        "setPos",
+        "getPos",
+        "marshall",
+        "toString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/packet/InvalidPacketException.java",
+      "lines": 7,
+      "sha256": "ddb233b799939a9571757c07f9817f219c07f4e4fa4e22207e749fa61f4695ef",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/proto/Action.java",
+      "lines": 5,
+      "sha256": "480cc03f5901ef92c3469bde1aa7fb948bcb2f8c54473969e5df54baa048854f",
+      "publicMethods": []
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/proto/Escape.java",
+      "lines": 67,
+      "sha256": "57a7b0fc6bbae7b812dc2b3cc69b93727ea14c478c98fa0d793ff5ea1d3138f5",
+      "publicMethods": [
+        "action",
+        "len",
+        "detect",
+        "mustEscape",
+        "escapeIt",
+        "toString"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/util/ZDLEEncoder.java",
+      "lines": 38,
+      "sha256": "172aced8b409a6dd20993f0dd91bb58bd1b59c28279202eb460744bbfd493fc2",
+      "publicMethods": [
+        "raw",
+        "zdleLen",
+        "zdle"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/util/ZModemCharacter.java",
+      "lines": 51,
+      "sha256": "b44c3c595ade1a7b27cbed9dd3b9025211144e11eab2361534f1b2c17234bfd8",
+      "publicMethods": [
+        "value",
+        "forbyte"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/util/ZModemReceive.java",
+      "lines": 206,
+      "sha256": "725e7ac97984b62aec85ffd6b4f998efef8b7439a9de77a409eb5e415d753ed7",
+      "publicMethods": [
+        "receive"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/util/ZModemSend.java",
+      "lines": 179,
+      "sha256": "43fe2245eea018f11d67bd4093f24349dbc8fddabd8393d5c8f36b6bc134c423",
+      "publicMethods": [
+        "nextFile",
+        "send"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/util/ZMOptions.java",
+      "lines": 34,
+      "sha256": "5709c9a06c4b387b7c2c326e84e48e61cdb1f8f5ce4c079806d6251e32e9c6c8",
+      "publicMethods": [
+        "value",
+        "with",
+        "forbyte"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/util/ZMPacket.java",
+      "lines": 7,
+      "sha256": "698a4f3b8305e5ee9d0843bb745f990252b611f4bcf4b3f4e22481e76fc15eca",
+      "publicMethods": [
+        "marshall"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/xfer/zm/util/ZMPacketFactory.java",
+      "lines": 33,
+      "sha256": "7efa072289cd3d45d2fa85f5415ea06ef3eac5235f2f23b4cad70e56246932f2",
+      "publicMethods": [
+        "createZFilePacket",
+        "createZFilePacket"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/zm/io/ZMPacketInputStream.java",
+      "lines": 144,
+      "sha256": "30769a4b29dc2d43ece9a9a056d494da6540ea3e9c7119f86d6b85792d14c42a",
+      "publicMethods": [
+        "read"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/zm/io/ZMPacketOutputStream.java",
+      "lines": 60,
+      "sha256": "2d61a1741aadc24bf6014aa2584729c7bd3b248e7932334be0b60cd031913057",
+      "publicMethods": [
+        "implWrite",
+        "write"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/ssh/zmodem/ZModem.java",
+      "lines": 42,
+      "sha256": "5aed7d1a9e5128355605efa6fcf3b951ea86a14c443a4ea392995618b0de465c",
+      "publicMethods": [
+        "receive",
+        "send",
+        "cancel"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/TomatoApplication.java",
+      "lines": 53,
+      "sha256": "0685872e3f7c52866df7c850660ad25c35013fdca37247decac2d4b6cf83f1cc",
+      "publicMethods": [
+        "start",
+        "stop"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/TomatoController.java",
+      "lines": 878,
+      "sha256": "f827c0165470558450f9cfadaf95c24bc027925ea782dc047b6203641d58ac8e",
+      "publicMethods": [
+        "initialize"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/utils/DialogPositionUtil.java",
+      "lines": 318,
+      "sha256": "242d4060b9d6e5f679c3bf9d9a065b7d836de7808e268576c3e0bde1444dc964",
+      "publicMethods": [
+        "getScreenForWindow",
+        "centerOnOwner",
+        "centerOnOwner",
+        "centerOnOwner",
+        "centerOnOwner",
+        "preLocateOnOwner",
+        "setMainWindow",
+        "getMainWindow"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/utils/RowSelectorDragSelection.java",
+      "lines": 107,
+      "sha256": "dacb98a48695d2fe18ccc1982bbc52c57a796250fcd94d2ab7abbe970c6846a9",
+      "publicMethods": [
+        "shouldReplaceSelectionOnPress",
+        "rowRange",
+        "install",
+        "rowIndexOf",
+        "isOnHeader"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/utils/SecurityUtils.java",
+      "lines": 44,
+      "sha256": "3c949e9e0c179e54a2cc189b68265fb7a9165d474bfef7447459967fe31ff588",
+      "publicMethods": [
+        "encrypt",
+        "decrypt"
+      ]
+    },
+    {
+      "path": "src/main/java/com/tangluobo/tomato/utils/SqliteReader.java",
+      "lines": 374,
+      "sha256": "8e6f1717c1bd3d12859938ef00be55fc9a8e5f80ecaf2bcdd5a324a59b2fc375",
+      "publicMethods": [
+        "getItemTableValue",
+        "getAllItemTableEntries",
+        "close"
+      ]
+    }
+  ],
+  "additionalReferences": [
+    {
+      "root": "D:\\Data\\Git\\tangluobo\\rdp4j",
+      "head": "9cbd5cbd7f01e4317ad2e3e6119a70ba388cc94a",
+      "files": [
+        {
+          "path": "src/main/java/com/tangluobo/rdp4j/RdpPane.java",
+          "sha256": "1024eaac8342be1b4f40eed2c1df5980581785585b3f0690116117d2b8ea35b5",
+          "purpose": "Natural-pixel scroll area, loading screen, status bar, keyboard, clipboard, full-screen and window behavior"
+        }
+      ]
+    }
+  ],
+  "inventoryRevision": 1696,
+  "sourceScope": "All first-party src/main/java/com/tangluobo/tomato Java sources; bundled third-party Java counted separately",
+  "completeJavaFiles": 539,
+  "vendoredJavaFiles": 255,
+  "completeReadOnlyGuard": "target/migration-1694-current-java-complete.json"
+}

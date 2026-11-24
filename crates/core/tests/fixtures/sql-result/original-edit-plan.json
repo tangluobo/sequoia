@@ -1,0 +1,3940 @@
+[
+  {
+    "name": "MYSQL/physical",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "MYSQL/aliases",
+    "kind": "MYSQL",
+    "target": "ITEMS",
+    "labels": [
+      "alias_id",
+      "alias_name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "MYSQL/expression-before-id",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "real_id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "id",
+      "name"
+    ],
+    "tables": [
+      "",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        1,
+        2
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "MYSQL/expression-only-key",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "MYSQL/duplicate-base-column",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name",
+      "second_id"
+    ],
+    "sources": [
+      "id",
+      "name",
+      "id"
+    ],
+    "tables": [
+      "items",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name",
+        "\u0000query-result-column-2"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "MYSQL/partial-composite",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      },
+      {
+        "字段名": "tenant",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "MYSQL/whole-composite",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "tenant",
+      "id",
+      "name"
+    ],
+    "sources": [
+      "tenant",
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      },
+      {
+        "字段名": "tenant",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "tenant",
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        2,
+        1,
+        0
+      ],
+      "primaryKeyColumns": [
+        "id",
+        "tenant"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "MYSQL/no-key-all",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": true,
+      "statusText": "可编辑 · 无完整主键，保存时按原始整行定位"
+    },
+    "editable": true,
+    "delete": false
+  },
+  {
+    "name": "MYSQL/no-key-partial",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "name"
+    ],
+    "sources": [
+      "name"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 无主键表需查询全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "MYSQL/no-key-untrusted",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 无主键表需查询全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "MYSQL/legacy-origin-missing",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "MYSQL/origin-length-mismatch",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "wrong"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "MYSQL/other-table",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "other",
+      "other"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "\u0000query-result-column-1"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "MYSQL/blank-source",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "MYSQL/null-source",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      null,
+      "name"
+    ],
+    "tables": [
+      null,
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "MYSQL/missing-table",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": null,
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "\u0000query-result-column-1"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 未找到源表或源表没有可编辑列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "MYSQL/empty-result",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": null,
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "POSTGRESQL/physical",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "POSTGRESQL/aliases",
+    "kind": "POSTGRESQL",
+    "target": "ITEMS",
+    "labels": [
+      "alias_id",
+      "alias_name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "POSTGRESQL/expression-before-id",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "real_id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "id",
+      "name"
+    ],
+    "tables": [
+      "",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        1,
+        2
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "POSTGRESQL/expression-only-key",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "POSTGRESQL/duplicate-base-column",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name",
+      "second_id"
+    ],
+    "sources": [
+      "id",
+      "name",
+      "id"
+    ],
+    "tables": [
+      "items",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name",
+        "\u0000query-result-column-2"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "POSTGRESQL/partial-composite",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      },
+      {
+        "字段名": "tenant",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "POSTGRESQL/whole-composite",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "tenant",
+      "id",
+      "name"
+    ],
+    "sources": [
+      "tenant",
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      },
+      {
+        "字段名": "tenant",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "tenant",
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        2,
+        1,
+        0
+      ],
+      "primaryKeyColumns": [
+        "id",
+        "tenant"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "POSTGRESQL/no-key-all",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": true,
+      "statusText": "可编辑 · 无完整主键，保存时按原始整行定位"
+    },
+    "editable": true,
+    "delete": false
+  },
+  {
+    "name": "POSTGRESQL/no-key-partial",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "name"
+    ],
+    "sources": [
+      "name"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 无主键表需查询全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "POSTGRESQL/no-key-untrusted",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 无主键表需查询全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "POSTGRESQL/legacy-origin-missing",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "POSTGRESQL/origin-length-mismatch",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "wrong"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "POSTGRESQL/other-table",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "other",
+      "other"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "\u0000query-result-column-1"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "POSTGRESQL/blank-source",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "POSTGRESQL/null-source",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      null,
+      "name"
+    ],
+    "tables": [
+      null,
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "POSTGRESQL/missing-table",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": null,
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "\u0000query-result-column-1"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 未找到源表或源表没有可编辑列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "POSTGRESQL/empty-result",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": null,
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "ORACLE/physical",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "ORACLE/aliases",
+    "kind": "ORACLE",
+    "target": "ITEMS",
+    "labels": [
+      "alias_id",
+      "alias_name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "ORACLE/expression-before-id",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "id",
+      "real_id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "id",
+      "name"
+    ],
+    "tables": [
+      "",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        1,
+        2
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "ORACLE/expression-only-key",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "ORACLE/duplicate-base-column",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "id",
+      "name",
+      "second_id"
+    ],
+    "sources": [
+      "id",
+      "name",
+      "id"
+    ],
+    "tables": [
+      "items",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name",
+        "\u0000query-result-column-2"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "ORACLE/partial-composite",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      },
+      {
+        "字段名": "tenant",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "ORACLE/whole-composite",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "tenant",
+      "id",
+      "name"
+    ],
+    "sources": [
+      "tenant",
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      },
+      {
+        "字段名": "tenant",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "tenant",
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        2,
+        1,
+        0
+      ],
+      "primaryKeyColumns": [
+        "id",
+        "tenant"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "ORACLE/no-key-all",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": true,
+      "statusText": "可编辑 · 无完整主键，保存时按原始整行定位"
+    },
+    "editable": true,
+    "delete": false
+  },
+  {
+    "name": "ORACLE/no-key-partial",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "name"
+    ],
+    "sources": [
+      "name"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 无主键表需查询全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "ORACLE/no-key-untrusted",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 无主键表需查询全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "ORACLE/legacy-origin-missing",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "ORACLE/origin-length-mismatch",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "wrong"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "ORACLE/other-table",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "other",
+      "other"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "\u0000query-result-column-1"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "ORACLE/blank-source",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "ORACLE/null-source",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      null,
+      "name"
+    ],
+    "tables": [
+      null,
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "ORACLE/missing-table",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": null,
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "\u0000query-result-column-1"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 未找到源表或源表没有可编辑列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "ORACLE/empty-result",
+    "kind": "ORACLE",
+    "target": "items",
+    "labels": null,
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "SSH/physical",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "SSH/aliases",
+    "kind": "SSH",
+    "target": "ITEMS",
+    "labels": [
+      "alias_id",
+      "alias_name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "SSH/expression-before-id",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "id",
+      "real_id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "id",
+      "name"
+    ],
+    "tables": [
+      "",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        1,
+        2
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "SSH/expression-only-key",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "SSH/duplicate-base-column",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "id",
+      "name",
+      "second_id"
+    ],
+    "sources": [
+      "id",
+      "name",
+      "id"
+    ],
+    "tables": [
+      "items",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name",
+        "\u0000query-result-column-2"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "SSH/partial-composite",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      },
+      {
+        "字段名": "tenant",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "SSH/whole-composite",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "tenant",
+      "id",
+      "name"
+    ],
+    "sources": [
+      "tenant",
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      },
+      {
+        "字段名": "tenant",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "tenant",
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        2,
+        1,
+        0
+      ],
+      "primaryKeyColumns": [
+        "id",
+        "tenant"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "SSH/no-key-all",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 表没有主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "SSH/no-key-partial",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "name"
+    ],
+    "sources": [
+      "name"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 表没有主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "SSH/no-key-untrusted",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 表没有主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "SSH/legacy-origin-missing",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "SSH/origin-length-mismatch",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "wrong"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "SSH/other-table",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "other",
+      "other"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "\u0000query-result-column-1"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "SSH/blank-source",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "SSH/null-source",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      null,
+      "name"
+    ],
+    "tables": [
+      null,
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "SSH/missing-table",
+    "kind": "SSH",
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": null,
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "\u0000query-result-column-1"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 未找到源表或源表没有可编辑列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "SSH/empty-result",
+    "kind": "SSH",
+    "target": "items",
+    "labels": null,
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "null/physical",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "null/aliases",
+    "kind": null,
+    "target": "ITEMS",
+    "labels": [
+      "alias_id",
+      "alias_name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "null/expression-before-id",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "id",
+      "real_id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "id",
+      "name"
+    ],
+    "tables": [
+      "",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        1,
+        2
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "null/expression-only-key",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "null/duplicate-base-column",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "id",
+      "name",
+      "second_id"
+    ],
+    "sources": [
+      "id",
+      "name",
+      "id"
+    ],
+    "tables": [
+      "items",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name",
+        "\u0000query-result-column-2"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "null/partial-composite",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      },
+      {
+        "字段名": "tenant",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "null/whole-composite",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "tenant",
+      "id",
+      "name"
+    ],
+    "sources": [
+      "tenant",
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      },
+      {
+        "字段名": "tenant",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "tenant",
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        2,
+        1,
+        0
+      ],
+      "primaryKeyColumns": [
+        "id",
+        "tenant"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "null/no-key-all",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 表没有主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "null/no-key-partial",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "name"
+    ],
+    "sources": [
+      "name"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 表没有主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "null/no-key-untrusted",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "否"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 表没有主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "null/legacy-origin-missing",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "null/origin-length-mismatch",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "wrong"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id",
+        "name"
+      ],
+      "editableColumnIndexes": [
+        0,
+        1
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "null/other-table",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "other",
+      "other"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "\u0000query-result-column-1"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "null/blank-source",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "null/null-source",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      null,
+      "name"
+    ],
+    "tables": [
+      null,
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "name"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "null/missing-table",
+    "kind": null,
+    "target": "items",
+    "labels": [
+      "id",
+      "name"
+    ],
+    "sources": [
+      "id",
+      "name"
+    ],
+    "tables": [
+      "items",
+      "items"
+    ],
+    "columns": null,
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0",
+        "\u0000query-result-column-1"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 未找到源表或源表没有可编辑列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "null/empty-result",
+    "kind": null,
+    "target": "items",
+    "labels": null,
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "id",
+        "主键": "是"
+      },
+      {
+        "字段名": "name",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "unicode-I-ı",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "ı"
+    ],
+    "sources": [
+      "ı"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "I",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "I"
+      ],
+      "editableColumnIndexes": [
+        0
+      ],
+      "primaryKeyColumns": [
+        "I"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "unicode-i-İ",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "İ"
+    ],
+    "sources": [
+      "İ"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "i",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "i"
+      ],
+      "editableColumnIndexes": [
+        0
+      ],
+      "primaryKeyColumns": [
+        "i"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "unicode-S-ſ",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "ſ"
+    ],
+    "sources": [
+      "ſ"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "S",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "S"
+      ],
+      "editableColumnIndexes": [
+        0
+      ],
+      "primaryKeyColumns": [
+        "S"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "unicode-ß-ẞ",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "ẞ"
+    ],
+    "sources": [
+      "ẞ"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "ß",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "ß"
+      ],
+      "editableColumnIndexes": [
+        0
+      ],
+      "primaryKeyColumns": [
+        "ß"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "unicode-ß-SS",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "SS"
+    ],
+    "sources": [
+      "SS"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "ß",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "unicode-Σ-ς",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "ς"
+    ],
+    "sources": [
+      "ς"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "Σ",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "Σ"
+      ],
+      "editableColumnIndexes": [
+        0
+      ],
+      "primaryKeyColumns": [
+        "Σ"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "unicode-σ-Σ",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "Σ"
+    ],
+    "sources": [
+      "Σ"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "σ",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "σ"
+      ],
+      "editableColumnIndexes": [
+        0
+      ],
+      "primaryKeyColumns": [
+        "σ"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "unicode-𐐀-𐐨",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "𐐨"
+    ],
+    "sources": [
+      "𐐨"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "𐐀",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "𐐀"
+      ],
+      "editableColumnIndexes": [
+        0
+      ],
+      "primaryKeyColumns": [
+        "𐐀"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "unicode-é-É",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "É"
+    ],
+    "sources": [
+      "É"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "é",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "é"
+      ],
+      "editableColumnIndexes": [
+        0
+      ],
+      "primaryKeyColumns": [
+        "é"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "unicode-ﬀ-FF",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "FF"
+    ],
+    "sources": [
+      "FF"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "ﬀ",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "unicode-µ-Μ",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "Μ"
+    ],
+    "sources": [
+      "Μ"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "µ",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "µ"
+      ],
+      "editableColumnIndexes": [
+        0
+      ],
+      "primaryKeyColumns": [
+        "µ"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "unicode-k-K",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "K"
+    ],
+    "sources": [
+      "K"
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      {
+        "字段名": "k",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "k"
+      ],
+      "editableColumnIndexes": [
+        0
+      ],
+      "primaryKeyColumns": [
+        "k"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "ambiguous-case",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "ID"
+    ],
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "Id",
+        "主键": "是"
+      },
+      {
+        "字段名": "id",
+        "主键": "否"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "\u0000query-result-column-0"
+      ],
+      "editableColumnIndexes": [],
+      "primaryKeyColumns": [],
+      "usesOriginalRowMatch": false,
+      "statusText": "只读结果 · 查询结果需包含完整主键或全部真实列"
+    },
+    "editable": false,
+    "delete": false
+  },
+  {
+    "name": "exact-case-wins",
+    "kind": "POSTGRESQL",
+    "target": "items",
+    "labels": [
+      "id"
+    ],
+    "sources": null,
+    "tables": null,
+    "columns": [
+      {
+        "字段名": "Id",
+        "主键": "否"
+      },
+      {
+        "字段名": "id",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        "id"
+      ],
+      "editableColumnIndexes": [
+        0
+      ],
+      "primaryKeyColumns": [
+        "id"
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  },
+  {
+    "name": "java-blank",
+    "kind": "MYSQL",
+    "target": "items",
+    "labels": [
+      " "
+    ],
+    "sources": [
+      " "
+    ],
+    "tables": [
+      "items"
+    ],
+    "columns": [
+      null,
+      {},
+      {
+        "字段名": " ",
+        "主键": "是"
+      },
+      {
+        "字段名": " ",
+        "主键": "是"
+      }
+    ],
+    "plan": {
+      "databaseColumnNames": [
+        " "
+      ],
+      "editableColumnIndexes": [
+        0
+      ],
+      "primaryKeyColumns": [
+        " "
+      ],
+      "usesOriginalRowMatch": false,
+      "statusText": "可编辑 · 双击单元格编辑，Ctrl+V 粘贴修改"
+    },
+    "editable": true,
+    "delete": true
+  }
+]

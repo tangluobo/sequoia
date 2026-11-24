@@ -1,0 +1,82 @@
+[
+  {
+    "input": "",
+    "output": ""
+  },
+  {
+    "input": " ",
+    "output": ""
+  },
+  {
+    "input": "select * from users where id=1 order by id limit 5",
+    "output": "select *\nfrom\n    users\nwhere\n    id=1\norder by\n    id\nlimit\n    5"
+  },
+  {
+    "input": "SELECT * FROM users WHERE id=1",
+    "output": "SELECT *\nFROM\n    users\nWHERE\n    id=1"
+  },
+  {
+    "input": "Select * From users Where id=1",
+    "output": "Select * From users Where id=1"
+  },
+  {
+    "input": "\tSELECT\n*\r\nFROM\tusers\nWHERE id=1",
+    "output": "SELECT *\nFROM\n    users\nWHERE\n    id=1"
+  },
+  {
+    "input": "select ' from a where b ' as text from t",
+    "output": "select '\nfrom\n    a\nwhere\n    b ' as text\nfrom\n    t"
+  },
+  {
+    "input": "select a,b from t left join z on t.id=z.id where z.x=1 group by a having a>1 order by b limit 1 offset 2",
+    "output": "select a,b\nfrom\n    t\nleft join\n    z\non\n    t.id=z.id\nwhere\n    z.x=1\ngroup by\n    a\nhaving\n    a>1\norder by\n    b\nlimit\n    1\noffset\n    2"
+  },
+  {
+    "input": "insert into t values (1); update t set x=2 where x=1; delete from t where x=2",
+    "output": "insert into t\nvalues\n    (1);\nupdate\n    t\nset\n    x=2\nwhere\n    x=1; delete\nfrom\n    t\nwhere\n    x=2"
+  },
+  {
+    "input": "create table t(x int); drop table t; alter table t add x int",
+    "output": "create table t(x int);\ndrop table\n    t;\nalter table\n    t add x int"
+  },
+  {
+    "input": "SELECT * FROM t",
+    "output": "SELECT * FROM t"
+  },
+  {
+    "input": "SELECT * FROM t",
+    "output": "SELECT * FROM t"
+  },
+  {
+    "input": "SELECT\u000b*\fFROM t",
+    "output": "SELECT *\nFROM\n    t"
+  },
+  {
+    "input": "SELECT *\n\nFROM t\n\n WHERE id=1",
+    "output": "SELECT *\nFROM\n    t\nWHERE\n    id=1"
+  },
+  {
+    "input": "select a from t union select b from z",
+    "output": "select a\nfrom\n    t union\nselect\n    b\nfrom\n    z"
+  },
+  {
+    "input": "-- FROM comment\nSELECT * FROM table1",
+    "output": "--\nFROM\n    comment\nSELECT\n    *\nFROM\n    table1"
+  },
+  {
+    "input": "SELECT '中文🍅' FROM 中文表 WHERE 名称='a'",
+    "output": "SELECT '中文🍅'\nFROM\n    中文表\nWHERE\n    名称='a'"
+  },
+  {
+    "input": "SELECT * FROM t INNER JOIN z ON x=y",
+    "output": "SELECT *\nFROM\n    t\nINNER JOIN\n    z\nON\n    x=y"
+  },
+  {
+    "input": "select * from t right join z on x=y cross join b full join c",
+    "output": "select *\nfrom\n    t\nright join\n    z\non\n    x=y\ncross join\n    b\nfull join\n    c"
+  },
+  {
+    "input": "\u0000 SELECT * FROM t \u0000",
+    "output": "SELECT *\nFROM\n    t"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "source": "D:\\Data\\Git\\tangluobo\\tomata\\src\\main\\java\\com\\tangluobo\\tomato\\module\\connect\\view\\ColorTransposeGamePane.java",
+  "sha256": "323242a5b7d39acce2ad196f409a547ca372de03786b0a80ffecff8126f1266a",
+  "oracle": "crates/core/tests/java/ColorTransposeOracle.java",
+  "note": "Actual JavaFX original execution; JSON numeric representation normalized from Gson doubles to integers only."
+}

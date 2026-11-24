@@ -1,0 +1,12 @@
+{
+  "upstream": "https://github.com/ikatson/rqbit",
+  "version": "9.1.0",
+  "patches": [
+    {
+      "file": "Cargo.toml",
+      "change": "rust-tls uses reqwest/rustls-no-provider; the embedding service installs its existing ring provider before starting a torrent session. No second AWS-LC TLS implementation is required."
+    },
+    {"file":"src/peer_info_reader/mod.rs","change":"Reject peer-provided magnet metadata above Tomato's 8 MiB metadata budget before allocating its buffer."}
+  ],
+  "upstreamSourceChanges": true
+}

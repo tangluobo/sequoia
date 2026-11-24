@@ -1,0 +1,4 @@
+{$TOMATO_CLOUD_DOMAIN} {
+    encode zstd gzip
+    reverse_proxy cloud:8443
+}

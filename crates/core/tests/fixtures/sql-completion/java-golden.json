@@ -1,0 +1,2440 @@
+{
+  "metadata": {
+    "schema": "public",
+    "database": "main",
+    "databases": [
+      "main",
+      "other",
+      "SELECT"
+    ],
+    "namespaces": [
+      "public",
+      "main"
+    ],
+    "tables": [
+      {
+        "name": "Users",
+        "columns": [
+          "id",
+          "Name",
+          "User_Name",
+          "Shared",
+          "σ",
+          "ς",
+          "İ",
+          "i",
+          "ı",
+          "ſ",
+          "s",
+          "²name",
+          "Ⅻname",
+          "١name",
+          "ͅx",
+          "ΟΣ",
+          "Οσ"
+        ]
+      },
+      {
+        "name": "orders",
+        "columns": [
+          "ID",
+          "amount",
+          "shared"
+        ]
+      },
+      {
+        "name": "中文表",
+        "columns": [
+          "字段一",
+          "字段二"
+        ]
+      },
+      {
+        "name": "userEmpty",
+        "columns": []
+      },
+      {
+        "name": "select",
+        "columns": [
+          "name"
+        ]
+      },
+      {
+        "name": "main",
+        "columns": [
+          "main_field"
+        ]
+      },
+      {
+        "name": "item_149",
+        "columns": []
+      },
+      {
+        "name": "item_148",
+        "columns": []
+      },
+      {
+        "name": "item_147",
+        "columns": []
+      },
+      {
+        "name": "item_146",
+        "columns": []
+      },
+      {
+        "name": "item_145",
+        "columns": []
+      },
+      {
+        "name": "item_144",
+        "columns": []
+      },
+      {
+        "name": "item_143",
+        "columns": []
+      },
+      {
+        "name": "item_142",
+        "columns": []
+      },
+      {
+        "name": "item_141",
+        "columns": []
+      },
+      {
+        "name": "item_140",
+        "columns": []
+      },
+      {
+        "name": "item_139",
+        "columns": []
+      },
+      {
+        "name": "item_138",
+        "columns": []
+      },
+      {
+        "name": "item_137",
+        "columns": []
+      },
+      {
+        "name": "item_136",
+        "columns": []
+      },
+      {
+        "name": "item_135",
+        "columns": []
+      },
+      {
+        "name": "item_134",
+        "columns": []
+      },
+      {
+        "name": "item_133",
+        "columns": []
+      },
+      {
+        "name": "item_132",
+        "columns": []
+      },
+      {
+        "name": "item_131",
+        "columns": []
+      },
+      {
+        "name": "item_130",
+        "columns": []
+      },
+      {
+        "name": "item_129",
+        "columns": []
+      },
+      {
+        "name": "item_128",
+        "columns": []
+      },
+      {
+        "name": "item_127",
+        "columns": []
+      },
+      {
+        "name": "item_126",
+        "columns": []
+      },
+      {
+        "name": "item_125",
+        "columns": []
+      },
+      {
+        "name": "item_124",
+        "columns": []
+      },
+      {
+        "name": "item_123",
+        "columns": []
+      },
+      {
+        "name": "item_122",
+        "columns": []
+      },
+      {
+        "name": "item_121",
+        "columns": []
+      },
+      {
+        "name": "item_120",
+        "columns": []
+      },
+      {
+        "name": "item_119",
+        "columns": []
+      },
+      {
+        "name": "item_118",
+        "columns": []
+      },
+      {
+        "name": "item_117",
+        "columns": []
+      },
+      {
+        "name": "item_116",
+        "columns": []
+      },
+      {
+        "name": "item_115",
+        "columns": []
+      },
+      {
+        "name": "item_114",
+        "columns": []
+      },
+      {
+        "name": "item_113",
+        "columns": []
+      },
+      {
+        "name": "item_112",
+        "columns": []
+      },
+      {
+        "name": "item_111",
+        "columns": []
+      },
+      {
+        "name": "item_110",
+        "columns": []
+      },
+      {
+        "name": "item_109",
+        "columns": []
+      },
+      {
+        "name": "item_108",
+        "columns": []
+      },
+      {
+        "name": "item_107",
+        "columns": []
+      },
+      {
+        "name": "item_106",
+        "columns": []
+      },
+      {
+        "name": "item_105",
+        "columns": []
+      },
+      {
+        "name": "item_104",
+        "columns": []
+      },
+      {
+        "name": "item_103",
+        "columns": []
+      },
+      {
+        "name": "item_102",
+        "columns": []
+      },
+      {
+        "name": "item_101",
+        "columns": []
+      },
+      {
+        "name": "item_100",
+        "columns": []
+      },
+      {
+        "name": "item_099",
+        "columns": []
+      },
+      {
+        "name": "item_098",
+        "columns": []
+      },
+      {
+        "name": "item_097",
+        "columns": []
+      },
+      {
+        "name": "item_096",
+        "columns": []
+      },
+      {
+        "name": "item_095",
+        "columns": []
+      },
+      {
+        "name": "item_094",
+        "columns": []
+      },
+      {
+        "name": "item_093",
+        "columns": []
+      },
+      {
+        "name": "item_092",
+        "columns": []
+      },
+      {
+        "name": "item_091",
+        "columns": []
+      },
+      {
+        "name": "item_090",
+        "columns": []
+      },
+      {
+        "name": "item_089",
+        "columns": []
+      },
+      {
+        "name": "item_088",
+        "columns": []
+      },
+      {
+        "name": "item_087",
+        "columns": []
+      },
+      {
+        "name": "item_086",
+        "columns": []
+      },
+      {
+        "name": "item_085",
+        "columns": []
+      },
+      {
+        "name": "item_084",
+        "columns": []
+      },
+      {
+        "name": "item_083",
+        "columns": []
+      },
+      {
+        "name": "item_082",
+        "columns": []
+      },
+      {
+        "name": "item_081",
+        "columns": []
+      },
+      {
+        "name": "item_080",
+        "columns": []
+      },
+      {
+        "name": "item_079",
+        "columns": []
+      },
+      {
+        "name": "item_078",
+        "columns": []
+      },
+      {
+        "name": "item_077",
+        "columns": []
+      },
+      {
+        "name": "item_076",
+        "columns": []
+      },
+      {
+        "name": "item_075",
+        "columns": []
+      },
+      {
+        "name": "item_074",
+        "columns": []
+      },
+      {
+        "name": "item_073",
+        "columns": []
+      },
+      {
+        "name": "item_072",
+        "columns": []
+      },
+      {
+        "name": "item_071",
+        "columns": []
+      },
+      {
+        "name": "item_070",
+        "columns": []
+      },
+      {
+        "name": "item_069",
+        "columns": []
+      },
+      {
+        "name": "item_068",
+        "columns": []
+      },
+      {
+        "name": "item_067",
+        "columns": []
+      },
+      {
+        "name": "item_066",
+        "columns": []
+      },
+      {
+        "name": "item_065",
+        "columns": []
+      },
+      {
+        "name": "item_064",
+        "columns": []
+      },
+      {
+        "name": "item_063",
+        "columns": []
+      },
+      {
+        "name": "item_062",
+        "columns": []
+      },
+      {
+        "name": "item_061",
+        "columns": []
+      },
+      {
+        "name": "item_060",
+        "columns": []
+      },
+      {
+        "name": "item_059",
+        "columns": []
+      },
+      {
+        "name": "item_058",
+        "columns": []
+      },
+      {
+        "name": "item_057",
+        "columns": []
+      },
+      {
+        "name": "item_056",
+        "columns": []
+      },
+      {
+        "name": "item_055",
+        "columns": []
+      },
+      {
+        "name": "item_054",
+        "columns": []
+      },
+      {
+        "name": "item_053",
+        "columns": []
+      },
+      {
+        "name": "item_052",
+        "columns": []
+      },
+      {
+        "name": "item_051",
+        "columns": []
+      },
+      {
+        "name": "item_050",
+        "columns": []
+      },
+      {
+        "name": "item_049",
+        "columns": []
+      },
+      {
+        "name": "item_048",
+        "columns": []
+      },
+      {
+        "name": "item_047",
+        "columns": []
+      },
+      {
+        "name": "item_046",
+        "columns": []
+      },
+      {
+        "name": "item_045",
+        "columns": []
+      },
+      {
+        "name": "item_044",
+        "columns": []
+      },
+      {
+        "name": "item_043",
+        "columns": []
+      },
+      {
+        "name": "item_042",
+        "columns": []
+      },
+      {
+        "name": "item_041",
+        "columns": []
+      },
+      {
+        "name": "item_040",
+        "columns": []
+      },
+      {
+        "name": "item_039",
+        "columns": []
+      },
+      {
+        "name": "item_038",
+        "columns": []
+      },
+      {
+        "name": "item_037",
+        "columns": []
+      },
+      {
+        "name": "item_036",
+        "columns": []
+      },
+      {
+        "name": "item_035",
+        "columns": []
+      },
+      {
+        "name": "item_034",
+        "columns": []
+      },
+      {
+        "name": "item_033",
+        "columns": []
+      },
+      {
+        "name": "item_032",
+        "columns": []
+      },
+      {
+        "name": "item_031",
+        "columns": []
+      },
+      {
+        "name": "item_030",
+        "columns": []
+      },
+      {
+        "name": "item_029",
+        "columns": []
+      },
+      {
+        "name": "item_028",
+        "columns": []
+      },
+      {
+        "name": "item_027",
+        "columns": []
+      },
+      {
+        "name": "item_026",
+        "columns": []
+      },
+      {
+        "name": "item_025",
+        "columns": []
+      },
+      {
+        "name": "item_024",
+        "columns": []
+      },
+      {
+        "name": "item_023",
+        "columns": []
+      },
+      {
+        "name": "item_022",
+        "columns": []
+      },
+      {
+        "name": "item_021",
+        "columns": []
+      },
+      {
+        "name": "item_020",
+        "columns": []
+      },
+      {
+        "name": "item_019",
+        "columns": []
+      },
+      {
+        "name": "item_018",
+        "columns": []
+      },
+      {
+        "name": "item_017",
+        "columns": []
+      },
+      {
+        "name": "item_016",
+        "columns": []
+      },
+      {
+        "name": "item_015",
+        "columns": []
+      },
+      {
+        "name": "item_014",
+        "columns": []
+      },
+      {
+        "name": "item_013",
+        "columns": []
+      },
+      {
+        "name": "item_012",
+        "columns": []
+      },
+      {
+        "name": "item_011",
+        "columns": []
+      },
+      {
+        "name": "item_010",
+        "columns": []
+      },
+      {
+        "name": "item_009",
+        "columns": []
+      },
+      {
+        "name": "item_008",
+        "columns": []
+      },
+      {
+        "name": "item_007",
+        "columns": []
+      },
+      {
+        "name": "item_006",
+        "columns": []
+      },
+      {
+        "name": "item_005",
+        "columns": []
+      },
+      {
+        "name": "item_004",
+        "columns": []
+      },
+      {
+        "name": "item_003",
+        "columns": []
+      },
+      {
+        "name": "item_002",
+        "columns": []
+      },
+      {
+        "name": "item_001",
+        "columns": []
+      },
+      {
+        "name": "item_000",
+        "columns": []
+      }
+    ]
+  },
+  "cases": [
+    {
+      "sql": "",
+      "caret": 0,
+      "start": 0,
+      "candidates": []
+    },
+    {
+      "sql": "sel",
+      "caret": 3,
+      "start": 0,
+      "candidates": [
+        {
+          "text": "SELECT",
+          "kind": "关键字"
+        }
+      ]
+    },
+    {
+      "sql": "SELECT",
+      "caret": 6,
+      "start": 0,
+      "candidates": []
+    },
+    {
+      "sql": "s",
+      "caret": 1,
+      "start": 0,
+      "candidates": [
+        {
+          "text": "SELECT",
+          "kind": "关键字"
+        },
+        {
+          "text": "SET",
+          "kind": "关键字"
+        },
+        {
+          "text": "SHOW",
+          "kind": "关键字"
+        },
+        {
+          "text": "SUM",
+          "kind": "关键字"
+        },
+        {
+          "text": "Shared",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "main.",
+      "caret": 5,
+      "start": 5,
+      "candidates": [
+        {
+          "text": "main_field",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "MAIN.us",
+      "caret": 7,
+      "start": 5,
+      "candidates": []
+    },
+    {
+      "sql": "public.",
+      "caret": 7,
+      "start": 7,
+      "candidates": [
+        {
+          "text": "item_000",
+          "kind": "表"
+        },
+        {
+          "text": "item_001",
+          "kind": "表"
+        },
+        {
+          "text": "item_002",
+          "kind": "表"
+        },
+        {
+          "text": "item_003",
+          "kind": "表"
+        },
+        {
+          "text": "item_004",
+          "kind": "表"
+        },
+        {
+          "text": "item_005",
+          "kind": "表"
+        },
+        {
+          "text": "item_006",
+          "kind": "表"
+        },
+        {
+          "text": "item_007",
+          "kind": "表"
+        },
+        {
+          "text": "item_008",
+          "kind": "表"
+        },
+        {
+          "text": "item_009",
+          "kind": "表"
+        },
+        {
+          "text": "item_010",
+          "kind": "表"
+        },
+        {
+          "text": "item_011",
+          "kind": "表"
+        },
+        {
+          "text": "item_012",
+          "kind": "表"
+        },
+        {
+          "text": "item_013",
+          "kind": "表"
+        },
+        {
+          "text": "item_014",
+          "kind": "表"
+        },
+        {
+          "text": "item_015",
+          "kind": "表"
+        },
+        {
+          "text": "item_016",
+          "kind": "表"
+        },
+        {
+          "text": "item_017",
+          "kind": "表"
+        },
+        {
+          "text": "item_018",
+          "kind": "表"
+        },
+        {
+          "text": "item_019",
+          "kind": "表"
+        },
+        {
+          "text": "item_020",
+          "kind": "表"
+        },
+        {
+          "text": "item_021",
+          "kind": "表"
+        },
+        {
+          "text": "item_022",
+          "kind": "表"
+        },
+        {
+          "text": "item_023",
+          "kind": "表"
+        },
+        {
+          "text": "item_024",
+          "kind": "表"
+        },
+        {
+          "text": "item_025",
+          "kind": "表"
+        },
+        {
+          "text": "item_026",
+          "kind": "表"
+        },
+        {
+          "text": "item_027",
+          "kind": "表"
+        },
+        {
+          "text": "item_028",
+          "kind": "表"
+        },
+        {
+          "text": "item_029",
+          "kind": "表"
+        },
+        {
+          "text": "item_030",
+          "kind": "表"
+        },
+        {
+          "text": "item_031",
+          "kind": "表"
+        },
+        {
+          "text": "item_032",
+          "kind": "表"
+        },
+        {
+          "text": "item_033",
+          "kind": "表"
+        },
+        {
+          "text": "item_034",
+          "kind": "表"
+        },
+        {
+          "text": "item_035",
+          "kind": "表"
+        },
+        {
+          "text": "item_036",
+          "kind": "表"
+        },
+        {
+          "text": "item_037",
+          "kind": "表"
+        },
+        {
+          "text": "item_038",
+          "kind": "表"
+        },
+        {
+          "text": "item_039",
+          "kind": "表"
+        },
+        {
+          "text": "item_040",
+          "kind": "表"
+        },
+        {
+          "text": "item_041",
+          "kind": "表"
+        },
+        {
+          "text": "item_042",
+          "kind": "表"
+        },
+        {
+          "text": "item_043",
+          "kind": "表"
+        },
+        {
+          "text": "item_044",
+          "kind": "表"
+        },
+        {
+          "text": "item_045",
+          "kind": "表"
+        },
+        {
+          "text": "item_046",
+          "kind": "表"
+        },
+        {
+          "text": "item_047",
+          "kind": "表"
+        },
+        {
+          "text": "item_048",
+          "kind": "表"
+        },
+        {
+          "text": "item_049",
+          "kind": "表"
+        },
+        {
+          "text": "item_050",
+          "kind": "表"
+        },
+        {
+          "text": "item_051",
+          "kind": "表"
+        },
+        {
+          "text": "item_052",
+          "kind": "表"
+        },
+        {
+          "text": "item_053",
+          "kind": "表"
+        },
+        {
+          "text": "item_054",
+          "kind": "表"
+        },
+        {
+          "text": "item_055",
+          "kind": "表"
+        },
+        {
+          "text": "item_056",
+          "kind": "表"
+        },
+        {
+          "text": "item_057",
+          "kind": "表"
+        },
+        {
+          "text": "item_058",
+          "kind": "表"
+        },
+        {
+          "text": "item_059",
+          "kind": "表"
+        },
+        {
+          "text": "item_060",
+          "kind": "表"
+        },
+        {
+          "text": "item_061",
+          "kind": "表"
+        },
+        {
+          "text": "item_062",
+          "kind": "表"
+        },
+        {
+          "text": "item_063",
+          "kind": "表"
+        },
+        {
+          "text": "item_064",
+          "kind": "表"
+        },
+        {
+          "text": "item_065",
+          "kind": "表"
+        },
+        {
+          "text": "item_066",
+          "kind": "表"
+        },
+        {
+          "text": "item_067",
+          "kind": "表"
+        },
+        {
+          "text": "item_068",
+          "kind": "表"
+        },
+        {
+          "text": "item_069",
+          "kind": "表"
+        },
+        {
+          "text": "item_070",
+          "kind": "表"
+        },
+        {
+          "text": "item_071",
+          "kind": "表"
+        },
+        {
+          "text": "item_072",
+          "kind": "表"
+        },
+        {
+          "text": "item_073",
+          "kind": "表"
+        },
+        {
+          "text": "item_074",
+          "kind": "表"
+        },
+        {
+          "text": "item_075",
+          "kind": "表"
+        },
+        {
+          "text": "item_076",
+          "kind": "表"
+        },
+        {
+          "text": "item_077",
+          "kind": "表"
+        },
+        {
+          "text": "item_078",
+          "kind": "表"
+        },
+        {
+          "text": "item_079",
+          "kind": "表"
+        },
+        {
+          "text": "item_080",
+          "kind": "表"
+        },
+        {
+          "text": "item_081",
+          "kind": "表"
+        },
+        {
+          "text": "item_082",
+          "kind": "表"
+        },
+        {
+          "text": "item_083",
+          "kind": "表"
+        },
+        {
+          "text": "item_084",
+          "kind": "表"
+        },
+        {
+          "text": "item_085",
+          "kind": "表"
+        },
+        {
+          "text": "item_086",
+          "kind": "表"
+        },
+        {
+          "text": "item_087",
+          "kind": "表"
+        },
+        {
+          "text": "item_088",
+          "kind": "表"
+        },
+        {
+          "text": "item_089",
+          "kind": "表"
+        },
+        {
+          "text": "item_090",
+          "kind": "表"
+        },
+        {
+          "text": "item_091",
+          "kind": "表"
+        },
+        {
+          "text": "item_092",
+          "kind": "表"
+        },
+        {
+          "text": "item_093",
+          "kind": "表"
+        },
+        {
+          "text": "item_094",
+          "kind": "表"
+        },
+        {
+          "text": "item_095",
+          "kind": "表"
+        },
+        {
+          "text": "item_096",
+          "kind": "表"
+        },
+        {
+          "text": "item_097",
+          "kind": "表"
+        },
+        {
+          "text": "item_098",
+          "kind": "表"
+        },
+        {
+          "text": "item_099",
+          "kind": "表"
+        }
+      ]
+    },
+    {
+      "sql": "`Users`.n",
+      "caret": 9,
+      "start": 8,
+      "candidates": [
+        {
+          "text": "Name",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "\"Users\".i",
+      "caret": 9,
+      "start": 8,
+      "candidates": [
+        {
+          "text": "İ",
+          "kind": "字段"
+        },
+        {
+          "text": "id",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "[Users].",
+      "caret": 8,
+      "start": 8,
+      "candidates": [
+        {
+          "text": "İ",
+          "kind": "字段"
+        },
+        {
+          "text": "i",
+          "kind": "字段"
+        },
+        {
+          "text": "ı",
+          "kind": "字段"
+        },
+        {
+          "text": "id",
+          "kind": "字段"
+        },
+        {
+          "text": "Name",
+          "kind": "字段"
+        },
+        {
+          "text": "ſ",
+          "kind": "字段"
+        },
+        {
+          "text": "s",
+          "kind": "字段"
+        },
+        {
+          "text": "Shared",
+          "kind": "字段"
+        },
+        {
+          "text": "User_Name",
+          "kind": "字段"
+        },
+        {
+          "text": "²name",
+          "kind": "字段"
+        },
+        {
+          "text": "ͅx",
+          "kind": "字段"
+        },
+        {
+          "text": "ΟΣ",
+          "kind": "字段"
+        },
+        {
+          "text": "Οσ",
+          "kind": "字段"
+        },
+        {
+          "text": "σ",
+          "kind": "字段"
+        },
+        {
+          "text": "ς",
+          "kind": "字段"
+        },
+        {
+          "text": "١name",
+          "kind": "字段"
+        },
+        {
+          "text": "Ⅻname",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "public.Users.s",
+      "caret": 14,
+      "start": 13,
+      "candidates": [
+        {
+          "text": "Shared",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "unrelated.Users.",
+      "caret": 16,
+      "start": 16,
+      "candidates": []
+    },
+    {
+      "sql": "unknown.x",
+      "caret": 9,
+      "start": 8,
+      "candidates": []
+    },
+    {
+      "sql": "public.other.Users.",
+      "caret": 19,
+      "start": 19,
+      "candidates": [
+        {
+          "text": "İ",
+          "kind": "字段"
+        },
+        {
+          "text": "i",
+          "kind": "字段"
+        },
+        {
+          "text": "ı",
+          "kind": "字段"
+        },
+        {
+          "text": "id",
+          "kind": "字段"
+        },
+        {
+          "text": "Name",
+          "kind": "字段"
+        },
+        {
+          "text": "ſ",
+          "kind": "字段"
+        },
+        {
+          "text": "s",
+          "kind": "字段"
+        },
+        {
+          "text": "Shared",
+          "kind": "字段"
+        },
+        {
+          "text": "User_Name",
+          "kind": "字段"
+        },
+        {
+          "text": "²name",
+          "kind": "字段"
+        },
+        {
+          "text": "ͅx",
+          "kind": "字段"
+        },
+        {
+          "text": "ΟΣ",
+          "kind": "字段"
+        },
+        {
+          "text": "Οσ",
+          "kind": "字段"
+        },
+        {
+          "text": "σ",
+          "kind": "字段"
+        },
+        {
+          "text": "ς",
+          "kind": "字段"
+        },
+        {
+          "text": "١name",
+          "kind": "字段"
+        },
+        {
+          "text": "Ⅻname",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "中文表.字段",
+      "caret": 6,
+      "start": 4,
+      "candidates": [
+        {
+          "text": "字段一",
+          "kind": "字段"
+        },
+        {
+          "text": "字段二",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "Users..x",
+      "caret": 8,
+      "start": 8,
+      "candidates": []
+    },
+    {
+      "sql": ".x",
+      "caret": 2,
+      "start": 2,
+      "candidates": []
+    },
+    {
+      "sql": "(",
+      "caret": 1,
+      "start": 1,
+      "candidates": []
+    },
+    {
+      "sql": "SELECT 名字",
+      "caret": 9,
+      "start": 7,
+      "candidates": []
+    },
+    {
+      "sql": "a$",
+      "caret": 2,
+      "start": 0,
+      "candidates": []
+    },
+    {
+      "sql": "𝒜",
+      "caret": 2,
+      "start": 2,
+      "candidates": []
+    },
+    {
+      "sql": "a𝒜",
+      "caret": 3,
+      "start": 3,
+      "candidates": []
+    },
+    {
+      "sql": "uͅ",
+      "caret": 2,
+      "start": 2,
+      "candidates": []
+    },
+    {
+      "sql": "²",
+      "caret": 1,
+      "start": 1,
+      "candidates": []
+    },
+    {
+      "sql": "Ⅻ",
+      "caret": 1,
+      "start": 1,
+      "candidates": []
+    },
+    {
+      "sql": "١",
+      "caret": 1,
+      "start": 0,
+      "candidates": [
+        {
+          "text": "١name",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "Users.σ",
+      "caret": 7,
+      "start": 6,
+      "candidates": []
+    },
+    {
+      "sql": "Users.ς",
+      "caret": 7,
+      "start": 6,
+      "candidates": []
+    },
+    {
+      "sql": "Users.İ",
+      "caret": 7,
+      "start": 6,
+      "candidates": []
+    },
+    {
+      "sql": "Users.ı",
+      "caret": 7,
+      "start": 6,
+      "candidates": []
+    },
+    {
+      "sql": "Users.s",
+      "caret": 7,
+      "start": 6,
+      "candidates": [
+        {
+          "text": "Shared",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "Users.ſ",
+      "caret": 7,
+      "start": 6,
+      "candidates": []
+    },
+    {
+      "sql": "Users.Ο",
+      "caret": 7,
+      "start": 6,
+      "candidates": [
+        {
+          "text": "ΟΣ",
+          "kind": "字段"
+        },
+        {
+          "text": "Οσ",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "[public].[Users].",
+      "caret": 17,
+      "start": 17,
+      "candidates": [
+        {
+          "text": "İ",
+          "kind": "字段"
+        },
+        {
+          "text": "i",
+          "kind": "字段"
+        },
+        {
+          "text": "ı",
+          "kind": "字段"
+        },
+        {
+          "text": "id",
+          "kind": "字段"
+        },
+        {
+          "text": "Name",
+          "kind": "字段"
+        },
+        {
+          "text": "ſ",
+          "kind": "字段"
+        },
+        {
+          "text": "s",
+          "kind": "字段"
+        },
+        {
+          "text": "Shared",
+          "kind": "字段"
+        },
+        {
+          "text": "User_Name",
+          "kind": "字段"
+        },
+        {
+          "text": "²name",
+          "kind": "字段"
+        },
+        {
+          "text": "ͅx",
+          "kind": "字段"
+        },
+        {
+          "text": "ΟΣ",
+          "kind": "字段"
+        },
+        {
+          "text": "Οσ",
+          "kind": "字段"
+        },
+        {
+          "text": "σ",
+          "kind": "字段"
+        },
+        {
+          "text": "ς",
+          "kind": "字段"
+        },
+        {
+          "text": "١name",
+          "kind": "字段"
+        },
+        {
+          "text": "Ⅻname",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "SELECT \"public\".\"Users\".N",
+      "caret": 25,
+      "start": 24,
+      "candidates": [
+        {
+          "text": "Name",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "user",
+      "caret": 4,
+      "start": 0,
+      "candidates": [
+        {
+          "text": "userEmpty",
+          "kind": "表"
+        },
+        {
+          "text": "Users",
+          "kind": "表"
+        },
+        {
+          "text": "User_Name",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "item_",
+      "caret": 5,
+      "start": 0,
+      "candidates": [
+        {
+          "text": "item_000",
+          "kind": "表"
+        },
+        {
+          "text": "item_001",
+          "kind": "表"
+        },
+        {
+          "text": "item_002",
+          "kind": "表"
+        },
+        {
+          "text": "item_003",
+          "kind": "表"
+        },
+        {
+          "text": "item_004",
+          "kind": "表"
+        },
+        {
+          "text": "item_005",
+          "kind": "表"
+        },
+        {
+          "text": "item_006",
+          "kind": "表"
+        },
+        {
+          "text": "item_007",
+          "kind": "表"
+        },
+        {
+          "text": "item_008",
+          "kind": "表"
+        },
+        {
+          "text": "item_009",
+          "kind": "表"
+        },
+        {
+          "text": "item_010",
+          "kind": "表"
+        },
+        {
+          "text": "item_011",
+          "kind": "表"
+        },
+        {
+          "text": "item_012",
+          "kind": "表"
+        },
+        {
+          "text": "item_013",
+          "kind": "表"
+        },
+        {
+          "text": "item_014",
+          "kind": "表"
+        },
+        {
+          "text": "item_015",
+          "kind": "表"
+        },
+        {
+          "text": "item_016",
+          "kind": "表"
+        },
+        {
+          "text": "item_017",
+          "kind": "表"
+        },
+        {
+          "text": "item_018",
+          "kind": "表"
+        },
+        {
+          "text": "item_019",
+          "kind": "表"
+        },
+        {
+          "text": "item_020",
+          "kind": "表"
+        },
+        {
+          "text": "item_021",
+          "kind": "表"
+        },
+        {
+          "text": "item_022",
+          "kind": "表"
+        },
+        {
+          "text": "item_023",
+          "kind": "表"
+        },
+        {
+          "text": "item_024",
+          "kind": "表"
+        },
+        {
+          "text": "item_025",
+          "kind": "表"
+        },
+        {
+          "text": "item_026",
+          "kind": "表"
+        },
+        {
+          "text": "item_027",
+          "kind": "表"
+        },
+        {
+          "text": "item_028",
+          "kind": "表"
+        },
+        {
+          "text": "item_029",
+          "kind": "表"
+        },
+        {
+          "text": "item_030",
+          "kind": "表"
+        },
+        {
+          "text": "item_031",
+          "kind": "表"
+        },
+        {
+          "text": "item_032",
+          "kind": "表"
+        },
+        {
+          "text": "item_033",
+          "kind": "表"
+        },
+        {
+          "text": "item_034",
+          "kind": "表"
+        },
+        {
+          "text": "item_035",
+          "kind": "表"
+        },
+        {
+          "text": "item_036",
+          "kind": "表"
+        },
+        {
+          "text": "item_037",
+          "kind": "表"
+        },
+        {
+          "text": "item_038",
+          "kind": "表"
+        },
+        {
+          "text": "item_039",
+          "kind": "表"
+        },
+        {
+          "text": "item_040",
+          "kind": "表"
+        },
+        {
+          "text": "item_041",
+          "kind": "表"
+        },
+        {
+          "text": "item_042",
+          "kind": "表"
+        },
+        {
+          "text": "item_043",
+          "kind": "表"
+        },
+        {
+          "text": "item_044",
+          "kind": "表"
+        },
+        {
+          "text": "item_045",
+          "kind": "表"
+        },
+        {
+          "text": "item_046",
+          "kind": "表"
+        },
+        {
+          "text": "item_047",
+          "kind": "表"
+        },
+        {
+          "text": "item_048",
+          "kind": "表"
+        },
+        {
+          "text": "item_049",
+          "kind": "表"
+        },
+        {
+          "text": "item_050",
+          "kind": "表"
+        },
+        {
+          "text": "item_051",
+          "kind": "表"
+        },
+        {
+          "text": "item_052",
+          "kind": "表"
+        },
+        {
+          "text": "item_053",
+          "kind": "表"
+        },
+        {
+          "text": "item_054",
+          "kind": "表"
+        },
+        {
+          "text": "item_055",
+          "kind": "表"
+        },
+        {
+          "text": "item_056",
+          "kind": "表"
+        },
+        {
+          "text": "item_057",
+          "kind": "表"
+        },
+        {
+          "text": "item_058",
+          "kind": "表"
+        },
+        {
+          "text": "item_059",
+          "kind": "表"
+        },
+        {
+          "text": "item_060",
+          "kind": "表"
+        },
+        {
+          "text": "item_061",
+          "kind": "表"
+        },
+        {
+          "text": "item_062",
+          "kind": "表"
+        },
+        {
+          "text": "item_063",
+          "kind": "表"
+        },
+        {
+          "text": "item_064",
+          "kind": "表"
+        },
+        {
+          "text": "item_065",
+          "kind": "表"
+        },
+        {
+          "text": "item_066",
+          "kind": "表"
+        },
+        {
+          "text": "item_067",
+          "kind": "表"
+        },
+        {
+          "text": "item_068",
+          "kind": "表"
+        },
+        {
+          "text": "item_069",
+          "kind": "表"
+        },
+        {
+          "text": "item_070",
+          "kind": "表"
+        },
+        {
+          "text": "item_071",
+          "kind": "表"
+        },
+        {
+          "text": "item_072",
+          "kind": "表"
+        },
+        {
+          "text": "item_073",
+          "kind": "表"
+        },
+        {
+          "text": "item_074",
+          "kind": "表"
+        },
+        {
+          "text": "item_075",
+          "kind": "表"
+        },
+        {
+          "text": "item_076",
+          "kind": "表"
+        },
+        {
+          "text": "item_077",
+          "kind": "表"
+        },
+        {
+          "text": "item_078",
+          "kind": "表"
+        },
+        {
+          "text": "item_079",
+          "kind": "表"
+        },
+        {
+          "text": "item_080",
+          "kind": "表"
+        },
+        {
+          "text": "item_081",
+          "kind": "表"
+        },
+        {
+          "text": "item_082",
+          "kind": "表"
+        },
+        {
+          "text": "item_083",
+          "kind": "表"
+        },
+        {
+          "text": "item_084",
+          "kind": "表"
+        },
+        {
+          "text": "item_085",
+          "kind": "表"
+        },
+        {
+          "text": "item_086",
+          "kind": "表"
+        },
+        {
+          "text": "item_087",
+          "kind": "表"
+        },
+        {
+          "text": "item_088",
+          "kind": "表"
+        },
+        {
+          "text": "item_089",
+          "kind": "表"
+        },
+        {
+          "text": "item_090",
+          "kind": "表"
+        },
+        {
+          "text": "item_091",
+          "kind": "表"
+        },
+        {
+          "text": "item_092",
+          "kind": "表"
+        },
+        {
+          "text": "item_093",
+          "kind": "表"
+        },
+        {
+          "text": "item_094",
+          "kind": "表"
+        },
+        {
+          "text": "item_095",
+          "kind": "表"
+        },
+        {
+          "text": "item_096",
+          "kind": "表"
+        },
+        {
+          "text": "item_097",
+          "kind": "表"
+        },
+        {
+          "text": "item_098",
+          "kind": "表"
+        },
+        {
+          "text": "item_099",
+          "kind": "表"
+        }
+      ]
+    },
+    {
+      "sql": "public.item_",
+      "caret": 12,
+      "start": 7,
+      "candidates": [
+        {
+          "text": "item_000",
+          "kind": "表"
+        },
+        {
+          "text": "item_001",
+          "kind": "表"
+        },
+        {
+          "text": "item_002",
+          "kind": "表"
+        },
+        {
+          "text": "item_003",
+          "kind": "表"
+        },
+        {
+          "text": "item_004",
+          "kind": "表"
+        },
+        {
+          "text": "item_005",
+          "kind": "表"
+        },
+        {
+          "text": "item_006",
+          "kind": "表"
+        },
+        {
+          "text": "item_007",
+          "kind": "表"
+        },
+        {
+          "text": "item_008",
+          "kind": "表"
+        },
+        {
+          "text": "item_009",
+          "kind": "表"
+        },
+        {
+          "text": "item_010",
+          "kind": "表"
+        },
+        {
+          "text": "item_011",
+          "kind": "表"
+        },
+        {
+          "text": "item_012",
+          "kind": "表"
+        },
+        {
+          "text": "item_013",
+          "kind": "表"
+        },
+        {
+          "text": "item_014",
+          "kind": "表"
+        },
+        {
+          "text": "item_015",
+          "kind": "表"
+        },
+        {
+          "text": "item_016",
+          "kind": "表"
+        },
+        {
+          "text": "item_017",
+          "kind": "表"
+        },
+        {
+          "text": "item_018",
+          "kind": "表"
+        },
+        {
+          "text": "item_019",
+          "kind": "表"
+        },
+        {
+          "text": "item_020",
+          "kind": "表"
+        },
+        {
+          "text": "item_021",
+          "kind": "表"
+        },
+        {
+          "text": "item_022",
+          "kind": "表"
+        },
+        {
+          "text": "item_023",
+          "kind": "表"
+        },
+        {
+          "text": "item_024",
+          "kind": "表"
+        },
+        {
+          "text": "item_025",
+          "kind": "表"
+        },
+        {
+          "text": "item_026",
+          "kind": "表"
+        },
+        {
+          "text": "item_027",
+          "kind": "表"
+        },
+        {
+          "text": "item_028",
+          "kind": "表"
+        },
+        {
+          "text": "item_029",
+          "kind": "表"
+        },
+        {
+          "text": "item_030",
+          "kind": "表"
+        },
+        {
+          "text": "item_031",
+          "kind": "表"
+        },
+        {
+          "text": "item_032",
+          "kind": "表"
+        },
+        {
+          "text": "item_033",
+          "kind": "表"
+        },
+        {
+          "text": "item_034",
+          "kind": "表"
+        },
+        {
+          "text": "item_035",
+          "kind": "表"
+        },
+        {
+          "text": "item_036",
+          "kind": "表"
+        },
+        {
+          "text": "item_037",
+          "kind": "表"
+        },
+        {
+          "text": "item_038",
+          "kind": "表"
+        },
+        {
+          "text": "item_039",
+          "kind": "表"
+        },
+        {
+          "text": "item_040",
+          "kind": "表"
+        },
+        {
+          "text": "item_041",
+          "kind": "表"
+        },
+        {
+          "text": "item_042",
+          "kind": "表"
+        },
+        {
+          "text": "item_043",
+          "kind": "表"
+        },
+        {
+          "text": "item_044",
+          "kind": "表"
+        },
+        {
+          "text": "item_045",
+          "kind": "表"
+        },
+        {
+          "text": "item_046",
+          "kind": "表"
+        },
+        {
+          "text": "item_047",
+          "kind": "表"
+        },
+        {
+          "text": "item_048",
+          "kind": "表"
+        },
+        {
+          "text": "item_049",
+          "kind": "表"
+        },
+        {
+          "text": "item_050",
+          "kind": "表"
+        },
+        {
+          "text": "item_051",
+          "kind": "表"
+        },
+        {
+          "text": "item_052",
+          "kind": "表"
+        },
+        {
+          "text": "item_053",
+          "kind": "表"
+        },
+        {
+          "text": "item_054",
+          "kind": "表"
+        },
+        {
+          "text": "item_055",
+          "kind": "表"
+        },
+        {
+          "text": "item_056",
+          "kind": "表"
+        },
+        {
+          "text": "item_057",
+          "kind": "表"
+        },
+        {
+          "text": "item_058",
+          "kind": "表"
+        },
+        {
+          "text": "item_059",
+          "kind": "表"
+        },
+        {
+          "text": "item_060",
+          "kind": "表"
+        },
+        {
+          "text": "item_061",
+          "kind": "表"
+        },
+        {
+          "text": "item_062",
+          "kind": "表"
+        },
+        {
+          "text": "item_063",
+          "kind": "表"
+        },
+        {
+          "text": "item_064",
+          "kind": "表"
+        },
+        {
+          "text": "item_065",
+          "kind": "表"
+        },
+        {
+          "text": "item_066",
+          "kind": "表"
+        },
+        {
+          "text": "item_067",
+          "kind": "表"
+        },
+        {
+          "text": "item_068",
+          "kind": "表"
+        },
+        {
+          "text": "item_069",
+          "kind": "表"
+        },
+        {
+          "text": "item_070",
+          "kind": "表"
+        },
+        {
+          "text": "item_071",
+          "kind": "表"
+        },
+        {
+          "text": "item_072",
+          "kind": "表"
+        },
+        {
+          "text": "item_073",
+          "kind": "表"
+        },
+        {
+          "text": "item_074",
+          "kind": "表"
+        },
+        {
+          "text": "item_075",
+          "kind": "表"
+        },
+        {
+          "text": "item_076",
+          "kind": "表"
+        },
+        {
+          "text": "item_077",
+          "kind": "表"
+        },
+        {
+          "text": "item_078",
+          "kind": "表"
+        },
+        {
+          "text": "item_079",
+          "kind": "表"
+        },
+        {
+          "text": "item_080",
+          "kind": "表"
+        },
+        {
+          "text": "item_081",
+          "kind": "表"
+        },
+        {
+          "text": "item_082",
+          "kind": "表"
+        },
+        {
+          "text": "item_083",
+          "kind": "表"
+        },
+        {
+          "text": "item_084",
+          "kind": "表"
+        },
+        {
+          "text": "item_085",
+          "kind": "表"
+        },
+        {
+          "text": "item_086",
+          "kind": "表"
+        },
+        {
+          "text": "item_087",
+          "kind": "表"
+        },
+        {
+          "text": "item_088",
+          "kind": "表"
+        },
+        {
+          "text": "item_089",
+          "kind": "表"
+        },
+        {
+          "text": "item_090",
+          "kind": "表"
+        },
+        {
+          "text": "item_091",
+          "kind": "表"
+        },
+        {
+          "text": "item_092",
+          "kind": "表"
+        },
+        {
+          "text": "item_093",
+          "kind": "表"
+        },
+        {
+          "text": "item_094",
+          "kind": "表"
+        },
+        {
+          "text": "item_095",
+          "kind": "表"
+        },
+        {
+          "text": "item_096",
+          "kind": "表"
+        },
+        {
+          "text": "item_097",
+          "kind": "表"
+        },
+        {
+          "text": "item_098",
+          "kind": "表"
+        },
+        {
+          "text": "item_099",
+          "kind": "表"
+        }
+      ]
+    },
+    {
+      "sql": "Users.Name",
+      "caret": 10,
+      "start": 6,
+      "candidates": []
+    },
+    {
+      "sql": "select.n",
+      "caret": 8,
+      "start": 7,
+      "candidates": [
+        {
+          "text": "name",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "main.ma",
+      "caret": 7,
+      "start": 5,
+      "candidates": [
+        {
+          "text": "main_field",
+          "kind": "字段"
+        }
+      ]
+    },
+    {
+      "sql": "other.",
+      "caret": 6,
+      "start": 6,
+      "candidates": []
+    }
+  ]
+}

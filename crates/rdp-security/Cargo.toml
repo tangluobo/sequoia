@@ -1,0 +1,24 @@
+[package]
+name = "tomato-rdp-security"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+ironrdp-core = "0.2"
+ironrdp-pdu = { version = "0.9", features = ["std"] }
+md-5 = "0.10"
+sha1 = "0.10"
+rc4 = { version = "0.1", features = ["zeroize"] }
+rsa = { version = "0.9", default-features = false, features = ["std"] }
+subtle = "2"
+zeroize = "1"
+tokio.workspace = true
+
+[dev-dependencies]
+sha2 = "0.10"
+
+[lints]
+workspace = true
