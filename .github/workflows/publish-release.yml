@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       release_version:
-        description: Release version matching Cargo.toml, e.g. v0.1.8
+        description: Release version matching Cargo.toml, e.g. v1.0.0
         type: string
         required: true
       mode:
@@ -43,16 +43,25 @@ jobs:
           fi
           version=${REQUESTED_VERSION#v}
           if [[ ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+([-+][A-Za-z0-9.-]+)?$ ]]; then
-            echo 'Enter a version such as v0.1.8 or 0.1.8.' >&2
+            echo 'Enter a version such as v1.0.0 or 1.0.0.' >&2
             exit 1
           fi
+          source_file() {
+            gh api "repos/$GH_REPO/contents/$1?ref=$2" --jq .content | base64 --decode
+          }
           workspace_version() {
-            gh api "repos/$GH_REPO/contents/Cargo.toml?ref=$1" --jq .content |
-              base64 --decode | python3 -c 'import sys, tomllib; print(tomllib.load(sys.stdin.buffer)["workspace"]["package"]["version"])'
+            source_file Cargo.toml "$1" |
+              python3 -c 'import sys, tomllib; print(tomllib.load(sys.stdin.buffer)["workspace"]["package"]["version"])'
           }
           current_version=$(workspace_version "$GITHUB_SHA")
           if [[ "$current_version" != "$version" ]]; then
             echo "Cargo.toml version $current_version does not match requested release v$version." >&2
+            exit 1
+          fi
+          locked_version=$(source_file Cargo.lock "$GITHUB_SHA" |
+            python3 -c 'import sys, tomllib; print(next((p["version"] for p in tomllib.load(sys.stdin.buffer)["package"] if p["name"] == "tomato" and "source" not in p), ""))')
+          if [[ "$locked_version" != "$version" ]]; then
+            echo "Cargo.lock Tomato version is ${locked_version:-missing}, expected $version. Run cargo update --workspace and commit Cargo.lock." >&2
             exit 1
           fi
 
