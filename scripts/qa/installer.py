@@ -8,6 +8,7 @@ import os
 import re
 import subprocess
 import time
+from tempfile import TemporaryDirectory
 
 ROOT=Path(__file__).resolve().parents[2]
 spec=importlib.util.spec_from_file_location('tomato_installer',ROOT/'scripts/build-installer.py')
@@ -61,7 +62,8 @@ owned_uninstall:
 SectionEnd
 ''',encoding='utf-8')
     env=os.environ.copy();env['TEMP']=str(root);env['TMP']=str(root)
-    run([installer.compiler(args.offline),'/V2','/INPUTCHARSET','UTF8',str(source)],env)
+    with TemporaryDirectory(dir=root) as tool_dir:
+        run([installer.compiler(args.offline,Path(tool_dir)),'/V2','/INPUTCHARSET','UTF8',str(source)],env)
     run([str(output),'/S'],env)
     for name,expected in contents.items():
         if (destination/name).read_bytes()!=expected:

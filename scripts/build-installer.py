@@ -2,10 +2,10 @@
 from pathlib import Path
 import argparse
 import hashlib
+import io
 import json
 import os
 import re
-import shutil
 import subprocess
 import tempfile
 import urllib.request
@@ -66,35 +66,42 @@ def manifest(stage):
     lines.append('!macroend')
     return '\n'.join(lines) + '\n'
 
-def compiler(offline):
+def compiler(offline, directory):
     override = os.environ.get('TOMATO_MAKENSIS')
     if override:
         return str(Path(override).resolve(strict=True))
-    cache = ROOT / 'target' / 'build-tools' / f'nsis-{VERSION}'
-    archive = cache.with_name(cache.name + '.zip')
-    cache.parent.mkdir(parents=True, exist_ok=True)
-    if not archive.exists():
+    cache = ROOT / 'target' / 'build-tools'
+    archive = cache / f'nsis-{VERSION}.zip'
+    max_size = 4 * 1024 * 1024
+    cached = archive.is_file()
+    if cached:
+        with archive.open('rb') as source:
+            content = source.read(max_size + 1)
+    else:
         if offline:
             raise RuntimeError('Verified NSIS cache unavailable in offline mode')
         with urllib.request.urlopen(NSIS_URL, timeout=60) as response:
-            content = response.read(4 * 1024 * 1024 + 1)
-        if len(content) > 4 * 1024 * 1024 or hashlib.sha256(content).hexdigest() != NSIS_SHA256:
-            raise RuntimeError('NSIS publisher checksum mismatch')
-        archive.write_bytes(content)
-    if hashlib.sha256(archive.read_bytes()).hexdigest() != NSIS_SHA256:
-        raise RuntimeError('NSIS cached archive checksum mismatch')
-    with tempfile.TemporaryDirectory(dir=cache.parent) as temporary:
-        root = Path(temporary)
-        with zipfile.ZipFile(archive) as source:
-            for item in source.infolist():
-                path = root / item.filename
-                if not path.resolve().is_relative_to(root.resolve()) or item.file_size > 32 * 1024 * 1024:
-                    raise RuntimeError('Invalid NSIS archive entry')
-            source.extractall(root)
-        tool = root / f'nsis-{VERSION}'
-        if not cache.exists():
-            shutil.move(tool, cache)
-    return str(cache / 'makensis.exe')
+            content = response.read(max_size + 1)
+    if len(content) > max_size or hashlib.sha256(content).hexdigest() != NSIS_SHA256:
+        raise RuntimeError('NSIS archive checksum mismatch')
+    if not cached:
+        cache.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=cache) as temporary:
+            downloaded = Path(temporary) / archive.name
+            downloaded.write_bytes(content)
+            downloaded.replace(archive)
+    # Cargo's cache may omit files from an extracted compiler directory.
+    directory = directory.resolve()
+    with zipfile.ZipFile(io.BytesIO(content)) as source:
+        for item in source.infolist():
+            path = directory / item.filename
+            if not path.resolve().is_relative_to(directory) or item.file_size > 32 * 1024 * 1024:
+                raise RuntimeError('Invalid NSIS archive entry')
+        source.extractall(directory)
+    tool = directory / f'nsis-{VERSION}' / 'makensis.exe'
+    if not tool.is_file():
+        raise RuntimeError('Verified NSIS archive is missing makensis.exe')
+    return str(tool)
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -115,9 +122,10 @@ def main():
     temporary_root = ROOT / 'target' / 'installer-build'
     temporary_root.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=temporary_root) as temporary:
-        include = Path(temporary) / 'payload.nsh'
+        directory = Path(temporary)
+        include = directory / 'payload.nsh'
         include.write_text(manifest(stage), encoding='utf-8')
-        command = [compiler(args.offline), '/V2', '/INPUTCHARSET', 'UTF8',
+        command = [compiler(args.offline, directory), '/V2', '/INPUTCHARSET', 'UTF8',
                    f'/DVERSION={args.version}', f'/DOUTPUT_FILE={output}',
                    f'/DOWNED_FILES={include}', f'/DICON_FILE={ROOT / "apps/tomato/resources/tomato.ico"}',
                    str(ROOT / 'packaging/windows/tomato.nsi')]

@@ -32,6 +32,8 @@ GitHub Actions 的 `Publish Release` 手动入口接受版本号，像 Java 流�
 
 同步 1.0.0 的工作区锁文件。发布入口在启动平台构建前核对锁文件中的 Tomato 版本，发现不一致时提示同步 `Cargo.lock`。平台构建继续使用 `--locked`。
 
+Windows 安装器从已校验的 NSIS 压缩包解压到本次构建的临时目录，避免恢复的缓存目录缺少 `makensis.exe` 时中断打包。
+
 # Oracle 自有表的主键元数据（1764 发布）
 
 XE 21c 的工具栏回归停在首次打开表，备份窗口尚未建立。数据库会话在 SQL ID `bjyhsh6dn94na` 上等待 CPU 调度。该 ID 与当前驱动发出的按所有者、表名过滤 `ALL_CONSTRAINTS` 的主键查询相符。证据见 `target/oracle-xe-fixture-1762-diagnostic/oracle-ui.log` 与 `target/oracle-xe-fixture-1762-diagnostic/sessions.log`。
