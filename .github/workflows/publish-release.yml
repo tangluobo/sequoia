@@ -1,0 +1,126 @@
+name: Publish Release
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: Run ID of a successful Release build from the default branch
+        type: string
+        required: true
+      mode:
+        description: Verify packages, create a draft, or publish a release
+        type: choice
+        options: [draft, publish, verify]
+        default: draft
+        required: true
+permissions:
+  actions: read
+  contents: write
+concurrency:
+  group: publish-release
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    env:
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - name: Verify source build and resolve its version
+        id: source
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BUILD_RUN_ID: ${{ inputs.run_id }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          if [[ "$GITHUB_REF" != "refs/heads/$DEFAULT_BRANCH" || ! "$BUILD_RUN_ID" =~ ^[1-9][0-9]*$ ]]; then
+            echo 'Run this workflow on the default branch with a numeric Release run ID.' >&2
+            exit 1
+          fi
+          run=$(gh api "repos/$GH_REPO/actions/runs/$BUILD_RUN_ID")
+          if ! jq -e --arg branch "$DEFAULT_BRANCH" --arg repo "$GH_REPO" '
+            .path == ".github/workflows/release.yml" and .event == "workflow_dispatch"
+            and .status == "completed" and .conclusion == "success"
+            and .head_branch == $branch and .head_repository.full_name == $repo
+          ' <<< "$run" >/dev/null; then
+            echo 'Choose a successful manual run of Release from the default branch.' >&2
+            exit 1
+          fi
+          sha=$(jq -er '.head_sha | select(test("^[0-9a-f]{40}$"))' <<< "$run")
+          relation=$(gh api "repos/$GH_REPO/compare/$sha...$GITHUB_SHA" --jq .status)
+          if [[ "$relation" != ahead && "$relation" != identical ]]; then
+            echo 'The build commit is outside the default branch history.' >&2
+            exit 1
+          fi
+          version=$(gh api "repos/$GH_REPO/contents/Cargo.toml?ref=$sha" --jq .content |
+            base64 --decode | python3 -c 'import sys, tomllib; print(tomllib.load(sys.stdin.buffer)["workspace"]["package"]["version"])')
+          if [[ ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+([-+][A-Za-z0-9.-]+)?$ ]]; then
+            echo 'Invalid workspace release version.' >&2
+            exit 1
+          fi
+          printf 'sha=%s\nversion=%s\n' "$sha" "$version" >> "$GITHUB_OUTPUT"
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.run_id }}
+          pattern: tomato-*
+          path: dist
+      - name: Verify all platform packages and prepare release assets
+        shell: bash
+        working-directory: dist
+        env:
+          VERSION: ${{ steps.source.outputs.version }}
+          BUILD_RUN_ID: ${{ inputs.run_id }}
+        run: |
+          : > SHA256SUMS.txt
+          for target in x86_64-pc-windows-msvc x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu x86_64-apple-darwin aarch64-apple-darwin; do
+            prefix="tomato-$VERSION-$target"
+            assets=("$prefix.zip" "$prefix.tar.gz")
+            if [[ "$target" == x86_64-pc-windows-msvc ]]; then
+              assets+=("$prefix-setup.exe")
+            fi
+            for asset in "${assets[@]}"; do
+              path="tomato-$target/$asset"
+              if [[ ! -f "$path" || -L "$path" || ! -f "$path.sha256" || -L "$path.sha256" ]]; then
+                echo "Missing package or checksum: $asset" >&2
+                exit 1
+              fi
+              expected=$(<"$path.sha256")
+              actual=$(sha256sum -- "$path")
+              if [[ "${expected%$'\r'}" != "${actual%% *}  $asset" ]]; then
+                echo "Checksum mismatch: $asset" >&2
+                exit 1
+              fi
+              printf '%s  %s\n' "${actual%% *}" "$asset" >> SHA256SUMS.txt
+              mv -- "$path" "$asset"
+            done
+          done
+          printf 'Verified %s assets for **v%s** from [Release build %s](%s/%s/actions/runs/%s).\n' \
+            "$(wc -l < SHA256SUMS.txt)" "$VERSION" "$BUILD_RUN_ID" "$GITHUB_SERVER_URL" "$GH_REPO" "$BUILD_RUN_ID" >> "$GITHUB_STEP_SUMMARY"
+      - name: Create GitHub Release
+        if: inputs.mode == 'draft' || inputs.mode == 'publish'
+        shell: bash
+        working-directory: dist
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: v${{ steps.source.outputs.version }}
+          SOURCE_SHA: ${{ steps.source.outputs.sha }}
+          MODE: ${{ inputs.mode }}
+        run: |
+          flags=(--target "$SOURCE_SHA" --generate-notes)
+          tag_error="$RUNNER_TEMP/release-tag-error.txt"
+          if gh api "repos/$GH_REPO/git/ref/tags/$RELEASE_TAG" --silent 2>"$tag_error"; then
+            tagged_sha=$(gh api "repos/$GH_REPO/commits/refs%2Ftags%2F$RELEASE_TAG" --jq .sha)
+            if [[ "$tagged_sha" != "$SOURCE_SHA" ]]; then
+              echo "$RELEASE_TAG already points to a different commit." >&2
+              exit 1
+            fi
+            flags+=(--verify-tag)
+          elif ! grep -Fq '(HTTP 404)' "$tag_error"; then
+            cat "$tag_error" >&2
+            exit 1
+          fi
+          if [[ "$MODE" == draft ]]; then
+            flags+=(--draft)
+          fi
+          url=$(gh release create "$RELEASE_TAG" ./*.zip ./*.tar.gz ./*-setup.exe ./SHA256SUMS.txt "${flags[@]}")
+          printf '[GitHub Release %s (%s)](%s)\n' "$RELEASE_TAG" "$MODE" "$url" >> "$GITHUB_STEP_SUMMARY"

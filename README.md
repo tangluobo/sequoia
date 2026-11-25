@@ -99,11 +99,13 @@ cargo xtask package
 cargo xtask package --profile dev
 ```
 
-`dist/` 生成 ZIP、tar.gz 和 SHA-256 校验文件，包含桌面程序、CLI、文档；macOS 额外包含 `.app`。可使用 `cargo xtask package --target <triple>`；该目标必须有相应工具链。打包命令不下载或安装平台工具。
+`dist/` 生成 ZIP、tar.gz 和 SHA-256 校验文件，包含桌面程序、CLI 和文档。macOS 额外包含 `.app`。可使用 `cargo xtask package --target <triple>` 指定已安装工具链的目标。Windows 可用 `--installer` 额外生成安装程序，首次运行会下载并校验固定版本的 NSIS。
 
-CI 在 Windows、Linux、macOS 执行格式、Clippy、测试和无界面引擎自检。发布流程覆盖 Windows x64、Linux x64/ARM64、macOS Intel/Apple Silicon，全部构建成功才创建草稿 Release。推送 `v0.1.7` 等与 workspace 版本一致的标签触发发布；手动触发仅上传工作流产物。本地新仓库尚未配置 GitHub remote，工作流需推送后才能实际运行。
+CI 在 Windows、Linux、macOS 执行格式、Clippy、测试和无界面引擎自检。`Release` 打包流程覆盖 Windows x64、Linux x64/ARM64、macOS Intel/Apple Silicon。推送与 workspace 版本一致的 `v*` 标签，五个平台打包成功后会创建草稿。
 
-当前发行格式为便携包，安装器、签名、公证、自动更新和 BSD/Web 构建尚未迁移。参考仓库的发布工作流依赖组织共享工作流和签名 secrets，这里改成独立构建与打包，不依赖其私有设置。
+手动打包完成后，在 GitHub 的 **Actions → Publish Release → Run workflow** 输入成功的 `Release` 运行 ID（运行页面 `/actions/runs/` 后的数字）。选择 `publish` 公开发布，或使用默认的 `draft` 创建草稿后在 Releases 页面确认发布。`verify` 仅校验产物。流程从打包提交读取版本，并把同一提交的五个平台包、Windows 安装程序和 `SHA256SUMS.txt` 附加到 Release。
+
+当前发行格式包括便携包和 Windows 安装程序。签名、公证、自动更新和 BSD/Web 构建尚未迁移。参考仓库的发布工作流依赖组织共享工作流和签名 secrets，这里改成独立构建与打包。
 
 详见 [架构与设计模式](docs/architecture.md)、[源码迁移清单](docs/migration.md)、[远程协议与验收说明](docs/remote-protocols.md) 和 [内存测量说明](docs/performance.md)。
 
