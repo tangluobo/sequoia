@@ -5,7 +5,7 @@ exclude = ["vendor/librqbit", "vendor/egui-wgpu", "vendor/ironrdp-async", "vendo
 default-members = ["apps/tomato", "apps/tomato-cli"]
 
 [workspace.package]
-version = "0.1.8"
+version = "1.0.0"
 edition = "2024"
 rust-version = "1.95"
 license = "MIT"
