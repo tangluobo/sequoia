@@ -9,10 +9,15 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import urllib.error
 import urllib.request
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
+MAVEN_REPOSITORIES = (
+    "https://repo.maven.apache.org/maven2/",
+    "https://maven-central.storage-download.googleapis.com/maven2/",
+)
 JARS = [
     ("com/healthmarketscience/jackcess/jackcess/4.0.8/jackcess-4.0.8.jar", "bb84e5c7367dedf3a5cea7ad2d37e6874bb688f9003edb92749ef032be25671e"),
     ("org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar", "6ee731df5c8e5a2976a1ca023b6bb320ea8d3539fbe64c8a1d5cb765127c33b4"),
@@ -20,6 +25,21 @@ JARS = [
     ("com/healthmarketscience/jackcess/jackcess-encrypt/4.0.3/jackcess-encrypt-4.0.3.jar", "d40a7871ac1dc6343cd2e433c3ee484eb59cdff728b7a1e22dcfc8b3f400a18a"),
     ("org/bouncycastle/bcprov-jdk18on/1.86/bcprov-jdk18on-1.86.jar", "2af190b300cbb0b35e248ccf5f4a06b6072030aeb3da7a98ec73abe5b4cb371f"),
 ]
+
+
+def download_jar(relative, expected):
+    failures = []
+    for repository in MAVEN_REPOSITORIES:
+        try:
+            with urllib.request.urlopen(repository + relative, timeout=60) as response:
+                content = response.read()
+        except (urllib.error.URLError, TimeoutError) as error:
+            failures.append(f"{repository}: {error}")
+            continue
+        if hashlib.sha256(content).hexdigest() != expected:
+            raise SystemExit(f"Maven artifact checksum mismatch: {repository}{relative}")
+        return content
+    raise SystemExit(f"Could not download Maven artifact {relative}\n" + "\n".join(failures))
 
 
 def main():
@@ -35,11 +55,7 @@ def main():
     for relative, expected in JARS:
         path = directory / Path(relative).name
         if not path.exists() or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
-            with urllib.request.urlopen("https://repo.maven.apache.org/maven2/" + relative, timeout=60) as response:
-                content = response.read()
-            if hashlib.sha256(content).hexdigest() != expected:
-                raise SystemExit("Maven artifact checksum mismatch: " + relative)
-            path.write_bytes(content)
+            path.write_bytes(download_jar(relative, expected))
     java = Path(os.environ["JAVA_HOME"]) / "bin"
     javac = java / ("javac.exe" if os.name == "nt" else "javac")
     native = java / ("native-image.cmd" if os.name == "nt" else "native-image")
