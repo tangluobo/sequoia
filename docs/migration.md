@@ -26,6 +26,8 @@ Release 测试修复 Windows Shell 拖放短路径与长路径的比较，仍验
 
 Oracle 的 Linux 夹具补齐原生界面测试所需的 Wayland、X11 等开发库。无桌面的数据库夹具运行服务端回归，窗口截图测试保留独立的桌面入口。
 
+RDP 的 TLS 回退测试等待自身回环服务器连接关闭，避免并行测试中的其他 RDP 会话影响清理断言。
+
 # Oracle 自有表的主键元数据（1764 发布）
 
 XE 21c 的工具栏回归停在首次打开表，备份窗口尚未建立。数据库会话在 SQL ID `bjyhsh6dn94na` 上等待 CPU 调度。该 ID 与当前驱动发出的按所有者、表名过滤 `ALL_CONSTRAINTS` 的主键查询相符。证据见 `target/oracle-xe-fixture-1762-diagnostic/oracle-ui.log` 与 `target/oracle-xe-fixture-1762-diagnostic/sessions.log`。

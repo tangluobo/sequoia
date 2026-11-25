@@ -455,7 +455,8 @@ async fn legacy_configuration_retries_an_explicit_tls_requirement_and_preserves_
                     wheel: 0,
                 })?;
                 let input = tokio::time::timeout(Duration::from_secs(3), fixture.received.recv())
-                    .await?
+                    .await
+                    .context("TLS retry input timed out")?
                     .context("TLS retry lost input")?;
                 anyhow::ensure!(
                     input.contains("31") && input.contains("47"),
@@ -463,14 +464,14 @@ async fn legacy_configuration_retries_an_explicit_tls_requirement_and_preserves_
                 );
                 Ok::<_, anyhow::Error>(())
             })
-            .await??;
+            .await
+            .context("TLS retry did not finish its frame and input checks")??;
             drop(session);
-            tokio::time::timeout(
-                Duration::from_secs(2),
-                tomato_services::remote_desktop::wait_rdp_cleanup(),
-            )
-            .await?;
-            let _ = tokio::time::timeout(Duration::from_secs(3), &mut fixture.server.0).await?;
+            // Other fixtures can still be running RDP sessions in this process.
+            let _connection_result =
+                tokio::time::timeout(Duration::from_secs(3), &mut fixture.server.0)
+                    .await
+                    .context("TLS retry left its server connection open")??;
             assert_eq!(serde_json::to_value(&fixture.connection)?, original);
             Ok(())
         })
