@@ -58,9 +58,7 @@ impl Draft {
                 self.indexes.selected.fill(false);
             }
             let anchor = self.indexes.drag.or(self.indexes.anchor).unwrap_or(row);
-            for i in anchor.min(row)..=anchor.max(row) {
-                self.indexes.selected[i] = true;
-            }
+            self.indexes.selected[anchor.min(row)..=anchor.max(row)].fill(true);
         } else {
             if !modifiers.command {
                 self.indexes.selected.fill(false);

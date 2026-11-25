@@ -2,7 +2,7 @@
 use super::*;
 pub(super) fn labels(app: &mut TomatoApp, id: &str) -> Vec<(String, egui::Pos2)> {
     let ctx = app.context.clone();
-    let output = ctx.run_ui(
+    let mut output = ctx.run_ui(
         egui::RawInput {
             screen_rect: Some(egui::Rect::from_min_size(
                 egui::Pos2::ZERO,
@@ -12,6 +12,7 @@ pub(super) fn labels(app: &mut TomatoApp, id: &str) -> Vec<(String, egui::Pos2)>
         },
         |_| draw(app, &ctx, id),
     );
+    output.textures_delta.clear();
     output
         .shapes
         .iter()

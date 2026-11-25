@@ -145,8 +145,8 @@ jobs:
       - name: Build embedded native Access exporter
         run: python scripts/build-access-export.py
       - uses: Swatinem/rust-cache@v2
-      - name: ODBC driver manager
-        run: sudo apt-get update && sudo apt-get install -y unixodbc-dev libkrb5-dev libclang-dev
+      - name: Native database fixture dependencies
+        run: sudo apt-get update && sudo apt-get install -y libasound2-dev unixodbc-dev libkrb5-dev libclang-dev
       - uses: ilammy/setup-nasm@v1
         if: runner.arch == 'X64'
         with:
@@ -236,17 +236,22 @@ jobs:
           TOMATO_CLOUD_FIXTURE_EXE: '${{ github.workspace }}/target/tomato-cloud-fixture.exe'
         run: cargo test --workspace --locked real_go_server_ -- --ignored
       - name: Build owned ADB peer
-        run: cargo build --workspace --all-targets --locked
+        run: cargo build --locked -p tomato-services --example adb_fixture
       - name: Native H264 video, live touch and PNG fallback
         shell: bash
         timeout-minutes: 5
         run: |
           fixture="$PWD/target/debug/examples/adb_fixture"
-          if [[ "$RUNNER_OS" == Windows ]]; then fixture="$fixture.exe"; fi
-          export TOMATO_TEST_ADB_EXE="$fixture"
+          profile="$(mktemp -d "${TMPDIR:-/tmp}/tomato-adb-fixture-XXXXXXXX")"
+          if [[ "$RUNNER_OS" == Windows ]]; then
+            fixture="$(cygpath -am "$fixture.exe")"
+            profile="$(cygpath -am "$profile")"
+          fi
+          export TOMATO_TEST_ADB_FIXTURE="$fixture" TOMATO_DATA_DIR="$profile"
           cargo test --workspace --locked --test adb -- --ignored
           cargo test --workspace --locked --test adb_video -- --ignored --nocapture --test-threads=1
           cargo test --workspace --locked actual_adb_tab_draws_device_sends_click_tab_and_text_and_releases_search_focus -- --ignored --nocapture
+          cargo test --workspace --locked legacy_program_paths_cannot_override_native_adb_on_open_or_reconnect -- --ignored --nocapture
       - name: Real Bash completion and control keys over SSH
         if: runner.os == 'Linux'
         timeout-minutes: 3

@@ -227,8 +227,9 @@ pub(super) fn paste(state: &mut Workbench, text: &str) -> anyhow::Result<()> {
             }
         }
         if row_mode {
-            for column in line.split('\t').count().min(width)..width {
-                if !page.definition.columns[column].generated {
+            let filled = line.split('\t').count();
+            for (column, field) in page.definition.columns.iter().enumerate().skip(filled) {
+                if !field.generated {
                     staged.push((row, column, Cell::Text(String::new())));
                 }
             }

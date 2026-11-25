@@ -794,12 +794,12 @@ fn preview(ui: &mut Ui, d: &Draft, rect: Rect) {
                 (((clip.right() - header.left()) / 150.).ceil() as usize).min(table.fields.len());
             ui.painter()
                 .rect_filled(header, 0., Color32::from_gray(240));
-            for col in first..last {
+            for (col, field) in table.fields.iter().enumerate().take(last).skip(first) {
                 let r = Rect::from_min_size(
                     header.min + vec2(col as f32 * 150. + 4., 0.),
                     vec2(143., 23.),
                 );
-                label(ui, r, &table.fields[col].name, Color32::BLACK, 12.);
+                label(ui, r, &field.name, Color32::BLACK, 12.);
             }
             for (index, row) in table.preview.iter().enumerate() {
                 let (r, _) = ui.allocate_exact_size(vec2(width, 23.), Sense::hover());

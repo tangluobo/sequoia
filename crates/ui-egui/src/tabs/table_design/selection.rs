@@ -49,9 +49,10 @@ impl Draft {
         }
         self.selected.resize(self.request.columns.len(), 0);
         if shift && let Some(anchor) = self.anchor {
-            for row in anchor.row.min(cell.row)..=anchor.row.max(cell.row) {
+            for selected in &mut self.selected[anchor.row.min(cell.row)..=anchor.row.max(cell.row)]
+            {
                 for column in anchor.column.min(cell.column)..=anchor.column.max(cell.column) {
-                    self.selected[row] |= 1 << column;
+                    *selected |= 1 << column;
                 }
             }
         } else {

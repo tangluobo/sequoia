@@ -20,6 +20,8 @@ Oracle XE 21c 实库验收通过：从连接树打开设计器，经实际控件
 
 2026-11-24 修复 SSH 与本地终端共用的历史视图。回滚超过一屏时，vt100 按视口高度截取历史和当前行，支持从当前输出滚到历史顶部并返回。
 
+2026-11-25 修复 GitHub Actions 构建。表格与设计器使用 Rust 1.100 Clippy 接受的迭代方式，Linux 的 SMB 扩展属性调用使用 rustix 1.1.6，数据库夹具安装 ALSA 开发库。ADB 回归运行隔离的原生回环设备。
+
 # Oracle 自有表的主键元数据（1764 发布）
 
 XE 21c 的工具栏回归停在首次打开表，备份窗口尚未建立。数据库会话在 SQL ID `bjyhsh6dn94na` 上等待 CPU 调度。该 ID 与当前驱动发出的按所有者、表名过滤 `ALL_CONSTRAINTS` 的主键查询相符。证据见 `target/oracle-xe-fixture-1762-diagnostic/oracle-ui.log` 与 `target/oracle-xe-fixture-1762-diagnostic/sessions.log`。
