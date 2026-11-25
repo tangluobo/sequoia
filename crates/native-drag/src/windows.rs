@@ -147,10 +147,12 @@ mod tests {
         let handle = windows::Win32::UI::Shell::HDROP(unsafe { medium.u.hGlobal }.0);
         let mut name = vec![0u16; 32768];
         let count = unsafe { DragQueryFileW(handle, 0, Some(&mut name)) } as usize;
-        assert_eq!(PathBuf::from(String::from_utf16(&name[..count])?), path);
         unsafe {
             ReleaseStgMedium(&mut medium);
         }
+        let dropped_path = PathBuf::from(String::from_utf16(&name[..count])?);
+        // Shell expands short path components such as RUNNER~1.
+        assert_eq!(dropped_path.canonicalize()?, path.canonicalize()?);
         drop(data);
         assert!(!directory.exists());
         Ok(())

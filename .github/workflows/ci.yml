@@ -212,9 +212,14 @@ jobs:
         shell: pwsh
         timeout-minutes: 5
         run: |
-          $services = Get-ChildItem target/debug/deps/tomato_services-*.exe | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1
-          $ui = Get-ChildItem target/debug/deps/tomato_ui_egui-*.exe | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1
-          python scripts/qa/hive-ui.py --label ci-hive-ui-${{ github.run_id }}-${{ github.run_attempt }} --services $services.FullName --ui $ui.FullName
+          $artifacts = cargo test --workspace --locked --lib --no-run --message-format=json |
+            ForEach-Object { ConvertFrom-Json -InputObject $_ } |
+            Where-Object { $_.reason -eq 'compiler-artifact' -and $_.profile.test -and $_.executable }
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $services = $artifacts | Where-Object { $_.target.name -eq 'tomato_services' } | Select-Object -ExpandProperty executable
+          $ui = $artifacts | Where-Object { $_.target.name -eq 'tomato_ui_egui' } | Select-Object -ExpandProperty executable
+          if (!$services -or !$ui) { throw 'Cargo did not report the Hive test executables' }
+          python scripts/qa/hive-ui.py --label ci-hive-ui-${{ github.run_id }}-${{ github.run_attempt }} --services $services --ui $ui
       - name: Apache Java and native HiveServer2 interoperability
         timeout-minutes: 15
         run: python scripts/qa/hive.py --label ci

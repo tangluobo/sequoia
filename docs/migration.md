@@ -22,6 +22,8 @@ Oracle XE 21c 实库验收通过：从连接树打开设计器，经实际控件
 
 2026-11-25 修复 GitHub Actions 构建。表格与设计器使用 Rust 1.100 Clippy 接受的迭代方式，Linux 的 SMB 扩展属性调用使用 rustix 1.1.6，数据库夹具安装 ALSA 开发库。ADB 回归运行隔离的原生回环设备，Oracle 独立协议测试使用已提交的锁文件。Access 原生适配器的 JAR 在 Maven Central 下载失败时使用 Google Cloud 镜像，两个来源均校验固定的 SHA-256。
 
+Release 测试修复 Windows Shell 拖放短路径与长路径的比较，仍验证 Unicode 文件和临时目录的释放。副本记录保存结束时显式解锁，避免 Unix 上同时启动的子进程持有继承的文件描述符而延迟下一次保存。Windows Hive CI 从 Cargo 的构建消息读取测试程序路径，兼容 Rust 1.100 的构建目录布局。
+
 # Oracle 自有表的主键元数据（1764 发布）
 
 XE 21c 的工具栏回归停在首次打开表，备份窗口尚未建立。数据库会话在 SQL ID `bjyhsh6dn94na` 上等待 CPU 调度。该 ID 与当前驱动发出的按所有者、表名过滤 `ALL_CONSTRAINTS` 的主键查询相符。证据见 `target/oracle-xe-fixture-1762-diagnostic/oracle-ui.log` 与 `target/oracle-xe-fixture-1762-diagnostic/sessions.log`。

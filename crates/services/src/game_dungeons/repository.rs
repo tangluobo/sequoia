@@ -12,6 +12,16 @@ pub(super) struct FileRepository {
     path: PathBuf,
 }
 
+struct SaveLock(fs::File);
+
+impl Drop for SaveLock {
+    fn drop(&mut self) {
+        // A concurrent fork can retain a descriptor until exec. Release the
+        // lock explicitly so the next save can proceed as soon as this one ends.
+        let _ = self.0.unlock();
+    }
+}
+
 fn digest(bytes: &[u8]) -> String {
     use sha2::{Digest, Sha256};
     format!("{:x}", Sha256::digest(bytes))
@@ -63,6 +73,7 @@ impl FileRepository {
             .open(PathBuf::from(lock_path))?;
         lock.try_lock()
             .context("副本记录正被其他程序保存，请稍后重试")?;
+        let _lock = SaveLock(lock);
         let original = bytes(&self.path)?;
         ensure!(
             original.as_deref().map(digest).as_deref() == revision,
@@ -90,5 +101,28 @@ impl FileRepository {
         );
         temporary.persist(&self.path).map_err(|e| e.error)?;
         Ok(digest(&encoded))
+    }
+}
+
+#[cfg(all(test, unix))]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn releases_save_lock_while_a_duplicate_descriptor_is_still_open() -> Result<()> {
+        let file = tempfile::NamedTempFile::new()?;
+        let lock = file.reopen()?;
+        lock.try_lock()?;
+        let duplicate = lock.try_clone()?;
+        let guard = SaveLock(lock);
+        let next = file.reopen()?;
+        assert!(matches!(
+            next.try_lock(),
+            Err(std::fs::TryLockError::WouldBlock)
+        ));
+        drop(guard);
+        next.try_lock()?;
+        drop(duplicate);
+        Ok(())
     }
 }
