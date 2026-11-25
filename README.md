@@ -103,7 +103,7 @@ cargo xtask package --profile dev
 
 CI 在 Windows、Linux、macOS 执行格式、Clippy、测试和无界面引擎自检。`Release` 打包流程覆盖 Windows x64、Linux x64/ARM64、macOS Intel/Apple Silicon。推送与 workspace 版本一致的 `v*` 标签，五个平台打包成功后会创建草稿。
 
-手动打包完成后，在 GitHub 的 **Actions → Publish Release → Run workflow** 输入成功的 `Release` 运行 ID（运行页面 `/actions/runs/` 后的数字）。选择 `publish` 公开发布，或使用默认的 `draft` 创建草稿后在 Releases 页面确认发布。`verify` 仅校验产物。流程从打包提交读取版本，并把同一提交的五个平台包、Windows 安装程序和 `SHA256SUMS.txt` 附加到 Release。
+在 GitHub 的 **Actions → Publish Release → Run workflow** 输入与 `Cargo.toml` 工作区一致的版本号，例如 `v0.1.8`。默认公开发布，选择 `draft` 可先创建草稿，`verify` 可只校验产物。流程优先复用默认分支上同版本且未过期的打包产物。需要时自动打包五个平台，再校验压缩包、Windows 安装程序并生成 `SHA256SUMS.txt`。
 
 当前发行格式包括便携包和 Windows 安装程序。签名、公证、自动更新和 BSD/Web 构建尚未迁移。参考仓库的发布工作流依赖组织共享工作流和签名 secrets，这里改成独立构建与打包。
 
