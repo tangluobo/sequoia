@@ -58,7 +58,7 @@ jobs:
           distribution: graalvm-community
           java-version: '25'
       - name: Native fixture dependencies
-        run: sudo apt-get update && sudo apt-get install -y libasound2-dev libudev-dev unixodbc-dev libkrb5-dev libclang-dev
+        run: sudo apt-get update && sudo apt-get install -y libxkbcommon-dev libwayland-dev libx11-dev libxi-dev libxrandr-dev libxcursor-dev libasound2-dev libudev-dev libfontconfig1-dev unixodbc-dev libkrb5-dev libclang-dev
       - uses: ilammy/setup-nasm@v1
         with:
           version: '3.01'
@@ -152,7 +152,8 @@ jobs:
         with:
           version: '3.01'
       - run: cargo build --locked -p tomato-cli
-      - run: cargo test --locked -p tomato-services --test database_servers -- --ignored
+      # Window capture requires a separately built GUI and an active desktop.
+      - run: cargo test --locked -p tomato-services --test database_servers -- --ignored --skip recovery::capture_native_recovery_windows
       - run: cargo test --locked -p tomato-services --test mongo -- --ignored --nocapture
   check:
     strategy:
