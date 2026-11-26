@@ -88,6 +88,7 @@ jobs:
           tar -xzf dist/*.tar.gz -C "$temp/tar"
           python3 scripts/bundle-macos.py --verify "$temp/zip"/tomato-*
           python3 scripts/bundle-macos.py --verify "$temp/tar"/tomato-*
+          python3 scripts/verify-macos-renderer.py "$temp/zip"/tomato-*
       - name: Resolve package platform
         id: package
         shell: bash

@@ -65,7 +65,8 @@ jobs:
             exit 1
           fi
           macos_recipe() {
-            gh api "repos/$GH_REPO/contents/scripts/bundle-macos.py?ref=$1" --jq .sha
+            gh api "repos/$GH_REPO/contents/scripts/bundle-macos.py?ref=$1" --jq .sha &&
+              gh api "repos/$GH_REPO/contents/scripts/verify-macos-renderer.py?ref=$1" --jq .sha
           }
           current_macos_recipe=$(macos_recipe "$GITHUB_SHA")
 

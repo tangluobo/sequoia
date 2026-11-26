@@ -4,7 +4,10 @@
 )]
 
 mod capture;
+#[cfg(target_os = "macos")]
+mod mac_renderer;
 mod render_log;
+
 struct Desktop(tomato_ui_egui::TomatoApp, capture::Capture);
 impl eframe::App for Desktop {
     fn logic(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
@@ -17,7 +20,17 @@ impl eframe::App for Desktop {
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
         self.0.ui(ui);
     }
+    #[cfg(not(target_os = "macos"))]
     fn on_exit(&mut self) {
+        self.exit();
+    }
+    #[cfg(target_os = "macos")]
+    fn on_exit(&mut self, _gl: Option<&eframe::glow::Context>) {
+        self.exit();
+    }
+}
+impl Desktop {
+    fn exit(&mut self) {
         if let Some(path) = std::env::var_os("TOMATO_RDP_ACCEPTANCE_REPORT")
             && let Some(report) = self.0.authorized_rdp_diagnostics()
         {
@@ -84,24 +97,31 @@ pub(crate) fn run(event_loop: Option<eframe::EventLoopBuilderHook>) -> eframe::R
             descriptor
         });
     }
-    eframe::run_native(
-        "Tomato",
-        options,
-        Box::new(|cc| {
-            if let Some(state) = &cc.wgpu_render_state {
-                tomato_ui_egui::configure_text_renderer(&cc.egui_ctx, state);
-                tomato_ui_egui::enable_gpu_video(&cc.egui_ctx, state.target_format);
-                tomato_ui_egui::enable_gpu_rdp(&cc.egui_ctx, state);
-            }
-            let runtime = tokio::runtime::Builder::new_multi_thread()
-                .worker_threads(2)
-                .max_blocking_threads(4)
-                .enable_all()
-                .build()?;
-            Ok(Box::new(Desktop(
-                tomato_ui_egui::TomatoApp::new(&cc.egui_ctx, runtime),
-                capture::Capture::new(),
-            )))
-        }),
-    )
+    #[cfg(target_os = "macos")]
+    {
+        mac_renderer::run(options)
+    }
+    #[cfg(not(target_os = "macos"))]
+    {
+        eframe::run_native("Tomato", options, Box::new(create_desktop))
+    }
+}
+
+fn create_desktop(
+    cc: &eframe::CreationContext<'_>,
+) -> Result<Box<dyn eframe::App>, Box<dyn std::error::Error + Send + Sync>> {
+    if let Some(state) = &cc.wgpu_render_state {
+        tomato_ui_egui::configure_text_renderer(&cc.egui_ctx, state);
+        tomato_ui_egui::enable_gpu_video(&cc.egui_ctx, state.target_format);
+        tomato_ui_egui::enable_gpu_rdp(&cc.egui_ctx, state);
+    }
+    let runtime = tokio::runtime::Builder::new_multi_thread()
+        .worker_threads(2)
+        .max_blocking_threads(4)
+        .enable_all()
+        .build()?;
+    Ok(Box::new(Desktop(
+        tomato_ui_egui::TomatoApp::new(&cc.egui_ctx, runtime),
+        capture::Capture::new(),
+    )))
 }

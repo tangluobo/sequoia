@@ -111,6 +111,8 @@ CI 在 Windows、Linux、macOS 执行格式、Clippy、测试和无界面引擎�
 
 macOS 便携包随附 unixODBC 运行库。解压后可打开 `Tomato.app`，也可在解压目录内运行 `tomato` 和 `tomato-cli`。使用 ODBC 导入仍需有对应数据源的驱动。
 
+macOS 优先使用 Metal。Metal 初始化失败时，应用会自动尝试 OpenGL。可以用 `TOMATO_RENDERER=opengl ./tomato` 直接选择 OpenGL。
+
 详见 [架构与设计模式](docs/architecture.md)、[源码迁移清单](docs/migration.md)、[远程协议与验收说明](docs/remote-protocols.md) 和 [内存测量说明](docs/performance.md)。
 
 

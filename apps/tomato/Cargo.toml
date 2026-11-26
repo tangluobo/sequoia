@@ -20,6 +20,9 @@ egui.workspace = true
 tokio.workspace = true
 image = { version = "0.25", default-features = false, features = ["png"] }
 
+[target.'cfg(target_os = "macos")'.dependencies]
+eframe = { workspace = true, features = ["glow"] }
+
 [dev-dependencies]
 serde_json.workspace = true
 winit = { version = "0.30", default-features = false }
