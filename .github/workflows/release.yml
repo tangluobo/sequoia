@@ -53,7 +53,9 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y libxkbcommon-dev libwayland-dev libx11-dev libxi-dev libxrandr-dev libxcursor-dev libasound2-dev libudev-dev libfontconfig1-dev unixodbc-dev libkrb5-dev libclang-dev
       - name: macOS ODBC driver manager
         if: runner.os == 'macOS'
-        run: brew install unixodbc
+        run: |
+          brew install unixodbc libtool
+          test -x "$(brew --prefix llvm@18)/bin/llvm-install-name-tool" || brew install llvm@18
       - name: Verify tag version
         shell: bash
         env:
@@ -76,6 +78,16 @@ jobs:
         run: cargo xtask package --target ${{ matrix.target }} --no-build --installer
       - if: runner.os != 'Windows'
         run: cargo xtask package --target ${{ matrix.target }} --no-build
+      - name: Verify relocated macOS archives
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          temp=$(mktemp -d)
+          mkdir "$temp/zip" "$temp/tar"
+          ditto -x -k dist/*.zip "$temp/zip"
+          tar -xzf dist/*.tar.gz -C "$temp/tar"
+          python3 scripts/bundle-macos.py --verify "$temp/zip"/tomato-*
+          python3 scripts/bundle-macos.py --verify "$temp/tar"/tomato-*
       - name: Resolve package platform
         id: package
         shell: bash

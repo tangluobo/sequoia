@@ -221,6 +221,16 @@ fn main() -> Result<()> {
                 "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\"><plist version=\"1.0\"><dict><key>CFBundleExecutable</key><string>tomato</string><key>CFBundleIdentifier</key><string>com.tangluobo.tomato</string><key>CFBundleName</key><string>Tomato</string><key>CFBundleShortVersionString</key><string>{version}</string><key>CFBundlePackageType</key><string>APPL</string><key>NSHighResolutionCapable</key><true/></dict></plist>"
             ),
         )?;
+        let python = std::env::var_os("PYTHON").unwrap_or_else(|| "python3".into());
+        if !Command::new(python)
+            .arg(root.join("scripts/bundle-macos.py"))
+            .arg(&stage)
+            .current_dir(&root)
+            .status()?
+            .success()
+        {
+            bail!("macOS runtime bundling failed");
+        }
     }
     let mut paths = Vec::new();
     collect(&stage, &mut paths)?;

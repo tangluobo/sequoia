@@ -109,6 +109,8 @@ CI 在 Windows、Linux、macOS 执行格式、Clippy、测试和无界面引擎�
 
 发布说明的「发布与下载」指向该版本的 GitHub Release 页面。下载包按系统和架构命名，例如 `tomato-1.0.0-linux-x64.tar.gz`，`SHA256SUMS.txt` 使用相同的文件名。
 
+macOS 便携包随附 unixODBC 运行库。解压后可打开 `Tomato.app`，也可在解压目录内运行 `tomato` 和 `tomato-cli`。使用 ODBC 导入仍需有对应数据源的驱动。
+
 详见 [架构与设计模式](docs/architecture.md)、[源码迁移清单](docs/migration.md)、[远程协议与验收说明](docs/remote-protocols.md) 和 [内存测量说明](docs/performance.md)。
 
 

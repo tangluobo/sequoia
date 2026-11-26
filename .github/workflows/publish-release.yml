@@ -64,6 +64,10 @@ jobs:
             echo "Cargo.lock Tomato version is ${locked_version:-missing}, expected $version. Run cargo update --workspace and commit Cargo.lock." >&2
             exit 1
           fi
+          macos_recipe() {
+            gh api "repos/$GH_REPO/contents/scripts/bundle-macos.py?ref=$1" --jq .sha
+          }
+          current_macos_recipe=$(macos_recipe "$GITHUB_SHA")
 
           runs=$(gh api --method GET "repos/$GH_REPO/actions/runs" \
             -f branch="$DEFAULT_BRANCH" -f event=workflow_dispatch -f status=success -F per_page=100)
@@ -79,6 +83,8 @@ jobs:
             [[ -n "$candidate" ]] || continue
             candidate_version=$(workspace_version "$candidate_sha")
             [[ "$candidate_version" == "$version" ]] || continue
+            candidate_macos_recipe=$(macos_recipe "$candidate_sha" 2>/dev/null) || continue
+            [[ "$candidate_macos_recipe" == "$current_macos_recipe" ]] || continue
             intact=$(gh api "repos/$GH_REPO/actions/runs/$candidate/artifacts?per_page=100" --jq '
               [.artifacts[] | select((.expired | not) and (.name | startswith("tomato-")))] | length')
             [[ "$intact" == 5 ]] || continue
