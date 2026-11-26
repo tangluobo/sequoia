@@ -76,9 +76,17 @@ jobs:
         run: cargo xtask package --target ${{ matrix.target }} --no-build --installer
       - if: runner.os != 'Windows'
         run: cargo xtask package --target ${{ matrix.target }} --no-build
+      - name: Resolve package platform
+        id: package
+        shell: bash
+        env:
+          TARGET: ${{ matrix.target }}
+        run: |
+          platform=$(python -c 'import json, os; print(json.load(open("packaging/targets.json"))[os.environ["TARGET"]])')
+          echo "platform=$platform" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v4
         with:
-          name: tomato-${{ matrix.target }}
+          name: tomato-${{ steps.package.outputs.platform }}
           if-no-files-found: error
           path: |
             dist/*.zip
@@ -92,18 +100,23 @@ jobs:
     permissions:
       contents: write
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/download-artifact@v4
         with:
+          pattern: tomato-*
           path: dist
-          merge-multiple: true
       - name: Verify and aggregate checksums
-        working-directory: dist
-        run: |
-          cat *.sha256 > SHA256SUMS.txt
-          sha256sum -c SHA256SUMS.txt
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: python3 scripts/prepare-release.py dist "${RELEASE_TAG#v}"
       - name: Create draft release
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           RELEASE_TAG: ${{ github.ref_name }}
-        run: gh release create "$RELEASE_TAG" dist/*.zip dist/*.tar.gz dist/*-setup.exe dist/SHA256SUMS.txt --draft --verify-tag --generate-notes
+        run: |
+          bash scripts/generate-release-notes.sh "$RELEASE_TAG" "$GITHUB_SHA" > "$RUNNER_TEMP/release-notes.md"
+          gh release create "$RELEASE_TAG" dist/*.zip dist/*.tar.gz dist/*-setup.exe dist/SHA256SUMS.txt \
+            --draft --verify-tag --notes-file "$RUNNER_TEMP/release-notes.md"

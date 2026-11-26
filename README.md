@@ -107,6 +107,8 @@ CI 在 Windows、Linux、macOS 执行格式、Clippy、测试和无界面引擎�
 
 当前发行格式包括便携包和 Windows 安装程序。签名、公证、自动更新和 BSD/Web 构建尚未迁移。参考仓库的发布工作流依赖组织共享工作流和签名 secrets，这里改成独立构建与打包。
 
+发布说明的「发布与下载」指向该版本的 GitHub Release 页面。下载包按系统和架构命名，例如 `tomato-1.0.0-linux-x64.tar.gz`，`SHA256SUMS.txt` 使用相同的文件名。
+
 详见 [架构与设计模式](docs/architecture.md)、[源码迁移清单](docs/migration.md)、[远程协议与验收说明](docs/remote-protocols.md) 和 [内存测量说明](docs/performance.md)。
 
 

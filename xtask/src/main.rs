@@ -106,7 +106,10 @@ fn main() -> Result<()> {
     let dist = root.join("dist");
     fs::create_dir_all(&dist)?;
     let suffix = if profile == "dev" { "-debug" } else { "" };
-    let name = format!("tomato-{version}-{host}{suffix}");
+    let platforms: serde_json::Value =
+        serde_json::from_str(include_str!("../../packaging/targets.json"))?;
+    let platform = platforms[&host].as_str().unwrap_or(&host);
+    let name = format!("tomato-{version}-{platform}{suffix}");
     let stage = dist.join(&name);
     // Only ever replace this exact generated staging directory within dist.
     if stage.exists() {
