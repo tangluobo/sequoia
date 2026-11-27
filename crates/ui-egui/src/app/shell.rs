@@ -371,9 +371,13 @@ impl TomatoApp {
                                                 .collect();
                                         }
                                     });
-                                let menu = ui.menu_button("+", |ui| self.create_menu(ui));
-                                let _tooltip =
-                                    menu.response.on_hover_text("新建连接、目录或导入/导出");
+                                if ui
+                                    .button("+")
+                                    .on_hover_text("新建根级连接")
+                                    .clicked()
+                                {
+                                    self.new_connection_at(None);
+                                }
                             });
                         } else {
                             egui::Frame::new()

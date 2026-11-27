@@ -539,7 +539,7 @@ fn text_position(output: &egui::FullOutput, text: &str) -> Option<egui::Pos2> {
 }
 
 #[test]
-fn root_connection_menu_remains_available_when_the_tree_is_full() -> anyhow::Result<()> {
+fn root_connection_create_button_works_when_the_tree_is_full() -> anyhow::Result<()> {
     let directory = tempfile::tempdir()?;
     let path = directory.path().join("connections.json");
     let connections = (0..80)
@@ -560,10 +560,10 @@ fn root_connection_menu_remains_available_when_the_tree_is_full() -> anyhow::Res
     let ctx = egui::Context::default();
     let mut app = TomatoApp::with_repository(&ctx, runtime, ConnectionFileRepository::new(&path));
     let output = render_frame_with_events(&ctx, &mut app, vec![]);
-    let plus = text_position(&output, "+").expect("connection create menu button");
+    let plus = text_position(&output, "+").expect("root connection create button");
     let output = click_app(&ctx, &mut app, plus);
-    assert!(text_position(&output, "新建连接").is_some());
-    assert!(text_position(&output, "新建目录").is_some());
+    assert_eq!(app.picker, Some(0));
+    assert!(!output.shapes.is_empty());
     Ok(())
 }
 
