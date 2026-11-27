@@ -371,11 +371,7 @@ impl TomatoApp {
                                                 .collect();
                                         }
                                     });
-                                if ui
-                                    .button("+")
-                                    .on_hover_text("新建根级连接")
-                                    .clicked()
-                                {
+                                if ui.button("+").on_hover_text("新建根级连接").clicked() {
                                     self.new_connection_at(None);
                                 }
                             });

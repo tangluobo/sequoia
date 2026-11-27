@@ -493,11 +493,7 @@ fn render_frame_with_events(
     output
 }
 
-fn click_app(
-    ctx: &egui::Context,
-    app: &mut TomatoApp,
-    position: egui::Pos2,
-) -> egui::FullOutput {
+fn click_app(ctx: &egui::Context, app: &mut TomatoApp, position: egui::Pos2) -> egui::FullOutput {
     let mut output = render_frame_with_events(
         ctx,
         app,

@@ -208,13 +208,9 @@ impl TomatoApp {
         } else {
             None
         };
-        if open_input_share
-            && let Some(runtime) = &self.runtime
-        {
+        if open_input_share && let Some(runtime) = &self.runtime {
             self.input_share
-                .get_or_insert_with(|| {
-                    Box::new(super::input_share::State::new(runtime, ctx))
-                })
+                .get_or_insert_with(|| Box::new(super::input_share::State::new(runtime, ctx)))
                 .open = true;
         }
         if let Some(mut config) = picked {

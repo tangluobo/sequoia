@@ -384,7 +384,10 @@ mod tests {
             );
             assert!(crate::asset_bytes::bytes(&asset).is_some());
         }
-        assert_eq!(tool("input_share"), "images/connect/tool-icons/input-share.svg");
+        assert_eq!(
+            tool("input_share"),
+            "images/connect/tool-icons/input-share.svg"
+        );
         assert!(crate::asset_bytes::bytes(&tool("input_share")).is_some());
         let mut connection = tomato_core::Connection::new("MYSQL");
         connection.set("databaseProfileId", "oceanbase-mysql");
