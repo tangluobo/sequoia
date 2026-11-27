@@ -341,6 +341,7 @@ pub fn tool(kind: &str) -> String {
         "downloader" | "music_downloader" => "downloader",
         "color_transpose_game" => "color-transpose",
         "game_dungeons" => "game-dungeons",
+        "input_share" => "input-share",
         _ => return "images/connect/beautiful.png".into(),
     };
     format!("images/connect/tool-icons/{name}.svg")
@@ -383,6 +384,8 @@ mod tests {
             );
             assert!(crate::asset_bytes::bytes(&asset).is_some());
         }
+        assert_eq!(tool("input_share"), "images/connect/tool-icons/input-share.svg");
+        assert!(crate::asset_bytes::bytes(&tool("input_share")).is_some());
         let mut connection = tomato_core::Connection::new("MYSQL");
         connection.set("databaseProfileId", "oceanbase-mysql");
         assert_eq!(

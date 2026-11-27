@@ -10544,7 +10544,7 @@ dependencies = [
 
 [[package]]
 name = "tomato"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "cc",
  "eframe",
@@ -10560,7 +10560,7 @@ dependencies = [
 
 [[package]]
 name = "tomato-cli"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "anyhow",
  "clap",
@@ -10573,7 +10573,7 @@ dependencies = [
 
 [[package]]
 name = "tomato-core"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "aes 0.8.4",
  "anyhow",
@@ -10611,7 +10611,7 @@ dependencies = [
 
 [[package]]
 name = "tomato-native-drag"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "anyhow",
  "tempfile",
@@ -10622,7 +10622,7 @@ dependencies = [
 
 [[package]]
 name = "tomato-native-input"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "anyhow",
  "tomato-core",
@@ -10632,7 +10632,7 @@ dependencies = [
 
 [[package]]
 name = "tomato-native-print"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "anyhow",
  "windows 0.62.2",
@@ -10640,7 +10640,7 @@ dependencies = [
 
 [[package]]
 name = "tomato-rdp-security"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "anyhow",
  "ironrdp-core",
@@ -10657,7 +10657,7 @@ dependencies = [
 
 [[package]]
 name = "tomato-services"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -10766,7 +10766,7 @@ dependencies = [
 
 [[package]]
 name = "tomato-ui-egui"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "anyhow",
  "axum",
@@ -12688,7 +12688,7 @@ checksum = "ec7a2a501ed189703dba8b08142f057e887dfc4b2cc4db2d343ac6376ba3e0b9"
 
 [[package]]
 name = "xtask"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "anyhow",
  "flate2",

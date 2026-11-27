@@ -279,15 +279,6 @@ impl TomatoApp {
                     }
                     ui.add_space(10.0);
                 }
-                if ui.button("键鼠").on_hover_text("鼠标和键盘共享").clicked()
-                    && let Some(runtime) = &self.runtime
-                {
-                    self.input_share
-                        .get_or_insert_with(|| {
-                            Box::new(super::input_share::State::new(runtime, ui.ctx()))
-                        })
-                        .open = true;
-                }
                 // Keep navigation's border inside its own background, like
                 // the header border; the neighbouring panel owns its fill.
                 let rect = ui.max_rect();
@@ -350,38 +341,53 @@ impl TomatoApp {
                                     egui::FontFamily::Name("md-bold".into()),
                                 )));
                             });
+                        } else if self.section == 0 {
+                            ui.horizontal(|ui| {
+                                ui.spacing_mut().item_spacing.x = 6.0;
+                                let search_width = (ui.available_width() - 42.0).max(20.0);
+                                egui::Frame::new()
+                                    .fill(Color32::from_gray(240))
+                                    .corner_radius(6)
+                                    .inner_margin(egui::Margin::symmetric(10, 5))
+                                    .show(ui, |ui| {
+                                        let response = ui.add_sized(
+                                            [search_width - 20.0, 18.0],
+                                            TextEdit::singleline(&mut self.filter)
+                                                .frame(egui::Frame::NONE)
+                                                .hint_text("搜索")
+                                                .font(egui::FontId::proportional(13.0)),
+                                        );
+                                        if response.changed()
+                                            && self
+                                                .filter
+                                                .trim_matches(|c: char| c <= ' ')
+                                                .is_empty()
+                                        {
+                                            self.collapsed = self
+                                                .store
+                                                .connections
+                                                .iter()
+                                                .map(|c| c.id.clone())
+                                                .collect();
+                                        }
+                                    });
+                                let menu = ui.menu_button("+", |ui| self.create_menu(ui));
+                                let _tooltip =
+                                    menu.response.on_hover_text("新建连接、目录或导入/导出");
+                            });
                         } else {
-                            let hint = if self.section == 0 {
-                                "搜索"
-                            } else {
-                                "搜索工具..."
-                            };
                             egui::Frame::new()
-                                .fill(if self.section == 0 {
-                                    Color32::from_gray(240)
-                                } else {
-                                    Color32::WHITE
-                                })
+                                .fill(Color32::WHITE)
                                 .corner_radius(6)
                                 .inner_margin(egui::Margin::symmetric(10, 5))
                                 .show(ui, |ui| {
-                                    let response = ui.add(
+                                    ui.add(
                                         TextEdit::singleline(&mut self.filter)
                                             .frame(egui::Frame::NONE)
-                                            .hint_text(hint)
+                                            .hint_text("搜索工具...")
                                             .desired_width(ui.available_width())
                                             .font(egui::FontId::proportional(13.0)),
                                     );
-                                    if response.changed()
-                                        && self.filter.trim_matches(|c: char| c <= ' ').is_empty()
-                                    {
-                                        self.collapsed = self
-                                            .store
-                                            .connections
-                                            .iter()
-                                            .map(|c| c.id.clone())
-                                            .collect();
-                                    }
                                 });
                         }
                     },

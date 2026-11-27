@@ -468,18 +468,123 @@ fn closing_a_tab_discards_its_pending_results() -> anyhow::Result<()> {
 }
 
 fn render_frame(ctx: &egui::Context, app: &mut TomatoApp) -> bool {
+    let mut output = render_frame_with_events(ctx, app, vec![]);
+    let painted = !output.shapes.is_empty();
+    // Headless test intentionally has no GPU backend to apply texture uploads.
+    output.textures_delta.clear();
+    painted
+}
+
+fn render_frame_with_events(
+    ctx: &egui::Context,
+    app: &mut TomatoApp,
+    events: Vec<egui::Event>,
+) -> egui::FullOutput {
     let input = egui::RawInput {
         screen_rect: Some(egui::Rect::from_min_size(
             egui::Pos2::ZERO,
             egui::vec2(1280.0, 800.0),
         )),
+        events,
         ..Default::default()
     };
-    let mut output = ctx.run_ui(input, |ui| app.ui(ui));
-    let painted = !output.shapes.is_empty();
-    // Headless test intentionally has no GPU backend to apply texture uploads.
+    ctx.run_ui(input, |ui| app.ui(ui))
+}
+
+fn click_app(
+    ctx: &egui::Context,
+    app: &mut TomatoApp,
+    position: egui::Pos2,
+) -> egui::FullOutput {
+    let mut output = render_frame_with_events(
+        ctx,
+        app,
+        vec![
+            egui::Event::PointerMoved(position),
+            egui::Event::PointerButton {
+                pos: position,
+                button: egui::PointerButton::Primary,
+                pressed: true,
+                modifiers: egui::Modifiers::NONE,
+            },
+        ],
+    );
     output.textures_delta.clear();
-    painted
+    output = render_frame_with_events(
+        ctx,
+        app,
+        vec![
+            egui::Event::PointerMoved(position),
+            egui::Event::PointerButton {
+                pos: position,
+                button: egui::PointerButton::Primary,
+                pressed: false,
+                modifiers: egui::Modifiers::NONE,
+            },
+        ],
+    );
+    output.textures_delta.clear();
+    output
+}
+
+fn text_position(output: &egui::FullOutput, text: &str) -> Option<egui::Pos2> {
+    output.shapes.iter().find_map(|shape| match &shape.shape {
+        egui::Shape::Text(text_shape) if text_shape.galley.job.text == text => {
+            Some(text_shape.pos + text_shape.galley.size() / 2.0)
+        }
+        _ => None,
+    })
+}
+
+#[test]
+fn input_sharing_opens_from_the_connection_picker_tools_tab() -> anyhow::Result<()> {
+    let directory = tempfile::tempdir()?;
+    let runtime = tokio::runtime::Builder::new_multi_thread()
+        .enable_all()
+        .build()?;
+    let ctx = egui::Context::default();
+    let mut app = TomatoApp::with_repository(
+        &ctx,
+        runtime,
+        ConnectionFileRepository::new(directory.path().join("connections.json")),
+    );
+    app.picker = Some(3);
+    let output = render_frame_with_events(&ctx, &mut app, vec![]);
+    let tile = text_position(&output, "鼠标和键盘共享").expect("tools tab tile");
+    let output = click_app(&ctx, &mut app, tile);
+    assert!(app.picker.is_none());
+    assert!(app.input_share.as_ref().is_some_and(|state| state.open));
+    assert!(!output.shapes.is_empty());
+    Ok(())
+}
+
+#[test]
+fn root_connection_menu_remains_available_when_the_tree_is_full() -> anyhow::Result<()> {
+    let directory = tempfile::tempdir()?;
+    let path = directory.path().join("connections.json");
+    let connections = (0..80)
+        .map(|index| {
+            let mut connection = Connection::new("SSH");
+            connection.name = format!("主机 {index}");
+            connection
+        })
+        .collect();
+    Store {
+        connections,
+        ..Default::default()
+    }
+    .save(&path)?;
+    let runtime = tokio::runtime::Builder::new_multi_thread()
+        .enable_all()
+        .build()?;
+    let ctx = egui::Context::default();
+    let mut app = TomatoApp::with_repository(&ctx, runtime, ConnectionFileRepository::new(&path));
+    let output = render_frame_with_events(&ctx, &mut app, vec![]);
+    let plus = text_position(&output, "+").expect("connection create menu button");
+    let output = click_app(&ctx, &mut app, plus);
+    assert!(text_position(&output, "新建连接").is_some());
+    assert!(text_position(&output, "新建目录").is_some());
+    Ok(())
 }
 
 #[test]

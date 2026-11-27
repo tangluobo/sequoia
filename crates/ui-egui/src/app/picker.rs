@@ -8,6 +8,7 @@ impl TomatoApp {
         };
         let mut open = true;
         let mut cancel = false;
+        let mut open_input_share = false;
         let mut picked = None;
         egui::Window::new("新建连接")
             .id(egui::Id::new("type-picker"))
@@ -64,6 +65,15 @@ impl TomatoApp {
                                 ));
                             }
                         } else if category == 3 || category == 5 {
+                            if category == 3 {
+                                tiles.push((
+                                    "INPUT_SHARE".into(),
+                                    "鼠标和键盘共享".into(),
+                                    icons::tool("input_share"),
+                                    0,
+                                    None,
+                                ));
+                            }
                             for &(id, label) in TOOLS {
                                 if tomato_core::catalog::is_relaxation_tool(id) != (category == 5) {
                                     continue;
@@ -150,28 +160,32 @@ impl TomatoApp {
                                         );
                                     }
                                     if response.clicked() {
-                                        let mut config = Connection::new(kind);
-                                        config.name.clear();
-                                        if kind == "TOOL" {
-                                            config.options.remove("host");
-                                            config.options.remove("port");
-                                            if profile.as_deref() == Some("music_downloader") {
-                                                config.name = label.clone();
-                                            }
+                                        if kind == "INPUT_SHARE" {
+                                            open_input_share = true;
                                         } else {
-                                            config.set("port", *port);
+                                            let mut config = Connection::new(kind);
+                                            config.name.clear();
+                                            if kind == "TOOL" {
+                                                config.options.remove("host");
+                                                config.options.remove("port");
+                                                if profile.as_deref() == Some("music_downloader") {
+                                                    config.name = label.clone();
+                                                }
+                                            } else {
+                                                config.set("port", *port);
+                                            }
+                                            if let Some(profile) = profile {
+                                                config.set(
+                                                    if kind == "TOOL" {
+                                                        "toolType"
+                                                    } else {
+                                                        "databaseProfileId"
+                                                    },
+                                                    profile.clone(),
+                                                );
+                                            }
+                                            picked = Some(config);
                                         }
-                                        if let Some(profile) = profile {
-                                            config.set(
-                                                if kind == "TOOL" {
-                                                    "toolType"
-                                                } else {
-                                                    "databaseProfileId"
-                                                },
-                                                profile.clone(),
-                                            );
-                                        }
-                                        picked = Some(config);
                                     }
                                     if (index + 1) % columns == 0 {
                                         ui.end_row();
@@ -189,11 +203,20 @@ impl TomatoApp {
                     });
                 });
             });
-        self.picker = if open && !cancel {
+        self.picker = if open && !cancel && !open_input_share {
             Some(category)
         } else {
             None
         };
+        if open_input_share
+            && let Some(runtime) = &self.runtime
+        {
+            self.input_share
+                .get_or_insert_with(|| {
+                    Box::new(super::input_share::State::new(runtime, ctx))
+                })
+                .open = true;
+        }
         if let Some(mut config) = picked {
             self.picker = None;
             if config.text("toolType") == "game_dungeons" {

@@ -798,6 +798,9 @@ pub fn bytes(name: &str) -> Option<&'static [u8]> {
         "images/connect/tool-icons/image-converter.svg.png" => Some(include_bytes!(
             "../assets/images/connect/tool-icons/image-converter.svg.png"
         )),
+        "images/connect/tool-icons/input-share.svg" => Some(include_bytes!(
+            "../assets/images/connect/tool-icons/input-share.svg"
+        )),
         "images/connect/tool-icons/json-tool.svg" => Some(include_bytes!(
             "../assets/images/connect/tool-icons/json-tool.svg"
         )),
