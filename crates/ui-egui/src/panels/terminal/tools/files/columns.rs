@@ -8,6 +8,7 @@ pub(super) fn render(
     pane: &mut Pane,
     icons: &mut crate::icons::Icons,
     connection: &tomato_core::Connection,
+    current_indices: &[usize],
 ) -> (Option<String>, Option<String>, Option<Operation>) {
     let (mut navigate, mut action, mut operation) = (None, None, None);
     let mut export_entry = None;
@@ -21,7 +22,6 @@ pub(super) fn render(
                 egui::vec2((count as f32 * WIDTH).max(ui.available_width()), height),
                 egui::Sense::hover(),
             );
-            let filter = pane.filter.to_lowercase();
             for column in 0..count {
                 let current = column == pane.columns.len();
                 let path = if current {
@@ -29,15 +29,12 @@ pub(super) fn render(
                 } else {
                     pane.columns[column].0.clone()
                 };
-                let indices: Vec<_> = if current {
-                    pane.entries
-                        .iter()
-                        .enumerate()
-                        .filter(|(_, e)| e.name.to_lowercase().contains(&filter))
-                        .map(|(i, _)| i)
-                        .collect()
+                let ancestor_indices;
+                let indices = if current {
+                    current_indices
                 } else {
-                    (0..pane.columns[column].1.len()).collect()
+                    ancestor_indices = (0..pane.columns[column].1.len()).collect::<Vec<_>>();
+                    &ancestor_indices
                 };
                 let rect = egui::Rect::from_min_size(
                     bounds.min + egui::vec2(column as f32 * WIDTH, 0.),
@@ -73,7 +70,7 @@ pub(super) fn render(
                         reveal = keyboard::update(
                             &child,
                             pane,
-                            &indices,
+                            indices,
                             1,
                             (height / ROW).floor().max(1.) as usize,
                             false,
@@ -146,7 +143,7 @@ pub(super) fn render(
                         &child,
                         pane,
                         selection_bounds,
-                        &indices,
+                        indices,
                         |display| {
                             egui::Rect::from_min_size(
                                 selection_bounds.min + egui::vec2(0., display as f32 * ROW),

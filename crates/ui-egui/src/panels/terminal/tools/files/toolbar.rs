@@ -111,7 +111,7 @@ pub(super) fn render(
                             action = Some("上传文件...".into());
                         }
                         if ui.small_button("⟳").on_hover_text("刷新").clicked() {
-                            workspace.panes.entry(section).or_default().refresh = true;
+                            action = Some("刷新".into());
                         }
                     });
                 });

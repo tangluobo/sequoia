@@ -8,22 +8,15 @@ pub(super) fn render(
     mode: &str,
     icons: &mut crate::icons::Icons,
     connection: &tomato_core::Connection,
+    indices: &[usize],
 ) -> (Option<String>, Option<String>, Option<Operation>) {
     let (mut navigate, mut action, mut operation) = (None, None, None);
     let mut rename_rect = None;
     let mut export_entry = None;
     if mode == "COLUMN" {
-        return super::columns::render(ui, pane, icons, connection);
+        return super::columns::render(ui, pane, icons, connection, indices);
     }
     {
-        let filter = pane.filter.to_lowercase();
-        let indices: Vec<_> = pane
-            .entries
-            .iter()
-            .enumerate()
-            .filter(|(_, e)| e.name.to_lowercase().contains(&filter))
-            .map(|(i, _)| i)
-            .collect();
         let grid = super::grid::Grid::new(ui, ui.available_width());
         let columns = grid.columns;
         let (bounds, _) = ui.allocate_exact_size(
@@ -36,8 +29,7 @@ pub(super) fn render(
         );
         pane.content_bounds = Some(bounds);
         let tile = |display| grid.cell(bounds, display);
-        let (range, background) =
-            super::selection::update(ui, pane, "ICON", bounds, &indices, tile);
+        let (range, background) = super::selection::update(ui, pane, "ICON", bounds, indices, tile);
         let first = ((ui.clip_rect().top() - bounds.top() - 12.) / grid.step.y)
             .floor()
             .max(0.) as usize

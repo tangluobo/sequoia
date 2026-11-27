@@ -19,10 +19,9 @@ pub struct FileSession {
     stopped: bool,
 }
 fn wake(notify: &Notify) {
-    if let Ok(n) = notify.lock()
-        && let Some(f) = &*n
-    {
-        f();
+    let callback = notify.lock().ok().and_then(|callback| callback.clone());
+    if let Some(callback) = callback {
+        callback();
     }
 }
 impl FileSession {

@@ -66,14 +66,7 @@ pub(crate) fn render(
     rename::prepare(ui, pane, &mode);
     pane.thumbnails
         .set_mode(mode == "ICON" && crate::tabs::ssh::images::supported_connection(connection));
-    let filter = pane.filter.to_lowercase();
-    let indices: Vec<_> = pane
-        .entries
-        .iter()
-        .enumerate()
-        .filter(|(_, e)| e.name.to_lowercase().contains(&filter))
-        .map(|(i, _)| i)
-        .collect();
+    let indices = pane.visible_file_indices();
     if mode == "LIST" {
         let list = list::render(
             ui,
@@ -90,7 +83,7 @@ pub(crate) fn render(
         export_request = list.export_request;
         sort_request = list.sort_request;
     } else {
-        let (next, chosen, renamed) = views::render(ui, pane, &mode, icons, connection);
+        let (next, chosen, renamed) = views::render(ui, pane, &mode, icons, connection, &indices);
         navigate = navigate.or(next);
         action = action.or(chosen);
         rename_operation = renamed;

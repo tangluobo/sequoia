@@ -28,6 +28,10 @@ pub(super) fn perform(
             .filter_map(|i| pane.entries.get(*i).cloned())
             .collect()
     };
+    if navigate.is_some() || action.is_some() {
+        // The workspace sends queued requests in logic, before the next UI pass.
+        ui.ctx().request_repaint();
+    }
     if let Some(path) = navigate {
         workspace.enqueue(section, Operation::List(path));
     }
@@ -238,4 +242,61 @@ pub(super) fn perform(
         }
     }
     intent
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn s3_parent_navigation_wakes_the_idle_file_browser() {
+        let ctx = egui::Context::default();
+        let mut workspace = Workspace::standalone_files("ICON", "/document/");
+        let connection = tomato_core::Connection::new("S3");
+        for _ in 0..3 {
+            ctx.run_ui(Default::default(), |_| {})
+                .textures_delta
+                .clear();
+        }
+        assert!(!ctx.has_requested_repaint());
+
+        let path = parent(&workspace.panes[&Section::Files].path);
+        assert_eq!(path, "/");
+        assert_wakes(&ctx, &mut workspace, &connection, None, Some(path));
+        assert!(workspace.busy(Section::Files));
+    }
+
+    #[test]
+    fn s3_refresh_wakes_the_idle_file_browser() {
+        let ctx = egui::Context::default();
+        let mut workspace = Workspace::standalone_files("LIST", "/");
+        workspace.file_status = tomato_services::terminal::Status::Ready;
+        workspace.panes.get_mut(&Section::Files).unwrap().refresh = false;
+        let connection = tomato_core::Connection::new("S3");
+        for _ in 0..3 {
+            ctx.run_ui(Default::default(), |_| {})
+                .textures_delta
+                .clear();
+        }
+        assert!(!ctx.has_requested_repaint());
+        assert_wakes(&ctx, &mut workspace, &connection, Some("刷新".into()), None);
+        assert!(workspace.panes[&Section::Files].refresh);
+    }
+
+    fn assert_wakes(
+        ctx: &egui::Context,
+        workspace: &mut Workspace,
+        connection: &tomato_core::Connection,
+        action: Option<String>,
+        navigate: Option<String>,
+    ) {
+        let mut frame = ctx.run_ui(Default::default(), |ui| {
+            assert!(perform(ui, workspace, connection, action.clone(), navigate.clone()).is_none());
+        });
+        frame.textures_delta.clear();
+        assert_eq!(
+            frame.viewport_output[&egui::ViewportId::ROOT].repaint_delay,
+            std::time::Duration::ZERO
+        );
+    }
 }

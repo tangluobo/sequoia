@@ -34,6 +34,10 @@ GitHub Actions 的 `Publish Release` 手动入口接受版本号，像 Java 流�
 
 Windows 安装器从已校验的 NSIS 压缩包解压到本次构建的临时目录，避免恢复的缓存目录缺少 `makensis.exe` 时中断打包。
 
+2026-11-26 文件浏览器目录导航。路径栏、「上级」和目录双击提交列表请求后安排一次重绘，下一帧将请求交给后台会话。覆盖空闲 S3 浏览器从 `/document/` 返回根目录时的唤醒行为。
+
+2026-11-26 窗口响应性。S3 等文件浏览器在目录和筛选文本不变时复用筛选结果，图标、列表与列视图共用当前目录索引。名称排序预计算小写排序键，刷新及目录导航会唤醒空闲界面。本地终端通过有界队列把 PTY 输入、尺寸调整和关闭交给工作线程，写入拥塞时界面仍能处理事件。
+
 # Oracle 自有表的主键元数据（1764 发布）
 
 XE 21c 的工具栏回归停在首次打开表，备份窗口尚未建立。数据库会话在 SQL ID `bjyhsh6dn94na` 上等待 CPU 调度。该 ID 与当前驱动发出的按所有者、表名过滤 `ALL_CONSTRAINTS` 的主键查询相符。证据见 `target/oracle-xe-fixture-1762-diagnostic/oracle-ui.log` 与 `target/oracle-xe-fixture-1762-diagnostic/sessions.log`。

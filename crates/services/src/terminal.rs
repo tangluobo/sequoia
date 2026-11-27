@@ -30,12 +30,12 @@ enum Backend {
 impl Terminal {
     /// Stop actors before awaiting their upload cleanup; ConPTY teardown can
     /// flush output synchronously, so release it on the blocking pool.
-    pub async fn shutdown(mut self) {
-        match &mut self.backend {
-            Backend::Files(session) => session.stop().await,
-            Backend::Ssh(session) => session.stop().await,
-            Backend::Local(_) => {
-                let _ = tokio::task::spawn_blocking(move || drop(self)).await;
+    pub async fn shutdown(self) {
+        match self.backend {
+            Backend::Files(mut session) => session.stop().await,
+            Backend::Ssh(mut session) => session.stop().await,
+            Backend::Local(session) => {
+                let _ = tokio::task::spawn_blocking(move || session.shutdown()).await;
             }
         }
     }
@@ -112,13 +112,7 @@ impl Terminal {
     }
     pub fn status(&mut self) -> Status {
         match &mut self.backend {
-            Backend::Local(t) => {
-                if t.exited() {
-                    Status::Exited
-                } else {
-                    Status::Ready
-                }
-            }
+            Backend::Local(t) => t.status(),
             Backend::Ssh(t) => t.status(),
             Backend::Files(t) => t.status(),
         }

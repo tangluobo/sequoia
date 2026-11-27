@@ -1,8 +1,13 @@
-use anyhow::{Result, bail};
+use super::Status;
+use anyhow::{Context, Result, bail, ensure};
 use portable_pty::{CommandBuilder, PtySize, native_pty_system};
 use std::{
     io::{Read, Write},
-    sync::{Arc, Mutex, mpsc},
+    sync::{
+        Arc, Mutex,
+        atomic::{AtomicBool, Ordering},
+        mpsc,
+    },
 };
 use tomato_core::Connection;
 #[cfg(all(test, windows))]
@@ -12,12 +17,23 @@ type SharedNotifier = Arc<Mutex<Option<OutputNotifier>>>;
 
 pub(super) struct LocalTerminal {
     child: Box<dyn portable_pty::Child + Send + Sync>,
-    writer: Arc<Mutex<Box<dyn Write + Send>>>,
+    input: Option<mpsc::SyncSender<Input>>,
     pub output: mpsc::Receiver<Vec<u8>>,
     notifier: SharedNotifier,
-    // Close stdin and disconnect the bounded output queue before ClosePseudoConsole.
-    // Otherwise a blocked reader or initial cursor query can deadlock its shutdown.
-    master: Box<dyn portable_pty::MasterPty + Send>,
+    controls: Arc<Controls>,
+    worker: Option<std::thread::JoinHandle<()>>,
+}
+
+enum Input {
+    Data(Vec<u8>),
+    Resize,
+}
+
+#[derive(Default)]
+struct Controls {
+    size: Mutex<Option<PtySize>>,
+    failure: Mutex<Option<String>>,
+    stopping: AtomicBool,
 }
 
 impl LocalTerminal {
@@ -33,7 +49,8 @@ impl LocalTerminal {
         let child = pair.slave.spawn_command(command)?;
         drop(pair.slave);
         let mut reader = pair.master.try_clone_reader()?;
-        let writer = Arc::new(Mutex::new(pair.master.take_writer()?));
+        let mut writer = pair.master.take_writer()?;
+        let master = pair.master;
         let (send, output) = mpsc::sync_channel(32);
         let notifier: SharedNotifier = Arc::new(Mutex::new(None));
         let reader_notifier = notifier.clone();
@@ -58,12 +75,31 @@ impl LocalTerminal {
             }
             notify(&reader_notifier);
         });
+        let (input, receive) = mpsc::sync_channel(8);
+        let controls = Arc::new(Controls::default());
+        let worker_controls = controls.clone();
+        let worker_notifier = notifier.clone();
+        let worker = std::thread::spawn(move || {
+            let result = run_input(&receive, &worker_controls, &*master, &mut *writer);
+            drop(receive);
+            if let Err(error) = result {
+                if let Ok(mut failure) = worker_controls.failure.lock() {
+                    *failure = Some(format!("{error:#}"));
+                }
+                notify(&worker_notifier);
+            }
+            // ConPTY can flush output during close. Drop stdin first and let
+            // the reader keep draining when the owning tab drops its receiver.
+            drop(writer);
+            drop(master);
+        });
         Ok(Self {
             child,
-            master: pair.master,
-            writer,
+            input: Some(input),
             output,
             notifier,
+            controls,
+            worker: Some(worker),
         })
     }
     pub fn on_output(&self, callback: impl Fn() + Send + Sync + 'static) {
@@ -73,27 +109,83 @@ impl LocalTerminal {
         notify(&self.notifier);
     }
     pub fn write(&self, text: &str) -> Result<()> {
-        let mut writer = self
-            .writer
-            .lock()
-            .map_err(|_| anyhow::anyhow!("终端输入锁失效"))?;
-        writer.write_all(text.as_bytes())?;
-        writer.flush()?;
+        ensure!(
+            text.len() <= 1024 * 1024,
+            "单次终端输入最多 1 MiB，请分批粘贴"
+        );
+        self.input
+            .as_ref()
+            .context("本地终端已关闭")?
+            .try_send(Input::Data(text.as_bytes().to_vec()))
+            .map_err(|_| anyhow::anyhow!("本地终端输入队列已满或会话已关闭"))?;
         Ok(())
     }
     pub fn resize(&self, rows: u16, cols: u16) -> Result<()> {
-        self.master.resize(PtySize {
+        *self
+            .controls
+            .size
+            .lock()
+            .map_err(|_| anyhow::anyhow!("终端尺寸锁失效"))? = Some(PtySize {
             rows,
             cols,
             pixel_width: 0,
             pixel_height: 0,
-        })?;
-        Ok(())
+        });
+        match self
+            .input
+            .as_ref()
+            .context("本地终端已关闭")?
+            .try_send(Input::Resize)
+        {
+            Ok(()) | Err(mpsc::TrySendError::Full(_)) => Ok(()),
+            Err(mpsc::TrySendError::Disconnected(_)) => bail!("本地终端已关闭"),
+        }
     }
-    pub fn exited(&mut self) -> bool {
-        self.child.try_wait().ok().flatten().is_some()
+    pub fn status(&mut self) -> Status {
+        if self.child.try_wait().ok().flatten().is_some() {
+            Status::Exited
+        } else if let Some(error) = self.controls.failure.lock().ok().and_then(|f| f.clone()) {
+            Status::Failed(error)
+        } else {
+            Status::Ready
+        }
+    }
+
+    pub(super) fn shutdown(mut self) {
+        let worker = self.worker.take();
+        drop(self);
+        if let Some(worker) = worker {
+            let _ = worker.join();
+        }
     }
 }
+
+fn run_input(
+    receive: &mpsc::Receiver<Input>,
+    controls: &Controls,
+    master: &dyn portable_pty::MasterPty,
+    writer: &mut dyn Write,
+) -> Result<()> {
+    while let Ok(input) = receive.recv() {
+        if controls.stopping.load(Ordering::Acquire) {
+            break;
+        }
+        let size = controls
+            .size
+            .lock()
+            .map_err(|_| anyhow::anyhow!("终端尺寸锁失效"))?
+            .take();
+        if let Some(size) = size {
+            master.resize(size).context("调整本地终端尺寸失败")?;
+        }
+        if let Input::Data(bytes) = input {
+            writer.write_all(&bytes).context("写入本地终端失败")?;
+            writer.flush().context("刷新本地终端输入失败")?;
+        }
+    }
+    Ok(())
+}
+
 fn notify(notifier: &SharedNotifier) {
     let callback = notifier.lock().ok().and_then(|guard| guard.clone());
     if let Some(callback) = callback {
@@ -102,6 +194,8 @@ fn notify(notifier: &SharedNotifier) {
 }
 impl Drop for LocalTerminal {
     fn drop(&mut self) {
+        self.controls.stopping.store(true, Ordering::Release);
+        self.input.take();
         if let Ok(mut notifier) = self.notifier.lock() {
             *notifier = None;
         }
