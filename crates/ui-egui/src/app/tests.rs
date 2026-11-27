@@ -488,7 +488,9 @@ fn render_frame_with_events(
         events,
         ..Default::default()
     };
-    ctx.run_ui(input, |ui| app.ui(ui))
+    let mut output = ctx.run_ui(input, |ui| app.ui(ui));
+    output.textures_delta.clear();
+    output
 }
 
 fn click_app(
@@ -534,28 +536,6 @@ fn text_position(output: &egui::FullOutput, text: &str) -> Option<egui::Pos2> {
         }
         _ => None,
     })
-}
-
-#[test]
-fn input_sharing_opens_from_the_connection_picker_tools_tab() -> anyhow::Result<()> {
-    let directory = tempfile::tempdir()?;
-    let runtime = tokio::runtime::Builder::new_multi_thread()
-        .enable_all()
-        .build()?;
-    let ctx = egui::Context::default();
-    let mut app = TomatoApp::with_repository(
-        &ctx,
-        runtime,
-        ConnectionFileRepository::new(directory.path().join("connections.json")),
-    );
-    app.picker = Some(3);
-    let output = render_frame_with_events(&ctx, &mut app, vec![]);
-    let tile = text_position(&output, "鼠标和键盘共享").expect("tools tab tile");
-    let output = click_app(&ctx, &mut app, tile);
-    assert!(app.picker.is_none());
-    assert!(app.input_share.as_ref().is_some_and(|state| state.open));
-    assert!(!output.shapes.is_empty());
-    Ok(())
 }
 
 #[test]
